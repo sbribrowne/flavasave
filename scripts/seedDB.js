@@ -2,15 +2,18 @@ const mongoose = require("mongoose");
 const db = require("../models");
 mongoose.Promise = global.Promise;
 
+
+//DONT KNOW IF WE NEED SEEDING RECIPES OR NOT
 // This file empties the Books collection and inserts the books below
 
 mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/reactreadinglist",
+  process.env.MONGODB_URI || "mongodb://localhost/flavasave_db",
   {
     useMongoClient: true
   }
 );
 
+/*
 const bookSeed = [
   {
     title: "The Dead Zone",
@@ -125,7 +128,8 @@ const bookSeed = [
     date: new Date(Date.now())
   }
 ];
-
+*/
+/*
 db.Book
   .remove({})
   .then(() => db.Book.collection.insertMany(bookSeed))
@@ -137,3 +141,4 @@ db.Book
     console.error(err);
     process.exit(1);
   });
+*/
