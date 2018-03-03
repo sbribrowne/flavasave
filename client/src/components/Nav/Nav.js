@@ -1,6 +1,6 @@
 import React from "react";
 
-const Nav = () =>
+const Nav = () => (
   <nav className="navbar navbar-inverse navbar-top">
     <div className="container-fluid">
       <div className="navbar-header">
@@ -10,10 +10,11 @@ const Nav = () =>
           <span className="icon-bar" />
         </button>
         <a href="/" className="navbar-brand">
-          React Reading List
+          FlavaSave!
         </a>
       </div>
     </div>
-  </nav>;
+  </nav>
+);
 
 export default Nav;
