@@ -3,7 +3,7 @@ import React from "react";
 const Nav = () => (
   <nav class="navbar navbar-expand-lg navbar-light sticky-top bg-light">
     <a class="navbar-brand" href="#">
-      FlavaSave
+      <img src="../../images/logo_green.png" alt="FlavaSave" height="42" width="42" />
     </a>
     <button
       class="navbar-toggler"
