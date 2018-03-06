@@ -1,5 +1,5 @@
 {
-  "name": "mern",
+  "name": "flavasave",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "axios": "^0.16.2",
-    "body-parser": "^1.17.2",
+    "body-parser": "^1.18.2",
     "express": "^4.15.4",
     "mongoose": "^4.11.7"
   }
