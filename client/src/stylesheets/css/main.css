@@ -1,0 +1,58 @@
+/* FONTS */
+@font-face {
+  font-family: PathwaysRough;
+  src: url(../../fonts/PathwaysRough-Regular.otf); }
+@font-face {
+  font-family: LeagueGothic;
+  src: url(../../fonts/LeagueGothic-Regular.otf); }
+@font-face {
+  font-family: LeagueGothicItalic;
+  src: url(../../fonts/LeagueGothic-Italic.otf);
+  font-weight: normal;
+  font-style: italic; }
+@font-face {
+  font-family: Peleguer;
+  src: url(../../fonts/Peleguer-Regular.ttf) format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: PeleguerBold;
+  src: url(../../fonts/Peleguer-Bold.ttf) format("truetype");
+  font-weight: Bold;
+  font-style: normal; }
+@font-face {
+  font-family: PeleguerItalic;
+  src: url(../../fonts/Peleguer-Italic.ttf) format("truetype");
+  font-weight: normal;
+  font-style: italic; }
+/*FONT VARIABLES*/
+/*COLOR VARIABLES*/
+.navbar {
+  padding: 0.5rem 0 0.5rem 0; }
+
+.navbar-brand {
+  padding-left: 8%; }
+
+.navbar-nav {
+  font-family: LeagueGothic, sans-serif;
+  padding-right: 8%; }
+
+.nav-item {
+  color: #1E401D;
+  font-size: 1.3rem;
+  letter-spacing: 0.15rem;
+  margin-left: 1.5rem; }
+
+.nav-item:hover {
+  color: #F99E1C;
+  font-size: 1.5rem; }
+
+#homeNav {
+  background-color: white; }
+
+body {
+  background: url(../../images/home_image.jpg) top right no-repeat;
+  background-attachment: fixed;
+  background-size: 100%; }
+
+/*# sourceMappingURL=main.css.map */

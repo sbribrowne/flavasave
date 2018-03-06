@@ -1,40 +1,23 @@
 import React from "react";
 
 const Nav = () => (
-  <nav class="navbar navbar-expand-lg navbar-light sticky-top bg-light">
-    <a class="navbar-brand" href="#">
-      FlavaSave
+  <nav className="navbar navbar-expand-lg" id="homeNav">
+    <a className="navbar-brand" href="#">
+      <img src={require('../../images/logo_green.png')} alt="FlavaSave" height="55" />
     </a>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-toggle="collapse"
-      data-target="#navbarNavAltMarkup"
-      aria-controls="navbarNavAltMarkup"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon" />
-    </button>
-    <div
-      class="collapse navbar-collapse justify-content-end"
-      id="navbarNavAltMarkup"
-    >
-      <div class="navbar-nav">
-        <a class="nav-item nav-link active" href="#">
-          Home <span class="sr-only">(current)</span>
+    <div className="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+      <div className="navbar-nav">
+        <a className="nav-item nav-link" href="#">
+          ABOUT
         </a>
-        <a class="nav-item nav-link" href="#">
-          About
+        <a className="nav-item nav-link" href="#">
+          HOW IT WORKS
         </a>
-        <a class="nav-item nav-link" href="#">
-          How It Works
+        <a className="nav-item nav-link" href="#">
+          SIGN IN
         </a>
-        <a class="nav-item nav-link" href="#">
-          Sign In
-        </a>
-        <a class="nav-item nav-link" href="#">
-          Sign Up
+        <a className="nav-item nav-link" href="#">
+          SIGN UP
         </a>
       </div>
     </div>
