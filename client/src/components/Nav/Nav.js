@@ -8,16 +8,16 @@ const Nav = () => (
     <div className="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
       <div className="navbar-nav">
         <a className="nav-item nav-link" href="#">
-          About
+          ABOUT
         </a>
         <a className="nav-item nav-link" href="#">
-          How It Works
+          HOW IT WORKS
         </a>
         <a className="nav-item nav-link" href="#">
-          Sign In
+          SIGN IN
         </a>
         <a className="nav-item nav-link" href="#">
-          Sign Up
+          SIGN UP
         </a>
       </div>
     </div>

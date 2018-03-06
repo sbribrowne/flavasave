@@ -1,7 +1,7 @@
-@import "../resources/_fonts";
+@import "../resources/_fontsandcolors";
 
 .navitem {
-    font-family: LeagueGothic;
+    font-family: $header;
 }
 
 #homeNav {
