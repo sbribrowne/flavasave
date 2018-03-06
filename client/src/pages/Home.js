@@ -1,18 +1,4 @@
 import React, { Component } from "react";
-<<<<<<< HEAD
-import Jumbotron from "../components/Jumbotron/Jumbotron";
-
-
-class Home extends Component {
-
-  render() {
-    return (
-      <Jumbotron />
-      
-    )
-  }
-}
-=======
 import Nav from "../components/Nav/Nav.js";
 
 const Home = () => {
@@ -25,4 +11,3 @@ const Home = () => {
 };
 
 export default Home;
->>>>>>> upstream/master
