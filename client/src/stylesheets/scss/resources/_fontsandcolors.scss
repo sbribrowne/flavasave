@@ -1,0 +1,56 @@
+/* FONTS */
+
+@font-face {
+    font-family: PathwaysRough;
+    src: url(../../fonts/PathwaysRough-Regular.otf);
+}
+
+@font-face {
+    font-family: LeagueGothic;
+    src: url(../../fonts/LeagueGothic-Regular.otf);
+}
+
+@font-face {
+    font-family: LeagueGothicItalic;
+    src: url(../../fonts/LeagueGothic-Italic.otf);
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: Peleguer;
+    src: url(../../fonts/Peleguer-Regular.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: PeleguerBold;
+    src: url(../../fonts/Peleguer-Bold.ttf) format('truetype');
+    font-weight: Bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: PeleguerItalic;
+    src: url(../../fonts/Peleguer-Italic.ttf) format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+/*FONT VARIABLES*/
+
+$logo-font: PathwaysRough,
+sans-serif;
+$header-font: LeagueGothic,
+sans-serif;
+$body-font: Peleguer,
+serif;
+
+/*COLOR VARIABLES*/
+
+$orange: #F99E1C;
+$red: #E44125;
+$darkgreen: #1E401D;
+$green: #90bb5e;
+$black: #0E0A08;

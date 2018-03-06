@@ -1,0 +1,30 @@
+@import "../resources/_fontsandcolors";
+
+.navbar {
+    padding: 0.5rem 0 0.5rem 0;
+}
+
+.navbar-brand {
+    padding-left: 8%;
+}
+
+.navbar-nav {
+    font-family: $header-font;
+    padding-right: 8%;
+}
+
+.nav-item {
+    color: $darkgreen;
+    font-size: 1.3rem;
+    letter-spacing: 0.15rem;
+    margin-left: 1.5rem;
+}
+
+.nav-item:hover {
+    color: $orange;
+    font-size: 1.5rem;
+}
+
+#homeNav {
+    background-color: white;
+}
