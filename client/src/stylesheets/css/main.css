@@ -27,17 +27,25 @@
   font-style: italic; }
 /*FONT VARIABLES*/
 /*COLOR VARIABLES*/
+.navbar {
+  padding: 0.5rem 0 0.5rem 0; }
+
 .navbar-brand {
-  margin-left: 8%; }
+  padding-left: 8%; }
 
 .navbar-nav {
   font-family: LeagueGothic, sans-serif;
-  margin-right: 8%; }
+  padding-right: 8%; }
 
 .nav-item {
   color: #1E401D;
-  font-size: 1.2rem;
-  letter-spacing: 0.15rem; }
+  font-size: 1.3rem;
+  letter-spacing: 0.15rem;
+  margin-left: 1.5rem; }
+
+.nav-item:hover {
+  color: #F99E1C;
+  font-size: 1.5rem; }
 
 #homeNav {
   background-color: white; }
