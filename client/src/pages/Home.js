@@ -6,7 +6,6 @@ const Home = () => {
   return (
     <div>
       <Nav />
-      <h1>Home Page Component goes here</h1>
     </div>
   );
 };

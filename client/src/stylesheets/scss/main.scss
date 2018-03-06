@@ -1,18 +1,7 @@
 @import './components/_homenav';
 
-/*FONT VARIABLES*/
-
-$logo-font: PathwaysRough,
-sans-serif;
-$header-font: LeagueGothic,
-sans-serif;
-$body-font: Peleguer,
-serif;
-
-/*COLOR VARIABLES*/
-
-$orange: #F99E1C;
-$red: #E44125;
-$darkgreen: #1E401D;
-$green: #90bb5e;
-$black: #0E0A08;
+body	{ 
+    background:url(../../images/home_image.jpg) top right no-repeat; 
+    background-attachment:fixed; 
+    background-size: 100%;
+}

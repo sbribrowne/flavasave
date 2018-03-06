@@ -42,7 +42,9 @@
 #homeNav {
   background-color: white; }
 
-/*FONT VARIABLES*/
-/*COLOR VARIABLES*/
+body {
+  background: url(../../images/home_image.jpg) top right no-repeat;
+  background-attachment: fixed;
+  background-size: 100%; }
 
 /*# sourceMappingURL=main.css.map */
