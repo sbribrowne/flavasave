@@ -1,10 +1,6 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./pages/Home/Home.js";
-import NewRecipe from "./pages/NewRecipe/NewRecipe.js";
-import Recipes from "./pages/Recipes/Recipes.js";
-import SignUp from "./pages/SignUp/SignUp.js";
-import UserPage from "./pages/UserPage/UserPage.js";
 
 
 
