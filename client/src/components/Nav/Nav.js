@@ -1,9 +1,9 @@
 import React from "react";
 
 const Nav = () => (
-  <nav className="navbar navbar-expand-lg navbar-light sticky-top bg-light">
+  <nav className="navbar navbar-expand-lg" id="homeNav">
     <a className="navbar-brand" href="#">
-      <img src="../../images/logo_green.png" alt="FlavaSave" height="42" width="42" />
+      <img src={require('../../images/logo_green.png')} alt="FlavaSave" height="42" />
     </a>
     <div className="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
       <div className="navbar-nav">
