@@ -3,7 +3,7 @@ import React from "react";
 const Nav = () => (
   <nav className="navbar navbar-expand-lg" id="homeNav">
     <a className="navbar-brand" href="#">
-      <img src={require('../../images/logo_green.png')} alt="FlavaSave" height="42" />
+      <img src={require('../../images/logo_green.png')} alt="FlavaSave" height="60" />
     </a>
     <div className="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
       <div className="navbar-nav">
