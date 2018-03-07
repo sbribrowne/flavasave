@@ -61,14 +61,23 @@
 .loginBox {
   position: absolute;
   background-color: #E44125;
-  width: 55%;
-  padding: 7em 7em 7em 7em;
+  width: 60%;
+  padding: 2em 4em 2em 4em;
   opacity: 0.90;
   right: 0; }
 
 .loginSubTitle {
   font-family: PeleguerItalic, serif;
-  color: white; }
+  font-size: 3rem;
+  color: white;
+  letter-spacing: 0.5rem; }
+
+.loginTitle {
+  font-family: LeagueGothic, sans-serif;
+  font-size: 3.5rem;
+  letter-spacing: 0.5rem;
+  color: white;
+  margin-top: 3rem; }
 
 footer {
   position: absolute;
