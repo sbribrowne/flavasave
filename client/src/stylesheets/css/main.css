@@ -114,8 +114,11 @@
 
 .card-deck {
   width: 80%;
-  margin-top: 40%;
+  margin-top: 45%;
   margin-left: 10%; }
+
+.card {
+  background-color: white; }
 
 footer {
   background-color: white;
