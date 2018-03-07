@@ -156,6 +156,10 @@
   margin-left: auto;
   margin-right: auto; }
 
+.howItWorksContainer {
+  background-color: #F99E1C;
+  padding: 13rem 10rem 13rem 10rem; }
+
 .howItWorksTitle {
   font-family: LeagueGothic, sans-serif;
   color: #1E401D;
@@ -164,7 +168,8 @@
   text-align: center; }
 
 .howItWorksText {
-  font-family: Peleguer, serif;
+  font-family: PeleguerBold, serif;
+  color: #1E401D;
   font-size: 3rem; }
 
 footer {
