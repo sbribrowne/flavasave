@@ -1,7 +1,7 @@
 import React from "react";
 
 const Login = () => (
-  <div className="bg-danger">
+  <div className="loginBox">
     <h1>FlavaSave</h1>
     <h3>
       <i>Your One-Stop Recipe Library</i>
