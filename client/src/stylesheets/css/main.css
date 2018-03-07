@@ -27,6 +27,69 @@
   font-style: italic; }
 /*FONT VARIABLES*/
 /*COLOR VARIABLES*/
+@-webkit-keyframes slideIn {
+  0% {
+    transform: translateX(-900px); }
+  100% {
+    transform: translateX(0); } }
+@-moz-keyframes slideIn {
+  0% {
+    transform: translateX(-900px); }
+  100% {
+    transform: translateX(0); } }
+@keyframes slideIn {
+  0% {
+    transform: translateX(-900px); }
+  100% {
+    transform: translateX(0); } }
+@-moz-keyframes bounce {
+  0%,
+    20%,
+    50%,
+    80%,
+    100% {
+    -moz-transform: translateY(0);
+    transform: translateY(0); }
+  40% {
+    -moz-transform: translateY(-30px);
+    transform: translateY(-30px); }
+  60% {
+    -moz-transform: translateY(-15px);
+    transform: translateY(-15px); } }
+@-webkit-keyframes bounce {
+  0%,
+    20%,
+    50%,
+    80%,
+    100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0); }
+  40% {
+    -webkit-transform: translateY(-30px);
+    transform: translateY(-30px); }
+  60% {
+    -webkit-transform: translateY(-15px);
+    transform: translateY(-15px); } }
+@keyframes bounce {
+  0%,
+    20%,
+    50%,
+    80%,
+    100% {
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -webkit-transform: translateY(0);
+    transform: translateY(0); }
+  40% {
+    -moz-transform: translateY(-30px);
+    -ms-transform: translateY(-30px);
+    -webkit-transform: translateY(-30px);
+    transform: translateY(-30px); }
+  60% {
+    -moz-transform: translateY(-15px);
+    -ms-transform: translateY(-15px);
+    -webkit-transform: translateY(-15px);
+    transform: translateY(-15px); } }
 .navbar {
   background-color: #FFF;
   border-radius: 0;
@@ -114,6 +177,30 @@
 .signupLink:hover {
   font-size: 2.5rem;
   color: #F99E1C; }
+
+.readmore-block {
+  position: absolute;
+  bottom: 5rem;
+  left: 3rem;
+  -webkit-animation: slideIn 1s forwards;
+  -moz-animation: slideIn 1s forwards;
+  animation: slideIn 1s forwards; }
+
+.readmore-text {
+  font-family: Peleguer, serif;
+  font-size: 4rem;
+  color: white;
+  border: 2px solid white;
+  transform: rotate(270deg);
+  padding: 2rem 4rem 1.5rem 4rem; }
+
+.arrow {
+  height: 10rem;
+  margin-top: 13rem;
+  margin-left: 11.5rem;
+  -moz-animation: bounce 3s infinite;
+  -webkit-animation: bounce 3s infinite;
+  animation: bounce 3s infinite; }
 
 .aboutHeader {
   font-family: LeagueGothic, sans-serif;

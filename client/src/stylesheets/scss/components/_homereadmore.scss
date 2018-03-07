@@ -1,0 +1,26 @@
+.readmore-block {
+    position: absolute;
+    bottom: 5rem;
+    left: 3rem;
+    -webkit-animation: slideIn 1s forwards;
+    -moz-animation: slideIn 1s forwards;
+    animation: slideIn 1s forwards;
+}
+
+.readmore-text {
+    font-family: $body-font;
+    font-size: 4rem;
+    color: white;
+    border: 2px solid white;
+    transform: rotate(270deg);
+    padding: 2rem 4rem 1.5rem 4rem;
+}
+
+.arrow {
+    height: 10rem;
+    margin-top: 13rem;
+    margin-left: 11.5rem;
+    -moz-animation: bounce 3s infinite;
+    -webkit-animation: bounce 3s infinite;
+    animation: bounce 3s infinite;
+}
