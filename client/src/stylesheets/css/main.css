@@ -120,15 +120,36 @@
   font-size: 6rem;
   letter-spacing: 1.5rem;
   color: white;
-  margin-left: 11%;
+  margin-left: 16%;
   margin-top: 45%; }
 
 .card-deck {
-  width: 80%;
-  margin-left: 10%; }
+  display: table;
+  width: 70%;
+  margin-left: 15%; }
+
+.card-deck [class*="col-"] {
+  float: none;
+  display: table-cell;
+  vertical-align: top; }
 
 .card {
-  background-color: white; }
+  background-color: white;
+  padding: 6rem 4rem 3rem 4rem; }
+
+.card-title {
+  font-family: LeagueGothic, sans-serif;
+  color: #1E401D;
+  font-size: 6rem;
+  text-align: center;
+  margin-top: 3rem; }
+
+.card-text {
+  font-family: Peleguer, serif;
+  font-size: 3rem; }
+
+.card-img-top {
+  margin-left: 12.75rem; }
 
 footer {
   background-color: white;
