@@ -66,8 +66,9 @@
   opacity: 0.90;
   right: 0; }
 
-.loginTitle {
-  font-family: LeagueGothic, sans-serif; }
+.loginSubTitle {
+  font-family: PeleguerItalic, serif;
+  color: white; }
 
 footer {
   position: absolute;
