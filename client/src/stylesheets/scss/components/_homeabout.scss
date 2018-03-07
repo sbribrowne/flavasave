@@ -5,23 +5,23 @@
     color: white;
     margin-left: 16%;
     margin-top: 45%;
+    margin-bottom: 1%;
 }
 
 .card-deck {
-    display: table;
     width: 70%;
     margin-left: 15%;
 }
 
-.card-deck [class*="col-"] {
-    float: none;
-    display: table-cell;
-    vertical-align: top;
+.big-card {
+    background: none;
+    border: none;
 }
 
 .card {
     background-color: white;
     padding: 6rem 4rem 3rem 4rem;
+    border: none;
 }
 
 .card-title {
@@ -34,9 +34,14 @@
 
 .card-text {
     font-family: $body-font;
-    font-size: 3rem;
+    font-size: 2.75rem;
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 4rem;
 }
 
 .card-img-top {
-    margin-left: 12.75rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
