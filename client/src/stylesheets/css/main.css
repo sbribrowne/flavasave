@@ -80,6 +80,7 @@ footer {
 
 .footertext:hover {
   background-color: transparent !important;
+  font-size: 2.5rem;
   color: #F99E1C; }
 
 #footercopyright {
