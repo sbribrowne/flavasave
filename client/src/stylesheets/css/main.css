@@ -54,6 +54,7 @@
   margin-left: 3rem; }
 
 .nav-item:hover {
+  text-decoration: none;
   color: #F99E1C;
   font-size: 3rem; }
 
@@ -69,15 +70,16 @@ footer {
 
 .footertext {
   font-family: LeagueGothic, sans-serif;
-  font-size: 2.5rem;
-  color: #0E0A08;
+  color: #1E401D;
+  font-size: 2rem;
+  letter-spacing: 0.4rem;
   letter-spacing: 0.3rem;
   padding-right: 6rem;
   padding-top: 2rem;
   margin-left: 6rem; }
 
 .footertext:hover {
-  color: #90bb5e; }
+  color: #F99E1C; }
 
 #footercopyright {
   margin-right: 6rem; }

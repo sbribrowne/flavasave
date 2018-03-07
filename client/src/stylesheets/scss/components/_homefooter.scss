@@ -8,8 +8,9 @@ footer {
 
 .footertext {
     font-family: $header-font;
-    font-size: 2.5rem;
-    color: $black;
+    color: $darkgreen;
+    font-size: 2rem;
+    letter-spacing: 0.4rem;
     letter-spacing: 0.3rem;
     padding-right: 6rem;
     padding-top: 2rem;
@@ -17,7 +18,7 @@ footer {
 }
 
 .footertext:hover {
-    color: $green;
+    color: $orange;
 }
 
 #footercopyright {
