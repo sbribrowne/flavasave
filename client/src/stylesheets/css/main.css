@@ -157,8 +157,8 @@
   margin-right: auto; }
 
 .howItWorksContainer {
-  background-color: #F99E1C;
-  padding: 13rem 10rem 13rem 10rem; }
+  padding: 13rem 10rem 13rem 10rem;
+  background: #F99E1C url("../../images/HIW_background.png"); }
 
 .howItWorksTitle {
   font-family: LeagueGothic, sans-serif;
