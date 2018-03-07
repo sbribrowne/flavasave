@@ -1,24 +1,25 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Nav = () => (
   <nav className="navbar navbar-expand-lg" id="homeNav">
-    <a className="navbar-brand" href="#">
+    <a className="navbar-brand" href="/">
       <img src={require('../../images/logo_green.png')} alt="FlavaSave" height="55" />
     </a>
     <div className="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
       <div className="navbar-nav">
-        <a className="nav-item nav-link" href="#">
+        <Link className="nav-item nav-link" to="/">
           ABOUT
-        </a>
-        <a className="nav-item nav-link" href="#">
+        </Link>
+        <Link className="nav-item nav-link" to="/">
           HOW IT WORKS
-        </a>
-        <a className="nav-item nav-link" href="#">
+        </Link>
+        <Link className="nav-item nav-link" to="/signup">
           SIGN IN
-        </a>
-        <a className="nav-item nav-link" href="#">
+        </Link>
+        <Link className="nav-item nav-link" to="/signup">
           SIGN UP
-        </a>
+        </Link>
       </div>
     </div>
   </nav>

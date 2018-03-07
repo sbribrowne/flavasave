@@ -1,11 +1,15 @@
-import React, { Component } from "react";
+import React from "react";
 import Nav from "../components/Nav/Nav.js";
+import Panel from "../components/Panels/Panel.js";
+import NeedToCookList from "../components/Lists/NeedToCookList";
 
 const Recipes = () => {
   return (
     <div>
       <Nav />
-      <h1>Recipes Page Component goes here</h1>
+      <Panel name={"Recipes"}>
+        <NeedToCookList />
+      </Panel>
     </div>
   );
 };
