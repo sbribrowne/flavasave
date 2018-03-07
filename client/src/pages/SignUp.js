@@ -10,25 +10,17 @@ const SignUp = () => {
       <div className="container">
         <div className="row">
           <div className="col-sm-4 panel panel-heading panel-success">
-            Start Cooking
+            <img
+              className="card-img-top"
+              src={require("../images/chef_green.png")}
+              height="180"
+            />
             <br />
-            Start Cooking
+            <h1>Start Cooking</h1>
             <br />
-            Start Cooking
-            <br />
-            Start Cooking
-            <br />
-            Start Cooking
-            <br />
-            Start Cooking
-            <br />
-            Start Cooking
-            <br />
-            Start Cooking
-            <br />
-            Start Cooking
-            <br />
-            Start Cooking
+            <h4>
+              <i>with your one-stop recipe library!</i>
+            </h4>
           </div>
           <div className="col-sm-8">
             <SignUpForm />
