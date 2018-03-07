@@ -1,12 +1,12 @@
 import React from "react";
-import Nav from "../components/Nav/Nav.js";
+import NavLogged from "../components/Nav/NavLogged.js";
 import Panel from "../components/Panels/Panel.js";
 import NeedToCookList from "../components/Lists/NeedToCookList";
 
 const Recipes = () => {
   return (
     <div>
-      <Nav />
+      <NavLogged />
       <Panel name={"Recipes"}>
         <NeedToCookList />
       </Panel>
