@@ -2,7 +2,6 @@ import React from "react";
 
 const SignUpForm = (props) => (
   <div className="sign-up-form">
-    <h1>Sign Up</h1>
     <form className="text-center">
       <div className="form-group">
         <label htmlFor="email">Email</label>
