@@ -13,6 +13,10 @@
     "installDeps": "yarn && cd client && yarn",
     "sass": "sass --watch client/src/stylesheets/scss:client/src/stylesheets/css"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/markkazanski/flavasave.git"
+  },
   "author": "",
   "license": "ISC",
   "devDependencies": {
@@ -27,7 +31,6 @@
     "express": "^4.16.2",
     "express-session": "^1.15.6",
     "method-override": "^2.3.10",
-    "mongoose": "^4.11.7",
     "mysql2": "^1.5.2",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
