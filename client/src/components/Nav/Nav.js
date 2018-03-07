@@ -1,25 +1,29 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Nav = () => (
-  <nav className="navbar navbar-expand-lg" id="homeNav">
-    <a className="navbar-brand" href="#">
-      <img src={require('../../images/logo_green.png')} alt="FlavaSave" height="55" />
-    </a>
-    <div className="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
-      <div className="navbar-nav">
-        <a className="nav-item nav-link" href="#">
-          ABOUT
-        </a>
-        <a className="nav-item nav-link" href="#">
-          HOW IT WORKS
-        </a>
-        <a className="nav-item nav-link" href="#">
-          SIGN IN
-        </a>
-        <a className="nav-item nav-link" href="#">
-          SIGN UP
-        </a>
-      </div>
+
+  <nav class="navbar" id="homeNav">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" id="navbarlogo" href="#"><img src={require('../../images/logo_green.png')} alt="FlavaSave" height="55" /></a>
+        </div>
+        <div className="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+          <div className="nav navbar-nav navbar-right">
+            <Link className="nav-item nav-link" to="/">
+              ABOUT
+            </Link>
+            <Link className="nav-item nav-link" to="/">
+              HOW IT WORKS
+            </Link>
+            <Link className="nav-item nav-link" to="/signup">
+              SIGN IN
+            </Link>
+            <Link className="nav-item nav-link" to="/signup">
+              SIGN UP
+            </Link>
+          </div>
+        </div>       
     </div>
   </nav>
 );

@@ -1,11 +1,15 @@
-import React, { Component } from "react";
+import React from "react";
 import Nav from "../components/Nav/Nav.js";
+import Panel from "../components/Panels/Panel";
+import SignUpForm from "../components/Forms/SignUpForm";
 
 const SignUp = () => {
   return (
     <div>
       <Nav />
-      <h1>SignUp Page Component goes here</h1>
+      <Panel name={"SignUp"}>
+      <SignUpForm />
+      </Panel>
     </div>
   );
 };
