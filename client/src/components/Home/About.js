@@ -1,8 +1,8 @@
 import React from "react";
 
 const About = () => (
-  <div className="card-deck">
-    <div className="card">
+  <div className="row card-deck">
+    <div className="col-md-4 card">
       <img className="card-img-top" src={require('../../images/mitts.png')} alt="Store Image" height = "90" />
       <div className="card-body">
         <h5 className="card-title">Store.</h5>
@@ -12,7 +12,7 @@ const About = () => (
         </p>
       </div>
     </div>
-    <div className="card">
+    <div className="col-md-4 card">
       <img className="card-img-top" src={require('../../images/spatulas.png')} alt="Organize Image" height = "90" />
       <div className="card-body">
         <h5 className="card-title">Organize.</h5>
@@ -22,7 +22,7 @@ const About = () => (
         </p>
       </div>
     </div>
-    <div className="card">
+    <div className="col-md-4 card">
       <img className="card-img-top" src={require('../../images/chef_green.png')} alt="Edit Image" height = "90" />
       <div className="card-body">
         <h5 className="card-title">Edit.</h5>

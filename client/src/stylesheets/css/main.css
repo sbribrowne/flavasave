@@ -79,6 +79,11 @@
   color: white;
   margin-top: 3rem; }
 
+.card-deck {
+  width: 80%;
+  margin-top: 40%;
+  margin-left: 10%; }
+
 footer {
   position: absolute;
   background-color: white;
