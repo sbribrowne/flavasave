@@ -3,13 +3,15 @@ import NavLogged from "../components/Nav/NavLogged.js";
 import Input from "../components/Forms/Input.js";
 import FormBtn from "../components/Forms/FormBtn.js";
 import DropDwn from "../components/Forms/DropDwn.js";
+import Panel from "../components/Panels/Panel.js";
+import OrangeHdr from "../components/Panels/OrangeHdr.js";
 
 const UserPage = () => {
   return (
     <div>
       <NavLogged />
 
-      <div>
+      <Panel>
         <h3>ADD RECIPE BY URL</h3>
         <form class='row'>
           <Input name="add-recipe" />
@@ -27,8 +29,12 @@ const UserPage = () => {
           <Input name="search-tags" />
           <FormBtn>Submit</FormBtn>
         </form>
-      </div>
+      </Panel>
+
+      <OrangeHdr></OrangeHdr>
+
     </div>
+
   );
 };
 
