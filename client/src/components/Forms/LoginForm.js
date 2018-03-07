@@ -2,7 +2,7 @@ import React from "react";
 
 const LoginForm = props => (
   <div className="sign-up-form">
-    <form className="text-center">
+    <form>
       <div className="form-group">
         <label htmlFor="email">Email</label>
         <input

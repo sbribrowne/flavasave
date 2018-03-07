@@ -7,6 +7,8 @@ const Login = () => (
     <h3 className="loginSubTitle">Your One-Stop Recipe Library.</h3>
     <h4 className="loginTitle">LOGIN</h4>
     <LoginForm />
+    <p>Don't have an account? <a href="">Sign up!</a></p>
+    <a>Forget Password?</a>
   </div>
 );
 
