@@ -1,7 +1,7 @@
 import React from "react";
 import Nav from "../components/Nav/Nav.js";
 import SignUpForm from "../components/Forms/SignUpForm";
-import Footer from "../components/Footer/Footer.js";
+import FooterLogged from "../components/Footer/FooterLogged.js";
 
 const SignUp = () => {
   return (
@@ -27,7 +27,7 @@ const SignUp = () => {
           </div>
         </div>
       </div>
-      <Footer />
+      <FooterLogged />
     </div>
   );
 };
