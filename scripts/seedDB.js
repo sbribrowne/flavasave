@@ -1,17 +1,12 @@
-const mongoose = require("mongoose");
 const db = require("../models");
-mongoose.Promise = global.Promise;
-
-
-//DONT KNOW IF WE NEED SEEDING RECIPES OR NOT
-// This file empties the Books collection and inserts the books below
-
-mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/flavasave_db",
-  {
-    useMongoClient: true
-  }
-);
+const app = express();
+const PORT = process.env.PORT || 3001;
+//syncs sequelize models and waits till update complete before starting server
+db.sequelize.sync().then(function(){
+  app.listen(PORT, function(){
+    console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
+  });
+});
 
 const recipeSeed = [
   {
@@ -40,26 +35,4 @@ const recipeSeed = [
 
 ];
 
-db.Recipe
-  .remove({})
-  .then(() => db.Recipe.collection.insertMany(recipeSeed))
-  .then(data => {
-    console.log(data.insertedIds.length + " records inserted!");
-    process.exit(0);
-  })
-  .catch(err => {
-    console.error(err);
-    process.exit(1);
-  });
-
-  db.User
-  .remove({})
-  .then(() => db.User.collection.insertMany(userSeed))
-  .then(data => {
-    console.log(data.insertedIds.length + " records inserted!");
-    process.exit(0);
-  })
-  .catch(err => {
-    console.error(err);
-    process.exit(1);
-  });
+//db.Recipe.create({});
