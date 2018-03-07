@@ -1,7 +1,7 @@
 import React from "react";
 
 const Howitworks = () => (
-  <div className="container bg-warning">
+  <div className="container-fluid bg-warning">
     <h1>HOW IT WORKS</h1>
     <ol>
       <li>Create and Accout or Login</li>
