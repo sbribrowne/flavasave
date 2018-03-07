@@ -1,13 +1,14 @@
 import React from "react";
-import Nav from "../components/Nav/Nav.js";
 import Input from "../components/Forms/Input.js";
 import FormBtn from "../components/Forms/FormBtn.js";
 import DropDwn from "../components/Forms/DropDwn.js";
+import NavLogged from "../components/Nav/NavLogged.js";
+
 
 const NewRecipe = () => {
   return (
     <div>
-      <Nav />
+      <NavLogged />
       <div>
         <h3>Recipe Name</h3>
         <form class='row'>
