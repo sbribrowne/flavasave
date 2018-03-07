@@ -50,7 +50,7 @@
 #homeNav {
   background-color: white; }
 
-body {
+.homebody {
   background: url(../../images/home_image.jpg) top right no-repeat;
   background-attachment: fixed;
   background-size: 100%; }

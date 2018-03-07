@@ -4,8 +4,9 @@ import "../stylesheets/css/main.css"
 
 const Home = () => {
   return (
-    <div>
+    <div class="homebody">
       <Nav />
+      <h1>SignUp Page Component goes here</h1>
     </div>
   );
 };
