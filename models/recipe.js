@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes){
-    var Recipe = sequelize.define("Recipe", { //User is TABLE name
+    var Recipe = sequelize.define("Recipe", { //Recipe is TABLE name
         // Name
         recipe_url:{ 
           type: DataTypes.STRING(2083)

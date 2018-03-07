@@ -1,4 +1,5 @@
 const db = require("../models");
+const express = require("express");
 const app = express();
 const PORT = process.env.PORT || 3001;
 //syncs sequelize models and waits till update complete before starting server
@@ -8,31 +9,42 @@ db.sequelize.sync().then(function(){
   });
 });
 
-const recipeSeed = [
-  {
-    title: "Bengali Rice Test Recipe",
-    url: "https://www.seriouseats.com/recipes/2018/01/bengali-rice-porridge-with-lentils-and-chicken.html",
-    ingredients: [{"text":"One Thing", "id": mongoose.Types.ObjectId()}, {"text":"Two Thing", "id": mongoose.Types.ObjectId()}, {"text":"Three Thing", "id": mongoose.Types.ObjectId()}],
-    instructions: [{"text":"One Thing", "id": mongoose.Types.ObjectId()}, {"text":"Two Thing", "id": mongoose.Types.ObjectId()}, {"text":"Three Thing", "id": mongoose.Types.ObjectId()}],
-    cooked: false,
-    imageUrl: "https://www.seriouseats.com/2018/01/20180112-rice-porridge-vicky-wasik-16-1500x1125.jpg",
-    tags: ["chicken"],
-    notes: "This is a test recipe",
-    date: Date.now
-  },
 
-  {
-    title: "Another Test Recipe",
-    url: "https://www.seriouseats.com/",
-    ingredients: [{"text":"One Thing", "id": mongoose.Types.ObjectId()}, {"text":"Two Thing", "id": mongoose.Types.ObjectId()}, {"text":"Three Thing", "id": mongoose.Types.ObjectId()}],
-    instructions: [{"text":"1. Boil", "id": mongoose.Types.ObjectId()}, {"text":"2. Serve", "id": mongoose.Types.ObjectId()}, {"text":"3. Eat", "id": mongoose.Types.ObjectId()}],
-    cooked: false,
-    imageUrl: "",
-    tags: ["food"],
-    notes: "This is another test recipe",
-    date: Date.now
-  }
+const userSeed = {
+  email: "test@test.test",
+  password: "password"
+};
 
-];
+const recipeSeed = {
+  recipe_url: "http://www.test.com",
+  recipe_name: "Test Rec",
+
+  UserId: ""
+};
+
+const ingredientSeed = {
+  ingredient_info: "Test Ingr",
+  RecipeId: ""
+};
+
 
 //db.Recipe.create({});
+
+db.User.create(userSeed)
+.then(function (dbUser) {
+  recipeSeed.UserId = dbUser.dataValues.id;
+  db.Recipe.create(recipeSeed)
+  .then(function(dbRecipe){
+    ingredientSeed.RecipeId = dbRecipe.dataValues.id;
+    db.Ingredient.create(ingredientSeed)
+    .then(function(dbRecipe){
+      console.log(dbRecipe);
+    }).catch(function (error) { //end create Ing
+        res.json(error);
+      });
+  }).catch(function (error) { //end create recipe
+      res.json(error);
+    });
+}).catch(function (error) { //end create user
+    res.json(error);
+  });
