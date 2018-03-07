@@ -13,7 +13,7 @@ const Home = () => {
       <Nav />
       <br />
       <Login />
-      <ReadMore />
+      <Readmore />
       <br />
       <br />
       <h1 className="aboutHeader">ABOUT</h1>

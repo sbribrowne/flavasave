@@ -3,7 +3,7 @@ import React from "react";
 const ReadMore = () => (
   <div className="ReadMore">
     <h3>Read More</h3>
-    <img className="card-img-top" src={require('../../images/arrow.png')} alt="Arrow Image" />
+    <img className="arrow" src={require('../../images/arrow.png')} alt="Arrow Image" />
   </div>
 );
 
