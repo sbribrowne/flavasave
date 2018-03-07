@@ -2,7 +2,7 @@ import React from "react";
 
 const Panel = (props) => (
   <div className="panel text-center col-md-6">
-    <img>{props.image}</img>
+    <img src={props.image} />
     <h1>{props.name}</h1>
   </div>
 );
