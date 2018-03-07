@@ -1,20 +1,14 @@
 import React from "react";
+import LoginForm from "../Forms/LoginForm.js";
 
 const Login = () => (
-  <div className="bg-danger">
-    <h1>FlavaSave</h1>
-    <h3>
-      <i>Your One-Stop Recipe Library</i>
-    </h3>
-    <ol>
-      <li>Create and Accout or Login</li>
-      <li>
-        All you need is the recipe URL. Input the URL into the text area on your
-        homepage. The app will do its magic, and your recipe will be added to
-        your account.
-      </li>
-      <li>Explore our features and start cooking!</li>
-    </ol>
+  <div className="loginBox">
+    <img className="card-img-top" src={require('../../images/logo_white.png')} alt="Store Image" height = "95" />
+    <h3 className="loginSubTitle">Your One-Stop Recipe Library.</h3>
+    <h4 className="loginTitle">LOGIN</h4>
+    <LoginForm />
+    <p class="loginText">Don't have an account? <a class="signupLink" href="">Sign up!</a></p>
+    <a class="loginText signupLink">Forget Password?</a>
   </div>
 );
 

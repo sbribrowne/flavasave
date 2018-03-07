@@ -11,14 +11,10 @@ const Home = () => {
     <div class="homebody">
       <Nav />
       <br />
-      <div className="row">
-        <div className="col-4" />
-        <div className="col-8">
-          <Login />
-        </div>
-      </div>
+      <Login />
       <br />
       <br />
+      <h1 className="aboutHeader">ABOUT</h1>
       <About />
       <br />
       <Howitworks />

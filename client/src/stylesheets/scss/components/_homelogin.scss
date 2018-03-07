@@ -1,0 +1,66 @@
+.loginBox {
+    position: absolute;
+    background-color: $red;
+    width: 60%;
+    padding: 2em 4em 2em 4em;
+    opacity: 0.90;
+    right: 0;
+}
+
+.loginSubTitle {
+    font-family: $body-font-italic;
+    font-size: 3rem;
+    color: white;
+    letter-spacing: 0.5rem;
+}
+
+.loginTitle {
+    font-family: $header-font;
+    font-size: 3.5rem;
+    letter-spacing: 0.5rem;
+    color: white;
+    margin-top: 3rem;
+}
+
+.form-text {
+    font-family: $body-font;
+    color: white;
+    font-size: 2rem;
+    letter-spacing: 0.75rem;
+    margin-top: 2%;
+}
+
+.form-control {
+    border-radius: 0%;
+}
+
+.login-button {
+    font-family: $header-font;
+    letter-spacing: 0.22rem;
+    background-color: $orange;
+    border: none;
+    border-radius: 0%;
+    padding: 0.5rem 3.5rem 0.5rem 3.5rem;
+    margin-top: 1%;
+    margin-bottom: 3%;
+}
+
+.login-button:hover {
+    background-color: $darkgreen;
+}
+
+.loginText {
+    font-family: $body-font-italic;
+    font-size: 2rem;
+    letter-spacing: 0.4rem;
+    color: white;
+}
+
+.signupLink {
+    color: white;
+}
+
+.signupLink:hover {
+    font-size: 2.5rem;
+    color: $orange;
+}
