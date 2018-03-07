@@ -79,6 +79,7 @@ footer {
   margin-left: 6rem; }
 
 .footertext:hover {
+  background-color: transparent !important;
   color: #F99E1C; }
 
 #footercopyright {
