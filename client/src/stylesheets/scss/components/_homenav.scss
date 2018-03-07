@@ -1,28 +1,39 @@
 @import "../resources/_fontsandcolors";
 
 .navbar {
-    padding: 0.5rem 0 0.5rem 0;
+    background-color: #FFF;
+    border-radius: 0;
+    height: 10rem;
+}
+
+.navbar-right {
+    font-family: $header-font;
+    font-size: 2.5rem;
+    padding-right: 6rem;
+    padding-top: 4rem;
 }
 
 .navbar-brand {
-    padding-left: 8%;
+    font-family: $logo-font;
+    font-size: 5rem;
+    color: $orange;
+    padding-left: 10rem;
 }
 
-.navbar-nav {
-    font-family: $header-font;
-    padding-right: 8%;
+.navbar-brand:hover {
+    color: $green;
 }
 
 .nav-item {
     color: $darkgreen;
-    font-size: 1.3rem;
-    letter-spacing: 0.15rem;
-    margin-left: 1.5rem;
+    font-size: 2.5rem;
+    letter-spacing: 0.4rem;
+    margin-left: 3rem;
 }
 
 .nav-item:hover {
     color: $orange;
-    font-size: 1.5rem;
+    font-size: 3rem;
 }
 
 #homeNav {

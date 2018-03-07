@@ -28,27 +28,65 @@
 /*FONT VARIABLES*/
 /*COLOR VARIABLES*/
 .navbar {
-  padding: 0.5rem 0 0.5rem 0; }
+  background-color: #FFF;
+  border-radius: 0;
+  height: 10rem; }
+
+.navbar-right {
+  font-family: LeagueGothic, sans-serif;
+  font-size: 2.5rem;
+  padding-right: 6rem;
+  padding-top: 4rem; }
 
 .navbar-brand {
-  padding-left: 8%; }
+  font-family: PathwaysRough, sans-serif;
+  font-size: 5rem;
+  color: #F99E1C;
+  padding-left: 10rem; }
 
-.navbar-nav {
-  font-family: LeagueGothic, sans-serif;
-  padding-right: 8%; }
+.navbar-brand:hover {
+  color: #90bb5e; }
 
 .nav-item {
   color: #1E401D;
-  font-size: 1.3rem;
-  letter-spacing: 0.15rem;
-  margin-left: 1.5rem; }
+  font-size: 2.5rem;
+  letter-spacing: 0.4rem;
+  margin-left: 3rem; }
 
 .nav-item:hover {
   color: #F99E1C;
-  font-size: 1.5rem; }
+  font-size: 3rem; }
 
 #homeNav {
   background-color: white; }
+
+footer {
+  position: absolute;
+  background-color: white;
+  width: 100%;
+  height: 6rem;
+  bottom: 0; }
+
+.footertext {
+  font-family: LeagueGothic, sans-serif;
+  font-size: 2.5rem;
+  color: #0E0A08;
+  letter-spacing: 0.3rem;
+  padding-right: 6rem;
+  padding-top: 2rem;
+  margin-left: 6rem; }
+
+.footertext:hover {
+  color: #90bb5e; }
+
+#footercopyright {
+  margin-right: 6rem; }
+
+#footercopyright:hover {
+  color: #0E0A08; }
+
+#footerleft {
+  margin-left: 6rem; }
 
 .homebody {
   background: url(../../images/home_image.jpg) top right no-repeat;

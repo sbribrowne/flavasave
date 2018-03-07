@@ -1,0 +1,33 @@
+footer {
+    position: absolute;
+    background-color: white; 
+    width: 100%;
+    height: 6rem;
+    bottom: 0;
+}
+
+.footertext {
+    font-family: $header-font;
+    font-size: 2.5rem;
+    color: $black;
+    letter-spacing: 0.3rem;
+    padding-right: 6rem;
+    padding-top: 2rem;
+    margin-left: 6rem;
+}
+
+.footertext:hover {
+    color: $green;
+}
+
+#footercopyright {
+    margin-right: 6rem;
+}
+
+#footercopyright:hover {
+    color: $black;
+}
+
+#footerleft {
+    margin-left: 6rem;
+}
