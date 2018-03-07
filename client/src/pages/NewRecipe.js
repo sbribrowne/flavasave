@@ -1,10 +1,10 @@
 import React from "react";
-import Nav from "../components/Nav/Nav.js";
+import NavLogged from "../components/Nav/NavLogged.js";
 
 const NewRecipe = () => {
   return (
     <div>
-      <Nav />
+      <NavLogged />
       <h1>NewRecipe Page Component goes here</h1>
     </div>
   );
