@@ -17,13 +17,10 @@ const Nav = () => (
               HOW IT WORKS
             </Link>
             <Link className="nav-item nav-link" to="/signup">
-              SIGN IN
-            </Link>
-            <Link className="nav-item nav-link" to="/signup">
               SIGN UP
             </Link>
           </div>
-        </div>       
+        </div>
     </div>
   </nav>
 );
