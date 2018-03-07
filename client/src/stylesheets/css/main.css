@@ -86,6 +86,9 @@
   letter-spacing: 0.75rem;
   margin-top: 2%; }
 
+.form-control {
+  border-radius: 0%; }
+
 .login-button {
   font-family: LeagueGothic, sans-serif;
   letter-spacing: 0.22rem;
