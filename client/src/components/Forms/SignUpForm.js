@@ -23,7 +23,9 @@ class SignUpForm extends React.Component {
       <div className="sign-up-form">
         <form className="text-center signUpForm" onSubmit={this.onSubmit}>
           <div className="form-group">
-            <label htmlFor="firstname">First Name</label>
+            <label htmlFor="firstname" className="signup-label">
+              FIRST NAME
+            </label>
             <input
               type="text"
               className="form-control"
@@ -33,7 +35,9 @@ class SignUpForm extends React.Component {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="lastname">Last Name</label>
+            <label htmlFor="lastname" className="signup-label">
+              LAST NAME
+            </label>
             <input
               type="text"
               className="form-control"
@@ -43,7 +47,9 @@ class SignUpForm extends React.Component {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="username">Username</label>
+            <label htmlFor="username" className="signup-label">
+              USERNAME
+            </label>
             <input
               type="text"
               className="form-control"
@@ -53,7 +59,9 @@ class SignUpForm extends React.Component {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="email">Email</label>
+            <label htmlFor="email" className="signup-label">
+              E-MAIL
+            </label>
             <input
               type="email"
               name="email"
@@ -63,7 +71,9 @@ class SignUpForm extends React.Component {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="password">Password</label>
+            <label htmlFor="password" className="signup-label">
+              PASSWORD
+            </label>
             <input
               type="password"
               name="password"
@@ -72,7 +82,10 @@ class SignUpForm extends React.Component {
               onChange={this.onChange}
             />
           </div>
-          <button type="submit" className="btn btn-primary btn-lg">
+          <button
+            type="submit"
+            className="btn btn-primary btn-lg signup-button"
+          >
             Sign Up
           </button>
         </form>

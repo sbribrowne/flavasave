@@ -6,37 +6,53 @@ var isAuthenticated = require("../config/middleware/isAuthenticated");
 
 module.exports = function (app) {
 
-    app.get("/api/recipe", function (req, res) {
-        //get recipe
-        //return res.JSON(recipe results)
+    //GET ALL RECIPES
+    app.get("/api/recipes", isAuthenticated, function(req, res){
+        //check that logged in. pass user_id to callback
+        console.log(isAuthenticated);
+        db.Recipe.findAll({
+          where: {
+            UserId: req.user.id
+          }
+        }).then(function(dbRecipe) {
+            res.json(dbRecipe); //returns all recipes JSON   
+        });
+      });
+    
+    //GET 1 Recipe and Ingredients & Instructions
+    app.get("/api/recipes/:recipeId", isAuthenticated, function(req, res){
+        db.Recipe.findOne({
+            where: {
+            id: req.params.recipeId
+            },
+            include: [
+            { model: db.Ingredient },
+            { model: db.Instruction}
+            ]
+        }).then(function(dbRecipe) {
+            res.json(dbRecipe); //returns 1 recipe and ingreds/instrs
+        });
     });
 
     // DELETES RECIPE
     app.delete("/api/recipes/:id", function (req, res) {
-
         db.Ingredient.destroy({ //delete all Ingr
             where: {
                 RecipeId: req.params.id
             }
         }).then(function(dataIngr){
-            console.log(dataIngr);
-
-
-            db.Instruction.destroy({ //delete all Ingr
+            db.Instruction.destroy({ //delete all Instr
                 where: {
                     RecipeId: req.params.id
                 }
             }).then(function(dataInstr){
-                console.log(dataInstr);
                 try{
-                    db.Recipe.destroy({ //delete Ingr
+                    db.Recipe.destroy({ //delete Recipe
                         where: {
                             id: req.params.id
                         }
                     }).then(function (dataRec) {
-                        console.log("recipe deleted: " +req.params.id);
-                        res.send("recipe deleted: " +req.params.id);
-                        //res.redirect("/recipe");
+                        res.send(req.params.id); //returns ID of deleted recipe
                     });
                 }catch(err){
                     console.log(err);
@@ -49,35 +65,21 @@ module.exports = function (app) {
         
     });
 
-    app.put("/api/recipes/update/:id", function (req, res) {
-        db.Recipe.findOne({
-            where: {
-                id: req.params.id
-            },
-        }).then(function (data) {
-            return data.update({
-                recipe_checkbox: req.body.recipe_checkbox
-            });
-        }).then(function (record) {
-            res.sendStatus(200);
-        });
-    });
-
-    // PUT ROUTE FOR UPDATING POSTS
-    app.put("/api/recipes/edit/:id", function (req, res) {
-        db.Recipe.update({
-            recipe_name: req.body.recipe_name,
-        }, {
+    //Updated recipe, including toggles checkbox
+    app.put("/api/recipes/:id", function (req, res) { //get recipeObj from AJAX call
+        db.Recipe.update(
+            req.body.recipeObj, 
+            {
                 where: {
                     id: req.params.id
                 }
-            }).then(function (dbPost) {
-            console.log("Edited went through");
-            res.json(dbPost);
-        });
+            })
+            .then(function (dbPost) {
+                res.json(dbPost); //edit complete
+            });
     });
 
-    app.post("/api/recipe", isAuthenticated, function (req, res) {
+    app.post("/api/recipes", isAuthenticated, function (req, res) {
         //add recipe
         //db.Recipe.create(...)
         var newUrl = req.body.recipe_url;
