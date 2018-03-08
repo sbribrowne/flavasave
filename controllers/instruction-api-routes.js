@@ -9,7 +9,6 @@ module.exports = function(app) {
                 RecipeId: req.params.id
             }
         }).then(function (data) {
-            console.log(data);
             res.json(data);
         });
     });
