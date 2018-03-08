@@ -7,15 +7,15 @@ footer {
 .footertext {
     font-family: $header-font;
     color: $darkgreen;
-    font-size: 2rem;
+    font-size: 3rem;
     letter-spacing: 0.4rem;
     letter-spacing: 0.3rem;
     padding-right: 6rem;
-    padding-top: 2rem;
+    padding-top: 1rem;
     margin-left: 6rem;
 }
 
-.footertext:hover {
+.footerlink:hover {
     background-color: transparent !important;
     font-size: 2.5rem;
     color: $orange;

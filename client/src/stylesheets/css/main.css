@@ -34,9 +34,8 @@
 
 .navbar-right {
   font-family: LeagueGothic, sans-serif;
-  font-size: 2.5rem;
   padding-right: 6rem;
-  padding-top: 4rem; }
+  padding-top: 3rem; }
 
 .navbar-brand {
   font-family: PathwaysRough, sans-serif;
@@ -49,14 +48,14 @@
 
 .nav-item {
   color: #1E401D;
-  font-size: 2.5rem;
+  font-size: 3rem;
   letter-spacing: 0.4rem;
   margin-left: 3rem; }
 
 .nav-item:hover {
   text-decoration: none;
   color: #F99E1C;
-  font-size: 3rem; }
+  font-size: 4rem; }
 
 .loginBox {
   position: absolute;
@@ -64,7 +63,8 @@
   width: 60%;
   padding: 2em 4em 2em 4em;
   opacity: 0.90;
-  right: 0; }
+  right: 0;
+  margin-top: 8rem; }
 
 .loginSubTitle {
   font-family: PeleguerItalic, serif;
@@ -74,7 +74,7 @@
 
 .loginTitle {
   font-family: LeagueGothic, sans-serif;
-  font-size: 3.5rem;
+  font-size: 7rem;
   letter-spacing: 0.5rem;
   color: white;
   margin-top: 3rem; }
@@ -117,18 +117,62 @@
 
 .aboutHeader {
   font-family: LeagueGothic, sans-serif;
-  font-size: 6rem;
+  font-size: 10rem;
   letter-spacing: 1.5rem;
   color: white;
-  margin-left: 11%;
-  margin-top: 45%; }
+  margin-left: 16%;
+  margin-top: 80rem;
+  margin-bottom: 1%; }
 
 .card-deck {
-  width: 80%;
-  margin-left: 10%; }
+  width: 70%;
+  margin-left: 15%; }
+
+.big-card {
+  background: none;
+  border: none; }
 
 .card {
-  background-color: white; }
+  background-color: white;
+  padding: 6rem 4rem 3rem 4rem;
+  border: none; }
+
+.card-title {
+  font-family: LeagueGothic, sans-serif;
+  color: #1E401D;
+  font-size: 6rem;
+  text-align: center;
+  margin-top: 3rem; }
+
+.card-text {
+  font-family: Peleguer, serif;
+  font-size: 2.75rem;
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 4rem; }
+
+.card-img-top {
+  display: block;
+  margin-left: auto;
+  margin-right: auto; }
+
+.howItWorksContainer {
+  background: #F99E1C url("../../images/HIW_background.png");
+  margin-top: 4%;
+  padding: 13rem 15% 13rem 15%; }
+
+.howItWorksTitle {
+  font-family: LeagueGothic, sans-serif;
+  color: #1E401D;
+  font-size: 10rem;
+  letter-spacing: 0.3rem;
+  text-align: center;
+  margin-bottom: 2%; }
+
+.howItWorksText {
+  font-family: PeleguerBold, serif;
+  color: #1E401D;
+  font-size: 4rem; }
 
 footer {
   background-color: white;
@@ -138,14 +182,14 @@ footer {
 .footertext {
   font-family: LeagueGothic, sans-serif;
   color: #1E401D;
-  font-size: 2rem;
+  font-size: 3rem;
   letter-spacing: 0.4rem;
   letter-spacing: 0.3rem;
   padding-right: 6rem;
-  padding-top: 2rem;
+  padding-top: 1rem;
   margin-left: 6rem; }
 
-.footertext:hover {
+.footerlink:hover {
   background-color: transparent !important;
   font-size: 2.5rem;
   color: #F99E1C; }
