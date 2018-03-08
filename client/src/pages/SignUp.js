@@ -7,9 +7,9 @@ const SignUp = () => {
   return (
     <div>
       <Nav />
-      <div className="container">
+      <div className="container-fluid">
         <div className="row">
-          <div className="col-sm-4 panel panel-heading panel-success">
+          <div className="col-md-4 signup-info">
             <img
               className="card-img-top"
               src={require("../images/chef_green.png")}
@@ -22,7 +22,7 @@ const SignUp = () => {
               <i>with your one-stop recipe library!</i>
             </h4>
           </div>
-          <div className="col-sm-8">
+          <div className="col-md-8">
             <SignUpForm />
           </div>
         </div>
