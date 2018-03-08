@@ -370,4 +370,9 @@ footer {
 .signup-footer {
   text-align: right; }
 
+@media only screen and (max-width: 980px) {
+  /* ===============================================HOME PAGE================================================ */
+  .readmore-block {
+    display: none; } }
+
 /*# sourceMappingURL=main.css.map */
