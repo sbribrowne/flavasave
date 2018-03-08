@@ -1,12 +1,40 @@
 import React from "react";
-import Nav from "../components/Nav/Nav.js";
+import NavLogged from "../components/Nav/NavLogged.js";
+import Input from "../components/Forms/Input.js";
+import FormBtn from "../components/Forms/FormBtn.js";
+import DropDwn from "../components/Forms/DropDwn.js";
+import Panel from "../components/Panels/Panel.js";
+import OrangeHdr from "../components/Panels/OrangeHdr.js";
 
 const UserPage = () => {
   return (
     <div>
-      <Nav />
-      <h1>UserPage Page Component goes here</h1>
+      <NavLogged />
+
+      <Panel>
+        <h3>ADD RECIPE BY URL</h3>
+        <form class='row'>
+          <Input name="add-recipe" />
+          <FormBtn>Submit</FormBtn>
+        </form>
+
+        <h3>SEARCH RECIPES</h3>
+        <form class='row'>
+          <Input name="search-recipe" />
+          <FormBtn>Submit</FormBtn>
+        </form>
+
+        <h3>SEARCH BY TAGS</h3>
+        <form class='row'>
+          <Input name="search-tags" />
+          <FormBtn>Submit</FormBtn>
+        </form>
+      </Panel>
+
+      <OrangeHdr></OrangeHdr>
+
     </div>
+
   );
 };
 

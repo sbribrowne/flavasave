@@ -1,5 +1,5 @@
 import React from "react";
-import Nav from "../components/Nav/Nav.js";
+import NavLogged from "../components/Nav/NavLogged.js";
 import Panel from "../components/Panels/Panel.js";
 import NeedToCookList from "../components/Lists/NeedToCookList";
 import CompleteList from "../components/Lists/CompleteList";
@@ -7,8 +7,13 @@ import CompleteList from "../components/Lists/CompleteList";
 const Recipes = () => {
   return (
     <div>
+<<<<<<< HEAD
       <Nav />
       <Panel name={"Need to Cook Recipes"}>
+=======
+      <NavLogged />
+      <Panel name={"Recipes"}>
+>>>>>>> upstream/master
         <NeedToCookList />
       </Panel>
       <Panel name={"Complete Recipes"}>

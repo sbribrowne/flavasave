@@ -1,7 +1,4 @@
-@import './components/_homenav';
-
-body	{ 
-    background:url(../../images/home_image.jpg) top right no-repeat; 
-    background-attachment:fixed; 
-    background-size: 100%;
-}
+@import './resources/_fontsandcolors';
+@import './resources/_animations';
+@import './pages/_home';
+@import './pages/_signup';

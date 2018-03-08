@@ -1,32 +1,37 @@
-const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
+module.exports = function(sequelize, DataTypes){
+    var Recipe = sequelize.define("Recipe", { //Recipe is TABLE name
+        // Name
+        recipe_url:{ 
+          type: DataTypes.STRING(2083)
+        },
 
+        recipe_name:{ 
+          type: DataTypes.STRING
+        },
 
-const ingredientSchema = new Schema({
-  _id: {type: String, required: true},
-  text: String,
-  amount: Number,
-  unit: String
-});
+        recipe_checkbox:{
+            type: DataTypes.BOOLEAN
+        }
 
-const instructionSchema = new Schema({
-  _id: {type: String, required: true},
-  text: String
-});
+      });
 
-const recipeSchema = new Schema({
-  userId: { type: String, required: true },
-  title: { type: String, required: true },
-  url: { type: String, required: true },
-  ingredients: [ingredientSchema],
-  instructions: [instructionSchema],
-  cooked: Boolean,
-  imageUrl: String,
-  tags: [String],
-  notes: String,
-  date: { type: Date, default: Date.now }
-});
+      Recipe.associate = function(models) {
+        // We're saying that a Recipe should belong to an User
+        // A Recipe can't be created without an User due to the foreign key constraint
+        Recipe.belongsTo(models.User, {
+          foreignKey: {
+            allowNull: false
+          }
+        });
 
-const Recipe = mongoose.model("Recipe", recipeSchema);
+        Recipe.hasMany(models.Ingredient, {
+          onDelete: "cascade"
+        });
 
-module.exports = Recipe;
+        Recipe.hasMany(models.Instruction, {
+          onDelete: "cascade"
+        });
+      };
+
+      return Recipe;
+};

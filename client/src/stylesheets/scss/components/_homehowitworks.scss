@@ -1,0 +1,20 @@
+.howItWorksContainer {
+    background: $orange url('../../images/HIW_background.png');
+    margin-top: 4%;
+    padding: 13rem 15% 13rem 15%;
+}
+
+.howItWorksTitle {
+    font-family: $header-font;
+    color: $darkgreen;
+    font-size: 10rem;
+    letter-spacing: 0.3rem;
+    text-align: center;
+    margin-bottom: 2%;
+}
+
+.howItWorksText {
+    font-family: $body-font-bold;
+    color: $darkgreen;
+    font-size: 4rem;
+}
