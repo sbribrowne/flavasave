@@ -9,6 +9,7 @@ module.exports = function (app) {
     //GET ALL RECIPES
     app.get("/api/recipes", isAuthenticated, function(req, res){
         //check that logged in. pass user_id to callback
+        console.log(isAuthenticated);
         db.Recipe.findAll({
           where: {
             UserId: req.user.id
@@ -64,33 +65,18 @@ module.exports = function (app) {
         
     });
 
-    //Toggles Checkbox
-    app.put("/api/recipes/:id", function (req, res) {
-        db.Recipe.findOne({
-            where: {
-                id: req.params.id
-            },
-        }).then(function (data) {
-            return data.update({
-                recipe_checkbox: req.body.recipe_checkbox
-            });
-        }).then(function (record) {
-            res.sendStatus(200);
-        });
-    });
-
-    // PUT ROUTE FOR UPDATING POSTS - NEEDS WORK
-    app.put("/api/recipes/edit/:id", function (req, res) {
-        db.Recipe.update({
-            recipe_name: req.body.recipe_name,
-        }, {
+    //Updated recipe, including toggles checkbox
+    app.put("/api/recipes/:id", function (req, res) { //get recipeObj from AJAX call
+        db.Recipe.update(
+            req.body.recipeObj, 
+            {
                 where: {
                     id: req.params.id
                 }
-            }).then(function (dbPost) {
-            console.log("Edited went through");
-            res.json(dbPost);
-        });
+            })
+            .then(function (dbPost) {
+                res.json(dbPost); //edit complete
+            });
     });
 
     app.post("/api/recipes", isAuthenticated, function (req, res) {
