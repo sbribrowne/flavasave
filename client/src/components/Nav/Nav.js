@@ -6,7 +6,9 @@ const Nav = () => (
   <nav class="navbar" id="homeNav">
     <div class="container-fluid">
         <div class="navbar-header">
+            <Link to="/">
             <a class="navbar-brand" id="navbarlogo" href="#"><img src={require('../../images/logo_green.png')} alt="FlavaSave" height="60" /></a>
+            </Link>
         </div>
         <div className="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
           <div className="nav navbar-nav navbar-right">
