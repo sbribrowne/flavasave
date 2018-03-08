@@ -1,36 +1,45 @@
 const db = require("../models");
 
 module.exports = function(app) {
-
-    app.get("/api/instructions/:id", function(req, res){
-        //get instructions
+    //get ALL instructions for Recipe
+    app.get("/api/`in`structions/:recipeId", function(req, res){
         db.Instruction.findAll({
             where: {
-                RecipeId: req.params.id
+                RecipeId: req.params.recipeId
             }
-        }).then(function (data) {
-            res.json(data);
+        }).then(function (dbInstruction) {
+            res.json(dbInstruction);
         });
     });
 
+    //add new instructions to recipe - include RecipeId in object
     app.post("/api/instructions", function(req, res){
-        //add instructions
-        console.log(req.body);
-        db.Instruction.create(req.body).then(function (Instruction) {
-            res.json(Instruction); //Says RecipeId cannot be null...even when there's a number.
+        db.Instruction.create(req.body.instructionObj)
+        .then(function (dbInstruction) {
+            res.json(dbInstruction);
         });
     });
 
-    app.put("/api/instructions/edit/:id", function (req, res) {
-        db.Instruction.update({
-            instruction_info: req.body.instruction_info,
-        }, {
+    //Edit instruction - include RecipeId in object
+    app.put("/api/instructions/:instructionId", function (req, res) {
+        db.Instruction.update(
+            req.body.instructionObj, {
                 where: {
-                    id: req.params.id
+                    id: req.params.instructionId
                 }
-            }).then(function (dbPost) {
-            console.log("Edited went through");
-            res.json(dbPost);
+            }).then(function (dbInstruction) {
+                res.json(dbInstruction);
         });
+    });
+
+     //DELETE
+     app.delete("/api/instructions/:instructionId", function (req, res) {
+        db.Instruction.destroy({ 
+            where: {
+                id: req.params.instructionId
+            }
+        }).then(function (dbInstruction) {
+                res.json(dbInstruction); //deleted
+            });
     });
 };
