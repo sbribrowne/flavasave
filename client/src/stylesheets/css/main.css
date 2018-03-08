@@ -374,5 +374,14 @@ footer {
   /* ===============================================HOME PAGE================================================ */
   .readmore-block {
     display: none; } }
+@media only screen and (max-width: 736px) {
+  /* ===============================================HOME PAGE================================================ */
+  .loginBox {
+    width: 100%;
+    opacity: 0.93;
+    margin-top: -4rem; }
+
+  .card-deck {
+    margin-left: 5%; } }
 
 /*# sourceMappingURL=main.css.map */

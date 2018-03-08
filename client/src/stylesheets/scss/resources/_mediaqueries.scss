@@ -1,26 +1,27 @@
-@media all and (max-width: 1690px) { 
+@media only screen and (max-width: 1690px) {}
 
-}
+@media only screen and (max-width: 1280px) {}
 
-@media all and (max-width: 1280px) { 
-
-}
-
-@media only screen and (max-width: 980px) { 
+@media only screen and (max-width: 980px) {
     /* ===============================================HOME PAGE================================================ */
     .readmore-block {
         display: none;
     }
 }
 
-@media all and (max-width: 736px) {
+@media only screen and (max-width: 736px) {
+    /* ===============================================HOME PAGE================================================ */
+    .loginBox {
+        width: 100%;
+        opacity: 0.93;
+        margin-top: -4rem;
+    }
     
+    .card-deck {
+        margin-left: 5%;
+    }
 }
 
-@media all and (max-width: 480px) {
+@media only screen and (max-width: 480px) {}
 
-}
-
-@media only screen and (max-width: 320px) {
-
-}
+@media only screen and (max-width: 320px) {}
