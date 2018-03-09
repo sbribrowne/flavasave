@@ -1,4 +1,6 @@
 import React from "react";
+import axios from "axios";
+import PropTypes from "prop-types";
 
 class SignUpForm extends React.Component {
   state = {
@@ -15,7 +17,8 @@ class SignUpForm extends React.Component {
 
   onSubmit = event => {
     event.preventDefault();
-    console.log(this.state);
+    // console.log(this.state);
+    this.props.userSignUpRequest(this.state);
   };
 
   render() {
@@ -93,5 +96,9 @@ class SignUpForm extends React.Component {
     );
   }
 }
+
+SignUpForm.propTypes = {
+  userSignUpRequest: PropTypes.func.isRequired
+};
 
 export default SignUpForm;

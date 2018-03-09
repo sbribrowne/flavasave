@@ -2,9 +2,13 @@ import React from "react";
 import Nav from "../components/Nav/Nav.js";
 import SignUpForm from "../components/Forms/SignUpForm";
 import FooterLogged from "../components/Footer/FooterLogged.js";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { userSignUpRequest } from "../actions/signUpActions.js";
 
 class SignUp extends React.Component {
   render() {
+    const { userSignUpRequest } = this.props;
     return (
       <div>
         <Nav />
@@ -20,7 +24,7 @@ class SignUp extends React.Component {
             </div>
             <div className="col-md-8 signup-form">
               <h1 className="signup-title">SIGN UP</h1>
-              <SignUpForm />
+              <SignUpForm userSignUpRequest={userSignUpRequest} />
             </div>
           </div>
         </div>
@@ -30,4 +34,9 @@ class SignUp extends React.Component {
   }
 }
 
-export default SignUp;
+SignUp.propTypes = {
+  userSignUpRequest: PropTypes.func.isRequired
+};
+
+// redux connect component to connect to redux store
+export default connect(null, { userSignUpRequest })(SignUp);
