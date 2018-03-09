@@ -2,12 +2,14 @@ import React from "react";
 import NavLogged from "../components/Nav/NavLogged.js";
 import Panel from "../components/Panels/Panel.js";
 import IngredientList from "../components/Lists/IngredientList";
+import FooterLogged from "../components/Footer/FooterLogged.js";
+import "../stylesheets/css/main.css";
 
 const Recipes = () => {
   return (
     <div>
       <NavLogged />
-      <Panel>
+      <Panel className="recipe-header">
         <h2>RECIPE NAME GOES HERE</h2>
         <p>Serving Size: GOES HERE</p>
         {/* Stand in IMAGE */}
@@ -36,6 +38,7 @@ const Recipes = () => {
         <button>DELETE</button>
         <button>NEED TO COOK|COMPLETE</button>
       </Panel>
+      <FooterLogged />
     </div>
   );
 };
