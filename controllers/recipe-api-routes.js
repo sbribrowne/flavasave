@@ -30,12 +30,14 @@ module.exports = function (app) {
             { model: db.Instruction}
             ]
         }).then(function(dbRecipe) {
+            console.log("dbRecipe");
+            console.log(dbRecipe);
             res.json(dbRecipe); //returns 1 recipe and ingreds/instrs
         });
     });
 
     // DELETES RECIPE
-    app.delete("/api/recipes/:id", function (req, res) {
+    app.delete("/api/recipes/:id",  isAuthenticated, function (req, res) {
         db.Ingredient.destroy({ //delete all Ingr
             where: {
                 RecipeId: req.params.id
@@ -51,7 +53,7 @@ module.exports = function (app) {
                         where: {
                             id: req.params.id
                         }
-                    }).then(function (dataRec) {
+                    }).then(function(dataRec) {
                         res.send(req.params.id); //returns ID of deleted recipe
                     });
                 }catch(err){
@@ -66,7 +68,9 @@ module.exports = function (app) {
     });
 
     //Updated recipe, including toggles checkbox
-    app.put("/api/recipes/:id", function (req, res) { //get recipeObj from AJAX call
+    app.put("/api/recipes/:id", isAuthenticated, function(req, res) { //get recipeObj from AJAX call
+        console.log("req.body");
+        console.log(req.body);
         db.Recipe.update(
             req.body.recipeObj, 
             {
@@ -79,7 +83,7 @@ module.exports = function (app) {
             });
     });
 
-    app.post("/api/recipes", isAuthenticated, function (req, res) {
+    app.post("/api/recipes", isAuthenticated, function(req, res) {
         //add recipe
         //db.Recipe.create(...)
         var newUrl = req.body.recipe_url;
@@ -107,7 +111,7 @@ module.exports = function (app) {
             }); 
         }); */
 
-        request(newUrl, function (error, response, body) {
+        request(newUrl, function(error, response, body) {
             if (error) throw error;
 
             // If the request was successful...
@@ -160,7 +164,7 @@ module.exports = function (app) {
                                                 recipeName: responseRecipe.recipe_name,
                                                 recipeUrl: `/recipe/${responseRecipe.id}`
                                             });*/ //returns Response object
-                                            res.redirect(`/recipe/${responseRecipe.id}`);
+                                            res.redirect(`/recipes/${responseRecipe.id}`);
 
                                         })
                                         .catch(function (error) {

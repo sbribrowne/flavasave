@@ -1,8 +1,10 @@
 const db = require("../models");
+// Requiring our custom middleware for checking if a user is logged in
+var isAuthenticated = require("../config/middleware/isAuthenticated");
 
 module.exports = function (app) {
     //get ALL ingredients for Recipe
-    app.get("/api/ingredients/:recipeId", function (req, res) {
+    app.get("/api/ingredients/:recipeId", isAuthenticated, function (req, res) {
         db.Ingredient.findAll({
             where: {
                 RecipeId: req.params.recipeId
@@ -13,7 +15,7 @@ module.exports = function (app) {
     });
 
     //add new ingre to recipe - include RecipeId in object
-    app.post("/api/ingredients", function (req, res) {
+    app.post("/api/ingredients",  isAuthenticated, function (req, res) {
         db.Ingredient.create(req.body.ingredientObj)
         .then(function (dbIngredient) {
             res.json(dbIngredient);
@@ -21,7 +23,7 @@ module.exports = function (app) {
     });
 
     //Edit ingre - include RecipeId in object
-    app.put("/api/ingredients/:ingredientId", function (req, res) {
+    app.put("/api/ingredients/:ingredientId",  isAuthenticated, function (req, res) {
         db.Ingredient.update(
             req.body.ingredientObj, {
                 where: {
@@ -33,7 +35,7 @@ module.exports = function (app) {
     });
 
     //DELETE
-    app.delete("/api/ingredients/:ingredientId", function (req, res) {
+    app.delete("/api/ingredients/:ingredientId", isAuthenticated, function (req, res) {
         db.Ingredient.destroy({ 
             where: {
                 id: req.params.ingredientId
