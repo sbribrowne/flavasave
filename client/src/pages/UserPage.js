@@ -33,11 +33,14 @@ const UserPage = () => {
         </form>
       </Panel>
 
-      <OrangeHdr></OrangeHdr>
-      <Panel name={"Recipes"}>
+
+      <OrangeHdr photo={require("../images/egg_crack_bowl.png")} alt={"cracked egg"} name={"Need to Cook Recipes"} />
+      <Panel>
         <NeedToCookList />
       </Panel>
-      <Panel name={"Complete Recipes"}>
+
+      <OrangeHdr photo={require("../images/fork_knife.png")} alt={"utensils"} name={"Completed Recipes"} />
+      <Panel>
         <CompleteList />
       </Panel>
 
