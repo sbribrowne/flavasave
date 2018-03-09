@@ -1,8 +1,8 @@
 import React from "react";
 
-const NTCListItem = (props) => (
+const CompleteListItem = (props) => (
   <li className="list-group-item">
-    {"RECIPE GOES HERE"}
+    <p>{"RECIPE GOES HERE"}
       <button
         className="btn btn-danger btn-lg"
       >Delete</button>
@@ -10,8 +10,8 @@ const NTCListItem = (props) => (
       <button
         className="btn btn-success btn-lg"
       >Edit</button>
-      
+      </p>
   </li>
 );
 
-export default NTCListItem;
+export default CompleteListItem;

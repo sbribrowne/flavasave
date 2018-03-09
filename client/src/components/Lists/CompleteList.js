@@ -1,9 +1,9 @@
 import React from "react";
-import NTCListItem from "./NTCListItem";
+import CompleteListItem from "./CompleteListItem";
 
 const NeedToCookList = (props) => (
   <ul className="list-group">
-    <NTCListItem />
+    <CompleteListItem />
   </ul>
 );
 
