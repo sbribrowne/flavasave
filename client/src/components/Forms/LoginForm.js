@@ -31,7 +31,7 @@ class LoginForm extends React.Component {
             />
           </div>
           <div className="form-group">
-            <label class="form-text" htmlFor="password">
+            <label className="form-text" htmlFor="password">
               PASSWORD
             </label>
             <input
