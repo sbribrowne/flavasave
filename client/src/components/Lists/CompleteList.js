@@ -1,15 +1,15 @@
 import React from "react";
-import NTCListItem from "./NTCListItem";
+import CompleteListItem from "./CompleteListItem";
 import Buttons from "../Buttons/Button";
 
-const NeedToCookList = (props) => (
+const CompleteList = (props) => (
   <div class="row">
     <div class="col-md-4">TITLE</div>
     <div class="col-md-4">SOURCE</div>
     <div class="col-md-4">ACTION</div>
     <div class="w-100"></div>
-    <NTCListItem />
+    <CompleteListItem />
   </div>
 );
 
-export default NeedToCookList;
+export default CompleteList;

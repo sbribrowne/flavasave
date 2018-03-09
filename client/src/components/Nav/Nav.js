@@ -23,7 +23,7 @@ const Nav = () => (
             </Link>
           </div>
         </div>
-    </div>
+      </div>
   </nav>
 );
 
