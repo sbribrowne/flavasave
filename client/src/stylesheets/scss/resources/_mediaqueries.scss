@@ -11,6 +11,11 @@
 
 @media only screen and (max-width: 736px) {
     /* ===============================================HOME PAGE================================================ */
+
+    .aboutHeader {
+        display: none;
+    }
+
     .loginBox {
         width: 100%;
         opacity: 0.93;
@@ -18,7 +23,12 @@
     }
     
     .card-deck {
-        margin-left: 5%;
+        margin-top: 70rem;
+        margin-left: 15%;
+    }
+
+    #footerleft {
+        display: none;
     }
 }
 

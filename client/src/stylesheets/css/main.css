@@ -289,13 +289,15 @@ footer {
   letter-spacing: 0.4rem;
   letter-spacing: 0.3rem;
   padding-right: 6rem;
-  padding-top: 1rem;
   margin-left: 6rem; }
 
 .footerlink:hover {
   background-color: transparent !important;
   font-size: 2.5rem;
   color: #F99E1C; }
+
+#footerleft {
+  margin-top: 2.75rem; }
 
 #footercopyright {
   margin-right: 6rem; }
@@ -305,6 +307,12 @@ footer {
 
 #footerleft {
   margin-left: 6rem; }
+
+ul {
+  list-style-type: none; }
+
+li {
+  display: inline-block; }
 
 .homebody {
   background: url(../../images/home_image.jpg) top right no-repeat;
@@ -376,12 +384,19 @@ footer {
     display: none; } }
 @media only screen and (max-width: 736px) {
   /* ===============================================HOME PAGE================================================ */
+  .aboutHeader {
+    display: none; }
+
   .loginBox {
     width: 100%;
     opacity: 0.93;
     margin-top: -4rem; }
 
   .card-deck {
-    margin-left: 5%; } }
+    margin-top: 70rem;
+    margin-left: 15%; }
+
+  #footerleft {
+    display: none; } }
 
 /*# sourceMappingURL=main.css.map */
