@@ -1,8 +1,10 @@
 const db = require("../models");
+// Requiring our custom middleware for checking if a user is logged in
+var isAuthenticated = require("../config/middleware/isAuthenticated");
 
 module.exports = function(app) {
     //get ALL instructions for Recipe
-    app.get("/api/`in`structions/:recipeId", function(req, res){
+    app.get("/api/instructions/:recipeId", isAuthenticated, function(req, res){
         db.Instruction.findAll({
             where: {
                 RecipeId: req.params.recipeId
@@ -13,7 +15,7 @@ module.exports = function(app) {
     });
 
     //add new instructions to recipe - include RecipeId in object
-    app.post("/api/instructions", function(req, res){
+    app.post("/api/instructions", isAuthenticated, function(req, res){
         db.Instruction.create(req.body.instructionObj)
         .then(function (dbInstruction) {
             res.json(dbInstruction);
@@ -21,7 +23,7 @@ module.exports = function(app) {
     });
 
     //Edit instruction - include RecipeId in object
-    app.put("/api/instructions/:instructionId", function (req, res) {
+    app.put("/api/instructions/:instructionId", isAuthenticated, function (req, res) {
         db.Instruction.update(
             req.body.instructionObj, {
                 where: {
@@ -33,7 +35,7 @@ module.exports = function(app) {
     });
 
      //DELETE
-     app.delete("/api/instructions/:instructionId", function (req, res) {
+     app.delete("/api/instructions/:instructionId", isAuthenticated, function (req, res) {
         db.Instruction.destroy({ 
             where: {
                 id: req.params.instructionId
