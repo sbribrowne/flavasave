@@ -13,11 +13,13 @@ const UserPage = () => {
     <div>
       <NavLogged />
 
-      <Panel>
+      <div class="container">
         <h3>ADD RECIPE BY URL</h3>
         <form class='row'>
-          <Input name="add-recipe" />
-          <FormBtn>Submit</FormBtn>
+          <span>
+            <Input name="add-recipe" />
+            <FormBtn>Submit</FormBtn>
+          </span>
         </form>
 
         <h3>SEARCH RECIPES</h3>
@@ -31,15 +33,18 @@ const UserPage = () => {
           <Input name="search-tags" />
           <FormBtn>Submit</FormBtn>
         </form>
-      </Panel>
+      </div>
 
-      <OrangeHdr></OrangeHdr>
-      <Panel name={"Recipes"}>
+
+      <OrangeHdr class="container" photo={require("../images/egg_crack_bowl.png")} alt={"cracked egg"} name={"Need to Cook Recipes"} />
+      <div class="container">
         <NeedToCookList />
-      </Panel>
-      <Panel name={"Complete Recipes"}>
+      </div>
+
+      <OrangeHdr class="container" photo={require("../images/fork_knife.png")} alt={"utensils"} name={"Completed Recipes"} />
+      <div class="container">
         <CompleteList />
-      </Panel>
+      </div>
 
     </div>
 
