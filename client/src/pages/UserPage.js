@@ -7,6 +7,7 @@ import Panel from "../components/Panels/Panel.js";
 import OrangeHdr from "../components/Panels/OrangeHdr.js";
 import NeedToCookList from "../components/Lists/NeedToCookList";
 import CompleteList from "../components/Lists/CompleteList";
+import FooterLogged from "../components/Footer/FooterLogged.js";
 
 const UserPage = () => {
   return (
@@ -44,6 +45,7 @@ const UserPage = () => {
         <CompleteList />
       </div>
 
+      <FooterLogged />
     </div>
 
   );

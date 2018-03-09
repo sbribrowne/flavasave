@@ -1,10 +1,15 @@
 import React from "react";
 import NTCListItem from "./NTCListItem";
+import Buttons from "../Buttons/Button";
 
 const NeedToCookList = (props) => (
-  <ul className="list-group">
+  <div class="row">
+    <div class="col-md-4">TITLE</div>
+    <div class="col-md-4">SOURCE</div>
+    <div class="col-md-4">ACTION</div>
+    <div class="w-100"></div>
     <NTCListItem />
-  </ul>
+  </div>
 );
 
 export default NeedToCookList;
