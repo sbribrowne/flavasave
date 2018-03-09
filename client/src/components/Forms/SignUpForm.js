@@ -21,7 +21,7 @@ class SignUpForm extends React.Component {
   render() {
     return (
       <div className="sign-up-form">
-        <form className="text-center signUpForm" onSubmit={this.onSubmit}>
+        <form className="signUpForm" onSubmit={this.onSubmit}>
           <div className="form-group">
             <label htmlFor="firstname" className="signup-label">
               FIRST NAME
