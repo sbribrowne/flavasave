@@ -5,7 +5,7 @@ import DropDwn from "../components/Forms/DropDwn.js";
 import NavLogged from "../components/Nav/NavLogged.js";
 
 
-const NewRecipe = () => {
+const AddNewRecipe = () => {
   return (
     <div>
       <NavLogged />
@@ -46,4 +46,4 @@ const NewRecipe = () => {
   );
 };
 
-export default NewRecipe;
+export default AddNewRecipe;

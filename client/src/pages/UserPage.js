@@ -5,6 +5,8 @@ import FormBtn from "../components/Forms/FormBtn.js";
 import DropDwn from "../components/Forms/DropDwn.js";
 import Panel from "../components/Panels/Panel.js";
 import OrangeHdr from "../components/Panels/OrangeHdr.js";
+import NeedToCookList from "../components/Lists/NeedToCookList";
+import CompleteList from "../components/Lists/CompleteList";
 
 const UserPage = () => {
   return (
@@ -32,6 +34,12 @@ const UserPage = () => {
       </Panel>
 
       <OrangeHdr></OrangeHdr>
+      <Panel name={"Recipes"}>
+        <NeedToCookList />
+      </Panel>
+      <Panel name={"Complete Recipes"}>
+        <CompleteList />
+      </Panel>
 
     </div>
 

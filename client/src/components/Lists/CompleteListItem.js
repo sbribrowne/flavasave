@@ -9,7 +9,7 @@ const CompleteListItem = (props) => (
       :
       <button
         className="btn btn-success btn-lg"
-      >Edit</button>}
+      >Edit</button>
       </p>
   </li>
 );
