@@ -11,6 +11,11 @@
 
 @media only screen and (max-width: 736px) {
     /* ===============================================HOME PAGE================================================ */
+
+    .aboutHeader {
+        display: none;
+    }
+
     .loginBox {
         width: 100%;
         opacity: 0.93;
@@ -18,10 +23,75 @@
     }
     
     .card-deck {
-        margin-left: 5%;
+        margin-top: 70rem;
+        margin-left: 15%;
+    }
+
+    #footerleft {
+        display: none;
     }
 }
 
-@media only screen and (max-width: 480px) {}
+@media only screen and (max-width: 480px) {
+    /* ===============================================HOME PAGE================================================ */
+    .homebody {
+        background: none;
+    }
+    
+    .login-logo {
+        height: 8rem; 
+    }
 
-@media only screen and (max-width: 320px) {}
+    .loginBox {
+        padding: 2em 4em 2em 4em;
+    }
+
+    .loginSubTitle {
+        font-size: 2.5rem;
+    }
+
+    .loginTitle {
+        font-size: 4rem;
+    }
+
+    .card-deck {
+        margin-top: 55rem;
+    }
+
+    .card {
+        padding: 3rem 1rem 2rem 1rem;
+    }
+
+    .howItWorksContainer {
+        margin-top: 0%;
+        padding: 8rem 15% 8rem 15%;
+    }
+
+    .howItWorksTitle {
+        font-size: 6rem;
+        text-align: center;
+        margin-bottom: 5rem;
+    }
+    
+    .howItWorksText {
+        font-size: 3rem;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .login-logo {
+        height: 4rem; 
+    }
+
+    .howItWorksText {
+        font-size: 2rem;
+    }
+
+    .navbar-brand {
+        padding-left: 3rem;
+    }
+
+    #navbarlogo {
+        height: 5rem;
+    }
+}
