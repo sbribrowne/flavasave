@@ -36,7 +36,7 @@ class SignUpForm extends React.Component {
       this.props
         .userSignUpRequest(this.state)
         .then(() => {
-          this.context.router.history.push("/");
+          this.context.router.history.push("/userpage");
         })
         .catch(error => {
           this.setState({ errors: error.response.data, isLoading: false });
@@ -83,6 +83,7 @@ class SignUpForm extends React.Component {
             onChange={this.onChange}
             value={this.state.password}
             field="password"
+            type="password"
           />
           <button
             type="submit"
