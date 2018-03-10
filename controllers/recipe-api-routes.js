@@ -16,7 +16,8 @@ module.exports = function (app) {
           }
         }).then(function(dbRecipe) {
             res.json(dbRecipe); //returns all recipes JSON   
-        });
+        })
+        .catch( function(err){ res.status(422).json(err) } );
       });
     
     //GET 1 Recipe and Ingredients & Instructions
