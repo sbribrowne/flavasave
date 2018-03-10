@@ -10,7 +10,8 @@ class SignUpForm extends React.Component {
     username: "",
     email: "",
     password: "",
-    errors: {}
+    errors: {},
+    isLoading: false // for signup button disabling if form is incomplete
   };
 
   onChange = event => {
@@ -19,14 +20,14 @@ class SignUpForm extends React.Component {
 
   onSubmit = event => {
     // set state for errors to be passed to the object > clear errors > then repopulate
-    this.setState({ errors: {} });
+    this.setState({ errors: {}, isLoading: true });
     event.preventDefault();
     // console.log(this.state);
     this.props
       .userSignUpRequest(this.state)
       .then(() => {})
       .catch(error => {
-        this.setState({ errors: error.response.data });
+        this.setState({ errors: error.response.data, isLoading: false });
       });
   };
 
@@ -131,6 +132,7 @@ class SignUpForm extends React.Component {
           <button
             type="submit"
             className="btn btn-primary btn-lg signup-button"
+            disabled={this.state.isLoading}
           >
             Sign Up
           </button>
