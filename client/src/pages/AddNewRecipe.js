@@ -7,7 +7,9 @@ import NavLogged from "../components/Nav/NavLogged.js";
 
 class AddNewRecipe extends Component {
 
-  //Need method
+  //Need method for handling input submit for
+
+  //We should add an input for saving images to be associated to the recipe created
 
   return() {
     return (
