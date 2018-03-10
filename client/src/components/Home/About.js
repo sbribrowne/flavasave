@@ -1,7 +1,7 @@
 import React from "react";
 
 const About = () => (
-  <div className="row card-deck row-eq-height">
+  <div className="row card-deck">
     <div className="col-md-4 big-card">
       <div className="col-md-12 card">
         <img className="card-img-top" src={require('../../images/mitts.png')} alt="Store Image" height = "90" />
