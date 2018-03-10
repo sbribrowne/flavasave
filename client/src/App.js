@@ -18,7 +18,7 @@ import UserPage from "./pages/UserPage.js";
               <Switch>
                 <Route exact path="/" component={Home} />
                 <Route exact path="/newrecipe" component={AddNewRecipe} />
-                <Route exact path="/recipe" component={RecipePage} />
+                <Route exact path="/recipe/:id" component={RecipePage} />
                 <Route exact path="/signup" component={SignUp} />
                 <Route exact path="/userpage" component={UserPage} />
               </Switch>
