@@ -9,6 +9,9 @@ module.exports = function(app) {
   function validateInput(data) {
     let errors = {};
 
+    if (Validator.isEmpty(data.username)) {
+      errors.username = "This field is required";
+    }
     if (Validator.isEmpty(data.email)) {
       errors.email = "This field is required";
     }
@@ -16,7 +19,7 @@ module.exports = function(app) {
       errors.email = "Email is invalid";
     }
     if (Validator.isEmpty(data.password)) {
-      errors.passwordConfirmation = "This field is required";
+      errors.password = "This field is required";
     }
     return {
       errors,
