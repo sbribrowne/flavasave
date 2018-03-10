@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import PropTypes from "prop-types";
+import classnames from "classnames";
 
 class SignUpForm extends React.Component {
   state = {
@@ -58,7 +59,11 @@ class SignUpForm extends React.Component {
               onChange={this.onChange}
             />
           </div>
-          <div className="form-group">
+          <div
+            className={classnames("form-group", {
+              "has-error": errors.username
+            })}
+          >
             <label htmlFor="username" className="signup-label">
               USERNAME
             </label>
