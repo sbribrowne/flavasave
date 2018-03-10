@@ -1,7 +1,7 @@
 // Requiring our models and passport as we've configured it
-var db = require("../models");
-var passport = require("../config/passport");
-var validateInput = require("../scripts/validations/signup");
+const db = require("../models");
+const passport = require("../config/passport");
+const validateInput = require("../scripts/validations/signup");
 
 module.exports = function(app) {
   // Using the passport.authenticate middleware with our local strategy.
@@ -38,7 +38,14 @@ module.exports = function(app) {
     // res.send("Axios made it to the backend!!!");
     const { errors, isValid } = validateInput(req.body); // use validator in backend
 
-    if (!isValid) {
+    if (isValid) {
+      // console.log(req.body);
+      const { firstname, lastname, username, email, password } = req.body;
+
+      db.User.create({ firstname, lastname, username, email, password })
+        .then(user => res.json({ success: true }))
+        .catch(error => res.status(500).json({ error: error }));
+    } else {
       res.status(400).json(errors);
     }
   });
