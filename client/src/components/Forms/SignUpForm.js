@@ -8,7 +8,8 @@ class SignUpForm extends React.Component {
     lastname: "",
     username: "",
     email: "",
-    password: ""
+    password: "",
+    errors: {}
   };
 
   onChange = event => {
@@ -16,12 +17,20 @@ class SignUpForm extends React.Component {
   };
 
   onSubmit = event => {
+    // set state for errors to be passed to the object > clear errors > then repopulate
+    this.setState({ errors: {} });
     event.preventDefault();
     // console.log(this.state);
-    this.props.userSignUpRequest(this.state);
+    this.props
+      .userSignUpRequest(this.state)
+      .then(() => {})
+      .catch(error => {
+        this.setState({ errors: error.response.data });
+      });
   };
 
   render() {
+    const { errors } = this.state;
     return (
       <div className="sign-up-form">
         <form className="signUpForm" onSubmit={this.onSubmit}>
@@ -60,6 +69,9 @@ class SignUpForm extends React.Component {
               value={this.state.username}
               onChange={this.onChange}
             />
+            {errors.username && (
+              <span className="help-block">{errors.username}</span>
+            )}
           </div>
           <div className="form-group">
             <label htmlFor="email" className="signup-label">
