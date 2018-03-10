@@ -1,8 +1,29 @@
 // Requiring our models and passport as we've configured it
 var db = require("../models");
 var passport = require("../config/passport");
+var Validator = require("validator");
+var isEmpty = require("lodash.isempty");
 
 module.exports = function(app) {
+  // validateInput function for signup
+  function validateInput(data) {
+    let errors = {};
+
+    if (Validator.isEmpty(data.email)) {
+      errors.email = "This field is required";
+    }
+    if (!Validator.isEmail(data.email)) {
+      errors.email = "Email is invalid";
+    }
+    if (Validator.isEmpty(data.password)) {
+      errors.passwordConfirmation = "This field is required";
+    }
+    return {
+      errors,
+      isValid: isEmpty(errors)
+    };
+  }
+
   // Using the passport.authenticate middleware with our local strategy.
   // If the user has valid login credentials, send them to the members page.
   // Otherwise the user will be sent an error
@@ -33,8 +54,13 @@ module.exports = function(app) {
   });
 
   // Test route for React axios
-  app.post("/api/user", function(req, res) {
-    res.send("Axios made it to the backend!!!");
+  app.post("/api/userSignUp", function(req, res) {
+    // res.send("Axios made it to the backend!!!");
+    const { errors, isValid } = validateInput(req.body); // use validator in backend
+
+    if (!isValid) {
+      res.status(400).json(errors);
+    }
   });
 
   // Route for logging user out
