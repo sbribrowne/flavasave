@@ -35,7 +35,11 @@ class SignUpForm extends React.Component {
     return (
       <div className="sign-up-form">
         <form className="signUpForm" onSubmit={this.onSubmit}>
-          <div className="form-group">
+          <div
+            className={classnames("form-group", {
+              "has-error": errors.firstname
+            })}
+          >
             <label htmlFor="firstname" className="signup-label">
               FIRST NAME
             </label>
@@ -46,8 +50,15 @@ class SignUpForm extends React.Component {
               value={this.state.firstname}
               onChange={this.onChange}
             />
+            {errors.firstname && (
+              <span className="help-block">{errors.firstname}</span>
+            )}
           </div>
-          <div className="form-group">
+          <div
+            className={classnames("form-group", {
+              "has-error": errors.lastname
+            })}
+          >
             <label htmlFor="lastname" className="signup-label">
               LAST NAME
             </label>
@@ -58,6 +69,9 @@ class SignUpForm extends React.Component {
               value={this.state.lastname}
               onChange={this.onChange}
             />
+            {errors.lastname && (
+              <span className="help-block">{errors.lastname}</span>
+            )}
           </div>
           <div
             className={classnames("form-group", {
@@ -78,7 +92,11 @@ class SignUpForm extends React.Component {
               <span className="help-block">{errors.username}</span>
             )}
           </div>
-          <div className="form-group">
+          <div
+            className={classnames("form-group", {
+              "has-error": errors.email
+            })}
+          >
             <label htmlFor="email" className="signup-label">
               E-MAIL
             </label>
@@ -89,8 +107,13 @@ class SignUpForm extends React.Component {
               value={this.state.email}
               onChange={this.onChange}
             />
+            {errors.email && <span className="help-block">{errors.email}</span>}
           </div>
-          <div className="form-group">
+          <div
+            className={classnames("form-group", {
+              "has-error": errors.password
+            })}
+          >
             <label htmlFor="password" className="signup-label">
               PASSWORD
             </label>
@@ -101,6 +124,9 @@ class SignUpForm extends React.Component {
               value={this.state.password}
               onChange={this.onChange}
             />
+            {errors.password && (
+              <span className="help-block">{errors.password}</span>
+            )}
           </div>
           <button
             type="submit"
