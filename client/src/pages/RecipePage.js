@@ -15,6 +15,12 @@ class Recipes extends Component {
     API.getRecipe().then(res => this.setState({ recipe: res.data }));
   }
 
+  //Need an editRecipe method
+
+  //Need a deleteRecipe method
+
+  //Need a handler for swapping the recipe from NeedtoCook to Complete
+
   render() {
     return (
       <div>
