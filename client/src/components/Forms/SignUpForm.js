@@ -1,5 +1,4 @@
 import React from "react";
-import axios from "axios";
 import PropTypes from "prop-types";
 import validateInput from "../../actions/validations/signup";
 import TextFieldGroup from "./TextFieldGroup";
@@ -36,7 +35,9 @@ class SignUpForm extends React.Component {
       this.setState({ errors: {}, isLoading: true });
       this.props
         .userSignUpRequest(this.state)
-        .then(() => {})
+        .then(() => {
+          this.context.router.history.push("/");
+        })
         .catch(error => {
           this.setState({ errors: error.response.data, isLoading: false });
         });
@@ -98,6 +99,10 @@ class SignUpForm extends React.Component {
 
 SignUpForm.propTypes = {
   userSignUpRequest: PropTypes.func.isRequired
+};
+
+SignUpForm.contextTypes = {
+  router: PropTypes.object.isRequired
 };
 
 export default SignUpForm;
