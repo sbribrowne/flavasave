@@ -3,10 +3,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const NavLogged = () => (
-  <nav class="navbar" id="homeNav">
-    <div class="container-fluid bg-danger">
-      <div class="navbar-header">
-        <a class="navbar-brand" id="navbarlogo" href="#">
+  <nav className="navbar" id="homeNav">
+    <div className="container-fluid bg-danger">
+      <div className="navbar-header">
+        <a className="navbar-brand" id="navbarlogo" href="#">
           <img
             src={require("../../images/logo_white.png")}
             alt="FlavaSave"

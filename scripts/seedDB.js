@@ -1,16 +1,20 @@
+import { TestScheduler } from "rx";
+
 const db = require("../models");
 const express = require("express");
 const app = express();
 const PORT = process.env.PORT || 3001;
 //syncs sequelize models and waits till update complete before starting server
-db.sequelize.sync().then(function(){
-  app.listen(PORT, function(){
+db.sequelize.sync().then(function() {
+  app.listen(PORT, function() {
     console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
   });
 });
 
-
 const userSeed = {
+  firstname: "test",
+  lastname: "test",
+  username: "test",
   email: "test@test.test",
   password: "password"
 };
@@ -27,24 +31,29 @@ const ingredientSeed = {
   RecipeId: ""
 };
 
-
 //db.Recipe.create({});
 
 db.User.create(userSeed)
-.then(function (dbUser) {
-  recipeSeed.UserId = dbUser.dataValues.id;
-  db.Recipe.create(recipeSeed)
-  .then(function(dbRecipe){
-    ingredientSeed.RecipeId = dbRecipe.dataValues.id;
-    db.Ingredient.create(ingredientSeed)
-    .then(function(dbRecipe){
-      console.log(dbRecipe);
-    }).catch(function (error) { //end create Ing
+  .then(function(dbUser) {
+    recipeSeed.UserId = dbUser.dataValues.id;
+    db.Recipe.create(recipeSeed)
+      .then(function(dbRecipe) {
+        ingredientSeed.RecipeId = dbRecipe.dataValues.id;
+        db.Ingredient.create(ingredientSeed)
+          .then(function(dbRecipe) {
+            console.log(dbRecipe);
+          })
+          .catch(function(error) {
+            //end create Ing
+            res.json(error);
+          });
+      })
+      .catch(function(error) {
+        //end create recipe
         res.json(error);
       });
-  }).catch(function (error) { //end create recipe
-      res.json(error);
-    });
-}).catch(function (error) { //end create user
+  })
+  .catch(function(error) {
+    //end create user
     res.json(error);
   });

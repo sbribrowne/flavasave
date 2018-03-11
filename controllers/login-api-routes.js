@@ -1,6 +1,7 @@
 // Requiring our models and passport as we've configured it
-var db = require("../models");
-var passport = require("../config/passport");
+const db = require("../models");
+const passport = require("../config/passport");
+const validateInput = require("../scripts/validations/signup");
 
 module.exports = function(app) {
   // Using the passport.authenticate middleware with our local strategy.
@@ -21,13 +22,32 @@ module.exports = function(app) {
     db.User.create({
       email: req.body.email,
       password: req.body.password
-    }).then(function() {
-      res.redirect(307, "/api/login");
-    }).catch(function(err) {
-      console.log(err);
-      res.json(err);
-      // res.status(422).json(err.errors[0].message);
-    });
+    })
+      .then(function() {
+        res.redirect(307, "/api/login");
+      })
+      .catch(function(err) {
+        console.log(err);
+        res.json(err);
+        // res.status(422).json(err.errors[0].message);
+      });
+  });
+
+  // Test route for React axios
+  app.post("/api/userSignUp", function(req, res) {
+    // res.send("Axios made it to the backend!!!");
+    const { errors, isValid } = validateInput(req.body); // use validator in backend
+
+    if (isValid) {
+      // console.log(req.body);
+      const { firstname, lastname, username, email, password } = req.body;
+
+      db.User.create({ firstname, lastname, username, email, password })
+        .then(user => res.json({ success: true }))
+        .catch(error => res.status(500).json({ error: error }));
+    } else {
+      res.status(400).json(errors);
+    }
   });
 
   // Route for logging user out
@@ -41,8 +61,7 @@ module.exports = function(app) {
     if (!req.user) {
       // The user is not logged in, send back an empty object
       res.json({});
-    }
-    else {
+    } else {
       // Otherwise send back the user's email and id
       // Sending back a password, even a hashed password, isn't a good idea
       res.json({
@@ -51,5 +70,4 @@ module.exports = function(app) {
       });
     }
   });
-
 };
