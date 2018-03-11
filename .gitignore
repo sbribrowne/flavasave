@@ -1,3 +1,4 @@
 node_modules/
 config/config.json
 ignore_this
+config/config.js

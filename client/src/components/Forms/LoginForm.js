@@ -31,16 +31,14 @@ class LoginForm extends React.Component {
 
     if (this.isValid()) {
       this.setState({ errors: {}, isLoading: true });
-      this.props
-        .loginAction(this.state)
-        .then(
-          res => this.context.router.history.push("/userpage"),
-          error =>
-            this.setState({
-              errors: error.response.data.errors,
-              isLoading: false
-            })
-        );
+      this.props.loginAction(this.state).then(
+        res => this.context.router.history.push("/userpage"),
+        error =>
+          this.setState({
+            errors: error.response.data.errors,
+            isLoading: false
+          })
+      );
     }
   };
 
@@ -56,14 +54,14 @@ class LoginForm extends React.Component {
             error={errors.username}
             label="Username"
             onChange={this.onChange}
-            value={this.state.username}
+            value={username}
             field="username"
           />
           <TextFieldGroup
             error={errors.password}
             label="Password"
             onChange={this.onChange}
-            value={this.state.password}
+            value={password}
             field="password"
             type="password"
           />

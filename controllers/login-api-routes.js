@@ -4,6 +4,8 @@ const passport = require("../config/passport");
 const validateInput = require("../scripts/validations/signup");
 const isEmpty = require("lodash.isempty");
 const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
+const config = require("../config/config");
 
 module.exports = function(app) {
   // Using the passport.authenticate middleware with our local strategy.
@@ -26,6 +28,14 @@ module.exports = function(app) {
     }).then(user => {
       if (user) {
         if (bcrypt.compareSync(password, user.get("password"))) {
+          const token = jwt.sign(
+            {
+              id: user.get("id"),
+              username: user.get("username")
+            },
+            config.jwtSecret
+          );
+          res.json({ token });
         } else {
           res.status(401).json({ errors: { form: "Invalid Credentials" } });
         }
