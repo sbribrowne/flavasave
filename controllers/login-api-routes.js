@@ -2,17 +2,37 @@
 const db = require("../models");
 const passport = require("../config/passport");
 const validateInput = require("../scripts/validations/signup");
-var isEmpty = require("lodash.isempty");
+const isEmpty = require("lodash.isempty");
+const bcrypt = require("bcrypt");
 
 module.exports = function(app) {
   // Using the passport.authenticate middleware with our local strategy.
   // If the user has valid login credentials, send them to the members page.
   // Otherwise the user will be sent an error
-  app.post("/api/login", passport.authenticate("local"), function(req, res) {
-    // Since we're doing a POST with javascript, we can't actually redirect that post into a GET request
-    // So we're sending the user back the route to the members page because the redirect will happen on the front end
-    // They won't get this or even be able to access this page if they aren't authed
-    res.json("/userpage"); //redirect?
+  // app.post("/api/login", passport.authenticate("local"), function(req, res) {
+  //   // Since we're doing a POST with javascript, we can't actually redirect that post into a GET request
+  //   // So we're sending the user back the route to the members page because the redirect will happen on the front end
+  //   // They won't get this or even be able to access this page if they aren't authed
+  //   res.json("/userpage"); //redirect?
+  // });
+
+  // User Login set up for React
+  // Route for logging in a user by username or email
+  app.post("/api/login", function(req, res) {
+    const { username, password } = req.body;
+
+    db.User.findOne({
+      where: { username: username }
+    }).then(user => {
+      if (user) {
+        if (bcrypt.compareSync(password, user.get("password"))) {
+        } else {
+          res.status(401).json({ errors: { form: "Invalid Credentials" } });
+        }
+      } else {
+        res.status(401).json({ errors: { form: "Invalid Credentials" } });
+      }
+    });
   });
 
   // User Sign Up route set up for React

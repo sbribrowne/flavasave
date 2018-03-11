@@ -36,7 +36,10 @@ class LoginForm extends React.Component {
         .then(
           res => this.context.router.history.push("/userpage"),
           error =>
-            this.setState({ errors: error.response.data, isLoading: false })
+            this.setState({
+              errors: error.response.data.errors,
+              isLoading: false
+            })
         );
     }
   };
@@ -46,6 +49,9 @@ class LoginForm extends React.Component {
     return (
       <div className="sign-up-form">
         <form className="loginForm" onSubmit={this.onSubmit}>
+          {errors.form && (
+            <div className="alert alert-danger">{errors.form}</div>
+          )}
           <TextFieldGroup
             error={errors.username}
             label="Username"
