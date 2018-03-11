@@ -10,7 +10,6 @@ import CompleteList from "../components/Lists/CompleteList";
 import FooterLogged from "../components/Footer/FooterLogged.js";
 
 class UserPage extends Component {
-
   //Need an addRecipe method
 
   //Need SearchRecipe method
@@ -26,41 +25,50 @@ class UserPage extends Component {
       <div>
         <NavLogged />
 
-        <div class="container">
+        <div className="container">
           <h3>ADD RECIPE BY URL</h3>
-          <form class='row'>
+          <form className="row">
             <Input name="add-recipe" />
             <FormBtn photo={require("../images/add_button.png")} />
           </form>
 
           <h3>SEARCH RECIPES</h3>
-          <form class='row'>
+          <form className="row">
             <Input name="search-recipe" />
             <FormBtn photo={require("../images/search_button.png")} />
           </form>
 
           <h3>SEARCH BY TAGS</h3>
-          <form class='row'>
+          <form className="row">
             <Input name="search-tags" />
             <FormBtn photo={require("../images/tag_search_button.png")} />
           </form>
         </div>
 
-
-        <OrangeHdr class="container orange-box" photo={require("../images/egg_crack_bowl.png")} alt={"cracked egg"} name={"Need to Cook Recipes"} />
-        <div class="container">
+        <OrangeHdr
+          className="container orange-box"
+          photo={require("../images/egg_crack_bowl.png")}
+          alt={"cracked egg"}
+          name={"Need to Cook Recipes"}
+        />
+        <div className="container">
           <NeedToCookList />
         </div>
 
-        <OrangeHdr class="container orange-box" photo={require("../images/fork_knife.png")} alt={"utensils"} name={"Completed Recipes"} />
-        <div class="container">
+        <OrangeHdr
+          className="container orange-box"
+          photo={require("../images/fork_knife.png")}
+          alt={"utensils"}
+          name={"Completed Recipes"}
+        />
+        <div className="container">
           <CompleteList />
         </div>
 
         <FooterLogged />
       </div>
     );
-  };
-};
+  }
+}
 
 export default UserPage;
