@@ -2,6 +2,7 @@
 const db = require("../models");
 const passport = require("../config/passport");
 const validateInput = require("../scripts/validations/signup");
+var isEmpty = require("lodash.isempty");
 
 module.exports = function(app) {
   // Using the passport.authenticate middleware with our local strategy.
@@ -33,21 +34,43 @@ module.exports = function(app) {
       });
   });
 
-  // Test route for React axios
+  // User Sign Up route set up for React
+  // High order function to first check if there is an existing email/username
+  function validateInputQuery(data, otherValid) {
+    let { errors } = otherValid(data);
+
+    return db.User.findOne({
+      where: { email: data.email },
+      or: { username: data.username }
+    }).then(function(user) {
+      if (user) {
+        if (user.get("username") === data.username) {
+          errors.username = "Sorry, this username is already taken";
+        }
+        if (user.get("email") == data.email) {
+          errors.email = "Sorry, this E-mail is already taken";
+        }
+      }
+      return {
+        errors,
+        isValid: isEmpty(errors)
+      };
+    });
+  }
+
   app.post("/api/userSignUp", function(req, res) {
-    // res.send("Axios made it to the backend!!!");
-    const { errors, isValid } = validateInput(req.body); // use validator in backend
+    validateInputQuery(req.body, validateInput).then(({ errors, isValid }) => {
+      if (isValid) {
+        // console.log(req.body);
+        const { firstname, lastname, username, email, password } = req.body;
 
-    if (isValid) {
-      // console.log(req.body);
-      const { firstname, lastname, username, email, password } = req.body;
-
-      db.User.create({ firstname, lastname, username, email, password })
-        .then(user => res.json({ success: true }))
-        .catch(error => res.status(500).json({ error: error }));
-    } else {
-      res.status(400).json(errors);
-    }
+        db.User.create({ firstname, lastname, username, email, password })
+          .then(user => res.json({ success: true }))
+          .catch(error => res.status(500).json({ error: error }));
+      } else {
+        res.status(400).json(errors);
+      }
+    });
   });
 
   // Route for logging user out
