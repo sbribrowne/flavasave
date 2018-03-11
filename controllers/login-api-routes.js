@@ -15,25 +15,6 @@ module.exports = function(app) {
     res.json("/userpage"); //redirect?
   });
 
-  // // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
-  // // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
-  // // otherwise send back an error
-  // app.post("/api/signup", function(req, res) {
-  //   console.log(req.body);
-  //   db.User.create({
-  //     email: req.body.email,
-  //     password: req.body.password
-  //   })
-  //     .then(function() {
-  //       res.redirect(307, "/api/login");
-  //     })
-  //     .catch(function(err) {
-  //       console.log(err);
-  //       res.json(err);
-  //       // res.status(422).json(err.errors[0].message);
-  //     });
-  // });
-
   // User Sign Up route set up for React
   // High order function to first check if there is an existing email/username
   function validateInputQuery(data, otherValid) {
@@ -58,7 +39,7 @@ module.exports = function(app) {
     });
   }
 
-  // Route for signing up a user, use validateInputQuery function first to identify existing usernames or emails
+  // Route for signing up a user, use validateInputQuery function first to identify existing usernames or emails then if isValid, continue on to the db to create user data
   app.post("/api/userSignUp", function(req, res) {
     validateInputQuery(req.body, validateInput).then(({ errors, isValid }) => {
       if (isValid) {
