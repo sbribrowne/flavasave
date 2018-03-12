@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import NavLogged from "../components/Nav/NavLogged.js";
+import Nav from "../components/Nav/Nav.js";
 import Input from "../components/Forms/Input.js";
 import FormBtn from "../components/Forms/FormBtn.js";
 import DropDwn from "../components/Forms/DropDwn.js";
@@ -23,7 +23,7 @@ class UserPage extends Component {
   render() {
     return (
       <div>
-        <NavLogged />
+        <Nav />
 
         <div className="container">
           <h3>ADD RECIPE BY URL</h3>

@@ -9,7 +9,7 @@ import "../stylesheets/css/main.css";
 
 const Home = () => {
   return (
-    <div class="homebody">
+    <div className="homebody">
       <Nav />
       <br />
       <Login />
