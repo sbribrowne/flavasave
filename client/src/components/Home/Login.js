@@ -14,7 +14,7 @@ const Login = () => (
     <LoginForm />
     <p className="loginText">
       Don't have an account?{" "}
-      <a class="signupLink" href="/signup">
+      <a className="signupLink" href="/signup">
         Sign up!
       </a>
     </p>

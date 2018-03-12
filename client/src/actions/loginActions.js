@@ -10,6 +10,14 @@ export function setCurrentUser(user) {
   };
 }
 
+export function logout() {
+  return dispatch => {
+    localStorage.removeItem("jwtToken"); // remove token from local storage
+    setAuthToken(false); // set user auth to false
+    dispatch(setCurrentUser({})); // set user to an object
+  };
+}
+
 export function loginAction(userData) {
   return dispatch => {
     return axios.post("api/login", userData).then(res => {
