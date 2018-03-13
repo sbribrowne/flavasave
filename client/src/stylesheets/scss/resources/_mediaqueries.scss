@@ -1,6 +1,16 @@
 @media only screen and (max-width: 1690px) {}
 
-@media only screen and (max-width: 1280px) {}
+@media only screen and (max-width: 1280px) {
+    /* ===============================================HOME PAGE================================================ */
+    .readmore-description {
+        bottom: 13vw;
+    }
+
+    .arrow {
+        margin-top: 7vw;
+        margin-left: 8vw;
+    }
+}
 
 @media only screen and (max-width: 980px) {
     /* ===============================================HOME PAGE================================================ */

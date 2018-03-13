@@ -177,10 +177,10 @@
   width: 45rem;
   font-family: LeagueGothic, sans-serif;
   letter-spacing: 0.5rem;
-  font-size: 4rem;
+  font-size: 2vw;
   color: white;
-  padding: 2rem 2rem 3rem 2rem;
-  bottom: 17rem;
+  padding: 2rem 2rem 10% 2rem;
+  bottom: 8vw;
   left: -18rem;
   transform: rotate(270deg); }
 
@@ -190,8 +190,9 @@
 
 .readmore-block {
   position: absolute;
-  bottom: 8rem;
-  left: 12rem; }
+  white-space: nowrap;
+  bottom: 2vw;
+  left: 8vw; }
 
 .readmore-subBlock {
   -webkit-animation: slideIn 2s forwards, bounce 6s 2s infinite;
@@ -200,7 +201,7 @@
 
 .readmore-text {
   font-family: Peleguer, serif;
-  font-size: 3rem;
+  font-size: 1.5vw;
   color: white;
   border: 2px solid white;
   transform: rotate(270deg);
@@ -208,8 +209,8 @@
 
 .arrow {
   height: 4rem;
-  margin-top: 12rem;
-  margin-left: 12rem; }
+  margin-top: 6vw;
+  margin-left: 6.5vw; }
 
 .aboutHeader {
   font-family: LeagueGothic, sans-serif;
@@ -372,6 +373,14 @@ li {
 .signup-footer {
   text-align: right; }
 
+@media only screen and (max-width: 1280px) {
+  /* ===============================================HOME PAGE================================================ */
+  .readmore-description {
+    bottom: 13vw; }
+
+  .arrow {
+    margin-top: 7vw;
+    margin-left: 8vw; } }
 @media only screen and (max-width: 980px) {
   /* ===============================================HOME PAGE================================================ */
   .readmore-block {
