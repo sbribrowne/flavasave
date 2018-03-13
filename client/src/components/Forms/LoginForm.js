@@ -60,7 +60,7 @@ class LoginForm extends React.Component {
             label="E-MAIL"
             onChange={this.onChange}
             value={email}
-            field="username"
+            field="email"
           />
           <TextFieldGroup
             error={errors.password}
