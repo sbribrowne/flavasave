@@ -49,92 +49,29 @@ class SignUpForm extends React.Component {
   render() {
     const { errors } = this.state;
     return (
-      <div className="sign-up-form">
+      <div className="sign-up-form signup-label">
         <form className="signUpForm" onSubmit={this.onSubmit}>
-<<<<<<< HEAD
-          <div className="form-group">
-            <label htmlFor="firstname" className="signup-label">
-              FIRST NAME
-            </label>
-            <input
-              type="text"
-              className="form-control"
-              name="firstname"
-              value={this.state.firstname}
-              onChange={this.onChange}
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="lastname" className="signup-label">
-              LAST NAME
-            </label>
-            <input
-              type="text"
-              className="form-control"
-              name="lastname"
-              value={this.state.lastname}
-              onChange={this.onChange}
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="username" className="signup-label">
-              USERNAME
-            </label>
-            <input
-              type="text"
-              className="form-control"
-              name="username"
-              value={this.state.username}
-              onChange={this.onChange}
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="email" className="signup-label">
-              E-MAIL
-            </label>
-            <input
-              type="email"
-              name="email"
-              className="form-control"
-              value={this.state.email}
-              onChange={this.onChange}
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="password" className="signup-label">
-              PASSWORD
-            </label>
-            <input
-              type="password"
-              name="password"
-              className="form-control"
-              value={this.state.password}
-              onChange={this.onChange}
-            />
-          </div>
-=======
           <TextFieldGroup
             error={errors.email}
-            label="Email"
+            label="E-MAIL"
             onChange={this.onChange}
             value={this.state.email}
             field="email"
           />
           <TextFieldGroup
             error={errors.password}
-            label="Password"
+            label="PASSWORD"
             onChange={this.onChange}
             value={this.state.password}
             field="password"
             type="password"
           />
->>>>>>> d4cca89df04dd83585abc7501f80f34dad5f1ddc
           <button
             type="submit"
             className="btn btn-primary btn-lg signup-button"
             disabled={this.state.isLoading}
           >
-            Sign Up
+            SIGN UP
           </button>
         </form>
       </div>
