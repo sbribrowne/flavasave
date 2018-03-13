@@ -2,12 +2,10 @@ import React from "react";
 import PropTypes from "prop-types";
 import validateInput from "../../actions/validations/signup";
 import TextFieldGroup from "./TextFieldGroup";
+import axios from "axios";
 
 class SignUpForm extends React.Component {
   state = {
-    firstname: "",
-    lastname: "",
-    username: "",
     email: "",
     password: "",
     errors: {},
@@ -30,6 +28,9 @@ class SignUpForm extends React.Component {
   onSubmit = event => {
     event.preventDefault();
 
+    axios.post("api/signup", { email: this.state.email, password: this.state.password } );
+
+    /*
     if (this.isValid()) {
       // set state for errors to be passed to the object > clear errors > then repopulate
       this.setState({ errors: {}, isLoading: true });
@@ -42,6 +43,7 @@ class SignUpForm extends React.Component {
           this.setState({ errors: error.response.data, isLoading: false });
         });
     }
+    */
   };
 
   render() {
@@ -49,27 +51,6 @@ class SignUpForm extends React.Component {
     return (
       <div className="sign-up-form">
         <form className="signUpForm" onSubmit={this.onSubmit}>
-          <TextFieldGroup
-            error={errors.firstname}
-            label="First Name"
-            onChange={this.onChange}
-            value={this.state.firstname}
-            field="firstname"
-          />
-          <TextFieldGroup
-            error={errors.lastname}
-            label="Last Name"
-            onChange={this.onChange}
-            value={this.state.lastname}
-            field="lastname"
-          />
-          <TextFieldGroup
-            error={errors.username}
-            label="Username"
-            onChange={this.onChange}
-            value={this.state.username}
-            field="username"
-          />
           <TextFieldGroup
             error={errors.email}
             label="Email"
