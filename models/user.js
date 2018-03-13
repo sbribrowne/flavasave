@@ -18,12 +18,14 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false
     },
-    unique_id:{ //Just in case. However passport works. 
+    unique_id: {
+      //Just in case. However passport works.
       type: DataTypes.STRING
     }
   });
 
-  User.associate = function(models) { //each user has many recipes. Recipes will use user_id as foreign key
+  User.associate = function(models) {
+    //each user has many recipes. Recipes will use user_id as foreign key
     // Associating User with Recipe
     // When an User is deleted, also delete any associated Recipes
     User.hasMany(models.Recipe, {
@@ -37,7 +39,11 @@ module.exports = function(sequelize, DataTypes) {
   // Hooks are automatic methods that run during various phases of the User Model lifecycle
   // In this case, before a User is created, we will automatically hash their password
   User.hook("beforeCreate", function(user) {
-    user.password = bcrypt.hashSync(user.password, bcrypt.genSaltSync(10), null);
+    user.password = bcrypt.hashSync(
+      user.password,
+      bcrypt.genSaltSync(10),
+      null
+    );
   });
   return User;
 };
