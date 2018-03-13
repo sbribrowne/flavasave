@@ -2,22 +2,26 @@
     position: absolute;
     background-color: $red;
     width: 70%;
-    padding: 3em 7em 3em 6em;
+    padding: 2em 7em 2em 6em;
     opacity: 0.93;
     right: 0;
-    margin-top: 4rem;
+    margin-top: 1vw;
+}
+
+.login-logo {
+    height: 5vw;
 }
 
 .loginSubTitle {
     font-family: $body-font-italic;
-    font-size: 4rem;
+    font-size: 2vw;
     color: white;
     letter-spacing: 0.5rem;
 }
 
 .loginTitle {
     font-family: $header-font;
-    font-size: 7rem;
+    font-size: 4vw;
     letter-spacing: 0.5rem;
     color: white;
     margin-top: 3rem;
@@ -26,7 +30,7 @@
 .form-text {
     font-family: $body-font;
     color: white;
-    font-size: 2rem;
+    font-size: 1.3vw;
     letter-spacing: 0.75rem;
     margin-top: 2%;
 }
@@ -52,7 +56,7 @@
 
 .loginText {
     font-family: $body-font-italic;
-    font-size: 2rem;
+    font-size: 1.5vw;
     letter-spacing: 0.4rem;
     color: white;
 }
