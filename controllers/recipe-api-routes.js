@@ -33,7 +33,12 @@ module.exports = function (app) {
         }).then(function(dbRecipe) {
             console.log("dbRecipe");
             console.log(dbRecipe);
-            res.json(dbRecipe); //returns 1 recipe and ingreds/instrs
+            if(dbRecipe.dataValues.UserId === req.user.id)
+                res.json(dbRecipe); //returns 1 recipe and ingreds/instrs
+            else    
+                res.send( new Error("Not your recipe. dbRecipe.dataValues.UserId does not match req.user.id") );
+        
+            //res.json(dbRecipe); //returns 1 recipe and ingreds/instrs
         });
     });
 

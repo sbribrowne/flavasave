@@ -5,7 +5,7 @@ import AddNewRecipe from "./pages/AddNewRecipe.js";
 import RecipePage from "./pages/RecipePage.js";
 import SignUp from "./pages/SignUp.js";
 import UserPage from "./pages/UserPage.js";
-import requireAuth from "./utils/requireAuth";
+//import requireAuth from "./utils/requireAuth";
 
 class App extends Component {
   render() {
@@ -18,7 +18,7 @@ class App extends Component {
               <Route exact path="/newrecipe" component={AddNewRecipe} />
               <Route exact path="/recipe/:id" component={RecipePage} />
               <Route exact path="/signup" component={SignUp} />
-              <Route exact path="/userpage" component={requireAuth(UserPage)} />
+              <Route exact path="/userpage" component={UserPage} />
             </Switch>
           </div>
         </Router>

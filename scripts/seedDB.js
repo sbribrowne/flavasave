@@ -12,9 +12,6 @@ db.sequelize.sync().then(function () {
 });
 
 const userSeed = {
-  firstname: "test",
-  lastname: "test",
-  username: "test",
   email: "test@test.test",
   password: "password"
 };
