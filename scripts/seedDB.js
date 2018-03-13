@@ -1,4 +1,4 @@
-import { TestScheduler } from "rx";
+//import { TestScheduler } from "rx";
 
 const db = require("../models");
 const express = require("express");
@@ -45,15 +45,15 @@ db.User.create(userSeed)
           })
           .catch(function(error) {
             //end create Ing
-            res.json(error);
+            console.log(error);
           });
       })
       .catch(function(error) {
         //end create recipe
-        res.json(error);
+        console.log(error);
       });
   })
   .catch(function(error) {
     //end create user
-    res.json(error);
+    console.log(error);
   });
