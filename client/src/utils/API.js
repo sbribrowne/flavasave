@@ -1,6 +1,6 @@
-// import axios from "axios";
+import axios from "axios";
 
-// export default {
+export default {
 //   Gets all recipes
 //   getRecipes: function() {
 //     return axios.get("/api/recipes");
@@ -13,8 +13,9 @@
 //   deleteRecipe: function(id) {
 //     return axios.delete(`/api/recipes/${id}`);
 //   },
-//   Saves a recipe to the database
-//   saveRecipe: function(bookData) {
-//     return axios.post("/api/recipes", recipeData);
-//   }
-// };
+  // Saves a recipe to the database from URL
+   saveRecipe: function(recipeData) {
+     return axios.post("/api/recipes", recipeData);
+  }
+  
+ };

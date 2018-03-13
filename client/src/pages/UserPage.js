@@ -10,7 +10,7 @@ import CompleteList from "../components/Lists/CompleteList";
 import FooterLogged from "../components/Footer/FooterLogged.js";
 
 class UserPage extends Component {
-  //Need an addRecipe method
+  //Need an addRecipe method from URL
 
   //Need SearchRecipe method
 
