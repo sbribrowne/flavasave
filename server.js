@@ -20,6 +20,7 @@ app.use(passport.session());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 // Serve up static assets
+  //if process.env.NODE_ENV === "production"
 app.use(express.static("client/build"));
 // Add routes, both API and view
 //require("./controllers/html-routes.js")(app);
