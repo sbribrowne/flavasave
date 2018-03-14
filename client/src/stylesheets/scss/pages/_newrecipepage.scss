@@ -7,3 +7,13 @@
     background-color: transparent;
     border: none;
 }
+
+.NRSubmit {
+    font-family: $header-font;
+    font-size: 2rem;
+    letter-spacing: 0.2rem;
+    color: white;
+    background-color: $orange;
+    border: none;
+    padding: 1rem 2rem 0rem 2rem;
+}

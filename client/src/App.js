@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./pages/Home.js";
+import RecipeEdit from "./pages/RecipeEdit.js";
 import AddNewRecipe from "./pages/AddNewRecipe.js";
 import RecipePage from "./pages/RecipePage.js";
 import SignUp from "./pages/SignUp.js";
@@ -15,8 +16,9 @@ class App extends Component {
           <div>
             <Switch>
               <Route exact path="/" component={Home} />
-              <Route exact path="/newrecipe" component={AddNewRecipe} />
+              <Route exact path="/recipeedit" component={RecipeEdit} />
               <Route exact path="/recipe/:id" component={RecipePage} />
+              <Route exact path="/newrecipe" component={AddNewRecipe} />
               <Route exact path="/signup" component={SignUp} />
               <Route exact path="/userpage" component={UserPage} />
             </Switch>

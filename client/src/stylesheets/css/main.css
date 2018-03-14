@@ -519,6 +519,15 @@ li {
   background-color: transparent;
   border: none; }
 
+.NRSubmit {
+  font-family: LeagueGothic, sans-serif;
+  font-size: 2rem;
+  letter-spacing: 0.2rem;
+  color: white;
+  background-color: #F99E1C;
+  border: none;
+  padding: 1rem 2rem 0rem 2rem; }
+
 @media only screen and (max-width: 1690px) {
   /* ===============================================HOME PAGE================================================ */
   .loginBox {
