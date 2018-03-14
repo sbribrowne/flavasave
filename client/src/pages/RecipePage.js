@@ -8,11 +8,16 @@ import "../stylesheets/css/main.css";
 
 class Recipes extends Component {
   state = {
-    recipe: {}
+    recipe: {
+      Ingredients: ["Test"]
+    }
   }
 
   componentDidMount() {
-    API.getRecipe().then(res => this.setState({ recipe: res.data }));
+    API.getRecipe(this.props.match.params.id)
+    .then(res => this.setState({ 
+      recipe: res.data
+    }));
   }
 
   //Need an editRecipe method
@@ -26,8 +31,16 @@ class Recipes extends Component {
       <div>
         <NavLogged />
         <Panel className="recipe-header">
-          <h2>RECIPE NAME GOES HERE</h2>
+          <h2>{this.state.recipe.recipe_name}</h2>
+          <p><a target="_blank" href={this.state.recipe.recipe_url}>{this.state.recipe.recipe_url}</a></p>
+          <p>Recipe ID: {this.props.match.params.id}</p>
           <p>Serving Size: GOES HERE</p>
+
+
+          <p> Ingredients:  {this.state.recipe["Ingredients"][0].ingredient_info}</p>
+       
+
+
           {/* Stand in IMAGE */}
           <img src={require("../images/salmon.jpg")} alt="Store Image" height="400" />
         </Panel>
