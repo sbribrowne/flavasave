@@ -459,6 +459,13 @@ li {
   margin-left: 25vw;
   margin-right: 5rem; }
 
+.table-header {
+  font-family: LeagueGothic, sans-serif;
+  font-size: 1.75vw;
+  letter-spacing: 0.3rem;
+  background-color: transparent;
+  border: none; }
+
 * {
   outline: 0px !important;
   -webkit-appearance: none; }
