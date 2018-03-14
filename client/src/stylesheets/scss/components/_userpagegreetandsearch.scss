@@ -24,18 +24,29 @@
     height: 2vw;
     border: none;
     background-color: $lightgray;
-}
-
-.search-btn {
-    background-color: $orange;
-    height: 2vw;
-}
-
-.imageClass {
-    height: 1.5vw;
     float: left;
 }
 
-.tag-search-button {
+.search-btn {
+    position: relative;
+    background-color: $green;
+    height: 2vw;
+    width: 5%;
+    border: none;
+    padding: 1rem 2rem 2rem 2rem;
+    margin-top: -10vw;
+    margin-left: 1rem;
+}
+
+.search-btn:hover {
+    background-color: $orange;
+}
+
+.imageClass {
     height: 1vw;
+    margin-left: 10%;
+}
+
+.tag-search-button {
+    height: 0.5vw;
 }

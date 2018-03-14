@@ -411,18 +411,28 @@ li {
   width: 90%;
   height: 2vw;
   border: none;
-  background-color: #e1dedc; }
-
-.search-btn {
-  background-color: #F99E1C;
-  height: 2vw; }
-
-.imageClass {
-  height: 1.5vw;
+  background-color: #e1dedc;
   float: left; }
 
+.search-btn {
+  position: relative;
+  background-color: #90bb5e;
+  height: 2vw;
+  width: 5%;
+  border: none;
+  padding: 1rem 2rem 2rem 2rem;
+  margin-top: -10vw;
+  margin-left: 1rem; }
+
+.search-btn:hover {
+  background-color: #F99E1C; }
+
+.imageClass {
+  height: 1vw;
+  margin-left: 10%; }
+
 .tag-search-button {
-  height: 1vw; }
+  height: 0.5vw; }
 
 @media only screen and (max-width: 1690px) {
   /* ===============================================HOME PAGE================================================ */
