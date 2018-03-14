@@ -20,22 +20,23 @@
 }
 
 .input-width {
+    font-family: $body-font;
+    font-size: 1.5vw;
     width: 90%;
-    height: 2vw;
+    height: 3vw;
     border: none;
     background-color: $lightgray;
     float: left;
+    padding-left: 2rem;
 }
 
 .search-btn {
     position: relative;
     background-color: $green;
-    height: 2vw;
-    width: 5%;
+    height: 3vw;
+    width: 10%;
     border: none;
     padding: 1rem 2rem 2rem 2rem;
-    margin-top: -10vw;
-    margin-left: 1rem;
 }
 
 .search-btn:hover {

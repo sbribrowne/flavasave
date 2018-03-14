@@ -1,3 +1,7 @@
+* {
+  outline: 0px !important;
+  -webkit-appearance: none; }
+
 /* FONTS */
 @font-face {
   font-family: PathwaysRough;
@@ -408,21 +412,22 @@ li {
   letter-spacing: 0.2rem; }
 
 .input-width {
+  font-family: Peleguer, serif;
+  font-size: 1.5vw;
   width: 90%;
-  height: 2vw;
+  height: 3vw;
   border: none;
   background-color: #e1dedc;
-  float: left; }
+  float: left;
+  padding-left: 2rem; }
 
 .search-btn {
   position: relative;
   background-color: #90bb5e;
-  height: 2vw;
-  width: 5%;
+  height: 3vw;
+  width: 10%;
   border: none;
-  padding: 1rem 2rem 2rem 2rem;
-  margin-top: -10vw;
-  margin-left: 1rem; }
+  padding: 1rem 2rem 2rem 2rem; }
 
 .search-btn:hover {
   background-color: #F99E1C; }
@@ -436,6 +441,10 @@ li {
 
 .orange-box {
   background-color: #F99E1C; }
+
+* {
+  outline: 0px !important;
+  -webkit-appearance: none; }
 
 @media only screen and (max-width: 1690px) {
   /* ===============================================HOME PAGE================================================ */
