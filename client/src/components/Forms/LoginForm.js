@@ -30,7 +30,7 @@ class LoginForm extends React.Component {
   onSubmit = event => {
     event.preventDefault();
 
-    axios.post("api/login", { email: this.state.username, password: this.state.password });
+    axios.post("api/login", { email: this.state.email, password: this.state.password });
 
     /*
     if (this.isValid()) {
