@@ -118,6 +118,7 @@ class UserPage extends Component {
           alt={"cracked egg"}
           name={"NEED TO COOK RECIPES"}
           className="container-fluid orange-box userpage-container"
+          orangeHdrImageClass="header-image-class"
         />
         <div className="container-fluid userpage-container">
           {this.state.recipes.length ? (
@@ -143,6 +144,7 @@ class UserPage extends Component {
           alt={"utensils"}
           name={"COMPLETED RECIPES"}
           className="container-fluid orange-box userpage-container"
+          orangeHdrImageClass="header-image-class"
         />
         <div className="container-fluid userpage-container">
           <CompleteList />
