@@ -13,14 +13,14 @@ class AddNewRecipe extends Component {
     return (
       <div>
         <NavLogged />
-        <div className="newrecipe-container">
+        <div className="editrecipe-container">
           <h3>RECIPE NAME</h3>
           <form className="row">
             <div className="recipe-page-col col-sm-11">
               <Input name="recipe-name" />
             </div>
             <div className="recipe-page-col col-sm-1">
-              <FormBtn className="NRSubmit" buttonName="SUBMIT" />
+              <FormBtn className="ERSubmit" buttonName="SUBMIT" />
             </div>
           </form>
 
@@ -30,7 +30,7 @@ class AddNewRecipe extends Component {
               <Input name="recipe-name" />
             </div>
             <div className="recipe-page-col col-sm-1">
-              <FormBtn className="NRSubmit" buttonName="SUBMIT" />
+              <FormBtn className="ERSubmit" buttonName="SUBMIT" />
             </div>
           </form>
 
@@ -46,7 +46,7 @@ class AddNewRecipe extends Component {
               <Input name="ingredient" />
             </div>
             <div className="recipe-page-col col-sm-1">
-              <FormBtn className="NRSubmit" buttonName="SUBMIT" />
+              <FormBtn className="ERSubmit" buttonName="SUBMIT" />
             </div>
           </form>
 
@@ -56,7 +56,7 @@ class AddNewRecipe extends Component {
               <Input name="recipe-name" />
             </div>
             <div className="recipe-page-col col-sm-1">
-              <FormBtn className="NRSubmit" buttonName="SUBMIT" />
+              <FormBtn className="ERSubmit" buttonName="SUBMIT" />
             </div>
           </form>
 
@@ -66,7 +66,7 @@ class AddNewRecipe extends Component {
               <Input name="recipe-name" />
             </div>
             <div className="recipe-page-col col-sm-1">
-              <FormBtn className="NRSubmit" buttonName="SUBMIT" />
+              <FormBtn className="ERSubmit" buttonName="SUBMIT" />
             </div>
           </form>
         </div>

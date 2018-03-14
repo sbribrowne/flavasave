@@ -511,7 +511,7 @@ li {
 .recipe-title {
   font-family: LeagueGothic, sans-serif; }
 
-.newrecipe-container {
+.editrecipe-container {
   width: 80%;
   margin-left: 10%; }
 
@@ -519,7 +519,7 @@ li {
   background-color: transparent;
   border: none; }
 
-.NRSubmit {
+.ERSubmit {
   font-family: LeagueGothic, sans-serif;
   font-size: 2rem;
   letter-spacing: 0.2rem;
