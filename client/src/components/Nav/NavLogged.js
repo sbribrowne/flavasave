@@ -3,8 +3,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const NavLogged = () => (
-  <nav className="navbar" id="homeNav">
-    <div className="container-fluid bg-danger">
+  <nav className="logged-navbar" id="homeNav">
+    <div className="container-fluid">
       <div className="navbar-header">
         <a className="navbar-brand" id="navbarlogo" href="#">
           <img
@@ -19,7 +19,7 @@ const NavLogged = () => (
         id="navbarNavAltMarkup"
       >
         <div className="nav navbar-nav navbar-right">
-          <Link className="nav-item nav-link" to="/">
+          <Link className="logged-nav-item nav-link" to="/">
             LOGOUT
           </Link>
         </div>

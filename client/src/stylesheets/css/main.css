@@ -373,6 +373,30 @@ li {
 .signup-footer {
   text-align: right; }
 
+.logged-navbar {
+  background-color: #E44125;
+  border-radius: 0;
+  height: 10rem; }
+
+.logged-nav-item {
+  color: white;
+  font-size: 1.5vw;
+  letter-spacing: 0.4rem;
+  margin-bottom: 3rem; }
+
+.logged-nav-item:hover {
+  text-decoration: none;
+  color: #1E401D;
+  font-size: 4rem; }
+
+.greeting-text {
+  font-family: LeagueGothic, sans-serif;
+  font-size: 2.5vw;
+  text-align: center;
+  letter-spacing: 0.4rem;
+  margin-top: 4vw;
+  margin-bottom: 3vw; }
+
 @media only screen and (max-width: 1690px) {
   /* ===============================================HOME PAGE================================================ */
   .loginBox {
