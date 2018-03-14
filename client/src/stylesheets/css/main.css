@@ -504,6 +504,13 @@ li {
   outline: 0px !important;
   -webkit-appearance: none; }
 
+.recipe-header {
+  font-family: LeagueGothic, sans-serif;
+  background-color: #e1dedc; }
+
+.recipe-title {
+  font-family: LeagueGothic, sans-serif; }
+
 @media only screen and (max-width: 1690px) {
   /* ===============================================HOME PAGE================================================ */
   .loginBox {
