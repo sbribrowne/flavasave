@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 import validateInput from "../../actions/validations/signup";
 import TextFieldGroup from "./TextFieldGroup";
 import axios from "axios";
+import { connect } from "react-redux";
+import { userSignUpRequest } from "../../actions/signUpActions";
 
 class SignUpForm extends React.Component {
   state = {
@@ -28,9 +30,11 @@ class SignUpForm extends React.Component {
   onSubmit = event => {
     event.preventDefault();
 
-    axios.post("api/signup", { email: this.state.email, password: this.state.password } );
+    axios.post("api/signup", {
+      email: this.state.email,
+      password: this.state.password
+    });
 
-    /*
     if (this.isValid()) {
       // set state for errors to be passed to the object > clear errors > then repopulate
       this.setState({ errors: {}, isLoading: true });
@@ -43,11 +47,10 @@ class SignUpForm extends React.Component {
           this.setState({ errors: error.response.data, isLoading: false });
         });
     }
-    */
   };
 
   render() {
-    const { errors } = this.state;
+    const { errors, email, password, isLoading } = this.state;
     return (
       <div className="sign-up-form signup-label">
         <form className="signUpForm" onSubmit={this.onSubmit}>
@@ -55,21 +58,21 @@ class SignUpForm extends React.Component {
             error={errors.email}
             label="E-MAIL"
             onChange={this.onChange}
-            value={this.state.email}
+            value={email}
             field="email"
           />
           <TextFieldGroup
             error={errors.password}
             label="PASSWORD"
             onChange={this.onChange}
-            value={this.state.password}
+            value={password}
             field="password"
             type="password"
           />
           <button
             type="submit"
             className="btn btn-primary btn-lg signup-button"
-            disabled={this.state.isLoading}
+            disabled={isLoading}
           >
             SIGN UP
           </button>
@@ -87,4 +90,4 @@ SignUpForm.contextTypes = {
   router: PropTypes.object.isRequired
 };
 
-export default SignUpForm;
+export default connect(null, { userSignUpRequest })(SignUpForm);
