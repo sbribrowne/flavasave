@@ -1,3 +1,7 @@
+* {
+  outline: 0px !important;
+  -webkit-appearance: none; }
+
 /* FONTS */
 @font-face {
   font-family: PathwaysRough;
@@ -391,12 +395,12 @@ li {
 
 .greeting-text {
   font-family: LeagueGothic, sans-serif;
-  font-size: 2.5vw;
+  font-size: 3.5vw;
   color: black;
   text-align: center;
   letter-spacing: 0.4rem;
   margin-top: 4vw;
-  margin-bottom: 1vw; }
+  margin-bottom: 3vw; }
 
 .userpage-container {
   width: 80%; }
@@ -404,38 +408,101 @@ li {
 .search-title {
   font-family: LeagueGothic, sans-serif;
   color: black;
-  font-size: 2vw;
-  letter-spacing: 0.2rem; }
+  font-size: 1.75vw;
+  letter-spacing: 0.1vw;
+  margin-left: -1rem; }
 
 .input-width {
-  width: 90%;
-  height: 2vw;
+  font-family: Peleguer, serif;
+  font-size: 1.5vw;
+  width: 93%;
+  height: 3vw;
   border: none;
   background-color: #e1dedc;
-  float: left; }
+  float: left;
+  padding-left: 2rem; }
 
 .search-btn {
   position: relative;
   background-color: #90bb5e;
-  height: 2vw;
-  width: 5%;
+  height: 3vw;
+  width: 7%;
   border: none;
-  padding: 1rem 2rem 2rem 2rem;
-  margin-top: -10vw;
-  margin-left: 1rem; }
+  padding: 1.5rem 2rem 2rem 2rem; }
 
 .search-btn:hover {
   background-color: #F99E1C; }
 
 .imageClass {
-  height: 2rem;
-  margin-left: 10%; }
+  height: 1.5vw;
+  margin-left: 0.5vw;
+  padding: 0; }
 
 .tag-search-button {
   height: 0.5vw; }
 
 .orange-box {
-  background-color: #F99E1C; }
+  background-color: #F99E1C;
+  padding: 1rem 0rem 0.5rem 0rem;
+  margin-top: 4%; }
+
+.orangeHdrTitle {
+  font-family: LeagueGothic, sans-serif;
+  font-size: 3vw;
+  color: white;
+  letter-spacing: 0.3rem; }
+
+.header-image-class {
+  height: 4vw;
+  float: left;
+  padding-top: 1rem;
+  margin-left: 25vw;
+  margin-right: 5rem; }
+
+.col-md-4 {
+  background-color: transparent;
+  border: none; }
+
+.table-header {
+  font-family: LeagueGothic, sans-serif;
+  font-size: 2.25vw;
+  letter-spacing: 0.3rem; }
+
+.table-item {
+  font-family: Peleguer, serif;
+  font-size: 3.5rem; }
+
+.userpage-buttons {
+  font-family: Peleguer, serif; }
+
+.up-edit-button {
+  color: black;
+  font-size: 2rem;
+  padding: 0.5rem 2rem 0 2rem;
+  background-color: transparent;
+  border: 0.25px solid #e1dedc;
+  border-radius: 0; }
+
+.up-edit-button:hover {
+  border-radius: 0;
+  background-color: #90bb5e;
+  border: none; }
+
+.up-delete-button {
+  color: black;
+  margin-left: 4rem;
+  font-size: 2rem;
+  padding: 0.5rem 2rem 0 2rem;
+  background-color: transparent;
+  border: 0.25px solid #e1dedc;
+  border-radius: 0; }
+
+.up-delete-button:hover {
+  border-radius: 0; }
+
+* {
+  outline: 0px !important;
+  -webkit-appearance: none; }
 
 @media only screen and (max-width: 1690px) {
   /* ===============================================HOME PAGE================================================ */
