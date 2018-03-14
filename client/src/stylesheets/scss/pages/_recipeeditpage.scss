@@ -1,6 +1,7 @@
 .editrecipe-container {
     width: 80%;
     margin-left: 10%;
+    margin-top: 4%;
 }
 
 .recipe-page-col {
@@ -17,12 +18,16 @@
 
 .ERSubmit {
     font-family: $header-font;
-    font-size: 2rem;
+    font-size: 0.85vw;
     letter-spacing: 0.2rem;
     color: white;
     background-color: $orange;
     border: none;
-    padding: 1rem 2rem 0rem 2rem;
+    padding: 0.5vw 2rem 0vw 2rem;
+}
+
+.ERSubmit:hover {
+    background-color: $darkgreen;
 }
 
 .ERInput {
@@ -31,4 +36,14 @@
     box-shadow: none;
     border: 0.5px solid $lightgray;
     padding-left: 2rem;
+}
+
+.drop-down {
+    font-size: 0.75vw;
+    text-align: center;
+    width: 100%;
+    padding: 0.75vw 2rem 0.75vw 2rem;
+    border: 0.5px solid $lightgray;
+    border-radius: 0;
+    background-color: transparent;
 }
