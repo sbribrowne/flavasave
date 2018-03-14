@@ -1,6 +1,5 @@
 import React from "react";
 import CompleteListItem from "./CompleteListItem";
-import Buttons from "../Buttons/Button";
 
 const CompleteList = props => (
   <div className="row">
