@@ -519,6 +519,10 @@ li {
   background-color: transparent;
   border: none; }
 
+.ERTitle {
+  font-family: LeagueGothic, sans-serif;
+  color: black; }
+
 .ERSubmit {
   font-family: LeagueGothic, sans-serif;
   font-size: 2rem;

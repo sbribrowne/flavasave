@@ -14,7 +14,7 @@ class AddNewRecipe extends Component {
       <div>
         <NavLogged />
         <div className="editrecipe-container">
-          <h3>RECIPE NAME</h3>
+          <h3 className="ERTitle">RECIPE NAME</h3>
           <form className="row">
             <div className="recipe-page-col col-sm-11">
               <Input name="recipe-name" />
@@ -24,7 +24,7 @@ class AddNewRecipe extends Component {
             </div>
           </form>
 
-          <h3>SERVING SIZE</h3>
+          <h3 className="ERTitle">SERVING SIZE</h3>
           <form className="row">
             <div className="recipe-page-col col-sm-11">
               <Input name="recipe-name" />
@@ -34,7 +34,7 @@ class AddNewRecipe extends Component {
             </div>
           </form>
 
-          <h3>INGREDIENTS</h3>
+          <h3 className="ERTitle">INGREDIENTS</h3>
           <form className="row">
             <div className="recipe-page-col col-sm-3">
               <Input name="amount" />
@@ -50,7 +50,7 @@ class AddNewRecipe extends Component {
             </div>
           </form>
 
-          <h3>INSTRUCTIONS</h3>
+          <h3 className="ERTitle">INSTRUCTIONS</h3>
           <form className="row">
             <div className="recipe-page-col col-sm-11">
               <Input name="recipe-name" />
@@ -60,7 +60,7 @@ class AddNewRecipe extends Component {
             </div>
           </form>
 
-          <h3>TAGS</h3>
+          <h3 className="ERTitle">TAGS</h3>
           <form className="row">
             <div className="recipe-page-col col-sm-11">
               <Input name="recipe-name" />
