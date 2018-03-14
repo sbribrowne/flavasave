@@ -115,20 +115,20 @@ class UserPage extends Component {
         </div>
 
         <OrangeHdr
-          className="container orange-box"
           photo={require("../images/egg_crack_bowl.png")}
           alt={"cracked egg"}
-          name={"Need to Cook Recipes"}
+          name={"NEED TO COOK RECIPES"}
+          className="container-fluid orange-box userpage-container"
         />
         <div className="container-fluid userpage-container">
           <NeedToCookList />
         </div>
 
         <OrangeHdr
-          className="container orange-box"
           photo={require("../images/fork_knife.png")}
           alt={"utensils"}
-          name={"Completed Recipes"}
+          name={"COMPLETED RECIPES"}
+          className="container-fluid orange-box userpage-container"
         />
         <div className="container-fluid userpage-container">
           <CompleteList />

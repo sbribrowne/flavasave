@@ -43,10 +43,14 @@
 }
 
 .imageClass {
-    height: 1vw;
+    height: 2rem;
     margin-left: 10%;
 }
 
 .tag-search-button {
     height: 0.5vw;
+}
+
+.orange-box {
+    background-color: $orange;
 }

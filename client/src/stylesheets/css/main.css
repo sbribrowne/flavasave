@@ -428,11 +428,14 @@ li {
   background-color: #F99E1C; }
 
 .imageClass {
-  height: 1vw;
+  height: 2rem;
   margin-left: 10%; }
 
 .tag-search-button {
   height: 0.5vw; }
+
+.orange-box {
+  background-color: #F99E1C; }
 
 @media only screen and (max-width: 1690px) {
   /* ===============================================HOME PAGE================================================ */
