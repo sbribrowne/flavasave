@@ -1,2 +1,7 @@
 @import './components/_userpagenav';
 @import './components/_userpagegreetandsearch';
+
+* {
+    outline:0px !important;
+    -webkit-appearance:none;
+}

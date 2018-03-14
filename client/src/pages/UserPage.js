@@ -65,45 +65,51 @@ class UserPage extends Component {
         <div className="container-fluid userpage-container">
           <h3 className="search-title">ADD RECIPE BY URL</h3>
           <form className="row">
-            <Input
-              value={this.state.recipe_url}
-              onChange={this.handleInputChange}
-              name="recipe_url"
-              className="input-width"
-            />
-            <FormBtn
-              disabled={!(this.state.recipe_url)}
-              onClick={this.handleFormSubmit}
-              photo={require("../images/add_button.png")}
-              className="search-btn"
-              imageClass="imageClass"
-            />
+            <div className="form-group">
+              <Input
+                value={this.state.recipe_url}
+                onChange={this.handleInputChange}
+                name="recipe_url"
+                className="input-width"
+              />
+              <FormBtn
+                disabled={!(this.state.recipe_url)}
+                onClick={this.handleFormSubmit}
+                photo={require("../images/add_button.png")}
+                className="search-btn"
+                imageClass="imageClass"
+              />
+            </div>
           </form>
 
           <h3 className="search-title">SEARCH RECIPES</h3>
           <form className="row">
-            <Input 
-            name="search-recipe" 
-            className="input-width"
-            />
-            <FormBtn 
-            photo={require("../images/search_button.png")} 
-            className="search-btn"
-            imageClass="imageClass"
-            />
+            <div className="form-group">
+              <Input 
+              name="search-recipe" 
+              className="input-width"
+              />
+              <FormBtn 
+              photo={require("../images/search_button.png")} 
+              className="search-btn"
+              imageClass="imageClass"
+              />
+            </div>
           </form>
 
           <h3 className="search-title">SEARCH BY TAGS</h3>
           <form className="row">
-            <Input 
-            name="search-tags" 
-            className="input-width"
-            />
-            <FormBtn 
-            photo={require("../images/tag_search_button.png")} 
-            className="search-btn"
-            imageClass="tag-search-button"
-            />
+            <div className="form-group">
+              <Input 
+              name="search-tags" 
+              className="input-width"
+              />
+              <FormBtn 
+              photo={require("../images/tag_search_button.png")} 
+              className="search-btn"
+              imageClass="tag-search-button"
+              />
+            </div>
           </form>
         </div>
 
@@ -112,6 +118,7 @@ class UserPage extends Component {
           alt={"cracked egg"}
           name={"NEED TO COOK RECIPES"}
           className="container-fluid orange-box userpage-container"
+          orangeHdrImageClass="header-image-class"
         />
         <div className="container-fluid userpage-container">
           {this.state.recipes.length ? (
@@ -128,7 +135,7 @@ class UserPage extends Component {
               ))}
             </NeedToCookList>
           ) : (
-              <h3>No Results to Display</h3>
+              <h1 className="table-item">No Results to Display</h1>
             )}
         </div>
 
@@ -137,6 +144,7 @@ class UserPage extends Component {
           alt={"utensils"}
           name={"COMPLETED RECIPES"}
           className="container-fluid orange-box userpage-container"
+          orangeHdrImageClass="header-image-class"
         />
         <div className="container-fluid userpage-container">
           <CompleteList />
