@@ -33,23 +33,6 @@ module.exports = function(app) {
       });
   });
 
-  // Test route for React axios
-  app.post("/api/userSignUp", function(req, res) {
-    // res.send("Axios made it to the backend!!!");
-    const { errors, isValid } = validateInput(req.body); // use validator in backend
-
-    if (isValid) {
-      // console.log(req.body);
-      const { firstname, lastname, username, email, password } = req.body;
-
-      db.User.create({ firstname, lastname, username, email, password })
-        .then(user => res.json({ success: true }))
-        .catch(error => res.status(500).json({ error: error }));
-    } else {
-      res.status(400).json(errors);
-    }
-  });
-
   // Route for logging user out
   app.get("/logout", function(req, res) {
     req.logout();
