@@ -27,7 +27,7 @@ class AddNewRecipe extends Component {
           <h3 className="ERTitle">SERVING SIZE</h3>
           <form className="row">
             <div className="recipe-page-col col-sm-11">
-              <Input name="recipe-name" />
+              <Input className="ERInput" name="recipe-name" />
             </div>
             <div className="recipe-page-col col-sm-1">
               <FormBtn className="ERSubmit" buttonName="SUBMIT" />
@@ -37,13 +37,13 @@ class AddNewRecipe extends Component {
           <h3 className="ERTitle">INGREDIENTS</h3>
           <form className="row">
             <div className="recipe-page-col col-sm-3">
-              <Input name="amount" />
+              <Input className="ERInput" name="amount" />
             </div>
             <div className="recipe-page-col col-sm-1">
               <DropDwn />
             </div>
             <div className="recipe-page-col col-sm-7">
-              <Input name="ingredient" />
+              <Input className="ERInput" name="ingredient" />
             </div>
             <div className="recipe-page-col col-sm-1">
               <FormBtn className="ERSubmit" buttonName="SUBMIT" />
@@ -53,7 +53,7 @@ class AddNewRecipe extends Component {
           <h3 className="ERTitle">INSTRUCTIONS</h3>
           <form className="row">
             <div className="recipe-page-col col-sm-11">
-              <Input name="recipe-name" />
+              <Input className="ERInput" name="recipe-name" />
             </div>
             <div className="recipe-page-col col-sm-1">
               <FormBtn className="ERSubmit" buttonName="SUBMIT" />
@@ -63,7 +63,7 @@ class AddNewRecipe extends Component {
           <h3 className="ERTitle">TAGS</h3>
           <form className="row">
             <div className="recipe-page-col col-sm-11">
-              <Input name="recipe-name" />
+              <Input className="ERInput" name="recipe-name" />
             </div>
             <div className="recipe-page-col col-sm-1">
               <FormBtn className="ERSubmit" buttonName="SUBMIT" />
