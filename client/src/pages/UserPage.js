@@ -76,24 +76,38 @@ class UserPage extends Component {
               value={this.state.recipe_url}
               onChange={this.handleInputChange}
               name="recipe_url"
+              className="input-width"
             />
             <FormBtn
               disabled={!(this.state.recipe_url)}
               onClick={this.handleFormSubmit}
               photo={require("../images/add_button.png")}
+              className="search-btn"
             />
           </form>
 
           <h3 className="search-title">SEARCH RECIPES</h3>
           <form className="row">
-            <Input name="search-recipe" />
-            <FormBtn photo={require("../images/search_button.png")} />
+            <Input 
+            name="search-recipe" 
+            className="input-width"
+            />
+            <FormBtn 
+            photo={require("../images/search_button.png")} 
+            className="search-btn"
+            />
           </form>
 
           <h3 className="search-title">SEARCH BY TAGS</h3>
           <form className="row">
-            <Input name="search-tags" />
-            <FormBtn photo={require("../images/tag_search_button.png")} />
+            <Input 
+            name="search-tags" 
+            className="input-width"
+            />
+            <FormBtn 
+            photo={require("../images/tag_search_button.png")} 
+            className="search-btn"
+            />
           </form>
         </div>
 

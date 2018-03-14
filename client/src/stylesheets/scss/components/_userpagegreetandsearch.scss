@@ -1,10 +1,11 @@
 .greeting-text {
     font-family: $header-font;
     font-size: 2.5vw;
+    color: black;
     text-align: center;
     letter-spacing: 0.4rem;
     margin-top: 4vw;
-    margin-bottom: 3vw;
+    margin-bottom: 1vw;
 }
 
 .userpage-container{
@@ -13,6 +14,19 @@
 
 .search-title {
     font-family: $header-font;
+    color: black;
     font-size: 2vw;
     letter-spacing: 0.2rem;
+}
+
+.input-width {
+    width: 90%;
+    height: 2vw;
+    border: none;
+    background-color: $lightgray;
+}
+
+.search-btn {
+    background-color: $orange;
+    height: 2vw;
 }

@@ -392,18 +392,30 @@ li {
 .greeting-text {
   font-family: LeagueGothic, sans-serif;
   font-size: 2.5vw;
+  color: black;
   text-align: center;
   letter-spacing: 0.4rem;
   margin-top: 4vw;
-  margin-bottom: 3vw; }
+  margin-bottom: 1vw; }
 
 .userpage-container {
   width: 80%; }
 
 .search-title {
   font-family: LeagueGothic, sans-serif;
+  color: black;
   font-size: 2vw;
   letter-spacing: 0.2rem; }
+
+.input-width {
+  width: 90%;
+  height: 2vw;
+  border: none;
+  background-color: #e1dedc; }
+
+.search-btn {
+  background-color: #F99E1C;
+  height: 2vw; }
 
 @media only screen and (max-width: 1690px) {
   /* ===============================================HOME PAGE================================================ */
