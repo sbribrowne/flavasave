@@ -135,7 +135,7 @@ class UserPage extends Component {
               ))}
             </NeedToCookList>
           ) : (
-              <h3>No Results to Display</h3>
+              <h1 className="table-item">No Results to Display</h1>
             )}
         </div>
 

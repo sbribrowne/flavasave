@@ -3,8 +3,8 @@ import Buttons from "../Buttons/Button";
 
 const CompleteListItem = props => (
   <div>
-    <div className="col-md-4">{"RECIPE GOES HERE"}</div>
-    <div className="col-md-4">{"SOURCE GOES HERE"}</div>
+    <div className="col-md-4 table-item">{"Recipe goes here"}</div>
+    <div className="col-md-4 table-item">{"Source goes here"}</div>
     <div className="col-md-4">
       <Buttons />
     </div>

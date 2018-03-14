@@ -58,7 +58,7 @@
 
 .orange-box {
     background-color: $orange;
-    padding: 2rem 0rem 1rem 0rem;
+    padding: 1rem 0rem 0.5rem 0rem;
     margin-top: 4%;
 }
 
@@ -81,6 +81,18 @@
     font-family: $header-font;
     font-size: 1.75vw;
     letter-spacing: 0.3rem;
+    background-color: transparent;
+    border: none;
+}
+
+.table-item {
+    font-family: $body-font;
+    font-size: 1.5vw;
+    background-color: transparent;
+    border: none;
+}
+
+.userpage-buttons {
     background-color: transparent;
     border: none;
 }
