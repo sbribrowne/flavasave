@@ -16,7 +16,7 @@ class AddNewRecipe extends Component {
         <div>
           <h3>Recipe Name</h3>
           <form className="row">
-            <div className="col-sm-11">
+            <div className="recipe-page-col col-sm-11">
               <Input name="recipe-name" />
             </div>
             <div className="col-sm-1">
