@@ -23,7 +23,7 @@
 .input-width {
     font-family: $body-font;
     font-size: 1.5vw;
-    width: 90%;
+    width: 93%;
     height: 3vw;
     border: none;
     background-color: $lightgray;
@@ -35,9 +35,9 @@
     position: relative;
     background-color: $green;
     height: 3vw;
-    width: 10%;
+    width: 7%;
     border: none;
-    padding: 1rem 2rem 2rem 2rem;
+    padding: 1.5rem 2rem 2rem 2rem;
 }
 
 .search-btn:hover {
@@ -77,22 +77,51 @@
     margin-right: 5rem;
 }
 
-.table-header {
-    font-family: $header-font;
-    font-size: 1.75vw;
-    letter-spacing: 0.3rem;
+.col-md-4 {
     background-color: transparent;
     border: none;
+}
+
+.table-header {
+    font-family: $header-font;
+    font-size: 2.25vw;
+    letter-spacing: 0.3rem;
 }
 
 .table-item {
     font-family: $body-font;
-    font-size: 1.5vw;
-    background-color: transparent;
-    border: none;
+    font-size: 3.5rem;
 }
 
 .userpage-buttons {
+    font-family: $body-font;
+}
+
+.up-edit-button {
+    color: black;
+    font-size: 2rem;
+    padding: 0.5rem 2rem 0 2rem;
     background-color: transparent;
+    border: 0.25px solid $lightgray;
+    border-radius: 0;
+}
+
+.up-edit-button:hover {
+    border-radius: 0;
+    background-color: $green;
     border: none;
+}
+
+.up-delete-button {
+    color: black;
+    margin-left: 4rem;
+    font-size: 2rem;
+    padding: 0.5rem 2rem 0 2rem;
+    background-color: transparent;
+    border: 0.25px solid $lightgray;
+    border-radius: 0;
+}
+
+.up-delete-button:hover {
+    border-radius: 0;
 }
