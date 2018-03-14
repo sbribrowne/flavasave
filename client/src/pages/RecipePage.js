@@ -11,7 +11,7 @@ class Recipes extends Component {
     recipe: {}
   }
 
-  componentDid() {
+  componentDidMount() {
     API.getRecipe().then(res => this.setState({ recipe: res.data }));
   }
 

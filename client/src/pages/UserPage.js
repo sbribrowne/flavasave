@@ -6,9 +6,12 @@ import DropDwn from "../components/Forms/DropDwn.js";
 import Panel from "../components/Panels/Panel.js";
 import OrangeHdr from "../components/Panels/OrangeHdr.js";
 import NeedToCookList from "../components/Lists/NeedToCookList";
+import NTCListItem from "../components/Lists/NTCListItem"
 import CompleteList from "../components/Lists/CompleteList";
 import FooterLogged from "../components/Footer/FooterLogged.js";
 import API from "../utils/API";
+import { Link } from "react-router-dom";
+import Buttons from "../components/Buttons/Button.js"
 
 class UserPage extends Component {
 
@@ -18,23 +21,23 @@ class UserPage extends Component {
     recipe_url: ""
   };
 
-  // componentDidMount() {
-  //   this.loadRecipes();
-  // }
+  componentDidMount() {
+    this.loadRecipes();
+  }
 
-  // loadRecipes = () => {
-  //   API.getRecipe()
-  //     .then(res =>
-  //       this.setState({ recipe_url: res.data })
-  //     )
-  //     .catch(err => console.log(err));
-  // };
+  loadRecipes = () => {
+    API.getRecipe()
+      .then(res =>
+        this.setState({ recipe_url: res.data })
+      )
+      .catch(err => console.log(err));
+  };
 
-  // deleteRecipe = id => {
-  //   API.deleteRecipe(id)
-  //     .then(res => this.loadRecipes())
-  //     .catch(err => console.log(err));
-  // };
+  deleteRecipe = id => {
+    API.deleteRecipe(id)
+      .then(res => this.loadRecipes())
+      .catch(err => console.log(err));
+  };
 
   handleInputChange = event => {
     const { name, value } = event.target;
@@ -53,16 +56,6 @@ class UserPage extends Component {
         .catch(err => console.log(err));
     }
   };
-
-  //Need an addRecipe method
-
-  //Need SearchRecipe method
-
-  //Need SearchRecipes by tags method
-
-  //Need a get method for Need to Cook Recipes
-
-  //Need a get method for COmpleted REcipes
 
   render() {
     return (
@@ -121,7 +114,22 @@ class UserPage extends Component {
           className="container-fluid orange-box userpage-container"
         />
         <div className="container-fluid userpage-container">
-          <NeedToCookList />
+          {this.state.recipes.length ? (
+            <NeedToCookList>
+              {this.state.recipes.map(recipe => (
+                <NTCListItem key={recipe._id}>
+                  <Link to={"/recipes/" + recipe._id}>
+                    <strong>
+                      {recipe.recipe_url}
+                    </strong>
+                  </Link>
+                  <Buttons onClick={() => this.deleteBook(recipe._id)} />
+                </NTCListItem>
+              ))}
+            </NeedToCookList>
+          ) : (
+              <h3>No Results to Display</h3>
+            )}
         </div>
 
         <OrangeHdr
@@ -138,6 +146,6 @@ class UserPage extends Component {
       </div>
     );
   }
-}
+};
 
 export default UserPage;
