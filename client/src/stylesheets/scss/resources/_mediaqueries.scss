@@ -1,10 +1,15 @@
-@media only screen and (max-width: 1690px) {}
+@media only screen and (max-width: 1690px) {
+    /* ===============================================HOME PAGE================================================ */
+    .loginBox {
+        margin-top: -2.5vw;
+    }
+}
 
 @media only screen and (max-width: 1280px) {
     /* ===============================================HOME PAGE================================================ */
     .loginBox {
         padding: 2em 7em 2em 4em;
-        margin-top: -1.5vw;
+        margin-top: -3.3vw;
     }
 
     .readmore-description {
@@ -19,8 +24,33 @@
 
 @media only screen and (max-width: 980px) {
     /* ===============================================HOME PAGE================================================ */
+    .loginBox {
+        padding: 2em 7em 2em 4em;
+        margin-top: -4.3vw;
+    }
+
+    .loginSubTitle {
+        font-size: 2.5vw;
+    }
+
     .readmore-block {
         display: none;
+    }
+
+    .aboutHeader {
+        margin-left: 30%;
+        margin-top: 55vw;
+        margin-bottom: 2%;
+    }
+
+    .card-deck {
+        width: 40%;
+        margin-left: 30%;
+        padding: 7rem 4rem 5rem 4rem;
+    }
+
+    .card-text {
+        font-size: 2.5vw;
     }
 }
 
@@ -38,8 +68,7 @@
     }
     
     .card-deck {
-        margin-top: 70rem;
-        margin-left: 15%;
+        margin-top: 60vw;
     }
 
     #footerleft {
@@ -54,7 +83,7 @@
     }
     
     .login-logo {
-        height: 8rem; 
+        display: none;
     }
 
     .loginBox {
@@ -69,12 +98,31 @@
         font-size: 4rem;
     }
 
-    .card-deck {
-        margin-top: 55rem;
+    .loginText {
+        font-size: 3vw;
     }
 
-    .card {
-        padding: 3rem 1rem 2rem 1rem;
+    .form-text {
+        font-size: 4vw;
+    }
+
+    .login-button {
+        font-size: 4vw;
+    }
+
+    .card-deck {
+        width: 60%;
+        margin-top: 90vw;
+        margin-left: 20%;
+        padding: 7rem 4rem 5rem 4rem;
+    }
+
+    .card-title {
+        font-size: 8vw;
+    }
+
+    .card-text {
+        font-size: 4.5vw;
     }
 
     .howItWorksContainer {
@@ -83,19 +131,38 @@
     }
 
     .howItWorksTitle {
-        font-size: 6rem;
+        font-size: 10vw;
         text-align: center;
         margin-bottom: 5rem;
     }
     
     .howItWorksText {
-        font-size: 3rem;
+        font-size: 5vw;
+    }
+
+    .footertext {
+        font-size: 3.5vw;
     }
 }
 
 @media only screen and (max-width: 320px) {
     .login-logo {
         height: 4rem; 
+    }
+
+    .loginText {
+        font-size: 5vw;
+    }
+
+    .card-deck {
+        width: 80%;
+        margin-top: 130vw;
+        margin-left: 10%;
+        padding: 7rem 2rem 5rem 2rem;
+    }
+
+    .card-text {
+        font-size: 7vw;
     }
 
     .howItWorksText {
@@ -108,5 +175,9 @@
 
     #navbarlogo {
         height: 5rem;
+    }
+
+    .footertext {
+        font-size: 5vw;
     }
 }
