@@ -70,7 +70,7 @@ class UserPage extends Component {
         <Nav />
         <h1 className="greeting-text">WELCOME, PLACEHOLDER@PLACEHOLDER.COM.</h1>
         <div className="container-fluid">
-          <h3>ADD RECIPE BY URL</h3>
+          <h3 className="search-title">ADD RECIPE BY URL</h3>
           <form className="row">
             <Input
               value={this.state.recipe_url}
@@ -84,13 +84,13 @@ class UserPage extends Component {
             />
           </form>
 
-          <h3>SEARCH RECIPES</h3>
+          <h3 className="search-title">SEARCH RECIPES</h3>
           <form className="row">
             <Input name="search-recipe" />
             <FormBtn photo={require("../images/search_button.png")} />
           </form>
 
-          <h3>SEARCH BY TAGS</h3>
+          <h3 className="search-title">SEARCH BY TAGS</h3>
           <form className="row">
             <Input name="search-tags" />
             <FormBtn photo={require("../images/tag_search_button.png")} />
