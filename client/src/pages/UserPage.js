@@ -69,7 +69,7 @@ class UserPage extends Component {
       <div>
         <Nav />
         <h1 className="greeting-text">WELCOME, PLACEHOLDER@PLACEHOLDER.COM.</h1>
-        <div className="container-fluid">
+        <div className="container-fluid userpage-container">
           <h3 className="search-title">ADD RECIPE BY URL</h3>
           <form className="row">
             <Input
@@ -103,7 +103,7 @@ class UserPage extends Component {
           alt={"cracked egg"}
           name={"Need to Cook Recipes"}
         />
-        <div className="container">
+        <div className="container-fluid userpage-container">
           <NeedToCookList />
         </div>
 
@@ -113,7 +113,7 @@ class UserPage extends Component {
           alt={"utensils"}
           name={"Completed Recipes"}
         />
-        <div className="container">
+        <div className="container-fluid userpage-container">
           <CompleteList />
         </div>
 

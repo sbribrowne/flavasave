@@ -397,6 +397,14 @@ li {
   margin-top: 4vw;
   margin-bottom: 3vw; }
 
+.userpage-container {
+  width: 80%; }
+
+.search-title {
+  font-family: LeagueGothic, sans-serif;
+  font-size: 2vw;
+  letter-spacing: 0.2rem; }
+
 @media only screen and (max-width: 1690px) {
   /* ===============================================HOME PAGE================================================ */
   .loginBox {
