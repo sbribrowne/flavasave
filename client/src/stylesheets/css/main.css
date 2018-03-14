@@ -521,7 +521,9 @@ li {
 
 .ERTitle {
   font-family: LeagueGothic, sans-serif;
-  color: black; }
+  color: black;
+  font-size: 1.5vw;
+  letter-spacing: 0.2rem; }
 
 .ERSubmit {
   font-family: LeagueGothic, sans-serif;
