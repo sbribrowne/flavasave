@@ -9,7 +9,7 @@ const TextFieldGroup = ({ field, value, label, error, type, onChange }) => {
         "has-error": error
       })}
     >
-      <label htmlFor="control-lable" className="signup-label">
+      <label htmlFor="control-lable">
         {label}
       </label>
       <input

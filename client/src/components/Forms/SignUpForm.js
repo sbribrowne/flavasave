@@ -49,18 +49,18 @@ class SignUpForm extends React.Component {
   render() {
     const { errors } = this.state;
     return (
-      <div className="sign-up-form">
+      <div className="sign-up-form signup-label">
         <form className="signUpForm" onSubmit={this.onSubmit}>
           <TextFieldGroup
             error={errors.email}
-            label="Email"
+            label="E-MAIL"
             onChange={this.onChange}
             value={this.state.email}
             field="email"
           />
           <TextFieldGroup
             error={errors.password}
-            label="Password"
+            label="PASSWORD"
             onChange={this.onChange}
             value={this.state.password}
             field="password"
@@ -71,7 +71,7 @@ class SignUpForm extends React.Component {
             className="btn btn-primary btn-lg signup-button"
             disabled={this.state.isLoading}
           >
-            Sign Up
+            SIGN UP
           </button>
         </form>
       </div>

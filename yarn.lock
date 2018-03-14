@@ -2155,9 +2155,6 @@ request@2.81.0:
     tunnel-agent "^0.6.0"
     uuid "^3.0.0"
 
-<<<<<<< HEAD
-request@^2.81.0, request@^2.83.0:
-=======
 request@^2.81.0:
   version "2.85.0"
   resolved "https://registry.yarnpkg.com/request/-/request-2.85.0.tgz#5a03615a47c61420b3eb99b7dba204f83603e1fa"
@@ -2186,7 +2183,6 @@ request@^2.81.0:
     uuid "^3.1.0"
 
 request@^2.83.0:
->>>>>>> 24a816d94d7629a5d7c605a4a21ce841ab9a6704
   version "2.83.0"
   resolved "https://registry.yarnpkg.com/request/-/request-2.83.0.tgz#ca0b65da02ed62935887808e6f510381034e3356"
   dependencies:

@@ -1,0 +1,56 @@
+.greeting-text {
+    font-family: $header-font;
+    font-size: 2.5vw;
+    color: black;
+    text-align: center;
+    letter-spacing: 0.4rem;
+    margin-top: 4vw;
+    margin-bottom: 1vw;
+}
+
+.userpage-container{
+    width: 80%;
+}
+
+.search-title {
+    font-family: $header-font;
+    color: black;
+    font-size: 2vw;
+    letter-spacing: 0.2rem;
+}
+
+.input-width {
+    width: 90%;
+    height: 2vw;
+    border: none;
+    background-color: $lightgray;
+    float: left;
+}
+
+.search-btn {
+    position: relative;
+    background-color: $green;
+    height: 2vw;
+    width: 5%;
+    border: none;
+    padding: 1rem 2rem 2rem 2rem;
+    margin-top: -10vw;
+    margin-left: 1rem;
+}
+
+.search-btn:hover {
+    background-color: $orange;
+}
+
+.imageClass {
+    height: 2rem;
+    margin-left: 10%;
+}
+
+.tag-search-button {
+    height: 0.5vw;
+}
+
+.orange-box {
+    background-color: $orange;
+}
