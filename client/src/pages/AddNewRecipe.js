@@ -13,59 +13,59 @@ class AddNewRecipe extends Component {
     return (
       <div>
         <NavLogged />
-        <div>
+        <div className="newrecipe-container">
           <h3>Recipe Name</h3>
           <form className="row">
             <div className="recipe-page-col col-sm-11">
               <Input name="recipe-name" />
             </div>
-            <div className="col-sm-1">
-              <FormBtn>Submit</FormBtn>
+            <div className="recipe-page-col col-sm-1">
+              <FormBtn buttonName="SUBMIT" />
             </div>
           </form>
 
           <h3>Serving Size</h3>
           <form className="row">
-            <div className="col-sm-11">
+            <div className="recipe-page-col col-sm-11">
               <Input name="recipe-name" />
             </div>
-            <div className="col-sm-1">
+            <div className="recipe-page-col col-sm-1">
               <FormBtn>Submit</FormBtn>
             </div>
           </form>
 
           <h3>Ingredients</h3>
           <form className="row">
-            <div className="col-sm-3">
+            <div className="recipe-page-col col-sm-3">
               <Input name="amount" />
             </div>
-            <div className="col-sm-1">
+            <div className="recipe-page-col col-sm-1">
               <DropDwn />
             </div>
-            <div className="col-sm-7">
+            <div className="recipe-page-col col-sm-7">
               <Input name="ingredient" />
             </div>
-            <div className="col-sm-1">
+            <div className="recipe-page-col col-sm-1">
               <FormBtn>Submit</FormBtn>
             </div>
           </form>
 
           <h3>Instructions</h3>
           <form className="row">
-            <div className="col-sm-11">
+            <div className="recipe-page-col col-sm-11">
               <Input name="recipe-name" />
             </div>
-            <div className="col-sm-1">
+            <div className="recipe-page-col col-sm-1">
               <FormBtn>Submit</FormBtn>
             </div>
           </form>
 
           <h3>Tags</h3>
           <form className="row">
-            <div className="col-sm-11">
+            <div className="recipe-page-col col-sm-11">
               <Input name="recipe-name" />
             </div>
-            <div className="col-sm-1">
+            <div className="recipe-page-col col-sm-1">
               <FormBtn>Submit</FormBtn>
             </div>
           </form>
