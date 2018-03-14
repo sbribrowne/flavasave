@@ -1,19 +1,20 @@
 import React, { Component } from "react";
-import NavLogged from "../components/Nav/NavLogged.js";
 import Panel from "../components/Panels/Panel.js";
+// import Nav from "../components/Nav/Nav";
+// import Footer from "../components/Footer/Footer";
 import IngredientList from "../components/Lists/IngredientList";
-import FooterLogged from "../components/Footer/FooterLogged.js";
 import API from "../utils/API";
 import "../stylesheets/css/main.css";
 
 class Recipes extends Component {
   state = {
-    recipe: {}
+    recipe: []
   }
 
-  componentDid() {
-    API.getRecipe().then(res => this.setState({ recipe: res.data }));
-  }
+  // componentDidMount() {
+  //   API.getRecipe().then(res => this.setState({ recipe: res.data })
+  // );
+  // }
 
   //Need an editRecipe method
 
@@ -21,10 +22,17 @@ class Recipes extends Component {
 
   //Need a handler for swapping the recipe from NeedtoCook to Complete
 
+
+  // render() {
+  //   return (
+  //     <div>
+  //       {this.state.recipe}
+  //     </div>
+  //   )
+  // }
   render() {
     return (
       <div>
-        <NavLogged />
         <Panel className="recipe-header">
           <h2>RECIPE NAME GOES HERE</h2>
           <p>Serving Size: GOES HERE</p>
@@ -54,7 +62,6 @@ class Recipes extends Component {
           <button>DELETE</button>
           <button>NEED TO COOK|COMPLETE</button>
         </Panel>
-        <FooterLogged />
       </div>
     );
   };

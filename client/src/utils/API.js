@@ -5,10 +5,13 @@ export default {
   // getRecipes: function () {
   //   return axios.get("/api/recipes");
   // },
-  // // Gets the recipe with the given id
-  // getRecipe: function (id) {
-  //   return axios.get(`/api/recipes/${id}`);
-  // },
+  // Gets the recipe with the given id
+  getRecipe: function (id) {
+    return axios.get(`/api/recipes/${id}`)
+      .then( data => {
+        console.log(data);
+      })
+  },
   // Deletes the recipe with the given id
   // deleteRecipe: function (id) {
   //   return axios.delete(`/api/recipes/${id}`);
