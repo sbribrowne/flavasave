@@ -83,6 +83,7 @@ class UserPage extends Component {
               onClick={this.handleFormSubmit}
               photo={require("../images/add_button.png")}
               className="search-btn"
+              imageClass="imageClass"
             />
           </form>
 
@@ -95,6 +96,7 @@ class UserPage extends Component {
             <FormBtn 
             photo={require("../images/search_button.png")} 
             className="search-btn"
+            imageClass="imageClass"
             />
           </form>
 
@@ -107,6 +109,7 @@ class UserPage extends Component {
             <FormBtn 
             photo={require("../images/tag_search_button.png")} 
             className="search-btn"
+            imageClass="tag-search-button"
             />
           </form>
         </div>

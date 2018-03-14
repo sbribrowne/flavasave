@@ -417,6 +417,13 @@ li {
   background-color: #F99E1C;
   height: 2vw; }
 
+.imageClass {
+  height: 1.5vw;
+  float: left; }
+
+.tag-search-button {
+  height: 1vw; }
+
 @media only screen and (max-width: 1690px) {
   /* ===============================================HOME PAGE================================================ */
   .loginBox {
