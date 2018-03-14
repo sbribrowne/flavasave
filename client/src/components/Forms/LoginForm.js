@@ -30,9 +30,11 @@ class LoginForm extends React.Component {
   onSubmit = event => {
     event.preventDefault();
 
-    axios.post("api/login", { email: this.state.email, password: this.state.password });
+    axios.post("api/login", {
+      email: this.state.email,
+      password: this.state.password
+    });
 
-    /*
     if (this.isValid()) {
       this.setState({ errors: {}, isLoading: true });
       this.props.loginAction(this.state).then(
@@ -44,7 +46,6 @@ class LoginForm extends React.Component {
           })
       );
     }
-    */
   };
 
   render() {
@@ -56,8 +57,8 @@ class LoginForm extends React.Component {
             <div className="alert alert-danger">{errors.form}</div>
           )}
           <TextFieldGroup
-            error={errors.username}
-            label="E-MAIL"
+            error={errors.email}
+            label="email"
             onChange={this.onChange}
             value={email}
             field="email"
