@@ -57,7 +57,7 @@ class UserPage extends Component {
   render() {
     return (
       <div>
-        <Nav />
+        <NavLogged />
         <h1 className="greeting-text">WELCOME, TESTING@PLACEHOLDER.COM.</h1>
         <div className="container-fluid userpage-container">
           <h3 className="search-title">ADD RECIPE BY URL</h3>
