@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Nav from "../components/Nav/Nav.js";
+import Nav from "../components/Nav/NavLogged.js";
 import Input from "../components/Forms/Input.js";
 import FormBtn from "../components/Forms/FormBtn.js";
 import DropDwn from "../components/Forms/DropDwn.js";
@@ -61,42 +61,59 @@ class UserPage extends Component {
     return (
       <div>
         <Nav />
-
-        <div className="container">
-          <h3>ADD RECIPE BY URL</h3>
+        <h1 className="greeting-text">WELCOME, PLACEHOLDER@PLACEHOLDER.COM.</h1>
+        <div className="container-fluid userpage-container">
+          <h3 className="search-title">ADD RECIPE BY URL</h3>
           <form className="row">
             <Input
               value={this.state.recipe_url}
               onChange={this.handleInputChange}
               name="recipe_url"
+              className="input-width"
             />
             <FormBtn
               disabled={!(this.state.recipe_url)}
               onClick={this.handleFormSubmit}
               photo={require("../images/add_button.png")}
+              className="search-btn"
+              imageClass="imageClass"
             />
           </form>
 
-          <h3>SEARCH RECIPES</h3>
+          <h3 className="search-title">SEARCH RECIPES</h3>
           <form className="row">
-            <Input name="search-recipe" />
-            <FormBtn photo={require("../images/search_button.png")} />
+            <Input 
+            name="search-recipe" 
+            className="input-width"
+            />
+            <FormBtn 
+            photo={require("../images/search_button.png")} 
+            className="search-btn"
+            imageClass="imageClass"
+            />
           </form>
 
-          <h3>SEARCH BY TAGS</h3>
+          <h3 className="search-title">SEARCH BY TAGS</h3>
           <form className="row">
-            <Input name="search-tags" />
-            <FormBtn photo={require("../images/tag_search_button.png")} />
+            <Input 
+            name="search-tags" 
+            className="input-width"
+            />
+            <FormBtn 
+            photo={require("../images/tag_search_button.png")} 
+            className="search-btn"
+            imageClass="tag-search-button"
+            />
           </form>
         </div>
 
         <OrangeHdr
-          className="container orange-box"
           photo={require("../images/egg_crack_bowl.png")}
           alt={"cracked egg"}
-          name={"Need to Cook Recipes"}
+          name={"NEED TO COOK RECIPES"}
+          className="container-fluid orange-box userpage-container"
         />
-        <div className="container">
+        <div className="container-fluid userpage-container">
           {this.state.recipes.length ? (
             <NeedToCookList>
               {this.state.recipes.map(recipe => (
@@ -116,12 +133,12 @@ class UserPage extends Component {
         </div>
 
         <OrangeHdr
-          className="container orange-box"
           photo={require("../images/fork_knife.png")}
           alt={"utensils"}
-          name={"Completed Recipes"}
+          name={"COMPLETED RECIPES"}
+          className="container-fluid orange-box userpage-container"
         />
-        <div className="container">
+        <div className="container-fluid userpage-container">
           <CompleteList />
         </div>
 

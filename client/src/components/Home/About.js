@@ -3,7 +3,6 @@ import React from "react";
 const About = () => (
   <div className="row card-deck">
     <div className="col-md-4 big-card">
-      <div className="col-md-12 card">
         <img className="card-img-top" src={require('../../images/mitts.png')} alt="Store Image" height = "90" />
         <div className="card-body">
           <h5 className="card-title">STORE.</h5>
@@ -12,10 +11,8 @@ const About = () => (
             just one place with just the URL.
           </p>
         </div>
-      </div>
     </div>
     <div className="col-md-4 big-card">
-    <div className="col-md-12 card">
         <img className="card-img-top" src={require('../../images/spatulas.png')} alt="Organize Image" height = "90" />
         <div className="card-body">
           <h5 className="card-title">ORGANIZE.</h5>
@@ -24,10 +21,8 @@ const About = () => (
             need to be cooked.
           </p>
         </div>
-      </div>
     </div>
     <div className="col-md-4 big-card">
-      <div className="col-md-12 card">
         <img className="card-img-top" src={require('../../images/chef_green.png')} alt="Edit Image" height = "90" />
         <div className="card-body">
           <h5 className="card-title">EDIT.</h5>
@@ -36,7 +31,6 @@ const About = () => (
             ingredients you already have.
           </p>
         </div>
-      </div>
     </div>
   </div>
 );
