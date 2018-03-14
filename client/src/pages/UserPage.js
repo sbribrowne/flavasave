@@ -1,20 +1,19 @@
 import React, { Component } from "react";
-import Nav from "../components/Nav/Nav.js";
+import NavLogged from "../components/Nav/NavLogged";
 import Input from "../components/Forms/Input.js";
 import FormBtn from "../components/Forms/FormBtn.js";
 import DropDwn from "../components/Forms/DropDwn.js";
 import Panel from "../components/Panels/Panel.js";
 import OrangeHdr from "../components/Panels/OrangeHdr.js";
 import NeedToCookList from "../components/Lists/NeedToCookList";
-import NTCListItem from "../components/Lists/NTCListItem"
+import NTCListItem from "../components/Lists/NTCListItem";
 import CompleteList from "../components/Lists/CompleteList";
 import FooterLogged from "../components/Footer/FooterLogged.js";
 import API from "../utils/API";
 import { Link } from "react-router-dom";
-import Buttons from "../components/Buttons/Button.js"
+import Buttons from "../components/Buttons/Button.js";
 
 class UserPage extends Component {
-
   //set inital state of forms to empty
   state = {
     recipes: [],
@@ -27,9 +26,7 @@ class UserPage extends Component {
 
   loadRecipes = () => {
     API.getRecipe()
-      .then(res =>
-        this.setState({ recipe_url: res.data })
-      )
+      .then(res => this.setState({ recipe_url: res.data }))
       .catch(err => console.log(err));
   };
 
@@ -50,7 +47,7 @@ class UserPage extends Component {
     event.preventDefault();
     if (this.state.recipe_url) {
       API.saveRecipe({
-        recipe_url: this.state.recipe_url,
+        recipe_url: this.state.recipe_url
       })
         //.then(res => this.loadRecipes())
         .catch(err => console.log(err));
@@ -60,7 +57,7 @@ class UserPage extends Component {
   render() {
     return (
       <div>
-        <Nav />
+        <NavLogged />
 
         <div className="container">
           <h3>ADD RECIPE BY URL</h3>
@@ -71,7 +68,7 @@ class UserPage extends Component {
               name="recipe_url"
             />
             <FormBtn
-              disabled={!(this.state.recipe_url)}
+              disabled={!this.state.recipe_url}
               onClick={this.handleFormSubmit}
               photo={require("../images/add_button.png")}
             />
@@ -102,17 +99,15 @@ class UserPage extends Component {
               {this.state.recipes.map(recipe => (
                 <NTCListItem key={recipe._id}>
                   <Link to={"/recipes/" + recipe._id}>
-                    <strong>
-                      {recipe.recipe_url}
-                    </strong>
+                    <strong>{recipe.recipe_url}</strong>
                   </Link>
                   <Buttons onClick={() => this.deleteBook(recipe._id)} />
                 </NTCListItem>
               ))}
             </NeedToCookList>
           ) : (
-              <h3>No Results to Display</h3>
-            )}
+            <h3>No Results to Display</h3>
+          )}
         </div>
 
         <OrangeHdr
@@ -129,6 +124,6 @@ class UserPage extends Component {
       </div>
     );
   }
-};
+}
 
 export default UserPage;
