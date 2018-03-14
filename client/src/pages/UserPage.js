@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Nav from "../components/Nav/Nav.js";
+import Nav from "../components/Nav/NavLogged.js";
 import Input from "../components/Forms/Input.js";
 import FormBtn from "../components/Forms/FormBtn.js";
 import DropDwn from "../components/Forms/DropDwn.js";
