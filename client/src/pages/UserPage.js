@@ -57,10 +57,10 @@ class UserPage extends Component {
   render() {
     return (
       <div>
-        <NavLogged />
-
-        <div className="container">
-          <h3>ADD RECIPE BY URL</h3>
+        <Nav />
+        <h1 className="greeting-text">WELCOME, TESTING@PLACEHOLDER.COM.</h1>
+        <div className="container-fluid userpage-container">
+          <h3 className="search-title">ADD RECIPE BY URL</h3>
           <form className="row">
             <div className="form-group">
               <Input
