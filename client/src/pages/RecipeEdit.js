@@ -17,7 +17,7 @@ class AddNewRecipe extends Component {
           <h3 className="ERTitle">RECIPE NAME</h3>
           <form className="row">
             <div className="recipe-page-col col-sm-11">
-              <Input name="recipe-name" />
+              <Input className="ERInput" name="recipe-name" />
             </div>
             <div className="recipe-page-col col-sm-1">
               <FormBtn className="ERSubmit" buttonName="SUBMIT" />
