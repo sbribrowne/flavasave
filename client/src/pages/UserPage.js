@@ -61,7 +61,7 @@ class UserPage extends Component {
     return (
       <div>
         <Nav />
-        <h1 className="greeting-text">WELCOME, PLACEHOLDER@PLACEHOLDER.COM.</h1>
+        <h1 className="greeting-text">WELCOME, TESTING@PLACEHOLDER.COM.</h1>
         <div className="container-fluid userpage-container">
           <h3 className="search-title">ADD RECIPE BY URL</h3>
           <form className="row">
