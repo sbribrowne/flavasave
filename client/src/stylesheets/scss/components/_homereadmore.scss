@@ -3,10 +3,10 @@
     width: 45rem;
     font-family: $header-font;
     letter-spacing: 0.5rem;
-    font-size: 4rem;
+    font-size: 2vw;
     color: white;
-    padding: 2rem 2rem 3rem 2rem;
-    bottom: 17rem;
+    padding: 2rem 2rem 10% 2rem;
+    bottom: 8vw;
     left: -18rem;
     transform: rotate(270deg);
 }
@@ -18,8 +18,9 @@
 
 .readmore-block {
     position: absolute;
-    bottom: 8rem;
-    left: 12rem;
+    white-space: nowrap;
+    bottom: 2vw;
+    left: 8vw;
 }
 
 .readmore-subBlock {
@@ -29,7 +30,7 @@
 }
 .readmore-text {
     font-family: $body-font;
-    font-size: 3rem;
+    font-size: 1.5vw;
     color: white;
     border: 2px solid white;
     transform: rotate(270deg);
@@ -38,6 +39,6 @@
 
 .arrow {
     height: 4rem;
-    margin-top: 12rem;
-    margin-left: 12rem;
+    margin-top: 6vw;
+    margin-left: 6.5vw;
 }

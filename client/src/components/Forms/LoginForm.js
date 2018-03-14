@@ -51,7 +51,7 @@ class LoginForm extends React.Component {
   render() {
     const { errors, email, password, isLoading } = this.state;
     return (
-      <div className="sign-up-form">
+      <div className="sign-up-form form-text">
         <form className="loginForm" onSubmit={this.onSubmit}>
           {errors.form && (
             <div className="alert alert-danger">{errors.form}</div>
@@ -65,7 +65,7 @@ class LoginForm extends React.Component {
           />
           <TextFieldGroup
             error={errors.password}
-            label="Password"
+            label="PASSWORD"
             onChange={this.onChange}
             value={password}
             field="password"
