@@ -3,6 +3,7 @@ import Input from "../components/Forms/Input.js";
 import FormBtn from "../components/Forms/FormBtn.js";
 import DropDwn from "../components/Forms/DropDwn.js";
 import NavLogged from "../components/Nav/NavLogged.js";
+import FooterLogged from "../components/Footer/FooterLogged.js";
 
 class AddNewRecipe extends Component {
   //Need method for handling input submit for
@@ -69,7 +70,12 @@ class AddNewRecipe extends Component {
               <FormBtn className="ERSubmit" buttonName="SUBMIT" />
             </div>
           </form>
+
+          <button className="btn ingredient-btn recipeEdit" type="button">EDIT</button>
+          <button className="btn ingredient-btn recipeDelete" type="button">DELETE</button>
+          <button className="btn ingredient-btn recipeComplete" type="button">NEED TO COOK | RECIPE COMPLETE</button>
         </div>
+        <FooterLogged />
       </div>
     );
   }
