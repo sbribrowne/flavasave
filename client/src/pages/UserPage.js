@@ -140,7 +140,7 @@ class UserPage extends Component {
         </div>
         
         <div className="container-fluid userpage-container">
-          <button className="btn ingredient-btn recipeEdit" type="button">ADD RECIPE MANUALLY</button>
+          <button className="btn manual-add-btn" type="button">ADD RECIPE MANUALLY</button>
         </div>
 
         <FooterLogged />
