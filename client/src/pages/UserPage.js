@@ -127,7 +127,7 @@ class UserPage extends Component {
               {this.state.recipes.map(recipe => (
                   <NTCListItem key={recipe.id}>
                       <div className='col-md-4 table-item recipe-name'>
-                        <Link className="table-item" to={"/recipes/" + recipe.id}>
+                        <Link className="table-item" to={"/recipe/" + recipe.id}>
                           {recipe.recipe_name}
                         </Link>
                       </div>
@@ -137,7 +137,7 @@ class UserPage extends Component {
                         </Link>
                       </div>
                       <div class='col-md-3 recipe-buttons'>
-                        <Link className="btn btn-sm up-edit-button" to={"/newRecipe/" + recipe.id}> Edit </Link>
+                        <Link className="btn btn-sm up-edit-button" to={"/recipeedit/" + recipe.id}> Edit </Link>
                         <Buttons onClick={() => this.deleteRecipe(recipe.id)} />
                       </div>
                   </NTCListItem>
