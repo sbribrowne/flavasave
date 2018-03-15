@@ -83,7 +83,7 @@ class UserPage extends Component {
                 onClick={this.handleFormSubmit}
                 photo={require("../images/add_button.png")}
                 className="search-btn"
-                imageClass="imageClass"
+                imageclass="imageClass"
               />
             </div>
           </form>
@@ -95,7 +95,7 @@ class UserPage extends Component {
               <FormBtn
                 photo={require("../images/search_button.png")}
                 className="search-btn"
-                imageClass="imageClass"
+                imageclass="imageClass"
               />
             </div>
           </form>
@@ -107,7 +107,7 @@ class UserPage extends Component {
               <FormBtn
                 photo={require("../images/tag_search_button.png")}
                 className="search-btn"
-                imageClass="tag-search-button"
+                imageclass="tag-search-button"
               />
             </div>
           </form>
@@ -118,7 +118,7 @@ class UserPage extends Component {
           alt={"cracked egg"}
           name={"NEED TO COOK RECIPES"}
           className="container-fluid orange-box userpage-container"
-          orangeHdrImageClass="header-image-class"
+          orangehdrimageclass="header-image-class"
         />
         <div className="container-fluid userpage-container">
           {this.state.recipes.length ? (
@@ -150,7 +150,7 @@ class UserPage extends Component {
           alt={"utensils"}
           name={"COMPLETED RECIPES"}
           className="container-fluid orange-box userpage-container"
-          orangeHdrImageClass="header-image-class"
+          orangehdrimageclass="header-image-class"
         />
         <div className="container-fluid userpage-container">
           <CompleteList />
