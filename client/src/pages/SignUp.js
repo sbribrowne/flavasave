@@ -14,7 +14,7 @@ class SignUp extends React.Component {
         <Nav />
         <div className="container-fluid">
           <div className="row">
-            <div className="col-md-4 signup-info">
+            <div className="col-md-4" id="signup-info">
               <img src={require("../images/chef_white.png")} height="180" />
               <br />
               <h1 className="signup-header">START COOKING</h1>

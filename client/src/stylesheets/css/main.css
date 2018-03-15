@@ -1,3 +1,7 @@
+* {
+  outline: 0px !important;
+  -webkit-appearance: none; }
+
 /* FONTS */
 @font-face {
   font-family: PathwaysRough;
@@ -97,15 +101,15 @@
 
 .navbar-right {
   font-family: LeagueGothic, sans-serif;
-  padding-right: 10rem;
+  padding-right: 8vw;
   padding-top: 3rem; }
 
 .navbar-brand {
-  padding-left: 10rem; }
+  padding-left: 8vw; }
 
 .nav-item {
   color: #1E401D;
-  font-size: 3rem;
+  font-size: 2vw;
   letter-spacing: 0.4rem;
   margin-left: 3rem; }
 
@@ -118,20 +122,23 @@
   position: absolute;
   background-color: #E44125;
   width: 70%;
-  padding: 3em 7em 3em 6em;
+  padding: 2em 7em 2em 6em;
   opacity: 0.93;
   right: 0;
-  margin-top: 4rem; }
+  margin-top: 1vw; }
+
+.login-logo {
+  height: 5vw; }
 
 .loginSubTitle {
   font-family: PeleguerItalic, serif;
-  font-size: 4rem;
+  font-size: 2vw;
   color: white;
   letter-spacing: 0.5rem; }
 
 .loginTitle {
   font-family: LeagueGothic, sans-serif;
-  font-size: 7rem;
+  font-size: 4vw;
   letter-spacing: 0.5rem;
   color: white;
   margin-top: 3rem; }
@@ -139,7 +146,7 @@
 .form-text {
   font-family: Peleguer, serif;
   color: white;
-  font-size: 2rem;
+  font-size: 1.3vw;
   letter-spacing: 0.75rem;
   margin-top: 2%; }
 
@@ -148,6 +155,7 @@
 
 .login-button {
   font-family: LeagueGothic, sans-serif;
+  font-size: 1.5vw;
   letter-spacing: 0.22rem;
   background-color: #F99E1C;
   border: none;
@@ -161,7 +169,7 @@
 
 .loginText {
   font-family: PeleguerItalic, serif;
-  font-size: 2rem;
+  font-size: 1.5vw;
   letter-spacing: 0.4rem;
   color: white; }
 
@@ -177,10 +185,10 @@
   width: 45rem;
   font-family: LeagueGothic, sans-serif;
   letter-spacing: 0.5rem;
-  font-size: 4rem;
+  font-size: 2vw;
   color: white;
-  padding: 2rem 2rem 3rem 2rem;
-  bottom: 17rem;
+  padding: 2rem 2rem 10% 2rem;
+  bottom: 8vw;
   left: -18rem;
   transform: rotate(270deg); }
 
@@ -190,8 +198,9 @@
 
 .readmore-block {
   position: absolute;
-  bottom: 8rem;
-  left: 12rem; }
+  white-space: nowrap;
+  bottom: 2vw;
+  left: 8vw; }
 
 .readmore-subBlock {
   -webkit-animation: slideIn 2s forwards, bounce 6s 2s infinite;
@@ -200,7 +209,7 @@
 
 .readmore-text {
   font-family: Peleguer, serif;
-  font-size: 3rem;
+  font-size: 1.5vw;
   color: white;
   border: 2px solid white;
   transform: rotate(270deg);
@@ -208,42 +217,38 @@
 
 .arrow {
   height: 4rem;
-  margin-top: 12rem;
-  margin-left: 12rem; }
+  margin-top: 6vw;
+  margin-left: 6.5vw; }
 
 .aboutHeader {
   font-family: LeagueGothic, sans-serif;
-  font-size: 10rem;
+  font-size: 6vw;
   letter-spacing: 1.5rem;
   color: white;
-  margin-left: 16%;
-  margin-top: 80rem;
-  margin-bottom: 1%; }
+  margin-left: 12.5%;
+  margin-top: 48vw;
+  margin-bottom: 2%; }
 
 .card-deck {
-  width: 70%;
-  margin-left: 15%; }
+  width: 75%;
+  margin-left: 12.5%;
+  background-color: white;
+  padding: 7rem 4rem 5rem 4rem; }
 
 .big-card {
   background: none;
   border: none; }
 
-.card {
-  background-color: white;
-  opacity: 0.97;
-  padding: 6rem 4rem 3rem 4rem;
-  border: none; }
-
 .card-title {
   font-family: LeagueGothic, sans-serif;
   color: #1E401D;
-  font-size: 6rem;
+  font-size: 4vw;
   text-align: center;
   margin-top: 3rem; }
 
 .card-text {
   font-family: Peleguer, serif;
-  font-size: 2.75rem;
+  font-size: 1.5vw;
   text-align: center;
   margin-top: 2rem;
   margin-bottom: 4rem; }
@@ -261,15 +266,15 @@
 .howItWorksTitle {
   font-family: LeagueGothic, sans-serif;
   color: #1E401D;
-  font-size: 10rem;
+  font-size: 6vw;
   letter-spacing: 0.3rem;
   text-align: center;
-  margin-bottom: 2%; }
+  margin-bottom: 4%; }
 
 .howItWorksText {
   font-family: PeleguerBold, serif;
   color: #1E401D;
-  font-size: 4rem; }
+  font-size: 2vw; }
 
 footer {
   background-color: white;
@@ -279,7 +284,7 @@ footer {
 .footertext {
   font-family: LeagueGothic, sans-serif;
   color: #1E401D;
-  font-size: 3rem;
+  font-size: 2vw;
   letter-spacing: 0.4rem;
   letter-spacing: 0.3rem;
   padding-right: 6rem;
@@ -313,20 +318,20 @@ li {
   background-attachment: fixed;
   background-size: 100%; }
 
-.signup-info {
+#signup-info {
   background-color: #90bb5e;
-  padding: 18rem 12rem 23rem 6rem; }
+  padding: 9vw 3rem 8vw 6rem; }
 
 .signup-header {
   font-family: LeagueGothic, sans-serif;
-  font-size: 8rem;
+  font-size: 3.5vw;
   letter-spacing: 0.4rem;
   color: white;
   margin-top: 6rem; }
 
 .signup-text {
   font-family: PeleguerItalic, serif;
-  font-size: 4rem;
+  font-size: 2.5vw;
   letter-spacing: 0.6rem;
   color: white; }
 
@@ -338,7 +343,7 @@ li {
   margin-bottom: 3rem; }
 
 .signup-form {
-  padding: 2.5rem 6rem 4rem 6rem;
+  padding: 6.5vw 6rem 4rem 6rem;
   background: none;
   border: none; }
 
@@ -372,10 +377,271 @@ li {
 .signup-footer {
   text-align: right; }
 
+.logged-navbar {
+  background-color: #E44125;
+  border-radius: 0;
+  height: 10rem; }
+
+.logged-nav-item {
+  color: white;
+  font-size: 1.5vw;
+  letter-spacing: 0.4rem;
+  margin-bottom: 3rem; }
+
+.logged-nav-item:hover {
+  text-decoration: none;
+  color: #1E401D;
+  font-size: 4rem; }
+
+.greeting-text {
+  font-family: LeagueGothic, sans-serif;
+  font-size: 3.5vw;
+  color: #121210;
+  text-align: center;
+  letter-spacing: 0.2rem;
+  margin-top: 4vw;
+  margin-bottom: 3vw; }
+
+.userpage-container {
+  width: 70%; }
+
+.search-title {
+  font-family: LeagueGothic, sans-serif;
+  color: #121210;
+  font-size: 1.5vw;
+  letter-spacing: 0.4rem;
+  margin-left: -1rem; }
+
+.input-width {
+  font-family: Peleguer, serif;
+  font-size: 1.5vw;
+  width: 93%;
+  height: 2vw;
+  border: none;
+  background-color: #e1dedc;
+  float: left;
+  padding-left: 2rem; }
+
+.search-btn {
+  position: relative;
+  background-color: #90bb5e;
+  height: 2vw;
+  width: 7%;
+  border: none;
+  padding: 0.3vw 2rem 0.1vw 2rem; }
+
+.search-btn:hover {
+  background-color: #1E401D; }
+
+.imageClass {
+  height: 1vw;
+  margin-left: 0.25vw;
+  padding: 0; }
+
+.tag-search-button {
+  height: 0.3vw; }
+
+.orange-box {
+  background-color: #F99E1C;
+  padding: 1rem 0rem 0.5rem 0rem;
+  margin-top: 4%; }
+
+.orangeHdrTitle {
+  font-family: LeagueGothic, sans-serif;
+  font-size: 2.5vw;
+  color: white;
+  letter-spacing: 0.3rem; }
+
+.header-image-class {
+  height: 4vw;
+  float: left;
+  padding-top: 1rem;
+  margin-left: 22vw;
+  margin-right: 5rem; }
+
+.col-md-4 {
+  background-color: transparent;
+  border: none; }
+
+.table-header {
+  font-family: LeagueGothic, sans-serif;
+  color: #121210;
+  font-size: 2.25vw;
+  letter-spacing: 0.3rem; }
+
+.table-item {
+  font-family: Peleguer, serif;
+  font-size: 3.5rem; }
+
+.userpage-buttons {
+  font-family: Peleguer, serif; }
+
+.up-edit-button {
+  color: black;
+  font-size: 2rem;
+  padding: 0.5rem 2rem 0 2rem;
+  background-color: transparent;
+  border: 0.25px solid #e1dedc;
+  border-radius: 0; }
+
+.up-edit-button:hover {
+  border-radius: 0;
+  background-color: #1E401D;
+  border: none; }
+
+.up-delete-button {
+  color: black;
+  margin-left: 4rem;
+  font-size: 2rem;
+  padding: 0.5rem 2rem 0 2rem;
+  background-color: transparent;
+  border: 0.25px solid #e1dedc;
+  border-radius: 0; }
+
+.up-delete-button:hover {
+  border-radius: 0; }
+
+.manual-add-btn {
+  font-family: LeagueGothic, sans-serif;
+  font-size: 1vw;
+  letter-spacing: 0.2rem;
+  color: white;
+  background-color: #90bb5e;
+  border-radius: 0;
+  margin-top: 3%;
+  padding-left: 3rem;
+  padding-right: 3rem; }
+
+.manual-add-btn:hover {
+  background-color: #1E401D; }
+
+* {
+  outline: 0px !important;
+  -webkit-appearance: none; }
+
+.recipe-header {
+  font-family: LeagueGothic, sans-serif;
+  background-color: #e1dedc; }
+
+.recipe-title {
+  font-family: LeagueGothic, sans-serif; }
+
+.editrecipe-container {
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 4%; }
+
+.recipe-page-col {
+  background-color: transparent;
+  border: none; }
+
+.ERTitle {
+  font-family: LeagueGothic, sans-serif;
+  color: black;
+  font-size: 1.5vw;
+  letter-spacing: 0.2rem; }
+
+.ERSubmit {
+  font-family: LeagueGothic, sans-serif;
+  font-size: 0.85vw;
+  letter-spacing: 0.2rem;
+  color: white;
+  background-color: #F99E1C;
+  border: none;
+  padding: 0.5vw 2rem 0vw 2rem; }
+
+.ERSubmit:hover {
+  background-color: #1E401D; }
+
+.ERInput {
+  width: 100%;
+  height: 2.5vw;
+  box-shadow: none;
+  border: 0.5px solid #e1dedc;
+  padding-left: 2rem; }
+
+.drop-down {
+  font-size: 0.75vw;
+  text-align: center;
+  width: 100%;
+  padding: 0.75vw 2rem 0.75vw 2rem;
+  border: 0.5px solid #e1dedc;
+  border-radius: 0;
+  background-color: transparent; }
+
+.ingredient-btn {
+  font-family: LeagueGothic, sans-serif;
+  font-size: 1vw;
+  letter-spacing: 0.2rem;
+  color: white;
+  background-color: #E44125;
+  border-radius: 0;
+  margin-top: 3%;
+  padding-left: 3rem;
+  padding-right: 3rem; }
+
+.ingredient-btn:hover {
+  background-color: #1E401D; }
+
+.recipeDelete {
+  margin-left: 3%; }
+
+.recipeComplete {
+  margin-left: 3%; }
+
+@media only screen and (max-width: 1690px) {
+  /* ===============================================HOME PAGE================================================ */
+  .loginBox {
+    margin-top: -2.5vw; } }
+@media only screen and (max-width: 1280px) {
+  /* ===============================================HOME PAGE================================================ */
+  .loginBox {
+    padding: 2em 7em 2em 4em;
+    margin-top: -3.3vw; }
+
+  .readmore-description {
+    bottom: 13vw; }
+
+  .arrow {
+    margin-top: 7vw;
+    margin-left: 8vw; } }
 @media only screen and (max-width: 980px) {
   /* ===============================================HOME PAGE================================================ */
+  .loginBox {
+    padding: 2em 7em 2em 4em;
+    margin-top: -4.3vw; }
+
+  .loginSubTitle {
+    font-size: 2.5vw; }
+
   .readmore-block {
-    display: none; } }
+    display: none; }
+
+  .aboutHeader {
+    margin-left: 30%;
+    margin-top: 55vw;
+    margin-bottom: 2%; }
+
+  .card-deck {
+    width: 40%;
+    margin-left: 30%;
+    padding: 7rem 4rem 5rem 4rem; }
+
+  .card-text {
+    font-size: 2.5vw; }
+
+  /* ===============================================SIGN UP PAGE================================================ */
+  .signup-header {
+    font-size: 8vw; }
+
+  .signup-text {
+    font-size: 4vw; }
+
+  .signup-title {
+    font-size: 8vw; }
+
+  .signup-label {
+    font-size: 2rem; } }
 @media only screen and (max-width: 736px) {
   /* ===============================================HOME PAGE================================================ */
   .aboutHeader {
@@ -387,8 +653,7 @@ li {
     margin-top: -4rem; }
 
   .card-deck {
-    margin-top: 70rem;
-    margin-left: 15%; }
+    margin-top: 60vw; }
 
   #footerleft {
     display: none; } }
@@ -398,7 +663,7 @@ li {
     background: none; }
 
   .login-logo {
-    height: 8rem; }
+    display: none; }
 
   .loginBox {
     padding: 2em 4em 2em 4em; }
@@ -409,26 +674,60 @@ li {
   .loginTitle {
     font-size: 4rem; }
 
-  .card-deck {
-    margin-top: 55rem; }
+  .loginText {
+    font-size: 3vw; }
 
-  .card {
-    padding: 3rem 1rem 2rem 1rem; }
+  .form-text {
+    font-size: 4vw; }
+
+  .login-button {
+    font-size: 4vw; }
+
+  .card-deck {
+    width: 60%;
+    margin-top: 90vw;
+    margin-left: 20%;
+    padding: 7rem 4rem 5rem 4rem; }
+
+  .card-title {
+    font-size: 8vw; }
+
+  .card-text {
+    font-size: 4.5vw; }
 
   .howItWorksContainer {
     margin-top: 0%;
     padding: 8rem 15% 8rem 15%; }
 
   .howItWorksTitle {
-    font-size: 6rem;
+    font-size: 10vw;
     text-align: center;
     margin-bottom: 5rem; }
 
   .howItWorksText {
-    font-size: 3rem; } }
+    font-size: 5vw; }
+
+  .footertext {
+    font-size: 3.5vw; }
+
+  /* ===============================================SIGN UP PAGE================================================ */
+  .signup-text {
+    font-size: 6vw; } }
 @media only screen and (max-width: 320px) {
   .login-logo {
     height: 4rem; }
+
+  .loginText {
+    font-size: 5vw; }
+
+  .card-deck {
+    width: 80%;
+    margin-top: 130vw;
+    margin-left: 10%;
+    padding: 7rem 2rem 5rem 2rem; }
+
+  .card-text {
+    font-size: 7vw; }
 
   .howItWorksText {
     font-size: 2rem; }
@@ -437,6 +736,13 @@ li {
     padding-left: 3rem; }
 
   #navbarlogo {
-    height: 5rem; } }
+    height: 5rem; }
+
+  .footertext {
+    font-size: 5vw; }
+
+  /* ===============================================SIGN UP PAGE================================================ */
+  .signup-text {
+    display: none; } }
 
 /*# sourceMappingURL=main.css.map */

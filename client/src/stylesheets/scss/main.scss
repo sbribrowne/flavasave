@@ -1,5 +1,13 @@
+* {
+    outline:0px !important;
+    -webkit-appearance:none;
+}
+
 @import './resources/_fontsandcolors';
 @import './resources/_animations';
 @import './pages/_home';
 @import './pages/_signup';
+@import './pages/_userpage';
+@import './pages/_recipepage';
+@import './pages/_recipeeditpage';
 @import './resources/_mediaqueries'

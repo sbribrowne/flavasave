@@ -7,7 +7,6 @@ const Login = () => (
       className="login-logo"
       src={require("../../images/logo_white.png")}
       alt="Store Image"
-      height="120"
     />
     <h3 className="loginSubTitle">Your One-Stop Recipe Library.</h3>
     <h4 className="loginTitle">LOGIN</h4>
