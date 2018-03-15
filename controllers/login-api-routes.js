@@ -2,36 +2,65 @@
 const db = require("../models");
 const passport = require("../config/passport");
 const validateInput = require("../scripts/validations/signup");
+const isEmpty = require("lodash.isempty");
 
 module.exports = function(app) {
-  // Using the passport.authenticate middleware with our local strategy.
-  // If the user has valid login credentials, send them to the members page.
-  // Otherwise the user will be sent an error
-  app.post("/api/login", passport.authenticate("local"), function(req, res) {
-    // Since we're doing a POST with javascript, we can't actually redirect that post into a GET request
-    // So we're sending the user back the route to the members page because the redirect will happen on the front end
-    // They won't get this or even be able to access this page if they aren't authed
-    res.send(req.body); //redirect?
-    console.log(req.body);
+  // High order function to first check if there is an existing user email
+  function validateInputQuery(data, otherValid) {
+    let { errors } = otherValid(data);
+
+    return db.User.findOne({
+      where: { email: data.email }
+    }).then(function(user) {
+      if (user) {
+        if (user.get("email") === data.email) {
+          errors.email = "Sorry, this E-mail is already taken";
+        }
+      }
+      return { errors, isValid: isEmpty(errors) };
+    });
+  }
+
+  // Route for signing up a user, use validateInputQuery function first to identify exisitng email then if valid, continue to db to create user
+  app.post("/api/signup", function(req, res) {
+    validateInputQuery(req.body, validateInput).then(({ errors, isValid }) => {
+      if (isValid) {
+        // console.log(req.body);
+        const { firstname, lastname, username, email, password } = req.body;
+
+        db.User.create({ email, password })
+          .then(function() {
+            res.redirect(307, "/api/login");
+          })
+          .catch(function(err) {
+            console.log(err);
+            res.json(err);
+            // res.status(422).json(err.errors[0].message);
+          });
+      } else {
+        res.status(400).json(errors);
+      }
+    });
   });
 
-  // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
-  // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
-  // otherwise send back an error
-  app.post("/api/signup", function(req, res) {
-    console.log(req.body);
-    db.User.create({
-      email: req.body.email,
-      password: req.body.password
-    })
-      .then(function() {
-        res.redirect(307, "/api/login");
-      })
-      .catch(function(err) {
-        console.log(err);
-        res.json(err);
-        // res.status(422).json(err.errors[0].message);
-      });
+  // Using the passport.authenticate middleware and callback with our local strategy.
+  // If the user has invalid login credentials, send status 401 with form message, if user is not invalid, try login again and send user data
+  app.post("/api/login", function(req, res, next) {
+    passport.authenticate("local", function(err, user, info) {
+      if (err) {
+        return next(err);
+      }
+      if (!user) {
+        return res.status(401).send({ form: "Invalid Credentials" });
+      } else {
+        req.logIn(user, function(err) {
+          if (err) {
+            return next(err);
+          }
+          return res.send(req.user);
+        });
+      }
+    })(req, res, next);
   });
 
   // Route for logging user out
