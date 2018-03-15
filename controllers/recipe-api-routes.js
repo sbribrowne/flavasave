@@ -132,6 +132,7 @@ module.exports = function (app) {
                     db.Recipe.create({
                             recipe_url: newUrl,
                             recipe_name: $("title").text().trim().substr(0, 60),
+                            recipe_notes: " ",
                             UserId: req.user.id //get user
                         })
                         .then(function (responseRecipe) {
@@ -170,7 +171,7 @@ module.exports = function (app) {
                                                 recipeName: responseRecipe.recipe_name,
                                                 recipeUrl: `/recipe/${responseRecipe.id}`
                                             });*/ //returns Response object
-                                            res.redirect(`/recipes/${responseRecipe.id}`);
+                                            res.send(`/recipe/${responseRecipe.id}`);
 
                                         })
                                         .catch(function (error) {
