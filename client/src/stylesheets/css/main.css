@@ -443,7 +443,7 @@ li {
 
 .orange-box {
   background-color: #F99E1C;
-  padding: 1rem 0rem 0.5rem 0rem;
+  padding: 0.25rem 0rem 0.25rem 0rem;
   margin-top: 4%; }
 
 .orangeHdrTitle {
@@ -453,9 +453,10 @@ li {
   letter-spacing: 0.3rem; }
 
 .header-image-class {
-  height: 4vw;
+  height: 6rem;
   float: left;
   padding-top: 1rem;
+  padding-bottom: 0.25rem;
   margin-left: 22vw;
   margin-right: 5rem; }
 
