@@ -1,20 +1,21 @@
 import React, { Component } from "react";
-import Nav from "../components/Nav/Nav.js";
+import NavLogged from "../components/Nav/NavLogged";
 import Input from "../components/Forms/Input.js";
 import FormBtn from "../components/Forms/FormBtn.js";
 import DropDwn from "../components/Forms/DropDwn.js";
 import Panel from "../components/Panels/Panel.js";
 import OrangeHdr from "../components/Panels/OrangeHdr.js";
 import NeedToCookList from "../components/Lists/NeedToCookList";
-import NTCListItem from "../components/Lists/NTCListItem"
+import NTCListItem from "../components/Lists/NTCListItem";
 import CompleteList from "../components/Lists/CompleteList";
 import FooterLogged from "../components/Footer/FooterLogged.js";
 import API from "../utils/API";
 import { Link } from "react-router-dom";
 import Buttons from "../components/Buttons/Button.js"
+import EditBtn from "../components/Buttons/EditBtn.js";
+
 
 class UserPage extends Component {
-
   //set inital state of forms to empty
   state = {
     recipes: [],
@@ -23,12 +24,16 @@ class UserPage extends Component {
 
   componentDidMount() {
     this.loadRecipes();
+    console.log(this.state.recipes);
   }
 
   loadRecipes = () => {
-    API.getRecipe()
-      .then(res =>
-        this.setState({ recipe_url: res.data })
+    API.getRecipes()
+      .then((res) => {
+        this.setState({ recipes: res.data })
+        console.log(res);
+        console.log(this.state.recipes);
+      }
       )
       .catch(err => console.log(err));
   };
@@ -50,9 +55,10 @@ class UserPage extends Component {
     event.preventDefault();
     if (this.state.recipe_url) {
       API.saveRecipe({
-        recipe_url: this.state.recipe_url,
+        recipe_url: this.state.recipe_url
       })
-        //.then(res => this.loadRecipes())
+        .then(res => this.loadRecipes())
+        //.then(res => { window.location.href = "http://localhost:3000" + res.data; } )
         .catch(err => console.log(err));
     }
   };
@@ -60,75 +66,104 @@ class UserPage extends Component {
   render() {
     return (
       <div>
-        <Nav />
-
-        <div className="container">
-          <h3>ADD RECIPE BY URL</h3>
+        <NavLogged />
+        <h1 className="greeting-text">WELCOME, TESTING@PLACEHOLDER.COM.</h1>
+        <div className="container-fluid userpage-container">
+          <h3 className="search-title">ADD RECIPE BY URL</h3>
           <form className="row">
-            <Input
-              value={this.state.recipe_url}
-              onChange={this.handleInputChange}
-              name="recipe_url"
-            />
-            <FormBtn
-              disabled={!(this.state.recipe_url)}
-              onClick={this.handleFormSubmit}
-              photo={require("../images/add_button.png")}
-            />
+            <div className="form-group">
+              <Input
+                value={this.state.recipe_url}
+                onChange={this.handleInputChange}
+                name="recipe_url"
+                className="input-width"
+              />
+              <FormBtn
+                disabled={!this.state.recipe_url}
+                onClick={this.handleFormSubmit}
+                photo={require("../images/add_button.png")}
+                className="search-btn"
+                imageClass="imageClass"
+              />
+            </div>
           </form>
 
-          <h3>SEARCH RECIPES</h3>
+          <h3 className="search-title">SEARCH RECIPES</h3>
           <form className="row">
-            <Input name="search-recipe" />
-            <FormBtn photo={require("../images/search_button.png")} />
+            <div className="form-group">
+              <Input name="search-recipe" className="input-width" />
+              <FormBtn
+                photo={require("../images/search_button.png")}
+                className="search-btn"
+                imageClass="imageClass"
+              />
+            </div>
           </form>
 
-          <h3>SEARCH BY TAGS</h3>
+          <h3 className="search-title">SEARCH BY TAGS</h3>
           <form className="row">
-            <Input name="search-tags" />
-            <FormBtn photo={require("../images/tag_search_button.png")} />
+            <div className="form-group">
+              <Input name="search-tags" className="input-width" />
+              <FormBtn
+                photo={require("../images/tag_search_button.png")}
+                className="search-btn"
+                imageClass="tag-search-button"
+              />
+            </div>
           </form>
         </div>
 
         <OrangeHdr
-          className="container orange-box"
           photo={require("../images/egg_crack_bowl.png")}
           alt={"cracked egg"}
-          name={"Need to Cook Recipes"}
+          name={"NEED TO COOK RECIPES"}
+          className="container-fluid orange-box userpage-container"
+          orangeHdrImageClass="header-image-class"
         />
-        <div className="container">
+        <div className="container-fluid userpage-container">
           {this.state.recipes.length ? (
             <NeedToCookList>
-              {this.state.recipes.map(recipe => (
-                <NTCListItem key={recipe._id}>
-                  <Link to={"/recipes/" + recipe._id}>
-                    <strong>
-                      {recipe.recipe_url}
-                    </strong>
+              {/* {this.state.recipes.map(recipe => (
+                <NTCListItem key={recipe.id}>
+                  <Link to={"/recipes/" + recipe.id}>
+                    <div className='col-md-4 table-item'>
+                      {recipe.recipe_name}
+                    </div>
                   </Link>
-                  <Buttons onClick={() => this.deleteBook(recipe._id)} />
+                  <div className='col-md-4 table-item'>
+                    {recipe.recipe_url}
+                  </div>
+                  <div class='col-md-4'>
+                    <Link className="userpage-buttons" to={"/newRecipe/" + recipe.id}> Edit </Link>
+                    <Buttons onClick={() => this.deleteRecipe(recipe.id)} />
+                  </div>
                 </NTCListItem>
-              ))}
+              ))} */}
             </NeedToCookList>
           ) : (
-              <h3>No Results to Display</h3>
+              <h1 className="table-item">No Results to Display</h1>
             )}
         </div>
 
         <OrangeHdr
-          className="container orange-box"
           photo={require("../images/fork_knife.png")}
           alt={"utensils"}
-          name={"Completed Recipes"}
+          name={"COMPLETED RECIPES"}
+          className="container-fluid orange-box userpage-container"
+          orangeHdrImageClass="header-image-class"
         />
-        <div className="container">
+        <div className="container-fluid userpage-container">
           <CompleteList />
         </div>
 
+        <div className="container-fluid userpage-container">
+          <button className="btn manual-add-btn" type="button">ADD RECIPE MANUALLY</button>
+        </div>
+
         <FooterLogged />
-      </div>
+      </div >
     );
   }
-};
+}
 
 export default UserPage;

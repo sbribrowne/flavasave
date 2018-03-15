@@ -8,7 +8,7 @@ import axios from "axios";
 
 class LoginForm extends React.Component {
   state = {
-    username: "",
+    email: "",
     password: "",
     errors: {},
     isLoading: false
@@ -30,9 +30,11 @@ class LoginForm extends React.Component {
   onSubmit = event => {
     event.preventDefault();
 
-    axios.post("api/login", { email: this.state.username, password: this.state.password });
+    axios.post("api/login", {
+      email: this.state.email,
+      password: this.state.password
+    });
 
-    /*
     if (this.isValid()) {
       this.setState({ errors: {}, isLoading: true });
       this.props.loginAction(this.state).then(
@@ -44,27 +46,26 @@ class LoginForm extends React.Component {
           })
       );
     }
-    */
   };
 
   render() {
-    const { errors, username, password, isLoading } = this.state;
+    const { errors, email, password, isLoading } = this.state;
     return (
-      <div className="sign-up-form">
+      <div className="sign-up-form form-text">
         <form className="loginForm" onSubmit={this.onSubmit}>
           {errors.form && (
             <div className="alert alert-danger">{errors.form}</div>
           )}
           <TextFieldGroup
-            error={errors.username}
-            label="Username"
+            error={errors.email}
+            label="E-MAIL"
             onChange={this.onChange}
-            value={username}
-            field="username"
+            value={email}
+            field="email"
           />
           <TextFieldGroup
             error={errors.password}
-            label="Password"
+            label="PASSWORD"
             onChange={this.onChange}
             value={password}
             field="password"

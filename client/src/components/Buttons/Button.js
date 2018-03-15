@@ -1,9 +1,8 @@
 import React from "react";
 
-const Buttons = () => (
-  <span>
-    <button className="btn btn-success btn-sm">Edit</button>
-    <button className="btn btn-danger btn-sm">Delete</button>
+const Buttons = props => (
+  <span className="userpage-buttons">
+    <button className="btn btn-danger btn-sm" {...props}>Delete</button>
   </span>
 );
 
