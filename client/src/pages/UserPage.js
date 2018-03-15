@@ -123,7 +123,7 @@ class UserPage extends Component {
         <div className="container-fluid userpage-container">
           {this.state.recipes.length ? (
             <NeedToCookList>
-              {/* {this.state.recipes.map(recipe => (
+              {this.state.recipes.map(recipe => (
                 <NTCListItem key={recipe.id}>
                   <Link to={"/recipes/" + recipe.id}>
                     <div className='col-md-4 table-item'>
@@ -138,7 +138,7 @@ class UserPage extends Component {
                     <Buttons onClick={() => this.deleteRecipe(recipe.id)} />
                   </div>
                 </NTCListItem>
-              ))} */}
+              ))}
             </NeedToCookList>
           ) : (
               <h1 className="table-item">No Results to Display</h1>
