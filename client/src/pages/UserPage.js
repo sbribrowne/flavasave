@@ -125,22 +125,22 @@ class UserPage extends Component {
           {this.state.recipes.length ? (
             <NeedToCookList>
               {this.state.recipes.map(recipe => (
-                <NTCListItem key={recipe.id}>
-                    <div className='col-md-4 table-item recipe-name'>
-                      <Link className="table-item" to={"/recipes/" + recipe.id}>
-                        {recipe.recipe_name}
-                      </Link>
-                    </div>
-                    <div className='col-md-5 table-item'>
-                      <Link className="table-item" to={recipe.recipe_url}>
-                        {recipe.recipe_url}
-                      </Link>
-                    </div>
-                    <div class='col-md-3 recipe-buttons'>
-                      <Link className="btn btn-sm up-edit-button" to={"/newRecipe/" + recipe.id}> Edit </Link>
-                      <Buttons onClick={() => this.deleteRecipe(recipe.id)} />
-                    </div>
-                </NTCListItem>
+                  <NTCListItem key={recipe.id}>
+                      <div className='col-md-4 table-item recipe-name'>
+                        <Link className="table-item" to={"/recipes/" + recipe.id}>
+                          {recipe.recipe_name}
+                        </Link>
+                      </div>
+                      <div className='col-md-5 table-item'>
+                        <Link className="table-item" to={recipe.recipe_url}>
+                          {recipe.recipe_url}
+                        </Link>
+                      </div>
+                      <div class='col-md-3 recipe-buttons'>
+                        <Link className="btn btn-sm up-edit-button" to={"/newRecipe/" + recipe.id}> Edit </Link>
+                        <Buttons onClick={() => this.deleteRecipe(recipe.id)} />
+                      </div>
+                  </NTCListItem>
               ))}
             </NeedToCookList>
           ) : (
