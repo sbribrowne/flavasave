@@ -2,6 +2,10 @@
   outline: 0px !important;
   -webkit-appearance: none; }
 
+.col, [class*="col-"] {
+  background-color: transparent;
+  border: none; }
+
 /* FONTS */
 @font-face {
   font-family: PathwaysRough;
@@ -395,7 +399,7 @@ li {
 
 .greeting-text {
   font-family: LeagueGothic, sans-serif;
-  font-size: 3.5vw;
+  font-size: 4rem;
   color: #121210;
   text-align: center;
   letter-spacing: 0.2rem;
@@ -408,8 +412,8 @@ li {
 .search-title {
   font-family: LeagueGothic, sans-serif;
   color: #121210;
-  font-size: 1.5vw;
-  letter-spacing: 0.4rem;
+  font-size: 2.75rem;
+  letter-spacing: 0.2rem;
   margin-left: -1rem; }
 
 .input-width {
@@ -448,7 +452,7 @@ li {
 
 .orangeHdrTitle {
   font-family: LeagueGothic, sans-serif;
-  font-size: 2.5vw;
+  font-size: 4.5rem;
   color: white;
   letter-spacing: 0.3rem; }
 
@@ -467,13 +471,14 @@ li {
 .table-header {
   font-family: LeagueGothic, sans-serif;
   color: #121210;
-  font-size: 2.25vw;
-  letter-spacing: 0.3rem; }
+  font-size: 1.5vw;
+  letter-spacing: 0.2rem; }
 
 .table-item {
   font-family: Peleguer, serif;
-  font-size: 2rem;
-  overflow: hidden; }
+  font-size: 2.75rem;
+  overflow: hidden;
+  padding-left: 40px; }
 
 .up-edit-button {
   font-family: Peleguer, serif;

@@ -1,6 +1,6 @@
 .greeting-text {
     font-family: $header-font;
-    font-size: 3.5vw;
+    font-size: 4rem;
     color: #121210;
     text-align: center;
     letter-spacing: 0.2rem;
@@ -15,8 +15,8 @@
 .search-title {
     font-family: $header-font;
     color: #121210;
-    font-size: 1.5vw;
-    letter-spacing: 0.4rem;
+    font-size: 2.75rem;
+    letter-spacing: 0.2rem;
     margin-left: -1rem;
 }
 
@@ -62,7 +62,7 @@
 
 .orangeHdrTitle {
     font-family: $header-font;
-    font-size: 2.5vw;
+    font-size: 4.5rem;
     color: white;
     letter-spacing: 0.3rem;
 }
@@ -84,14 +84,15 @@
 .table-header {
     font-family: $header-font;
     color: #121210;
-    font-size: 2.25vw;
-    letter-spacing: 0.3rem;
+    font-size: 1.5vw;
+    letter-spacing: 0.2rem;
 }
 
 .table-item {
     font-family: $body-font;
-    font-size: 2rem;
+    font-size: 2.75rem;
     overflow: hidden;
+    padding-left: 40px;
 }
 
 .up-edit-button {
