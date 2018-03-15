@@ -11,7 +11,9 @@ import CompleteList from "../components/Lists/CompleteList";
 import FooterLogged from "../components/Footer/FooterLogged.js";
 import API from "../utils/API";
 import { Link } from "react-router-dom";
-import Buttons from "../components/Buttons/Button.js";
+import Buttons from "../components/Buttons/Button.js"
+import EditBtn from "../components/Buttons/EditBtn.js";
+
 
 class UserPage extends Component {
   //set inital state of forms to empty
@@ -22,11 +24,17 @@ class UserPage extends Component {
 
   componentDidMount() {
     this.loadRecipes();
+    console.log(this.state.recipes);
   }
 
   loadRecipes = () => {
-    API.getRecipe()
-      .then(res => this.setState({ recipe_url: res.data }))
+    API.getRecipes()
+      .then((res) => {
+        this.setState({ recipes: res.data })
+        console.log(res);
+        console.log(this.state.recipes);
+      }
+      )
       .catch(err => console.log(err));
   };
 
@@ -49,7 +57,8 @@ class UserPage extends Component {
       API.saveRecipe({
         recipe_url: this.state.recipe_url
       })
-        .then(res => { window.location.href = "http://localhost:3000" + res.data; } )
+        .then(res => this.loadRecipes())
+        //.then(res => { window.location.href = "http://localhost:3000" + res.data; } )
         .catch(err => console.log(err));
     }
   };
@@ -114,18 +123,26 @@ class UserPage extends Component {
         <div className="container-fluid userpage-container">
           {this.state.recipes.length ? (
             <NeedToCookList>
-              {this.state.recipes.map(recipe => (
-                <NTCListItem key={recipe._id}>
-                  <Link to={"/recipes/" + recipe._id}>
-                    <strong>{recipe.recipe_url}</strong>
+              {/* {this.state.recipes.map(recipe => (
+                <NTCListItem key={recipe.id}>
+                  <Link to={"/recipes/" + recipe.id}>
+                    <div className='col-md-4 table-item'>
+                      {recipe.recipe_name}
+                    </div>
                   </Link>
-                  <Buttons onClick={() => this.deleteBook(recipe._id)} />
+                  <div className='col-md-4 table-item'>
+                    {recipe.recipe_url}
+                  </div>
+                  <div class='col-md-4'>
+                    <Link className="userpage-buttons" to={"/newRecipe/" + recipe.id}> Edit </Link>
+                    <Buttons onClick={() => this.deleteRecipe(recipe.id)} />
+                  </div>
                 </NTCListItem>
-              ))}
+              ))} */}
             </NeedToCookList>
           ) : (
-            <h1 className="table-item">No Results to Display</h1>
-          )}
+              <h1 className="table-item">No Results to Display</h1>
+            )}
         </div>
 
         <OrangeHdr
@@ -138,13 +155,13 @@ class UserPage extends Component {
         <div className="container-fluid userpage-container">
           <CompleteList />
         </div>
-        
+
         <div className="container-fluid userpage-container">
           <button className="btn manual-add-btn" type="button">ADD RECIPE MANUALLY</button>
         </div>
 
         <FooterLogged />
-      </div>
+      </div >
     );
   }
 }
