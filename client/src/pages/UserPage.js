@@ -123,9 +123,9 @@ class UserPage extends Component {
         <div className="container-fluid userpage-container">
           {this.state.recipes.length ? (
             <NeedToCookList>
-              {/* {this.state.recipes.map(recipe => (
+              {this.state.recipes.map(recipe => (
                 <NTCListItem key={recipe.id}>
-                  <Link to={"/recipes/" + recipe.id}>
+                  <Link to={"/recipe/" + recipe.id}>
                     <div className='col-md-4 table-item'>
                       {recipe.recipe_name}
                     </div>
@@ -133,12 +133,12 @@ class UserPage extends Component {
                   <div className='col-md-4 table-item'>
                     {recipe.recipe_url}
                   </div>
-                  <div class='col-md-4'>
-                    <Link className="userpage-buttons" to={"/newRecipe/" + recipe.id}> Edit </Link>
+                  <div className='col-md-4'>
+                    <Link className="userpage-buttons" to={"/recipeedit/" + recipe.id}> Edit </Link>
                     <Buttons onClick={() => this.deleteRecipe(recipe.id)} />
                   </div>
                 </NTCListItem>
-              ))} */}
+              ))}
             </NeedToCookList>
           ) : (
               <h1 className="table-item">No Results to Display</h1>
