@@ -19,6 +19,7 @@ export default {
     return axios.post("/api/recipes", newURL)
       .then(function (data) {
         console.log(data);
+        return data;
       })
   }
 };

@@ -31,7 +31,7 @@ class UserPage extends Component {
     API.getRecipes()
       .then((res) => {
         this.setState({ recipes: res.data })
-        console.log(res.data);
+        console.log(res);
         console.log(this.state.recipes);
       }
       )
@@ -58,6 +58,7 @@ class UserPage extends Component {
         recipe_url: this.state.recipe_url
       })
         .then(res => this.loadRecipes())
+        //.then(res => { window.location.href = "http://localhost:3000" + res.data; } )
         .catch(err => console.log(err));
     }
   };
