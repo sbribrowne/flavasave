@@ -48,15 +48,14 @@ class Recipes extends Component {
     return (
       <div>
         <NavLogged />
-        <Panel className="recipe-header">
-          <h2>{this.state.recipe.recipe_name}</h2>
-          <p><a target="_blank" href={this.state.recipe.recipe_url}>{this.state.recipe.recipe_url}</a></p>
-          <p>Recipe ID: {this.props.match.params.id}</p>
-          <p>Serving Size: GOES HERE</p>
 
+        <div className="recipe-header">
+          <h2 className="recipe-title">{this.state.recipe.recipe_name}</h2>
+          <p className="recipe-servingsize">Serving Size: goes here</p>
           {/* Stand in IMAGE */}
           <img src={require("../images/salmon.jpg")} alt="Store Image" height="400" />
-        </Panel>
+        </div>
+
         <Panel>
           <h4>INGREDIENTS</h4>
           {this.state.ingredients.length ? ( //Check for Ingredients
@@ -69,9 +68,6 @@ class Recipes extends Component {
               <h3>No Results to Display</h3>
             )}    
         </Panel>
-        <div className="container" height="400" width="400">
-          <RecipeNotes data={this.state.recipe.recipe_notes} />
-      </div>
 
         {/* STAND IN DIRECTIONS SECTION */}
         <Panel>
@@ -86,7 +82,15 @@ class Recipes extends Component {
               <h3>No Results to Display</h3>
             )} 
         </Panel>
-        {/* STAND IN BUTTONS */}
+        
+        <p><a target="_blank" href={this.state.recipe.recipe_url} className="recipe-link">{this.state.recipe.recipe_url}</a></p>
+            
+        <Panel>
+          <div className="container" height="400" width="400">
+            <RecipeNotes data={this.state.recipe.recipe_notes} />
+          </div>
+        </Panel>
+
         <Panel>
           <button>ADD</button>
           <button>DELETE</button>

@@ -1,8 +1,27 @@
 .recipe-header {
     font-family: $header-font;
     background-color: $lightgray;
+    margin-top: 3%;
+    padding: 3rem 2rem 7rem 9vw;
 }
 
 .recipe-title {
     font-family: $header-font;
+    color: $red;
+    font-size: 6rem;
+    letter-spacing: 0.3rem;
+    text-transform: uppercase;
+}
+
+.recipe-servingsize {
+    font-family: $body-font-italic;
+    font-size: 3rem;
+}
+
+.recipe-link {
+    font-family: $body-font;
+    font-size: 2rem;
+    color: black;
+    text-decoration: none;
+    margin-left: 9vw;
 }

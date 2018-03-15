@@ -522,10 +522,27 @@ li {
 
 .recipe-header {
   font-family: LeagueGothic, sans-serif;
-  background-color: #e1dedc; }
+  background-color: #e1dedc;
+  margin-top: 3%;
+  padding: 3rem 2rem 7rem 9vw; }
 
 .recipe-title {
-  font-family: LeagueGothic, sans-serif; }
+  font-family: LeagueGothic, sans-serif;
+  color: #E44125;
+  font-size: 6rem;
+  letter-spacing: 0.3rem;
+  text-transform: uppercase; }
+
+.recipe-servingsize {
+  font-family: PeleguerItalic, serif;
+  font-size: 3rem; }
+
+.recipe-link {
+  font-family: Peleguer, serif;
+  font-size: 2rem;
+  color: black;
+  text-decoration: none;
+  margin-left: 9vw; }
 
 .editrecipe-container {
   width: 80%;
