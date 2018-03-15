@@ -12,6 +12,7 @@ import FooterLogged from "../components/Footer/FooterLogged.js";
 import API from "../utils/API";
 import { Link } from "react-router-dom";
 import Buttons from "../components/Buttons/Button.js"
+import EditBtn from "../components/Buttons/EditBtn.js";
 
 class UserPage extends Component {
 
@@ -106,15 +107,16 @@ class UserPage extends Component {
             <NeedToCookList>
               {this.state.recipes.map(recipe => (
                 <NTCListItem key={recipe.id}>
-                  <Link to={"/recipes/"}>
+                  <Link to={"/recipes/" + recipe.id}>
                     <div className='col-md-4'>
                       {recipe.recipe_name}
                     </div>
-                    <div className='col-md-4'>
-                      {recipe.recipe_url}
-                    </div>
                   </Link>
+                  <div className='col-md-4'>
+                    {recipe.recipe_url}
+                  </div>
                   <div class='col-md-4'>
+                    <Link className="btn btn-sm" to={"/newRecipe/" + recipe.id}> Edit </Link>
                     <Buttons onClick={() => this.deleteRecipe(recipe.id)} />
                   </div>
                 </NTCListItem>

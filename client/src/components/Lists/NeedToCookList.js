@@ -1,5 +1,4 @@
 import React from "react";
-import NTCListItem from "./NTCListItem";
 
 const NeedToCookList = ({ children }) => {
   return (
