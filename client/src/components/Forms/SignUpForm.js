@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import validateInput from "../../actions/validations/signup";
 import TextFieldGroup from "./TextFieldGroup";
-import axios from "axios";
+//import axios from "axios";
 import { connect } from "react-redux";
 import { userSignUpRequest } from "../../actions/signUpActions";
 
@@ -29,11 +29,10 @@ class SignUpForm extends React.Component {
 
   onSubmit = event => {
     event.preventDefault();
-
-    axios.post("api/signup", {
-      email: this.state.email,
-      password: this.state.password
-    });
+    // axios.post("api/signup", {
+    //   email: this.state.email,
+    //   password: this.state.password
+    // });
 
     if (this.isValid()) {
       // set state for errors to be passed to the object > clear errors > then repopulate
