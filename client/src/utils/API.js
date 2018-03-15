@@ -5,7 +5,7 @@ export default {
   getRecipes: function () {
     return axios.get("/api/recipes");
   },
-  // // Gets the recipe with the given id
+  // Gets the recipe with the given id
   getRecipe: function (id) {
     return axios.get(`/api/recipes/${id}`);
   },

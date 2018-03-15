@@ -23,13 +23,18 @@ class UserPage extends Component {
 
   componentDidMount() {
     this.loadRecipes();
+    console.log(this.state.recipes);
   }
 
   loadRecipes = () => {
-    API.getRecipe()
-      .then(res =>
-        this.setState({ recipe_url: res.data })
+    API.getRecipes()
+      .then((res) => {
+        this.setState({ recipes: res.data })
+        console.log(res.data);
+        console.log(this.state.recipes);
+      }
       )
+
       .catch(err => console.log(err));
   };
 
@@ -52,7 +57,7 @@ class UserPage extends Component {
       API.saveRecipe({
         recipe_url: this.state.recipe_url,
       })
-        //.then(res => this.loadRecipes())
+        .then(res => this.loadRecipes())
         .catch(err => console.log(err));
     }
   };
@@ -100,16 +105,22 @@ class UserPage extends Component {
           {this.state.recipes.length ? (
             <NeedToCookList>
               {this.state.recipes.map(recipe => (
-                <NTCListItem key={recipe._id}>
-                  <Link to={"/recipes/" + recipe._id}>
-                    <strong>
+                <NTCListItem key={recipe.id}>
+                  <Link to={"/recipes/"}>
+                    <div class='col-md-4'>
+                      {recipe.recipe_name}
+                    </div>
+                    <div class='col-md-4'>
                       {recipe.recipe_url}
-                    </strong>
+                    </div>
                   </Link>
-                  <Buttons onClick={() => this.deleteBook(recipe._id)} />
+                  <div class='col-md-4'>
+                    <Buttons onClick={() => this.deleteRecipe(recipe.id)} />
+                  </div>
                 </NTCListItem>
               ))}
             </NeedToCookList>
+
           ) : (
               <h3>No Results to Display</h3>
             )}
@@ -126,7 +137,7 @@ class UserPage extends Component {
         </div>
 
         <FooterLogged />
-      </div>
+      </div >
     );
   }
 };

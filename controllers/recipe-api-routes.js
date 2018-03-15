@@ -7,78 +7,79 @@ var isAuthenticated = require("../config/middleware/isAuthenticated");
 module.exports = function (app) {
 
     //GET ALL RECIPES
-    app.get("/api/recipes", isAuthenticated, function(req, res){
+    app.get("/api/recipes", isAuthenticated, function (req, res) {
         //check that logged in. pass user_id to callback
         console.log(isAuthenticated);
         db.Recipe.findAll({
-          where: {
-            UserId: req.user.id
-          }
-        }).then(function(dbRecipe) {
+            where: {
+                UserId: req.user.id
+            }
+        }).then(function (dbRecipe) {
             res.json(dbRecipe); //returns all recipes JSON   
         })
-        .catch( function(err){ res.status(422).json(err) } );
-      });
-    
+            .catch(function (err) { res.status(422).json(err) });
+    });
+
     //GET 1 Recipe and Ingredients & Instructions
-    app.get("/api/recipes/:recipeId", isAuthenticated, function(req, res){
+    app.get("/api/recipes/:recipeId", isAuthenticated, function (req, res) {
+        console.log('something')
         db.Recipe.findOne({
             where: {
-            id: req.params.recipeId
+                id: req.params.recipeId
             },
             include: [
-            { model: db.Ingredient },
-            { model: db.Instruction}
+                { model: db.Ingredient },
+                { model: db.Instruction }
             ]
-        }).then(function(dbRecipe) {
+        }).then(function (dbRecipe) {
             console.log("dbRecipe");
             console.log(dbRecipe);
-            if(dbRecipe.dataValues.UserId === req.user.id)
+            if (dbRecipe.dataValues.UserId === req.user.id)
                 res.json(dbRecipe); //returns 1 recipe and ingreds/instrs
-            else    
-                res.send( new Error("Not your recipe. dbRecipe.dataValues.UserId does not match req.user.id") );
-        
+            else
+                res.send(new Error("Not your recipe. dbRecipe.dataValues.UserId does not match req.user.id"));
+
             //res.json(dbRecipe); //returns 1 recipe and ingreds/instrs
         });
     });
 
     // DELETES RECIPE
-    app.delete("/api/recipes/:id",  isAuthenticated, function (req, res) {
+    app.delete("/api/recipes/:id", isAuthenticated, function (req, res) {
         db.Ingredient.destroy({ //delete all Ingr
             where: {
                 RecipeId: req.params.id
             }
-        }).then(function(dataIngr){
+        }).then(function (dataIngr) {
             db.Instruction.destroy({ //delete all Instr
                 where: {
                     RecipeId: req.params.id
                 }
-            }).then(function(dataInstr){
-                try{
+            }).then(function (dataInstr) {
+                try {
                     db.Recipe.destroy({ //delete Recipe
                         where: {
                             id: req.params.id
                         }
-                    }).then(function(dataRec) {
+                    }).then(function (dataRec) {
                         res.send(req.params.id); //returns ID of deleted recipe
                     });
-                }catch(err){
+                } catch (err) {
                     console.log(err);
                 }
 
             });
-            
+
         });
 
-        
+
     });
 
     //Updated recipe, including toggles checkbox
-    app.put("/api/recipes/:id", isAuthenticated, function(req, res) { //get recipeObj from AJAX call
+    app.put("/api/recipes/:id", isAuthenticated, function (req, res) { //get recipeObj from AJAX call
         console.log("req.body");
         console.log(req.body);
         db.Recipe.update(
-            req.body.recipeObj, 
+            req.body.recipeObj,
             {
                 where: {
                     id: req.params.id
@@ -89,7 +90,7 @@ module.exports = function (app) {
             });
     });
 
-    app.post("/api/recipes", isAuthenticated, function(req, res) {
+    app.post("/api/recipes", isAuthenticated, function (req, res) {
         //add recipe
         //db.Recipe.create(...)
         var newUrl = req.body.recipe_url;
@@ -117,7 +118,7 @@ module.exports = function (app) {
             }); 
         }); */
 
-        request(newUrl, function(error, response, body) {
+        request(newUrl, function (error, response, body) {
             if (error) throw error;
 
             // If the request was successful...
@@ -127,13 +128,13 @@ module.exports = function (app) {
                 //console.log(parseItempropIngredients($));
 
                 //console.log(parseItempropInstructions($));
-                
-                if(req.user)
+
+                if (req.user)
                     db.Recipe.create({
-                            recipe_url: newUrl,
-                            recipe_name: $("title").text().trim().substr(0, 60),
-                            UserId: req.user.id //get user
-                        })
+                        recipe_url: newUrl,
+                        recipe_name: $("title").text().trim().substr(0, 60),
+                        UserId: req.user.id //get user
+                    })
                         .then(function (responseRecipe) {
                             var recipeId = responseRecipe.dataValues.id; //user reicpe id of ingr and instr
 
@@ -145,8 +146,8 @@ module.exports = function (app) {
                                 };
                             }
                             db.Ingredient.bulkCreate(ingredsArrayTemp, {
-                                    individualHooks: true
-                                })
+                                individualHooks: true
+                            })
                                 .then(function (responseIngredient) {
                                     var instructionsArrayTemp = parseItempropInstructions($, recipeId);
                                     if (!instructionsArrayTemp.length) { //check if no instructions
@@ -156,8 +157,8 @@ module.exports = function (app) {
                                         };
                                     }
                                     db.Instruction.bulkCreate(instructionsArrayTemp, {
-                                            individualHooks: true
-                                        })
+                                        individualHooks: true
+                                    })
                                         .then(function (responseInstruction) {
                                             var bigObject = {
                                                 recipe: responseRecipe,
