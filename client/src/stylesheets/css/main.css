@@ -472,12 +472,11 @@ li {
 
 .table-item {
   font-family: Peleguer, serif;
-  font-size: 3rem; }
-
-.userpage-buttons {
-  font-family: Peleguer, serif; }
+  font-size: 2rem;
+  overflow: hidden; }
 
 .up-edit-button {
+  font-family: Peleguer, serif;
   color: black;
   font-size: 2rem;
   padding: 0.5rem 2rem 0 2rem;
@@ -491,6 +490,7 @@ li {
   border: none; }
 
 .up-delete-button {
+  font-family: Peleguer, serif;
   color: black;
   margin-left: 4rem;
   font-size: 2rem;

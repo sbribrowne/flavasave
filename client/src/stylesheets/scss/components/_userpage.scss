@@ -90,14 +90,12 @@
 
 .table-item {
     font-family: $body-font;
-    font-size: 3rem;
-}
-
-.userpage-buttons {
-    font-family: $body-font;
+    font-size: 2rem;
+    overflow: hidden;
 }
 
 .up-edit-button {
+    font-family: $body-font;
     color: black;
     font-size: 2rem;
     padding: 0.5rem 2rem 0 2rem;
@@ -113,6 +111,7 @@
 }
 
 .up-delete-button {
+    font-family: $body-font;
     color: black;
     margin-left: 4rem;
     font-size: 2rem;
