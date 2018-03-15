@@ -49,7 +49,7 @@ class UserPage extends Component {
       API.saveRecipe({
         recipe_url: this.state.recipe_url
       })
-        //.then(res => this.loadRecipes())
+        .then(res => { window.location.href = "http://localhost:3000" + res.data; } )
         .catch(err => console.log(err));
     }
   };
