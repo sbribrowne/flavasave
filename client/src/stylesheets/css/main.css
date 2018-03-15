@@ -537,6 +537,21 @@ li {
   font-family: PeleguerItalic, serif;
   font-size: 3rem; }
 
+.recipe-subtitle {
+  font-family: LeagueGothic, sans-serif;
+  font-size: 5rem;
+  letter-spacing: 0.5rem;
+  color: #F99E1C;
+  margin-left: 9vw; }
+
+.instructionChecklist {
+  font-family: Peleguer, serif;
+  font-size: 3.5rem;
+  background-color: transparent;
+  border: none;
+  width: 80%;
+  margin-left: 7%; }
+
 .recipe-link {
   font-family: Peleguer, serif;
   font-size: 2rem;

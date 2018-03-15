@@ -57,7 +57,7 @@ class Recipes extends Component {
         </div>
 
         <Panel>
-          <h4>INGREDIENTS</h4>
+         <h4 className="recipe-subtitle">INGREDIENTS</h4>
           {this.state.ingredients.length ? ( //Check for Ingredients
             <IngredientList>
               {this.state.ingredients.map(ingredient => (
@@ -66,12 +66,12 @@ class Recipes extends Component {
             </IngredientList>
             ) : (
               <h3>No Results to Display</h3>
-            )}    
+            )}      
         </Panel>
 
         {/* STAND IN DIRECTIONS SECTION */}
         <Panel>
-          <h4>DIRECTIONS</h4>
+          <h4 className="recipe-subtitle">DIRECTIONS</h4>
           {this.state.instructions.length ? ( //Check for Instructions
             <InstructionList>
               {this.state.instructions.map(instruction => (
