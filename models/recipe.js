@@ -9,6 +9,10 @@ module.exports = function(sequelize, DataTypes){
           type: DataTypes.STRING
         },
 
+        recipe_notes:{ 
+          type: DataTypes.TEXT
+        },
+
         recipe_checkbox:{
             type: DataTypes.BOOLEAN
         }

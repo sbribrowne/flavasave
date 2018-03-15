@@ -2,24 +2,42 @@ import React, { Component } from "react";
 import NavLogged from "../components/Nav/NavLogged.js";
 import Panel from "../components/Panels/Panel.js";
 import IngredientList from "../components/Lists/IngredientList";
+import IngredientListItem from "../components/Lists/IngredientListItem";
+import InstructionList from "../components/Lists/InstructionList";
+import InstructionListItem from "../components/Lists/InstructionListItem";
 import FooterLogged from "../components/Footer/FooterLogged.js";
 import API from "../utils/API";
 import "../stylesheets/css/main.css";
+import DeleteBtn from "../components/Buttons/DeleteBtn";
+import RecipeNotes from "../components/Forms/RecipeNotes"
 
 class Recipes extends Component {
   state = {
-    recipe: {
-      Ingredients: ["Test"]
-    }
+    recipe: {},
+    ingredients: [],
+    instructions: []
   }
 
   componentDidMount() {
-    API.getRecipe(this.props.match.params.id)
-    .then(res => this.setState({ 
-      recipe: res.data
-    }));
+    this.loadRecipe();
   }
 
+  loadRecipe = () => {
+    API.getRecipe(this.props.match.params.id)
+    .then(
+      res => {
+        this.setState({ 
+          recipe: res.data,
+          ingredients: res.data.Ingredients, 
+          instructions: res.data.Instructions 
+        });
+      }
+    );
+  };
+
+  deleteIngredient(){
+
+  }
   //Need an editRecipe method
 
   //Need a deleteRecipe method
@@ -36,30 +54,37 @@ class Recipes extends Component {
           <p>Recipe ID: {this.props.match.params.id}</p>
           <p>Serving Size: GOES HERE</p>
 
-
-          <p> Ingredients:  {this.state.recipe["Ingredients"][0].ingredient_info}</p>
-       
-
-
           {/* Stand in IMAGE */}
           <img src={require("../images/salmon.jpg")} alt="Store Image" height="400" />
         </Panel>
         <Panel>
           <h4>INGREDIENTS</h4>
-          <IngredientList />
+          {this.state.ingredients.length ? ( //Check for Ingredients
+            <IngredientList>
+              {this.state.ingredients.map(ingredient => (
+                <IngredientListItem key={ingredient.id} data={ingredient} />
+              ))}
+            </IngredientList>
+            ) : (
+              <h3>No Results to Display</h3>
+            )}    
         </Panel>
         <div className="container" height="400" width="400">
-          STAND IN NOTES SECTION
+          <RecipeNotes data={this.state.recipe.recipe_notes} />
       </div>
 
         {/* STAND IN DIRECTIONS SECTION */}
         <Panel>
           <h4>DIRECTIONS</h4>
-          <p>The path of the righteous man is beset on all sides by the iniquities of the selfish and the tyranny of evil men. Blessed is he who, in the name of charity and good will, shepherds the weak through the valley of darkness, for he is truly his brother's keeper and the finder of lost children. And I will strike down upon thee with great vengeance and furious anger those who would attempt to poison and destroy My brothers. And you will know My name is the Lord when I lay My vengeance upon thee.
-            The path of the righteous man is beset on all sides by the iniquities of the selfish and the tyranny of evil men. Blessed is he who, in the name of charity and good will, shepherds the weak through the valley of darkness, for he is truly his brother's keeper and the finder of lost children. And I will strike down upon thee with great vengeance and furious anger those who would attempt to poison and destroy My brothers. And you will know My name is the Lord when I lay My vengeance upon thee.
-            The path of the righteous man is beset on all sides by the iniquities of the selfish and the tyranny of evil men. Blessed is he who, in the name of charity and good will, shepherds the weak through the valley of darkness, for he is truly his brother's keeper and the finder of lost children. And I will strike down upon thee with great vengeance and furious anger those who would attempt to poison and destroy My brothers. And you will know My name is the Lord when I lay My vengeance upon thee.
-            The path of the righteous man is beset on all sides by the iniquities of the selfish and the tyranny of evil men. Blessed is he who, in the name of charity and good will, shepherds the weak through the valley of darkness, for he is truly his brother's keeper and the finder of lost children. And I will strike down upon thee with great vengeance and furious anger those who would attempt to poison and destroy My brothers. And you will know My name is the Lord when I lay My vengeance upon thee.
-        </p>
+          {this.state.instructions.length ? ( //Check for Instructions
+            <InstructionList>
+              {this.state.instructions.map(instruction => (
+                <InstructionListItem key={instruction.id} data={instruction} />
+              ))}
+            </InstructionList>
+            ) : (
+              <h3>No Results to Display</h3>
+            )} 
         </Panel>
         {/* STAND IN BUTTONS */}
         <Panel>
