@@ -26,7 +26,7 @@ module.exports = function(app) {
     validateInputQuery(req.body, validateInput).then(({ errors, isValid }) => {
       if (isValid) {
         // console.log(req.body);
-        const { firstname, lastname, username, email, password } = req.body;
+        const { email, password } = req.body;
 
         db.User.create({ email, password })
           .then(function() {
