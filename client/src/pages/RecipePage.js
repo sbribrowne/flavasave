@@ -54,19 +54,6 @@ class Recipes extends Component {
           <p>Recipe ID: {this.props.match.params.id}</p>
           <p>Serving Size: GOES HERE</p>
 
-
-          <p> Ingredients:  {this.state.recipe.Ingredients[0].ingredient_info}</p>
-          <p> Ingredients this.state.ingredients:  {this.state.ingredients.length}</p>
-          
-          {this.state.ingredients.map(ingredient => (
-                <p>This is an Ingredient {ingredient.ingredient_info}</p>
-              ))}
-
-
-
-      
-
-
           {/* Stand in IMAGE */}
           <img src={require("../images/salmon.jpg")} alt="Store Image" height="400" />
         </Panel>

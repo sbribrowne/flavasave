@@ -3,9 +3,12 @@ import React from "react";
 const IngredientListItem = (props) => (
   <div className="row ingredientChecklist">
     <div className="col-sm-1">
-      <i className="glyphicon glyphicon-ok"></i>
+
+    {props.data.ingredient_checkbox ? 
+      (<i className="glyphicon glyphicon-ok"></i> ) : 
+      (<i className="glyphicon glyphicon-remove"></i>) }
     </div>
-    <div className="col-sm-11">4 POUNDS OF PURE AWESOME</div>
+    <div className="col-sm-11">{props.data.ingredient_info} </div>
   </div>
 );
 
