@@ -1,10 +1,11 @@
 import React from "react";
-import IngredientListItem from "./IngredientListItem";
 
-const IngredientList = (props) => (
-  <div className="ingredients-list ingredient-text">
-    <IngredientListItem />
-  </div>
+const IngredientList = ({ children }) => (
+  <div className="list-overflow-container">
+      <ul className="ingredients-list ingredient-text">
+        {children}
+      </ul>
+    </div>
 );
 
 export default IngredientList;

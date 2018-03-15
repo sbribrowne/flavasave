@@ -2,24 +2,42 @@ import React, { Component } from "react";
 import NavLogged from "../components/Nav/NavLogged.js";
 import Panel from "../components/Panels/Panel.js";
 import IngredientList from "../components/Lists/IngredientList";
+import IngredientListItem from "../components/Lists/IngredientListItem";
 import FooterLogged from "../components/Footer/FooterLogged.js";
 import API from "../utils/API";
 import "../stylesheets/css/main.css";
+import DeleteBtn from "../components/Buttons/DeleteBtn";
 
 class Recipes extends Component {
   state = {
     recipe: {
-      Ingredients: ["Test"]
-    }
+      Ingredients: ["asdfafd"]
+    },
+    ingredients: ["asdf"]
   }
 
   componentDidMount() {
-    API.getRecipe(this.props.match.params.id)
-    .then(res => this.setState({ 
-      recipe: res.data
-    }));
+    this.loadRecipe();
   }
 
+  loadRecipe = () => {
+    API.getRecipe(this.props.match.params.id)
+    .then(
+      res => {
+        this.setState({ 
+          recipe: res.data
+        });
+
+        this.setState({ 
+          ingredients: res.data.Ingredients
+        });
+      }
+    );
+  };
+
+  deleteIngredient(){
+
+  }
   //Need an editRecipe method
 
   //Need a deleteRecipe method
@@ -37,8 +55,16 @@ class Recipes extends Component {
           <p>Serving Size: GOES HERE</p>
 
 
-          <p> Ingredients:  {this.state.recipe["Ingredients"][0].ingredient_info}</p>
-       
+          <p> Ingredients:  {this.state.recipe.Ingredients[0].ingredient_info}</p>
+          <p> Ingredients this.state.ingredients:  {this.state.ingredients.length}</p>
+          
+          {this.state.ingredients.map(ingredient => (
+                <p>This is an Ingredient {ingredient.ingredient_info}</p>
+              ))}
+
+
+
+      
 
 
           {/* Stand in IMAGE */}
@@ -46,7 +72,17 @@ class Recipes extends Component {
         </Panel>
         <Panel>
           <h4>INGREDIENTS</h4>
-          <IngredientList />
+          {this.state.ingredients.length ? ( //Check for Ingredients
+            <IngredientList>
+              {this.state.ingredients.map(ingredient => (
+                <IngredientListItem key={ingredient.id} data={ingredient}>
+                  <p>{ingredient.ingredient_info}</p>
+                </IngredientListItem>
+              ))}
+            </IngredientList>
+            ) : (
+              <h3>No Results to Display</h3>
+            )}    
         </Panel>
         <div className="container" height="400" width="400">
           STAND IN NOTES SECTION
