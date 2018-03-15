@@ -504,7 +504,7 @@ li {
 .up-delete-button {
   font-family: Peleguer, serif;
   color: black;
-  margin-left: 4rem;
+  margin-left: 2rem;
   font-size: 2rem;
   padding: 0.5rem 2rem 0 2rem;
   background-color: transparent;
@@ -513,6 +513,20 @@ li {
 
 .up-delete-button:hover {
   border-radius: 0; }
+
+.up-toggle-button {
+  font-family: Peleguer, serif;
+  color: black;
+  margin-left: 2rem;
+  font-size: 2rem;
+  padding: 0.5rem 2rem 0 2rem;
+  background-color: transparent;
+  border: 0.25px solid #e1dedc;
+  border-radius: 0; }
+
+.up-toggle-button:hover {
+  background-color: #90bb5e;
+  border: none; }
 
 .manual-add-btn {
   font-family: LeagueGothic, sans-serif;
