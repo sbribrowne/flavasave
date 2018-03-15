@@ -9,6 +9,7 @@ import FooterLogged from "../components/Footer/FooterLogged.js";
 import API from "../utils/API";
 import "../stylesheets/css/main.css";
 import DeleteBtn from "../components/Buttons/DeleteBtn";
+import RecipeNotes from "../components/Forms/RecipeNotes"
 
 class Recipes extends Component {
   state = {
@@ -69,7 +70,7 @@ class Recipes extends Component {
             )}    
         </Panel>
         <div className="container" height="400" width="400">
-          STAND IN NOTES SECTION
+          <RecipeNotes data={this.state.recipe.recipe_notes} />
       </div>
 
         {/* STAND IN DIRECTIONS SECTION */}
