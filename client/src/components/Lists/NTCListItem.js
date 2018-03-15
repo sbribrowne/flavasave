@@ -1,8 +1,9 @@
 import React from "react";
 
 const NTCListItem = (props) => (
-  <div className='row'>
+  <div>
     {props.children}
+    <hr />
   </div>
 );
 

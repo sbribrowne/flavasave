@@ -83,7 +83,7 @@ class UserPage extends Component {
                 onClick={this.handleFormSubmit}
                 photo={require("../images/add_button.png")}
                 className="search-btn"
-                imageClass="imageClass"
+                imageclass="imageClass"
               />
             </div>
           </form>
@@ -95,7 +95,7 @@ class UserPage extends Component {
               <FormBtn
                 photo={require("../images/search_button.png")}
                 className="search-btn"
-                imageClass="imageClass"
+                imageclass="imageClass"
               />
             </div>
           </form>
@@ -107,7 +107,7 @@ class UserPage extends Component {
               <FormBtn
                 photo={require("../images/tag_search_button.png")}
                 className="search-btn"
-                imageClass="tag-search-button"
+                imageclass="tag-search-button"
               />
             </div>
           </form>
@@ -118,26 +118,29 @@ class UserPage extends Component {
           alt={"cracked egg"}
           name={"NEED TO COOK RECIPES"}
           className="container-fluid orange-box userpage-container"
-          orangeHdrImageClass="header-image-class"
+          orangehdrimageclass="header-image-class"
         />
+        
         <div className="container-fluid userpage-container">
           {this.state.recipes.length ? (
             <NeedToCookList>
               {this.state.recipes.map(recipe => (
-                <NTCListItem key={recipe.id}>
-                  <Link to={"/recipe/" + recipe.id}>
-                    <div className='col-md-4 table-item'>
-                      {recipe.recipe_name}
-                    </div>
-                  </Link>
-                  <div className='col-md-4 table-item'>
-                    {recipe.recipe_url}
-                  </div>
-                  <div className='col-md-4'>
-                    <Link className="userpage-buttons" to={"/recipeedit/" + recipe.id}> Edit </Link>
-                    <Buttons onClick={() => this.deleteRecipe(recipe.id)} />
-                  </div>
-                </NTCListItem>
+                  <NTCListItem key={recipe.id}>
+                      <div className='col-md-4 table-item recipe-name'>
+                        <Link className="table-item" to={"/recipe/" + recipe.id}>
+                          {recipe.recipe_name}
+                        </Link>
+                      </div>
+                      <div className='col-md-5 table-item'>
+                        <Link className="table-item" to={recipe.recipe_url}>
+                          {recipe.recipe_url}
+                        </Link>
+                      </div>
+                      <div class='col-md-3 recipe-buttons'>
+                        <Link className="btn btn-sm up-edit-button" to={"/recipeedit/" + recipe.id}> Edit </Link>
+                        <Buttons onClick={() => this.deleteRecipe(recipe.id)} />
+                      </div>
+                  </NTCListItem>
               ))}
             </NeedToCookList>
           ) : (
@@ -150,7 +153,7 @@ class UserPage extends Component {
           alt={"utensils"}
           name={"COMPLETED RECIPES"}
           className="container-fluid orange-box userpage-container"
-          orangeHdrImageClass="header-image-class"
+          orangehdrimageclass="header-image-class"
         />
         <div className="container-fluid userpage-container">
           <CompleteList />
