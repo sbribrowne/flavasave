@@ -56,8 +56,8 @@ class Recipes extends Component {
           <img src={require("../images/salmon.jpg")} alt="Store Image" height="400" />
         </div>
 
-        <Panel>
-         <h4 className="recipe-subtitle">INGREDIENTS</h4>
+        <div className="ingredient-div">
+          <h4 className="recipe-subtitle">INGREDIENTS</h4>
           {this.state.ingredients.length ? ( //Check for Ingredients
             <IngredientList>
               {this.state.ingredients.map(ingredient => (
@@ -67,10 +67,10 @@ class Recipes extends Component {
             ) : (
               <h3>No Results to Display</h3>
             )}      
-        </Panel>
+        </div>
 
         {/* STAND IN DIRECTIONS SECTION */}
-        <Panel>
+        <div className="instruction-div">
           <h4 className="recipe-subtitle">DIRECTIONS</h4>
           {this.state.instructions.length ? ( //Check for Instructions
             <InstructionList>
@@ -81,21 +81,20 @@ class Recipes extends Component {
             ) : (
               <h3>No Results to Display</h3>
             )} 
-        </Panel>
+        </div>
         
         <p><a target="_blank" href={this.state.recipe.recipe_url} className="recipe-link">{this.state.recipe.recipe_url}</a></p>
             
-        <Panel>
-          <div className="container" height="400" width="400">
-            <RecipeNotes data={this.state.recipe.recipe_notes} />
-          </div>
-        </Panel>
+        <div className="container" height="400" width="400">
+          <RecipeNotes data={this.state.recipe.recipe_notes} />
+        </div>
+        
+        <div className="container-fluid recipepage-btns">
+          <button className="btn recipepage-btn" type="button">ADD</button>
+          <button className="btn recipepage-btn" type="button">DELETE</button>
+          <button className="btn recipepage-btn" type="button">NEED TO COOK | COMPLETE</button>
+        </div>
 
-        <Panel>
-          <button>ADD</button>
-          <button>DELETE</button>
-          <button>NEED TO COOK|COMPLETE</button>
-        </Panel>
         <FooterLogged />
       </div>
     );
