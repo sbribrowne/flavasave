@@ -452,7 +452,7 @@ li {
 
 .orangeHdrTitle {
   font-family: LeagueGothic, sans-serif;
-  font-size: 4.5rem;
+  font-size: 5rem;
   color: white;
   letter-spacing: 0.3rem; }
 
@@ -471,14 +471,21 @@ li {
 .table-header {
   font-family: LeagueGothic, sans-serif;
   color: #121210;
-  font-size: 1.5vw;
+  font-size: 3rem;
   letter-spacing: 0.2rem; }
+
+.recipe-name {
+  text-decoration: underline; }
 
 .table-item {
   font-family: Peleguer, serif;
   font-size: 2.75rem;
-  overflow: hidden;
-  padding-left: 40px; }
+  color: #121210;
+  line-height: 2.75rem;
+  overflow: hidden; }
+
+.recipe-buttons {
+  padding-left: 5rem; }
 
 .up-edit-button {
   font-family: Peleguer, serif;
@@ -509,7 +516,7 @@ li {
 
 .manual-add-btn {
   font-family: LeagueGothic, sans-serif;
-  font-size: 1vw;
+  font-size: 2rem;
   letter-spacing: 0.2rem;
   color: white;
   background-color: #90bb5e;
