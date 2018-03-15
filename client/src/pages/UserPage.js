@@ -107,10 +107,10 @@ class UserPage extends Component {
               {this.state.recipes.map(recipe => (
                 <NTCListItem key={recipe.id}>
                   <Link to={"/recipes/"}>
-                    <div class='col-md-4'>
+                    <div className='col-md-4'>
                       {recipe.recipe_name}
                     </div>
-                    <div class='col-md-4'>
+                    <div className='col-md-4'>
                       {recipe.recipe_url}
                     </div>
                   </Link>
