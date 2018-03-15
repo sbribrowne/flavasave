@@ -56,7 +56,31 @@
     font-size: 2rem;
     color: black;
     text-decoration: none;
+    margin-left: 9%;
+    width: 80%;
+}
+
+.recipe-notes-panel {
+    border: 4px solid $orange;
+    border-radius: 0;
+    width: 20%;
     margin-left: 9vw;
+    margin-top: 2%;
+}
+
+.recipe-notes-header {
+    color: white;
+    font-size: 3rem;
+    letter-spacing: 0.5rem;
+    background-color: $orange;
+    height: 100%;
+    margin-top: -0.01rem;
+    padding-top: 0.4rem;
+    padding-left: 0.5rem;
+}
+
+.panel-header {
+    font-family: $header-font;
 }
 
 .recipepage-btns {
@@ -73,4 +97,8 @@
     padding: 0.5rem 4rem 0.5rem 4rem;
     margin-top: 6rem;
     margin-right: 7rem;
+}
+
+.recipepage-btn:hover  {
+    background-color: $darkgreen;
 }

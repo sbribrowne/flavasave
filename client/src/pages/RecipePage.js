@@ -84,10 +84,10 @@ class Recipes extends Component {
         </div>
         
         <p><a target="_blank" href={this.state.recipe.recipe_url} className="recipe-link">{this.state.recipe.recipe_url}</a></p>
-            
-        <div className="container" height="400" width="400">
-          <RecipeNotes data={this.state.recipe.recipe_notes} />
-        </div>
+
+        <Panel name="STICKY NOTES" panelfullclass="panel recipe-notes-panel" panelheaderclass="recipe-notes-header">    
+            <RecipeNotes data={this.state.recipe.recipe_notes} />
+        </Panel>
         
         <div className="container-fluid recipepage-btns">
           <button className="btn recipepage-btn" type="button">ADD</button>
