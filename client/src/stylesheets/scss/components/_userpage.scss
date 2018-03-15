@@ -1,6 +1,6 @@
 .greeting-text {
     font-family: $header-font;
-    font-size: 3.5vw;
+    font-size: 4rem;
     color: #121210;
     text-align: center;
     letter-spacing: 0.2rem;
@@ -15,8 +15,8 @@
 .search-title {
     font-family: $header-font;
     color: #121210;
-    font-size: 1.5vw;
-    letter-spacing: 0.4rem;
+    font-size: 2.75rem;
+    letter-spacing: 0.2rem;
     margin-left: -1rem;
 }
 
@@ -56,21 +56,22 @@
 
 .orange-box {
     background-color: $orange;
-    padding: 1rem 0rem 0.5rem 0rem;
+    padding: 0.25rem 0rem 0.25rem 0rem;
     margin-top: 4%;
 }
 
 .orangeHdrTitle {
     font-family: $header-font;
-    font-size: 2.5vw;
+    font-size: 5rem;
     color: white;
     letter-spacing: 0.3rem;
 }
 
 .header-image-class {
-    height: 4vw; 
+    height: 6rem; 
     float: left;
     padding-top: 1rem;
+    padding-bottom: 0.25rem;
     margin-left: 22vw;
     margin-right: 5rem;
 }
@@ -83,20 +84,28 @@
 .table-header {
     font-family: $header-font;
     color: #121210;
-    font-size: 2.25vw;
-    letter-spacing: 0.3rem;
+    font-size: 3rem;
+    letter-spacing: 0.2rem;
+}
+
+.recipe-name {
+    text-decoration: underline;
 }
 
 .table-item {
     font-family: $body-font;
-    font-size: 3.5rem;
+    font-size: 2.75rem;
+    color: #121210;
+    line-height: 2.75rem;
+    overflow: hidden;
 }
 
-.userpage-buttons {
-    font-family: $body-font;
+.recipe-buttons {
+    padding-left: 5rem;
 }
 
 .up-edit-button {
+    font-family: $body-font;
     color: black;
     font-size: 2rem;
     padding: 0.5rem 2rem 0 2rem;
@@ -112,6 +121,7 @@
 }
 
 .up-delete-button {
+    font-family: $body-font;
     color: black;
     margin-left: 4rem;
     font-size: 2rem;
@@ -127,7 +137,7 @@
 
 .manual-add-btn {
     font-family: $header-font;
-    font-size: 1vw;
+    font-size: 2rem;
     letter-spacing: 0.2rem;
     color: white;
     background-color: $green;

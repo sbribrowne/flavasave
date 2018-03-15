@@ -48,17 +48,16 @@ class Recipes extends Component {
     return (
       <div>
         <NavLogged />
-        <Panel className="recipe-header">
-          <h2>{this.state.recipe.recipe_name}</h2>
-          <p><a target="_blank" href={this.state.recipe.recipe_url}>{this.state.recipe.recipe_url}</a></p>
-          <p>Recipe ID: {this.props.match.params.id}</p>
-          <p>Serving Size: GOES HERE</p>
 
+        <div className="recipe-header">
+          <h2 className="recipe-title">{this.state.recipe.recipe_name}</h2>
+          <p className="recipe-servingsize">Serving Size: goes here</p>
           {/* Stand in IMAGE */}
           <img src={require("../images/salmon.jpg")} alt="Store Image" height="400" />
-        </Panel>
-        <Panel>
-          <h4>INGREDIENTS</h4>
+        </div>
+
+        <div className="ingredient-div">
+          <h4 className="recipe-subtitle">INGREDIENTS</h4>
           {this.state.ingredients.length ? ( //Check for Ingredients
             <IngredientList>
               {this.state.ingredients.map(ingredient => (
@@ -67,15 +66,12 @@ class Recipes extends Component {
             </IngredientList>
             ) : (
               <h3>No Results to Display</h3>
-            )}    
-        </Panel>
-        <div className="container" height="400" width="400">
-          <RecipeNotes data={this.state.recipe.recipe_notes} />
-      </div>
+            )}      
+        </div>
 
         {/* STAND IN DIRECTIONS SECTION */}
-        <Panel>
-          <h4>DIRECTIONS</h4>
+        <div className="instruction-div">
+          <h4 className="recipe-subtitle">DIRECTIONS</h4>
           {this.state.instructions.length ? ( //Check for Instructions
             <InstructionList>
               {this.state.instructions.map(instruction => (
@@ -85,13 +81,20 @@ class Recipes extends Component {
             ) : (
               <h3>No Results to Display</h3>
             )} 
+        </div>
+        
+        <p><a target="_blank" href={this.state.recipe.recipe_url} className="recipe-link">{this.state.recipe.recipe_url}</a></p>
+
+        <Panel name="STICKY NOTES" panelfullclass="panel recipe-notes-panel" panelheaderclass="recipe-notes-header">    
+            <RecipeNotes data={this.state.recipe.recipe_notes} />
         </Panel>
-        {/* STAND IN BUTTONS */}
-        <Panel>
-          <button>ADD</button>
-          <button>DELETE</button>
-          <button>NEED TO COOK|COMPLETE</button>
-        </Panel>
+        
+        <div className="container-fluid recipepage-btns">
+          <button className="btn recipepage-btn" type="button">ADD</button>
+          <button className="btn recipepage-btn" type="button">DELETE</button>
+          <button className="btn recipepage-btn" type="button">NEED TO COOK | COMPLETE</button>
+        </div>
+
         <FooterLogged />
       </div>
     );

@@ -3,6 +3,11 @@
     -webkit-appearance:none;
 }
 
+.col, [class*="col-"] {
+    background-color: transparent;
+    border: none;
+}
+
 @import './resources/_fontsandcolors';
 @import './resources/_animations';
 @import './pages/_home';

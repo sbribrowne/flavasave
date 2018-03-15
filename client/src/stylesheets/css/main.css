@@ -2,6 +2,10 @@
   outline: 0px !important;
   -webkit-appearance: none; }
 
+.col, [class*="col-"] {
+  background-color: transparent;
+  border: none; }
+
 /* FONTS */
 @font-face {
   font-family: PathwaysRough;
@@ -395,7 +399,7 @@ li {
 
 .greeting-text {
   font-family: LeagueGothic, sans-serif;
-  font-size: 3.5vw;
+  font-size: 4rem;
   color: #121210;
   text-align: center;
   letter-spacing: 0.2rem;
@@ -408,8 +412,8 @@ li {
 .search-title {
   font-family: LeagueGothic, sans-serif;
   color: #121210;
-  font-size: 1.5vw;
-  letter-spacing: 0.4rem;
+  font-size: 2.75rem;
+  letter-spacing: 0.2rem;
   margin-left: -1rem; }
 
 .input-width {
@@ -443,19 +447,20 @@ li {
 
 .orange-box {
   background-color: #F99E1C;
-  padding: 1rem 0rem 0.5rem 0rem;
+  padding: 0.25rem 0rem 0.25rem 0rem;
   margin-top: 4%; }
 
 .orangeHdrTitle {
   font-family: LeagueGothic, sans-serif;
-  font-size: 2.5vw;
+  font-size: 5rem;
   color: white;
   letter-spacing: 0.3rem; }
 
 .header-image-class {
-  height: 4vw;
+  height: 6rem;
   float: left;
   padding-top: 1rem;
+  padding-bottom: 0.25rem;
   margin-left: 22vw;
   margin-right: 5rem; }
 
@@ -466,17 +471,24 @@ li {
 .table-header {
   font-family: LeagueGothic, sans-serif;
   color: #121210;
-  font-size: 2.25vw;
-  letter-spacing: 0.3rem; }
+  font-size: 3rem;
+  letter-spacing: 0.2rem; }
+
+.recipe-name {
+  text-decoration: underline; }
 
 .table-item {
   font-family: Peleguer, serif;
-  font-size: 3.5rem; }
+  font-size: 2.75rem;
+  color: #121210;
+  line-height: 2.75rem;
+  overflow: hidden; }
 
-.userpage-buttons {
-  font-family: Peleguer, serif; }
+.recipe-buttons {
+  padding-left: 5rem; }
 
 .up-edit-button {
+  font-family: Peleguer, serif;
   color: black;
   font-size: 2rem;
   padding: 0.5rem 2rem 0 2rem;
@@ -490,6 +502,7 @@ li {
   border: none; }
 
 .up-delete-button {
+  font-family: Peleguer, serif;
   color: black;
   margin-left: 4rem;
   font-size: 2rem;
@@ -503,7 +516,7 @@ li {
 
 .manual-add-btn {
   font-family: LeagueGothic, sans-serif;
-  font-size: 1vw;
+  font-size: 2rem;
   letter-spacing: 0.2rem;
   color: white;
   background-color: #90bb5e;
@@ -521,10 +534,94 @@ li {
 
 .recipe-header {
   font-family: LeagueGothic, sans-serif;
-  background-color: #e1dedc; }
+  background-color: #e1dedc;
+  margin-top: 3%;
+  padding: 3rem 2rem 7rem 9vw; }
 
 .recipe-title {
+  font-family: LeagueGothic, sans-serif;
+  color: #E44125;
+  font-size: 6rem;
+  letter-spacing: 0.3rem;
+  text-transform: uppercase; }
+
+.recipe-servingsize {
+  font-family: PeleguerItalic, serif;
+  font-size: 3rem; }
+
+.recipe-subtitle {
+  font-family: LeagueGothic, sans-serif;
+  font-size: 5rem;
+  letter-spacing: 0.5rem;
+  color: #F99E1C;
+  margin-left: 9vw;
+  margin-top: 3%;
+  margin-bottom: 2%; }
+
+.ingredientChecklist {
+  width: 80%;
+  margin-left: 7%;
+  border: none; }
+
+.ingredientItem {
+  font-family: Peleguer, serif;
+  font-size: 3.5rem;
+  background-color: transparent;
+  border: none;
+  padding: 0; }
+
+.instructionChecklist {
+  font-family: Peleguer, serif;
+  font-size: 3.5rem;
+  background-color: transparent;
+  border: none;
+  width: 80%;
+  margin-left: 7%; }
+
+.recipe-link {
+  font-family: Peleguer, serif;
+  font-size: 2rem;
+  color: black;
+  text-decoration: none;
+  margin-left: 9%;
+  width: 80%; }
+
+.recipe-notes-panel {
+  border: 4px solid #F99E1C;
+  border-radius: 0;
+  width: 20%;
+  margin-left: 9vw;
+  margin-top: 2%; }
+
+.recipe-notes-header {
+  color: white;
+  font-size: 3rem;
+  letter-spacing: 0.5rem;
+  background-color: #F99E1C;
+  height: 100%;
+  margin-top: -0.01rem;
+  padding-top: 0.4rem;
+  padding-left: 0.5rem; }
+
+.panel-header {
   font-family: LeagueGothic, sans-serif; }
+
+.recipepage-btns {
+  margin-left: 8vw; }
+
+.recipepage-btn {
+  font-family: LeagueGothic, sans-serif;
+  font-size: 2rem;
+  letter-spacing: 0.2rem;
+  color: white;
+  background-color: #E44125;
+  border-radius: 0;
+  padding: 0.5rem 4rem 0.5rem 4rem;
+  margin-top: 6rem;
+  margin-right: 7rem; }
+
+.recipepage-btn:hover {
+  background-color: #1E401D; }
 
 .editrecipe-container {
   width: 80%;
