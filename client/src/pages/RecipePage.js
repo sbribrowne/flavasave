@@ -3,13 +3,10 @@ import Panel from "../components/Panels/Panel.js";
 // import Nav from "../components/Nav/Nav";
 // import Footer from "../components/Footer/Footer";
 import IngredientList from "../components/Lists/IngredientList";
-<<<<<<< HEAD
-=======
 import IngredientListItem from "../components/Lists/IngredientListItem";
 import InstructionList from "../components/Lists/InstructionList";
 import InstructionListItem from "../components/Lists/InstructionListItem";
 import FooterLogged from "../components/Footer/FooterLogged.js";
->>>>>>> upstream/master
 import API from "../utils/API";
 import "../stylesheets/css/main.css";
 import DeleteBtn from "../components/Buttons/DeleteBtn";
@@ -17,15 +14,6 @@ import RecipeNotes from "../components/Forms/RecipeNotes"
 
 class Recipes extends Component {
   state = {
-<<<<<<< HEAD
-    recipe: []
-  }
-
-  // componentDidMount() {
-  //   API.getRecipe().then(res => this.setState({ recipe: res.data })
-  // );
-  // }
-=======
     recipe: {},
     ingredients: [],
     instructions: []
@@ -34,7 +22,6 @@ class Recipes extends Component {
   componentDidMount() {
     this.loadRecipe();
   }
->>>>>>> upstream/master
 
   loadRecipe = () => {
     API.getRecipe(this.props.match.params.id)

@@ -3,11 +3,7 @@ import Input from "../components/Forms/Input.js";
 import FormBtn from "../components/Forms/FormBtn.js";
 import DropDwn from "../components/Forms/DropDwn.js";
 import NavLogged from "../components/Nav/NavLogged.js";
-<<<<<<< HEAD
-import API from "../utils/API";
-=======
 import FooterLogged from "../components/Footer/FooterLogged.js";
->>>>>>> upstream/master
 
 class AddNewRecipe extends Component {
   //Need method for handling input submit for

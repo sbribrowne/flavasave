@@ -93,7 +93,7 @@ class UserPage extends Component {
             <div className="form-group">
               <Input name="search-recipe" className="input-width" />
               <FormBtn
-                photo={require("../images/search_button.png")}
+                photo={require("../images/search_button.png")}  
                 className="search-btn"
                 imageClass="imageClass"
               />

@@ -1,11 +1,7 @@
 {
   "development": {
     "username": "root",
-<<<<<<< HEAD
     "password": "S1l3nus!13",
-=======
-    "password": "password",
->>>>>>> upstream/master
     "database": "flavasave_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
