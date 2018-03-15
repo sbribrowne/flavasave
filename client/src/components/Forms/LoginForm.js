@@ -58,7 +58,7 @@ class LoginForm extends React.Component {
           )}
           <TextFieldGroup
             error={errors.email}
-            label="email"
+            label="E-MAIL"
             onChange={this.onChange}
             value={email}
             field="email"

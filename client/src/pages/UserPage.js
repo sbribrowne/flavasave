@@ -138,6 +138,10 @@ class UserPage extends Component {
         <div className="container-fluid userpage-container">
           <CompleteList />
         </div>
+        
+        <div className="container-fluid userpage-container">
+          <button className="btn manual-add-btn" type="button">ADD RECIPE MANUALLY</button>
+        </div>
 
         <FooterLogged />
       </div>

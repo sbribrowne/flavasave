@@ -318,7 +318,7 @@ li {
   background-attachment: fixed;
   background-size: 100%; }
 
-.signup-info {
+#signup-info {
   background-color: #90bb5e;
   padding: 9vw 3rem 8vw 6rem; }
 
@@ -396,7 +396,7 @@ li {
 .greeting-text {
   font-family: LeagueGothic, sans-serif;
   font-size: 3.5vw;
-  color: black;
+  color: #121210;
   text-align: center;
   letter-spacing: 0.2rem;
   margin-top: 4vw;
@@ -407,7 +407,7 @@ li {
 
 .search-title {
   font-family: LeagueGothic, sans-serif;
-  color: black;
+  color: #121210;
   font-size: 1.5vw;
   letter-spacing: 0.4rem;
   margin-left: -1rem; }
@@ -416,7 +416,7 @@ li {
   font-family: Peleguer, serif;
   font-size: 1.5vw;
   width: 93%;
-  height: 3vw;
+  height: 2vw;
   border: none;
   background-color: #e1dedc;
   float: left;
@@ -425,21 +425,21 @@ li {
 .search-btn {
   position: relative;
   background-color: #90bb5e;
-  height: 3vw;
+  height: 2vw;
   width: 7%;
   border: none;
-  padding: 1.5rem 2rem 2rem 2rem; }
+  padding: 0.3vw 2rem 0.1vw 2rem; }
 
 .search-btn:hover {
-  background-color: #F99E1C; }
+  background-color: #1E401D; }
 
 .imageClass {
-  height: 1.5vw;
-  margin-left: 0.5vw;
+  height: 1vw;
+  margin-left: 0.25vw;
   padding: 0; }
 
 .tag-search-button {
-  height: 0.5vw; }
+  height: 0.3vw; }
 
 .orange-box {
   background-color: #F99E1C;
@@ -465,6 +465,7 @@ li {
 
 .table-header {
   font-family: LeagueGothic, sans-serif;
+  color: #121210;
   font-size: 2.25vw;
   letter-spacing: 0.3rem; }
 
@@ -485,7 +486,7 @@ li {
 
 .up-edit-button:hover {
   border-radius: 0;
-  background-color: #90bb5e;
+  background-color: #1E401D;
   border: none; }
 
 .up-delete-button {
@@ -500,9 +501,93 @@ li {
 .up-delete-button:hover {
   border-radius: 0; }
 
+.manual-add-btn {
+  font-family: LeagueGothic, sans-serif;
+  font-size: 1vw;
+  letter-spacing: 0.2rem;
+  color: white;
+  background-color: #90bb5e;
+  border-radius: 0;
+  margin-top: 3%;
+  padding-left: 3rem;
+  padding-right: 3rem; }
+
+.manual-add-btn:hover {
+  background-color: #1E401D; }
+
 * {
   outline: 0px !important;
   -webkit-appearance: none; }
+
+.recipe-header {
+  font-family: LeagueGothic, sans-serif;
+  background-color: #e1dedc; }
+
+.recipe-title {
+  font-family: LeagueGothic, sans-serif; }
+
+.editrecipe-container {
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 4%; }
+
+.recipe-page-col {
+  background-color: transparent;
+  border: none; }
+
+.ERTitle {
+  font-family: LeagueGothic, sans-serif;
+  color: black;
+  font-size: 1.5vw;
+  letter-spacing: 0.2rem; }
+
+.ERSubmit {
+  font-family: LeagueGothic, sans-serif;
+  font-size: 0.85vw;
+  letter-spacing: 0.2rem;
+  color: white;
+  background-color: #F99E1C;
+  border: none;
+  padding: 0.5vw 2rem 0vw 2rem; }
+
+.ERSubmit:hover {
+  background-color: #1E401D; }
+
+.ERInput {
+  width: 100%;
+  height: 2.5vw;
+  box-shadow: none;
+  border: 0.5px solid #e1dedc;
+  padding-left: 2rem; }
+
+.drop-down {
+  font-size: 0.75vw;
+  text-align: center;
+  width: 100%;
+  padding: 0.75vw 2rem 0.75vw 2rem;
+  border: 0.5px solid #e1dedc;
+  border-radius: 0;
+  background-color: transparent; }
+
+.ingredient-btn {
+  font-family: LeagueGothic, sans-serif;
+  font-size: 1vw;
+  letter-spacing: 0.2rem;
+  color: white;
+  background-color: #E44125;
+  border-radius: 0;
+  margin-top: 3%;
+  padding-left: 3rem;
+  padding-right: 3rem; }
+
+.ingredient-btn:hover {
+  background-color: #1E401D; }
+
+.recipeDelete {
+  margin-left: 3%; }
+
+.recipeComplete {
+  margin-left: 3%; }
 
 @media only screen and (max-width: 1690px) {
   /* ===============================================HOME PAGE================================================ */
