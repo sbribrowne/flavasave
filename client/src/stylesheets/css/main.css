@@ -4,7 +4,8 @@
 
 .col, [class*="col-"] {
   background-color: transparent;
-  border: none; }
+  border: none;
+  padding: 0; }
 
 /* FONTS */
 @font-face {
@@ -472,7 +473,8 @@ li {
   font-family: LeagueGothic, sans-serif;
   color: #121210;
   font-size: 3rem;
-  letter-spacing: 0.2rem; }
+  letter-spacing: 0.2rem;
+  padding-top: 2rem; }
 
 .recipe-name {
   text-decoration: underline; }
@@ -482,10 +484,12 @@ li {
   font-size: 2.75rem;
   color: #121210;
   line-height: 2.75rem;
-  overflow: hidden; }
+  overflow: hidden;
+  padding-top: 2rem; }
 
 .recipe-buttons {
-  padding-left: 5rem; }
+  padding-left: 5rem;
+  padding-top: 2rem; }
 
 .up-edit-button {
   font-family: Peleguer, serif;
@@ -525,7 +529,7 @@ li {
   border-radius: 0; }
 
 .up-toggle-button:hover {
-  background-color: #90bb5e;
+  background-color: #1E401D;
   border: none; }
 
 .manual-add-btn {

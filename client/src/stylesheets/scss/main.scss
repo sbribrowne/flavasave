@@ -6,6 +6,7 @@
 .col, [class*="col-"] {
     background-color: transparent;
     border: none;
+    padding: 0;
 }
 
 @import './resources/_fontsandcolors';

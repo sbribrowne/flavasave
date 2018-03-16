@@ -8,7 +8,7 @@ const NeedToCookList = ({ children }) => {
         <div className="col-md-5 table-header recipe-buttons">ACTION</div>
         <hr />
       </div>
-      <div className="row recipe-item-row">
+      <div className="row">
         {children}  
       </div>
     </div>
