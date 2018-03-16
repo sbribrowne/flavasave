@@ -18,12 +18,14 @@
 
 .ERSubmit {
     font-family: $header-font;
-    font-size: 0.85vw;
+    font-size: 1vw;
     letter-spacing: 0.2rem;
     color: white;
     background-color: $orange;
     border: none;
-    padding: 0.5vw 2rem 0vw 2rem;
+    border-radius: 0;
+    padding: 1.1rem 2rem 1rem 2rem;
+    margin-left: 2rem;
 }
 
 .ERSubmit:hover {
@@ -31,11 +33,13 @@
 }
 
 .ERInput {
-    width: 100%;
+    font-family: $body-font;
+    font-size: 3rem;
+    width: 100%; 
     height: 2.5vw;
     box-shadow: none;
     border: 0.5px solid $lightgray;
-    padding-left: 2rem;
+    padding-left: 2.4rem;
 }
 
 .drop-down {
