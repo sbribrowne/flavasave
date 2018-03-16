@@ -8,6 +8,7 @@ import OrangeHdr from "../components/Panels/OrangeHdr.js";
 import NeedToCookList from "../components/Lists/NeedToCookList";
 import NTCListItem from "../components/Lists/NTCListItem";
 import CompleteList from "../components/Lists/CompleteList";
+import CompleteListItem from "../components/Lists/CompleteListItem";
 import FooterLogged from "../components/Footer/FooterLogged.js";
 import API from "../utils/API";
 import { Link } from "react-router-dom";
@@ -159,7 +160,7 @@ class UserPage extends Component {
 
         <div className="container-fluid userpage-container">
           {this.state.recipes.length ? (
-            <CompleteList>
+            <NeedToCookList>
               {this.state.recipes.map(recipe => (
                 !recipe.recipe_checkbox ? (
                   <NTCListItem key={recipe.id}>
@@ -179,7 +180,7 @@ class UserPage extends Component {
                   )
 
               ))}
-            </CompleteList>
+            </NeedToCookList>
           ) : (
               <h1 className="table-items">No results to display</h1>
             )}
@@ -198,7 +199,7 @@ class UserPage extends Component {
             <CompleteList>
               {this.state.recipes.map(recipe => (
                 recipe.recipe_checkbox ? (
-                  <NTCListItem key={recipe.id}>
+                  <CompleteListItem key={recipe.id}>
                     <div className='col-md-7 table-item recipe-name'>
                       <Link className="table-item" to={"/recipe/" + recipe.id}>
                         {recipe.recipe_name}
@@ -209,9 +210,9 @@ class UserPage extends Component {
                       <Buttons onClick={() => this.deleteRecipe(recipe.id)} />
                       <button onClick={() => this.makeFalse(recipe.id)} className="btn up-toggle-button" type="button">Need to cook | Complete</button>
                     </div>
-                  </NTCListItem>
+                  </CompleteListItem>
                 ) : (
-                    <h1 className="noshow">No Results to Display</h1>
+                    <h1 className="noshow"></h1>
                   )
               ))}
             </CompleteList>
