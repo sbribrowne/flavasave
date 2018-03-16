@@ -488,7 +488,6 @@ li {
   padding-top: 2rem; }
 
 .recipe-buttons {
-  padding-left: 5rem;
   padding-top: 2rem; }
 
 .up-edit-button {
@@ -720,7 +719,27 @@ li {
 
   .arrow {
     margin-top: 7vw;
-    margin-left: 8vw; } }
+    margin-left: 8vw; }
+
+  /* ===============================================USER PAGE================================================ */
+  .search-btn {
+    height: 2vw;
+    padding: 0.1vw 2rem 0.3vw 2rem; }
+
+  .orangeHdrTitle {
+    font-size: 3.5rem; }
+
+  .header-image-class {
+    margin-left: 20vw; }
+
+  .up-edit-button {
+    padding: 0.5rem 1rem 0 1rem; }
+
+  .up-delete-button {
+    padding: 0.5rem 1rem 0 1rem; }
+
+  .up-toggle-button {
+    padding: 0.5rem 1rem 0 1rem; } }
 @media only screen and (max-width: 980px) {
   /* ===============================================HOME PAGE================================================ */
   .loginBox {
@@ -757,7 +776,31 @@ li {
     font-size: 8vw; }
 
   .signup-label {
-    font-size: 2rem; } }
+    font-size: 2rem; }
+
+  /* ===============================================USER PAGE================================================ */
+  .table-header {
+    display: none; }
+
+  .input-width {
+    height: 3vw; }
+
+  .search-btn {
+    height: 3vw;
+    padding: 0.1vw 2rem 0.3vw 1.75rem; }
+
+  .imageClass {
+    height: 1.5vw;
+    margin-left: 0.01vw; }
+
+  .tag-search-button {
+    height: 0.6vw; }
+
+  .orangeHdrTitle {
+    font-size: 3rem; }
+
+  .header-image-class {
+    margin-left: 17vw; } }
 @media only screen and (max-width: 736px) {
   /* ===============================================HOME PAGE================================================ */
   .aboutHeader {
@@ -772,7 +815,29 @@ li {
     margin-top: 60vw; }
 
   #footerleft {
-    display: none; } }
+    display: none; }
+
+  /* ===============================================USER PAGE================================================ */
+  .input-width {
+    width: 92%; }
+
+  .search-btn {
+    padding: -2vw 2rem 0.4vw 1.75rem; }
+
+  .imageClass {
+    height: 1.2vw;
+    margin-left: -0.5vw; }
+
+  .tag-search-button {
+    height: 0.6vw;
+    margin-left: -0.5vw; }
+
+  .header-image-class {
+    margin-left: 13vw; }
+
+  .manual-add-btn {
+    font-family: LeagueGothic, sans-serif;
+    font-size: 1.5rem; } }
 @media only screen and (max-width: 480px) {
   /* ===============================================HOME PAGE================================================ */
   .homebody {
