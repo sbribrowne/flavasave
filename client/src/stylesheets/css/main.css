@@ -542,6 +542,10 @@ li {
 .manual-add-btn:hover {
   background-color: #1E401D; }
 
+.noshow {
+  display: none;
+}
+
 * {
   outline: 0px !important;
   -webkit-appearance: none; }
