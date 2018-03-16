@@ -11,30 +11,39 @@ import CompleteList from "../components/Lists/CompleteList";
 import FooterLogged from "../components/Footer/FooterLogged.js";
 import API from "../utils/API";
 import { Link } from "react-router-dom";
-import Buttons from "../components/Buttons/Button.js"
+import Buttons from "../components/Buttons/Button.js";
 import EditBtn from "../components/Buttons/EditBtn.js";
-
 
 class UserPage extends Component {
   //set inital state of forms to empty
   state = {
+    user: "",
     recipes: [],
     recipe_url: ""
   };
 
   componentDidMount() {
+    this.currentUser();
     this.loadRecipes();
     console.log(this.state.recipes);
   }
 
+  currentUser = () => {
+    API.getUserData()
+      .then(res => {
+        this.setState({ user: res.data });
+        console.log(res);
+      })
+      .catch(err => console.log(err));
+  };
+
   loadRecipes = () => {
     API.getRecipes()
-      .then((res) => {
-        this.setState({ recipes: res.data })
+      .then(res => {
+        this.setState({ recipes: res.data });
         console.log(res);
         console.log(this.state.recipes);
-      }
-      )
+      })
       .catch(err => console.log(err));
   };
 
@@ -64,10 +73,14 @@ class UserPage extends Component {
   };
 
   render() {
+    const userName = this.state.user.email;
+
     return (
       <div>
         <NavLogged />
-        <h1 className="greeting-text">WELCOME, TESTING@PLACEHOLDER.COM.</h1>
+        <h1 className="greeting-text">{`WELCOME, ${
+          userName.split("@")[0]
+        }`}</h1>
         <div className="container-fluid userpage-container">
           <h3 className="search-title">ADD RECIPE BY URL</h3>
           <form className="row">
@@ -120,28 +133,36 @@ class UserPage extends Component {
           className="container-fluid orange-box userpage-container"
           orangehdrimageclass="header-image-class"
         />
-        
+
         <div className="container-fluid userpage-container">
           {this.state.recipes.length ? (
             <NeedToCookList>
               {this.state.recipes.map(recipe => (
-                  <NTCListItem key={recipe.id}>
-                      <div className='col-md-7 table-item recipe-name'>
-                        <Link className="table-item" to={"/recipe/" + recipe.id}>
-                          {recipe.recipe_name}
-                        </Link>
-                      </div>
-                      <div class='col-md-5 recipe-buttons'>
-                        <Link className="btn btn-sm up-edit-button" to={"/recipeedit/" + recipe.id}> Edit </Link>
-                        <Buttons onClick={() => this.deleteRecipe(recipe.id)} />
-                        <button className="btn up-toggle-button" type="button">Need to cook | Complete</button>
-                      </div>
-                  </NTCListItem>
+                <NTCListItem key={recipe.id}>
+                  <div className="col-md-7 table-item recipe-name">
+                    <Link className="table-item" to={"/recipe/" + recipe.id}>
+                      {recipe.recipe_name}
+                    </Link>
+                  </div>
+                  <div class="col-md-5 recipe-buttons">
+                    <Link
+                      className="btn btn-sm up-edit-button"
+                      to={"/recipeedit/" + recipe.id}
+                    >
+                      {" "}
+                      Edit{" "}
+                    </Link>
+                    <Buttons onClick={() => this.deleteRecipe(recipe.id)} />
+                    <button className="btn up-toggle-button" type="button">
+                      Need to cook | Complete
+                    </button>
+                  </div>
+                </NTCListItem>
               ))}
             </NeedToCookList>
           ) : (
-              <h1 className="table-item">No Results to Display</h1>
-            )}
+            <h1 className="table-item">No Results to Display</h1>
+          )}
         </div>
 
         <OrangeHdr
@@ -156,11 +177,13 @@ class UserPage extends Component {
         </div>
 
         <div className="container-fluid userpage-container">
-          <button className="btn manual-add-btn" type="button">ADD RECIPE MANUALLY</button>
+          <button className="btn manual-add-btn" type="button">
+            ADD RECIPE MANUALLY
+          </button>
         </div>
 
         <FooterLogged />
-      </div >
+      </div>
     );
   }
 }
