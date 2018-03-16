@@ -136,7 +136,7 @@ class UserPage extends Component {
                           {recipe.recipe_url}
                         </Link>
                       </div>
-                      <div class='col-md-3 recipe-buttons'>
+                      <div className='col-md-3 recipe-buttons'>
                         <Link className="btn btn-sm up-edit-button" to={"/recipeedit/" + recipe.id}> Edit </Link>
                         <Buttons onClick={() => this.deleteRecipe(recipe.id)} />
                       </div>

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Panel from "../components/Panels/Panel.js";
 // import Nav from "../components/Nav/Nav";
 // import Footer from "../components/Footer/Footer";
+import NavLogged from "../components/Nav/NavLogged";
 import IngredientList from "../components/Lists/IngredientList";
 import IngredientListItem from "../components/Lists/IngredientListItem";
 import InstructionList from "../components/Lists/InstructionList";
