@@ -662,24 +662,26 @@ li {
 
 .ERSubmit {
   font-family: LeagueGothic, sans-serif;
-  font-size: 0.85vw;
+  font-size: 1vw;
   letter-spacing: 0.2rem;
   color: white;
   background-color: #F99E1C;
   border: none;
   border-radius: 0;
-  padding: 1.3rem 2rem 1.1rem 2rem;
+  padding: 1.1rem 2rem 1rem 2rem;
   margin-left: 2rem; }
 
 .ERSubmit:hover {
   background-color: #1E401D; }
 
 .ERInput {
+  font-family: Peleguer, serif;
+  font-size: 3rem;
   width: 100%;
   height: 2.5vw;
   box-shadow: none;
   border: 0.5px solid #e1dedc;
-  padding-left: 2rem; }
+  padding-left: 2.4rem; }
 
 .drop-down {
   font-size: 0.75vw;
@@ -843,7 +845,31 @@ li {
 
   .manual-add-btn {
     font-family: LeagueGothic, sans-serif;
-    font-size: 1.5rem; } }
+    font-size: 1.5rem; }
+
+  /* ===============================================RECIPE EDIT================================================ */
+  .ERTitle {
+    font-size: 2rem;
+    margin-left: -1.5rem; }
+
+  .ERSubmit {
+    font-size: 1rem;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    margin-top: 1rem;
+    margin-left: 0rem; }
+
+  .drop-down {
+    font-size: 1rem; }
+
+  .ingredient-btn {
+    font-size: 1rem;
+    letter-spacing: 0.2rem;
+    margin-top: 1%;
+    padding-left: 1rem;
+    padding-right: 1rem; }
+
+  .ingredient-btns {
+    margin-left: -1.4rem; } }
 @media only screen and (max-width: 480px) {
   /* ===============================================HOME PAGE================================================ */
   .homebody {
@@ -966,7 +992,12 @@ li {
   .recipepage-btn {
     letter-spacing: 0.2rem;
     margin-top: 1.5rem;
-    margin-right: 1rem; } }
+    margin-right: 1rem; }
+
+  /* ===============================================RECIPE EDIT================================================ */
+  .ERInput {
+    height: 2rem;
+    font-size: 1.5rem; } }
 @media only screen and (max-width: 375px) {
   .login-logo {
     height: 4rem; }

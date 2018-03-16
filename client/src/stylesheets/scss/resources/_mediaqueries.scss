@@ -175,6 +175,34 @@
         font-family: $header-font;
         font-size: 1.5rem;
     }
+    /* ===============================================RECIPE EDIT================================================ */
+    .ERTitle {
+        font-size: 2rem;
+        margin-left: -1.5rem;
+    }
+
+    .ERSubmit {
+        font-size: 1rem;
+        padding: 0.5rem 1rem 0.5rem 1rem;
+        margin-top: 1rem;
+        margin-left: 0rem;
+    }
+
+    .drop-down {
+        font-size: 1rem;
+    }
+
+    .ingredient-btn {
+        font-size: 1rem;
+        letter-spacing: 0.2rem;
+        margin-top: 1%;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .ingredient-btns {
+        margin-left: -1.4rem;
+    }
 }
 
 @media only screen and (max-width: 480px) {
@@ -331,6 +359,11 @@
         letter-spacing: 0.2rem;
         margin-top: 1.5rem;
         margin-right: 1rem;
+    }
+    /* ===============================================RECIPE EDIT================================================ */
+    .ERInput {
+        height: 2rem;
+        font-size: 1.5rem;
     }
 }
 
