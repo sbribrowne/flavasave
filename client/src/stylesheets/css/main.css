@@ -4,7 +4,8 @@
 
 .col, [class*="col-"] {
   background-color: transparent;
-  border: none; }
+  border: none;
+  padding: 0; }
 
 /* FONTS */
 @font-face {
@@ -108,8 +109,9 @@
   padding-right: 8vw;
   padding-top: 3rem; }
 
-.navbar-brand {
-  padding-left: 8vw; }
+#navbarlogo {
+  padding-left: 8vw;
+  margin-top: 1.2vw; }
 
 .nav-item {
   color: #1E401D;
@@ -381,6 +383,11 @@ li {
 .signup-footer {
   text-align: right; }
 
+.logged-logo-white {
+  height: 60px;
+  padding-left: 8vw;
+  margin-top: 1.2vw; }
+
 .logged-navbar {
   background-color: #E44125;
   border-radius: 0;
@@ -388,9 +395,10 @@ li {
 
 .logged-nav-item {
   color: white;
-  font-size: 1.5vw;
+  font-size: 3rem;
   letter-spacing: 0.4rem;
-  margin-bottom: 3rem; }
+  margin-bottom: 3rem;
+  margin-left: 3rem; }
 
 .logged-nav-item:hover {
   text-decoration: none;
@@ -472,7 +480,8 @@ li {
   font-family: LeagueGothic, sans-serif;
   color: #121210;
   font-size: 3rem;
-  letter-spacing: 0.2rem; }
+  letter-spacing: 0.2rem;
+  padding-top: 2rem; }
 
 .recipe-name {
   text-decoration: underline; }
@@ -482,10 +491,11 @@ li {
   font-size: 2.75rem;
   color: #121210;
   line-height: 2.75rem;
-  overflow: hidden; }
+  overflow: hidden;
+  padding-top: 2rem; }
 
 .recipe-buttons {
-  padding-left: 5rem; }
+  padding-top: 2rem; }
 
 .up-edit-button {
   font-family: Peleguer, serif;
@@ -504,7 +514,7 @@ li {
 .up-delete-button {
   font-family: Peleguer, serif;
   color: black;
-  margin-left: 4rem;
+  margin-left: 2rem;
   font-size: 2rem;
   padding: 0.5rem 2rem 0 2rem;
   background-color: transparent;
@@ -513,6 +523,20 @@ li {
 
 .up-delete-button:hover {
   border-radius: 0; }
+
+.up-toggle-button {
+  font-family: Peleguer, serif;
+  color: black;
+  margin-left: 2rem;
+  font-size: 2rem;
+  padding: 0.5rem 2rem 0 2rem;
+  background-color: transparent;
+  border: 0.25px solid #e1dedc;
+  border-radius: 0; }
+
+.up-toggle-button:hover {
+  background-color: #1E401D;
+  border: none; }
 
 .manual-add-btn {
   font-family: LeagueGothic, sans-serif;
@@ -599,6 +623,7 @@ li {
   letter-spacing: 0.5rem;
   background-color: #F99E1C;
   height: 100%;
+  width: 100%;
   margin-top: -0.01rem;
   padding-top: 0.4rem;
   padding-left: 0.5rem; }
@@ -640,22 +665,26 @@ li {
 
 .ERSubmit {
   font-family: LeagueGothic, sans-serif;
-  font-size: 0.85vw;
+  font-size: 1vw;
   letter-spacing: 0.2rem;
   color: white;
   background-color: #F99E1C;
   border: none;
-  padding: 0.5vw 2rem 0vw 2rem; }
+  border-radius: 0;
+  padding: 1.1rem 2rem 1rem 2rem;
+  margin-left: 2rem; }
 
 .ERSubmit:hover {
   background-color: #1E401D; }
 
 .ERInput {
+  font-family: Peleguer, serif;
+  font-size: 3rem;
   width: 100%;
   height: 2.5vw;
   box-shadow: none;
   border: 0.5px solid #e1dedc;
-  padding-left: 2rem; }
+  padding-left: 2.4rem; }
 
 .drop-down {
   font-size: 0.75vw;
@@ -686,6 +715,18 @@ li {
 .recipeComplete {
   margin-left: 3%; }
 
+.recipe-add-button {
+  font-family: LeagueGothic, sans-serif;
+  font-size: 2rem;
+  letter-spacing: 0.2rem;
+  color: white;
+  background-color: #E44125;
+  border-radius: 0;
+  margin-top: 2%;
+  margin-left: -1.1rem;
+  padding-left: 3rem;
+  padding-right: 3rem; }
+
 @media only screen and (max-width: 1690px) {
   /* ===============================================HOME PAGE================================================ */
   .loginBox {
@@ -701,7 +742,27 @@ li {
 
   .arrow {
     margin-top: 7vw;
-    margin-left: 8vw; } }
+    margin-left: 8vw; }
+
+  /* ===============================================USER PAGE================================================ */
+  .search-btn {
+    height: 2vw;
+    padding: 0.1vw 2rem 0.3vw 2rem; }
+
+  .orangeHdrTitle {
+    font-size: 3.5rem; }
+
+  .header-image-class {
+    margin-left: 20vw; }
+
+  .up-edit-button {
+    padding: 0.5rem 1rem 0 1rem; }
+
+  .up-delete-button {
+    padding: 0.5rem 1rem 0 1rem; }
+
+  .up-toggle-button {
+    padding: 0.5rem 1rem 0 1rem; } }
 @media only screen and (max-width: 980px) {
   /* ===============================================HOME PAGE================================================ */
   .loginBox {
@@ -738,7 +799,31 @@ li {
     font-size: 8vw; }
 
   .signup-label {
-    font-size: 2rem; } }
+    font-size: 2rem; }
+
+  /* ===============================================USER PAGE================================================ */
+  .table-header {
+    display: none; }
+
+  .input-width {
+    height: 3vw; }
+
+  .search-btn {
+    height: 3vw;
+    padding: 0.1vw 2rem 0.3vw 1.75rem; }
+
+  .imageClass {
+    height: 1.5vw;
+    margin-left: 0.01vw; }
+
+  .tag-search-button {
+    height: 0.6vw; }
+
+  .orangeHdrTitle {
+    font-size: 3rem; }
+
+  .header-image-class {
+    margin-left: 17vw; } }
 @media only screen and (max-width: 736px) {
   /* ===============================================HOME PAGE================================================ */
   .aboutHeader {
@@ -753,7 +838,53 @@ li {
     margin-top: 60vw; }
 
   #footerleft {
-    display: none; } }
+    display: none; }
+
+  /* ===============================================USER PAGE================================================ */
+  .input-width {
+    width: 92%; }
+
+  .search-btn {
+    padding: -2vw 2rem 0.4vw 1.75rem; }
+
+  .imageClass {
+    height: 1.2vw;
+    margin-left: -0.5vw; }
+
+  .tag-search-button {
+    height: 0.6vw;
+    margin-left: -0.5vw; }
+
+  .header-image-class {
+    margin-left: 13vw; }
+
+  .manual-add-btn {
+    font-family: LeagueGothic, sans-serif;
+    font-size: 1.5rem; }
+
+  /* ===============================================RECIPE EDIT================================================ */
+  .ERTitle {
+    font-size: 2rem;
+    margin-left: -1.5rem; }
+
+  .ERSubmit {
+    font-size: 1rem;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    margin-top: 1rem;
+    margin-left: 0rem; }
+
+  .drop-down {
+    font-size: 1rem; }
+
+  .ingredient-btn {
+    font-size: 1rem;
+    letter-spacing: 0.2rem;
+    margin-top: 1%;
+    padding-left: 1rem;
+    padding-right: 1rem; }
+
+  .ingredient-btns {
+    margin-left: -1.4rem; } }
 @media only screen and (max-width: 480px) {
   /* ===============================================HOME PAGE================================================ */
   .homebody {
@@ -809,8 +940,86 @@ li {
 
   /* ===============================================SIGN UP PAGE================================================ */
   .signup-text {
-    font-size: 6vw; } }
-@media only screen and (max-width: 320px) {
+    font-size: 6vw; }
+
+  /* ===============================================USER PAGE================================================ */
+  .input-width {
+    width: 85%;
+    height: 6vw; }
+
+  .search-btn {
+    padding: -2vw 2rem 0.4vw 1.75rem;
+    height: 6vw; }
+
+  .imageClass {
+    height: 2.5vw;
+    margin-left: -0.5vw; }
+
+  .tag-search-button {
+    height: 1vw;
+    margin-left: -0.5vw; }
+
+  .header-image-class {
+    margin-left: 10vw;
+    margin-right: 2rem; }
+
+  .manual-add-btn {
+    font-family: LeagueGothic, sans-serif;
+    font-size: 1.5rem; }
+
+  /* ===============================================RECIPE PAGE================================================ */
+  .recipe-image {
+    display: none; }
+
+  .recipe-link {
+    display: none; }
+
+  .recipe-header {
+    padding: 1rem 2rem 2rem 9vw;
+    margin-bottom: 10%; }
+
+  .recipe-title {
+    font-size: 3.5rem; }
+
+  .recipe-servingsize {
+    font-size: 2rem; }
+
+  .recipe-subtitle {
+    font-size: 3rem; }
+
+  .ingredientChecklist {
+    width: 100%;
+    margin-left: 0%; }
+
+  .ingredientItem {
+    font-size: 2rem; }
+
+  .instructionChecklist {
+    font-size: 2rem;
+    margin-left: 3%; }
+
+  .recipe-notes-panel {
+    display: none; }
+
+  .recipepage-btns {
+    margin-left: 4vw; }
+
+  .recipepage-btn {
+    letter-spacing: 0.2rem;
+    margin-top: 1.5rem;
+    margin-right: 1rem; }
+
+  /* ===============================================RECIPE EDIT================================================ */
+  .ERInput {
+    height: 2rem;
+    font-size: 1.5rem; }
+
+  /* ===============================================RECIPE EDIT PAGE================================================ */
+  .recipe-add-button {
+    font-size: 1.5rem;
+    margin-left: -1.4rem;
+    padding: 0.5rem 1.5rem 0.5rem 1.5rem; } }
+@media only screen and (max-width: 375px) {
   .login-logo {
     height: 4rem; }
 
@@ -840,6 +1049,29 @@ li {
 
   /* ===============================================SIGN UP PAGE================================================ */
   .signup-text {
-    display: none; } }
+    display: none; }
+
+  /* ===============================================USER PAGE================================================ */
+  .greeting-text {
+    font-size: 2rem; }
+
+  .input-width {
+    width: 83%;
+    height: 8vw; }
+
+  .search-btn {
+    padding: -2vw 2rem 0.4vw 1.75rem;
+    height: 8vw; }
+
+  .imageClass {
+    height: 2vw;
+    margin-left: -0.5vw; }
+
+  .orangeHdrTitle {
+    font-size: 2rem; }
+
+  .tag-search-button {
+    height: 1vw;
+    margin-left: -0.5vw; } }
 
 /*# sourceMappingURL=main.css.map */

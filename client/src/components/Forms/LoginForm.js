@@ -4,7 +4,7 @@ import validateInput from "../../actions/validations/login";
 import TextFieldGroup from "./TextFieldGroup";
 import { connect } from "react-redux";
 import { loginAction } from "../../actions/loginActions";
-import axios from "axios";
+// import axios from "axios";
 
 class LoginForm extends React.Component {
   state = {
@@ -29,22 +29,21 @@ class LoginForm extends React.Component {
 
   onSubmit = event => {
     event.preventDefault();
-
-    axios.post("api/login", {
-      email: this.state.email,
-      password: this.state.password
-    });
+    // axios.post("api/login", {
+    //   email: this.state.email,
+    //   password: this.state.password
+    // });
 
     if (this.isValid()) {
       this.setState({ errors: {}, isLoading: true });
-      this.props.loginAction(this.state).then(
-        res => this.context.router.history.push("/userpage"),
-        error =>
-          this.setState({
-            errors: error.response.data.errors,
-            isLoading: false
-          })
-      );
+      this.props
+        .loginAction(this.state)
+        .then(() => {
+          this.context.router.history.push("/userpage");
+        })
+        .catch(error => {
+          this.setState({ errors: error.response.data, isLoading: false });
+        });
     }
   };
 

@@ -9,9 +9,7 @@ const TextFieldGroup = ({ field, value, label, error, type, onChange }) => {
         "has-error": error
       })}
     >
-      <label htmlFor="control-lable">
-        {label}
-      </label>
+      <label htmlFor="control-label">{label}</label>
       <input
         type={type}
         className="form-control"
@@ -19,7 +17,7 @@ const TextFieldGroup = ({ field, value, label, error, type, onChange }) => {
         value={value}
         onChange={onChange}
       />
-      {error && <span className="help-block">{error}</span>}
+      {error && <span className="text-white">{error}</span>}
     </div>
   );
 };
