@@ -21,6 +21,13 @@ class NavLogged extends React.Component {
             id="navbarNavAltMarkup"
           >
             <div className="nav navbar-nav navbar-right">
+            <a
+                className="logged-nav-item nav-link"
+                href="/"
+                onClick={this.logout}
+              >
+                MY RECIPES
+              </a>
               <a
                 className="logged-nav-item nav-link"
                 href="/"
