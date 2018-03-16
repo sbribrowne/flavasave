@@ -21,7 +21,7 @@ class RecipeEdit extends Component {
               <Input className="ERInput" name="recipe-name" />
             </div>
             <div className="recipe-page-col col-sm-1">
-              <FormBtn className="ERSubmit" buttonName="SUBMIT" />
+              <button className="btn ERSubmit" type="button">SAVE</button>
             </div>
           </form>
 
@@ -31,7 +31,7 @@ class RecipeEdit extends Component {
               <Input className="ERInput" name="recipe-name" />
             </div>
             <div className="recipe-page-col col-sm-1">
-              <FormBtn className="ERSubmit" buttonName="SUBMIT" />
+              <button className="btn ERSubmit" type="button">SAVE</button>
             </div>
           </form>
 
@@ -47,7 +47,7 @@ class RecipeEdit extends Component {
               <Input className="ERInput" name="ingredient" />
             </div>
             <div className="recipe-page-col col-sm-1">
-              <FormBtn className="ERSubmit" buttonName="SUBMIT" />
+              <button className="btn ERSubmit" type="button">SAVE</button>
             </div>
           </form>
 
@@ -57,7 +57,7 @@ class RecipeEdit extends Component {
               <Input className="ERInput" name="recipe-name" />
             </div>
             <div className="recipe-page-col col-sm-1">
-              <FormBtn className="ERSubmit" buttonName="SUBMIT" />
+              <button className="btn ERSubmit" type="button">SAVE</button>
             </div>
           </form>
 
@@ -67,7 +67,7 @@ class RecipeEdit extends Component {
               <Input className="ERInput" name="recipe-name" />
             </div>
             <div className="recipe-page-col col-sm-1">
-              <FormBtn className="ERSubmit" buttonName="SUBMIT" />
+              <button className="btn ERSubmit" type="button">SAVE</button>
             </div>
           </form>
 
