@@ -123,7 +123,7 @@
 .up-delete-button {
     font-family: $body-font;
     color: black;
-    margin-left: 4rem;
+    margin-left: 2rem;
     font-size: 2rem;
     padding: 0.5rem 2rem 0 2rem;
     background-color: transparent;
@@ -133,6 +133,22 @@
 
 .up-delete-button:hover {
     border-radius: 0;
+}
+
+.up-toggle-button {
+    font-family: $body-font;
+    color: black;
+    margin-left: 2rem;
+    font-size: 2rem;
+    padding: 0.5rem 2rem 0 2rem;
+    background-color: transparent;
+    border: 0.25px solid $lightgray;
+    border-radius: 0;
+}
+
+.up-toggle-button:hover {
+    background-color: $green;
+    border: none;
 }
 
 .manual-add-btn {
