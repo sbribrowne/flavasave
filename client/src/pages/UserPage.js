@@ -159,22 +159,10 @@ class UserPage extends Component {
 
         <div className="container-fluid userpage-container">
           {this.state.recipes.length ? (
-            <CompleteList>
+            <NeedToCookList>
               {this.state.recipes.map(recipe => (
                 !recipe.recipe_checkbox ? (
                   <NTCListItem key={recipe.id}>
-<<<<<<< HEAD
-                      <div className='col-md-7 table-item recipe-name'>
-                        <Link className="table-item" to={"/recipe/" + recipe.id}>
-                          {recipe.recipe_name}
-                        </Link>
-                      </div>
-                      <div className='col-md-5 recipe-buttons'>
-                        <Link className="btn btn-sm up-edit-button" to={"/recipeedit/" + recipe.id}> Edit </Link>
-                        <Buttons onClick={() => this.deleteRecipe(recipe.id)} />
-                        <button className="btn up-toggle-button" type="button">Need to cook | Complete</button>
-                      </div>
-=======
                     <div className='col-md-7 table-item recipe-name'>
                       <Link className="table-item" to={"/recipe/" + recipe.id}>
                         {recipe.recipe_name}
@@ -185,14 +173,13 @@ class UserPage extends Component {
                       <Buttons onClick={() => this.deleteRecipe(recipe.id)} />
                       <button onClick={() => this.makeTrue(recipe.id)} className="btn up-toggle-button" type="button">Need to cook | Complete</button>
                     </div>
->>>>>>> upstream/master
                   </NTCListItem>
                 ) : (
                     <h1 className="noshow"></h1>
                   )
 
               ))}
-            </CompleteList>
+            </NeedToCookList>
           ) : (
               <h1 className="table-items">No results to display</h1>
             )}
