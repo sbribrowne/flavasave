@@ -71,10 +71,10 @@ class RecipeEdit extends Component {
             </div>
           </form>
 
-          <button className="btn ingredient-btn recipeEdit" type="button">EDIT</button>
-          <button className="btn ingredient-btn recipeDelete" type="button">DELETE</button>
+          <button className="btn ingredient-btn recipeEdit" type="button">ADD INGREDIENT | INSTRUCTION</button>
           <button className="btn ingredient-btn recipeComplete" type="button">NEED TO COOK | RECIPE COMPLETE</button>
           <button className="btn ingredient-btn recipeComplete" type="button">REVERT TO ORIGINAL</button>
+          <button className="btn ingredient-btn recipeDelete" type="button">DELETE</button>
         </div>
         <FooterLogged />
       </div>
