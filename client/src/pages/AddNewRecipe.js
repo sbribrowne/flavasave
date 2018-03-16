@@ -75,7 +75,7 @@ class AddNewRecipe extends Component {
                     <Input className="ERInput" name="ingredient" />
                     </div>
                     <div className="recipe-page-col col-sm-1">
-                    <FormBtn className="ERSubmit" buttonName="ADD" />
+                    <button className="btn ERSubmit" type="button">ADD</button>
                     </div>
                 </div>
 
@@ -85,7 +85,7 @@ class AddNewRecipe extends Component {
                     <Input className="ERInput" name="recipe-name" />
                     </div>
                     <div className="recipe-page-col col-sm-1">
-                    <FormBtn className="ERSubmit" buttonName="ADD" />
+                    <button className="btn ERSubmit" type="button">ADD</button>
                     </div>
                 </div>
 
@@ -95,11 +95,11 @@ class AddNewRecipe extends Component {
                     <Input className="ERInput" name="recipe-name" />
                     </div>
                     <div className="recipe-page-col col-sm-1">
-                    <FormBtn className="ERSubmit" buttonName="ADD" />
+                    <button className="btn ERSubmit" type="button">ADD</button>
                     </div>
                 </div>
 
-                <button className="btn ingredient-btn recipeEdit" type="button">SUBMIT</button>
+                <button className="btn recipe-add-button" type="button">SUBMIT</button>
           </form>
         </div>
         <FooterLogged />

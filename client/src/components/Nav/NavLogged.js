@@ -10,9 +10,9 @@ class NavLogged extends React.Component {
           <div className="navbar-header">
             <Link to="/userpage">
               <img
+                className="logged-logo-white"
                 src={require("../../images/logo_white.png")}
                 alt="FlavaSave"
-                height="55"
               />
             </Link>
           </div>
@@ -21,6 +21,13 @@ class NavLogged extends React.Component {
             id="navbarNavAltMarkup"
           >
             <div className="nav navbar-nav navbar-right">
+            <Link
+                className="logged-nav-item nav-link"
+                to="/"
+                onClick={logout}
+              >
+                MY RECIPES
+              </Link>
               <Link
                 className="logged-nav-item nav-link"
                 to="/"

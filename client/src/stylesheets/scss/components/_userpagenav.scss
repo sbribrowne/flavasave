@@ -1,3 +1,9 @@
+.logged-logo-white {
+    height: 60px;
+    padding-left: 8vw;
+    margin-top: 1.2vw;
+}
+
 .logged-navbar {
     background-color: $red;
     border-radius: 0;
@@ -6,9 +12,10 @@
 
 .logged-nav-item {
     color: white;
-    font-size: 1.5vw;
+    font-size: 3rem;
     letter-spacing: 0.4rem;
     margin-bottom: 3rem;
+    margin-left: 3rem;
 }
 
 .logged-nav-item:hover {

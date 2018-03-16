@@ -23,9 +23,9 @@ export default {
       })
   },
   // Add new recipe to the database
-  // addRecipe: function (recipe) {
+  // addManualRecipe: function (recipe) {
   //   console.log(recipe);
-  //   return axios.post("/api/recipes", recipe)
+  //   return axios.post("/api/manual", recipe)
   //     .then( (data) => {
   //       console.log(data);
   //       return data;
