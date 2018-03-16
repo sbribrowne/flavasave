@@ -9,6 +9,11 @@ export default {
   getRecipe: function (id) {
     return axios.get(`/api/recipes/${id}`);
   },
+  updateRecipe: function (id, object) {
+    console.log(id);
+    console.log(object);
+    return axios.put(`/api/recipes/${id}`, object);
+  },
   // Deletes the recipe with the given id
   deleteRecipe: function (id) {
     return axios.delete(`/api/recipes/${id}`);

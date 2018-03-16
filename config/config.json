@@ -1,7 +1,11 @@
 {
   "development": {
     "username": "root",
+<<<<<<< HEAD
     "password": "MyNewPass",
+=======
+    "password": "password",
+>>>>>>> 4a03f0218f2bd0ba59996310c1aeb9130e7d7261
     "database": "flavasave_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
