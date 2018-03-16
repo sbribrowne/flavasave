@@ -392,7 +392,7 @@ li {
 
 .logged-nav-item {
   color: white;
-  font-size: 1.5vw;
+  font-size: 3rem;
   letter-spacing: 0.4rem;
   margin-bottom: 3rem;
   margin-left: 3rem; }
@@ -923,7 +923,7 @@ li {
   .manual-add-btn {
     font-family: LeagueGothic, sans-serif;
     font-size: 1.5rem; } }
-@media only screen and (max-width: 320px) {
+@media only screen and (max-width: 375px) {
   .login-logo {
     height: 4rem; }
 
