@@ -248,6 +248,37 @@
     .signup-text {
         font-size: 6vw;
     }
+    /* ===============================================USER PAGE================================================ */
+
+    .input-width {
+        width: 85%;
+        height: 6vw;
+    }
+
+    .search-btn {
+        padding: -2vw 2rem 0.4vw 1.75rem;
+        height: 6vw;
+    }
+
+    .imageClass {
+        height: 2.5vw;
+        margin-left: -0.5vw;
+    }
+
+    .tag-search-button {
+        height: 1vw;
+        margin-left: -0.5vw;
+    }
+
+    .header-image-class {
+        margin-left: 10vw;
+        margin-right: 2rem;
+    }
+
+    .manual-add-btn {
+        font-family: $header-font;
+        font-size: 1.5rem;
+    }
 }
 
 @media only screen and (max-width: 320px) {
@@ -285,8 +316,36 @@
     .footertext {
         font-size: 5vw;
     }
-         /* ===============================================SIGN UP PAGE================================================ */
-         .signup-text {
-            display: none;
-        }
+    /* ===============================================SIGN UP PAGE================================================ */
+    .signup-text {
+    display: none;
+    }   
+    /* ===============================================USER PAGE================================================ */
+    .greeting-text {
+        font-size: 2rem;
+    }
+
+    .input-width {
+        width: 83%;
+        height: 8vw;
+    }
+
+    .search-btn {
+        padding: -2vw 2rem 0.4vw 1.75rem;
+        height: 8vw;
+    }
+
+    .imageClass {
+        height: 2vw;
+        margin-left: -0.5vw;
+    }
+
+    .orangeHdrTitle {
+        font-size: 2rem;
+    }
+
+    .tag-search-button {
+        height: 1vw;
+        margin-left: -0.5vw;
+    }
 }

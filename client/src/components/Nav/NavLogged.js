@@ -10,9 +10,9 @@ class NavLogged extends React.Component {
           <div className="navbar-header">
             <a className="navbar-brand" id="navbarlogo" href="#">
               <img
+                className="logged-logo-white"
                 src={require("../../images/logo_white.png")}
                 alt="FlavaSave"
-                height="55"
               />
             </a>
           </div>
