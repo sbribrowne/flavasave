@@ -4,6 +4,10 @@ const cheerio = require('cheerio');
 // Requiring our custom middleware for checking if a user is logged in
 var isAuthenticated = require("../config/middleware/isAuthenticated");
 
+//global variables - THIS IS BAD
+var recipeImageUrl = "testimageurl";
+var recipeServingSize = "servingsize";
+
 module.exports = function (app) {
 
     //GET ALL RECIPES
@@ -92,8 +96,7 @@ module.exports = function (app) {
 
     app.post("/api/recipes", isAuthenticated, function (req, res) {
         var newUrl = req.body.recipe_url;
-        var recipeImageUrl = "testimageurl";
-        var recipeServingSize = "servingsize";
+
 
         request(newUrl, function (error, response, body) {
             if (error) throw error;
@@ -194,7 +197,7 @@ module.exports = function (app) {
 
 };
 
-
+/*
 function parseImageUrl($){
      //Look for JSON object in page
      $("script").each(function () {
@@ -228,6 +231,7 @@ function parseImageUrl($){
     });
 
 }
+*/
 
 function parseItempropIngredients($, recipeId) {
     var ingredientsArray = [];
@@ -289,7 +293,7 @@ function parseItempropIngredients($, recipeId) {
                 recipeImageUrl = $(this)[0].attribs.src;
             }
 
-            if ($(this).attr("itemprop").match(/yield/)){ //all itemprops that match yield
+            if ($(this).attr("itemprop").match(/recipeYield/)){ //all itemprops that match yield
                 console.log("Serving Size 2");
                 console.log(  $(this).text() );
                 recipeServingSize = $(this).text();
