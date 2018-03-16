@@ -41,7 +41,6 @@ class AddNewRecipe extends Component {
   //   }
   // };
 
-  //We should add an input for saving images to be associated to the recipe created
 
   render() {
     return (
