@@ -126,19 +126,15 @@ class UserPage extends Component {
             <NeedToCookList>
               {this.state.recipes.map(recipe => (
                   <NTCListItem key={recipe.id}>
-                      <div className='col-md-4 table-item recipe-name'>
+                      <div className='col-md-7 table-item recipe-name'>
                         <Link className="table-item" to={"/recipe/" + recipe.id}>
                           {recipe.recipe_name}
                         </Link>
                       </div>
-                      <div className='col-md-5 table-item'>
-                        <Link className="table-item" to={recipe.recipe_url}>
-                          {recipe.recipe_url}
-                        </Link>
-                      </div>
-                      <div className='col-md-3 recipe-buttons'>
+                      <div className='col-md-5 recipe-buttons'>
                         <Link className="btn btn-sm up-edit-button" to={"/recipeedit/" + recipe.id}> Edit </Link>
                         <Buttons onClick={() => this.deleteRecipe(recipe.id)} />
+                        <button className="btn up-toggle-button" type="button">Need to cook | Complete</button>
                       </div>
                   </NTCListItem>
               ))}

@@ -57,14 +57,14 @@ class AddNewRecipe extends Component {
                 </div>
 
                 <h3 className="ERTitle">SERVING SIZE</h3>
-                <form className="row">
+                <div className="row">
                     <div className="recipe-page-col col-sm-12">
-                    <Input className="ERInput" name="recipe-name" />
+                    <Input className="ERInput" name="serving-size" />
                     </div>
-                </form>
+                </div>
 
                 <h3 className="ERTitle">INGREDIENTS</h3>
-                <form className="row">
+                <div className="row">
                     <div className="recipe-page-col col-sm-3">
                     <Input className="ERInput" name="amount" />
                     </div>
@@ -77,27 +77,27 @@ class AddNewRecipe extends Component {
                     <div className="recipe-page-col col-sm-1">
                     <FormBtn className="ERSubmit" buttonName="ADD" />
                     </div>
-                </form>
+                </div>
 
                 <h3 className="ERTitle">INSTRUCTIONS</h3>
-                <form className="row">
+                <div className="row">
                     <div className="recipe-page-col col-sm-11">
                     <Input className="ERInput" name="recipe-name" />
                     </div>
                     <div className="recipe-page-col col-sm-1">
                     <FormBtn className="ERSubmit" buttonName="ADD" />
                     </div>
-                </form>
+                </div>
 
                 <h3 className="ERTitle">TAGS</h3>
-                <form className="row">
+                <div className="row">
                     <div className="recipe-page-col col-sm-11">
                     <Input className="ERInput" name="recipe-name" />
                     </div>
                     <div className="recipe-page-col col-sm-1">
                     <FormBtn className="ERSubmit" buttonName="ADD" />
                     </div>
-                </form>
+                </div>
 
                 <button className="btn ingredient-btn recipeEdit" type="button">SUBMIT</button>
           </form>
