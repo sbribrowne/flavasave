@@ -53,7 +53,7 @@ class Recipes extends Component {
           <h2 className="recipe-title">{this.state.recipe.recipe_name}</h2>
           <p className="recipe-servingsize">Serving Size: goes here</p>
           {/* Stand in IMAGE */}
-          <img src={require("../images/salmon.jpg")} alt="Store Image" height="400" />
+          <img className="recipe-image" src={require("../images/salmon.jpg")} alt="Store Image" height="400" />
         </div>
 
         <div className="ingredient-div">

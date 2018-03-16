@@ -279,6 +279,59 @@
         font-family: $header-font;
         font-size: 1.5rem;
     }
+    /* ===============================================RECIPE PAGE================================================ */
+    .recipe-image {
+        display: none;
+    }
+
+    .recipe-link {
+        display: none;
+    }
+
+    .recipe-header {
+        padding: 1rem 2rem 2rem 9vw;
+        margin-bottom: 10%;
+    }
+
+    .recipe-title {
+        font-size: 3.5rem;
+    }
+
+    .recipe-servingsize {
+        font-size: 2rem;
+    }
+
+    .recipe-subtitle {
+        font-size: 3rem;
+    }
+
+    .ingredientChecklist {
+        width: 100%;
+        margin-left: 0%;
+    }
+
+    .ingredientItem {
+        font-size: 2rem;
+    }
+
+    .instructionChecklist {
+        font-size: 2rem;
+        margin-left: 3%;
+    }
+
+    .recipe-notes-panel {
+        display: none;
+    }
+
+    .recipepage-btns {
+        margin-left: 4vw;
+    }
+    
+    .recipepage-btn  {
+        letter-spacing: 0.2rem;
+        margin-top: 1.5rem;
+        margin-right: 1rem;
+    }
 }
 
 @media only screen and (max-width: 375px) {
