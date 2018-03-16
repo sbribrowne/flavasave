@@ -105,8 +105,8 @@ module.exports = function (app) {
             if (response.statusCode === 200 && req.user) {
                 const $ = cheerio.load(body); //load HTML into cheerio
 
-                if (req.user){ //await
-                     db.Recipe.create({
+                if (req.user) { //await
+                    db.Recipe.create({
                         recipe_url: newUrl,
                         recipe_name: $("title").text().trim().substr(0, 60),
                         recipe_notes: "Notes go here",
@@ -151,26 +151,26 @@ module.exports = function (app) {
                                                 recipeUrl: `/recipe/${responseRecipe.id}`
                                             });*/ //returns Response object
 
-                                                db.Recipe.update(
-                                                    {
-                                                        recipe_image_url: recipeImageUrl,
-                                                        recipe_serving_size: recipeServingSize
-                                                    },
-                                                    {
-                                                        where: {
-                                                            id: recipeId
-                                                        }
+                                            db.Recipe.update(
+                                                {
+                                                    recipe_image_url: recipeImageUrl,
+                                                    recipe_serving_size: recipeServingSize
+                                                },
+                                                {
+                                                    where: {
+                                                        id: recipeId
                                                     }
-                                                ).then(function(dbRecipeUpdate){
-                                                    console.log("recipeImageUrl");
-                                                    console.log(recipeImageUrl);
-                                                    console.log("recipeServingSize");
-                                                    console.log(recipeServingSize);
-                                                    res.send(`/recipe/${responseRecipe.id}`);
-                                                });
+                                                }
+                                            ).then(function (dbRecipeUpdate) {
+                                                console.log("recipeImageUrl");
+                                                console.log(recipeImageUrl);
+                                                console.log("recipeServingSize");
+                                                console.log(recipeServingSize);
+                                                res.send(`/recipe/${responseRecipe.id}`);
+                                            });
 
-                                         
-    
+
+
 
                                         })
                                         .catch(function (error) {
@@ -186,7 +186,7 @@ module.exports = function (app) {
                             res.json(error);
                         });
 
-                //removed create user
+                    //removed create user
                 } //end IF user
 
             } //end succesfull response
@@ -251,14 +251,14 @@ function parseItempropIngredients($, recipeId) {
                 if (JSON.parse($(this).html())["image"]) {
                     console.log("IMAGE FOUND");
                     recipeImageUrl = JSON.parse($(this).html())["image"];
-                }else  
+                } else
                     console.log("No Image");
 
                 if (JSON.parse($(this).html())["recipeYield"]) {
                     console.log("Serving Size");
-                    console.log(  $(this).text() );
+                    console.log($(this).text());
                     recipeServingSize = JSON.parse($(this).html())["recipeYield"];
-                }else  
+                } else
                     console.log("No Serving Size");
 
             } else //if Recipe Schema Exists
@@ -280,22 +280,22 @@ function parseItempropIngredients($, recipeId) {
         //$('[itemprop="ingredients"]')
         $('[itemprop]').map(function (i, el) { //get list of elements with itemprop attr
             // this === el 
-            if ($(this).attr("itemprop").match(/ngredient/)){ //all itemprops that match I/ingredient
+            if ($(this).attr("itemprop").match(/ngredient/)) { //all itemprops that match I/ingredient
                 ingredientsArray.push({
                     ingredient_info: $(this).text(),
                     RecipeId: recipeId
                 }); //pushes an object
             }
 
-            if ($(this).attr("itemprop").match(/image/)){ //all itemprops that match image
+            if ($(this).attr("itemprop").match(/image/)) { //all itemprops that match image
                 console.log("IMAGE FOUND 2");
-                console.log( $(this)[0].attribs.src );
+                console.log($(this)[0].attribs.src);
                 recipeImageUrl = $(this)[0].attribs.src;
             }
 
-            if ($(this).attr("itemprop").match(/recipeYield/)){ //all itemprops that match yield
+            if ($(this).attr("itemprop").match(/recipeYield/)) { //all itemprops that match yield
                 console.log("Serving Size 2");
-                console.log(  $(this).text() );
+                console.log($(this).text());
                 recipeServingSize = $(this).text();
             }
         });
