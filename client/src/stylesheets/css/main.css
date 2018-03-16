@@ -109,8 +109,9 @@
   padding-right: 8vw;
   padding-top: 3rem; }
 
-.navbar-brand {
-  padding-left: 8vw; }
+#navbarlogo {
+  padding-left: 8vw;
+  margin-top: 1.2vw; }
 
 .nav-item {
   color: #1E401D;
@@ -383,7 +384,9 @@ li {
   text-align: right; }
 
 .logged-logo-white {
-  height: 60px; }
+  height: 60px;
+  padding-left: 8vw;
+  margin-top: 1.2vw; }
 
 .logged-navbar {
   background-color: #E44125;
