@@ -7,16 +7,14 @@ class Nav extends React.Component {
       <nav className="navbar" id="homeNav">
         <div className="container-fluid">
           <div className="navbar-header">
-            <a className="navbar-brand" id="navbarlogo" href="#">
-              <Link to="/userpage">
-                <img
-                  id="navbarlogo"
-                  src={require("../../images/logo_green.png")}
-                  alt="FlavaSave"
-                  height="60"
-                />
-              </Link>
-            </a>
+            <Link to="/userpage">
+              <img
+                id="navbarlogo"
+                src={require("../../images/logo_green.png")}
+                alt="FlavaSave"
+                height="60"
+              />
+            </Link>
           </div>
           <div
             className="collapse navbar-collapse justify-content-end"

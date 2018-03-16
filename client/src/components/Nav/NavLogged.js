@@ -8,15 +8,13 @@ class NavLogged extends React.Component {
       <nav className="logged-navbar" id="homeNav">
         <div className="container-fluid">
           <div className="navbar-header">
-            <a className="navbar-brand" id="navbarlogo" href="#">
-              <Link to="/userpage">
-                <img
-                  src={require("../../images/logo_white.png")}
-                  alt="FlavaSave"
-                  height="55"
-                />
-              </Link>
-            </a>
+            <Link to="/userpage">
+              <img
+                src={require("../../images/logo_white.png")}
+                alt="FlavaSave"
+                height="55"
+              />
+            </Link>
           </div>
           <div
             className="collapse navbar-collapse justify-content-end"
