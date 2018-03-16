@@ -5,6 +5,14 @@ module.exports = function(sequelize, DataTypes){
           type: DataTypes.STRING(2083)
         },
 
+        recipe_image_url:{ 
+          type: DataTypes.STRING(2083)
+        },
+
+        recipe_serving_size:{ 
+          type: DataTypes.STRING
+        },
+
         recipe_name:{ 
           type: DataTypes.STRING
         },
