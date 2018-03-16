@@ -90,7 +90,7 @@ class Recipes extends Component {
         </Panel>
         
         <div className="container-fluid recipepage-btns">
-          <button className="btn recipepage-btn" type="button">ADD</button>
+          <button className="btn recipepage-btn" type="button">EDIT</button>
           <button className="btn recipepage-btn" type="button">DELETE</button>
           <button className="btn recipepage-btn" type="button">NEED TO COOK | COMPLETE</button>
         </div>
