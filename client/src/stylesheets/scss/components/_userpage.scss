@@ -86,6 +86,7 @@
     color: #121210;
     font-size: 3rem;
     letter-spacing: 0.2rem;
+    padding-top: 2rem;
 }
 
 .recipe-name {
@@ -98,10 +99,11 @@
     color: #121210;
     line-height: 2.75rem;
     overflow: hidden;
+    padding-top: 2rem;
 }
 
 .recipe-buttons {
-    padding-left: 5rem;
+    padding-top: 2rem;
 }
 
 .up-edit-button {
@@ -147,7 +149,7 @@
 }
 
 .up-toggle-button:hover {
-    background-color: $green;
+    background-color: $darkgreen;
     border: none;
 }
 
