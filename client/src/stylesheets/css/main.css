@@ -552,10 +552,6 @@ li {
 .manual-add-btn:hover {
   background-color: #1E401D; }
 
-.noshow {
-  display: none;
-}
-
 * {
   outline: 0px !important;
   -webkit-appearance: none; }
@@ -604,7 +600,7 @@ li {
   background-color: transparent;
   border: none;
   width: 80%;
-  margin-left: 7%; }
+  margin-left: 8%; }
 
 .recipe-link {
   font-family: Peleguer, serif;

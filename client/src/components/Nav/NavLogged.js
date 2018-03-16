@@ -23,8 +23,7 @@ class NavLogged extends React.Component {
             <div className="nav navbar-nav navbar-right">
             <Link
                 className="logged-nav-item nav-link"
-                to="/"
-                onClick={logout}
+                to="/userpage"
               >
                 MY RECIPES
               </Link>
