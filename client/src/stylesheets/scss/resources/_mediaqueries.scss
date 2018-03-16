@@ -11,38 +11,30 @@
         padding: 2em 7em 2em 4em;
         margin-top: -3.3vw;
     }
-
     .readmore-description {
         bottom: 13vw;
     }
-
     .arrow {
         margin-top: 7vw;
         margin-left: 8vw;
     }
-
     /* ===============================================USER PAGE================================================ */
     .search-btn {
         height: 2vw;
         padding: 0.1vw 2rem 0.3vw 2rem;
     }
-
     .orangeHdrTitle {
         font-size: 3.5rem;
     }
-
     .header-image-class {
         margin-left: 20vw;
     }
-
     .up-edit-button {
         padding: 0.5rem 1rem 0 1rem;
     }
-
     .up-delete-button {
         padding: 0.5rem 1rem 0 1rem;
     }
-
     .up-toggle-button {
         padding: 0.5rem 1rem 0 1rem;
     }
@@ -54,27 +46,22 @@
         padding: 2em 7em 2em 4em;
         margin-top: -4.3vw;
     }
-
     .loginSubTitle {
         font-size: 2.5vw;
     }
-
     .readmore-block {
         display: none;
     }
-
     .aboutHeader {
         margin-left: 30%;
         margin-top: 55vw;
         margin-bottom: 2%;
     }
-
     .card-deck {
         width: 40%;
         margin-left: 30%;
         padding: 7rem 4rem 5rem 4rem;
     }
-
     .card-text {
         font-size: 2.5vw;
     }
@@ -82,15 +69,12 @@
     .signup-header {
         font-size: 8vw;
     }
-
     .signup-text {
         font-size: 4vw;
     }
-
     .signup-title {
         font-size: 8vw;
     }
-
     .signup-label {
         font-size: 2rem;
     }
@@ -98,79 +82,62 @@
     .table-header {
         display: none;
     }
-
     .input-width {
         height: 3vw;
     }
-
     .search-btn {
         height: 3vw;
         padding: 0.1vw 2rem 0.3vw 1.75rem;
     }
-
     .imageClass {
         height: 1.5vw;
         margin-left: 0.01vw;
     }
-
     .tag-search-button {
         height: 0.6vw;
     }
-
     .orangeHdrTitle {
         font-size: 3rem;
     }
-
     .header-image-class {
         margin-left: 17vw;
     }
-
 }
 
 @media only screen and (max-width: 736px) {
     /* ===============================================HOME PAGE================================================ */
-
     .aboutHeader {
         display: none;
     }
-
     .loginBox {
         width: 100%;
         opacity: 0.93;
         margin-top: -4rem;
     }
-    
     .card-deck {
         margin-top: 60vw;
     }
-
     #footerleft {
         display: none;
     }
     /* ===============================================USER PAGE================================================ */
-
     .input-width {
         width: 92%;
     }
-
     .search-btn {
         padding: -2vw 2rem 0.4vw 1.75rem;
     }
-
     .imageClass {
         height: 1.2vw;
         margin-left: -0.5vw;
     }
-
     .tag-search-button {
         height: 0.6vw;
         margin-left: -0.5vw;
     }
-
     .header-image-class {
         margin-left: 13vw;
     }
-
     .manual-add-btn {
         font-family: $header-font;
         font-size: 1.5rem;
@@ -180,18 +147,15 @@
         font-size: 2rem;
         margin-left: -1.5rem;
     }
-
     .ERSubmit {
         font-size: 1rem;
         padding: 0.5rem 1rem 0.5rem 1rem;
         margin-top: 1rem;
         margin-left: 0rem;
     }
-
     .drop-down {
         font-size: 1rem;
     }
-
     .ingredient-btn {
         font-size: 1rem;
         letter-spacing: 0.2rem;
@@ -199,7 +163,6 @@
         padding-left: 1rem;
         padding-right: 1rem;
     }
-
     .ingredient-btns {
         margin-left: -1.4rem;
     }
@@ -210,99 +173,79 @@
     .homebody {
         background: none;
     }
-    
     .login-logo {
         display: none;
     }
-
     .loginBox {
         padding: 2em 4em 2em 4em;
     }
-
     .loginSubTitle {
         font-size: 2.5rem;
     }
-
     .loginTitle {
         font-size: 4rem;
     }
-
     .loginText {
         font-size: 3vw;
     }
-
     .form-text {
         font-size: 4vw;
     }
-
     .login-button {
         font-size: 4vw;
     }
-
     .card-deck {
         width: 60%;
         margin-top: 90vw;
         margin-left: 20%;
         padding: 7rem 4rem 5rem 4rem;
     }
-
     .card-title {
         font-size: 8vw;
     }
-
     .card-text {
         font-size: 4.5vw;
     }
-
     .howItWorksContainer {
         margin-top: 0%;
         padding: 8rem 15% 8rem 15%;
     }
-
     .howItWorksTitle {
         font-size: 10vw;
         text-align: center;
         margin-bottom: 5rem;
     }
-    
     .howItWorksText {
         font-size: 5vw;
     }
-
     .footertext {
         font-size: 3.5vw;
     }
-     /* ===============================================SIGN UP PAGE================================================ */
+    /* ===============================================SIGN UP PAGE================================================ */
     .signup-text {
         font-size: 6vw;
     }
     /* ===============================================USER PAGE================================================ */
-
     .input-width {
         width: 85%;
         height: 6vw;
     }
-
     .search-btn {
         padding: -2vw 2rem 0.4vw 1.75rem;
         height: 6vw;
     }
-
     .imageClass {
         height: 2.5vw;
         margin-left: -0.5vw;
     }
-
     .tag-search-button {
         height: 1vw;
         margin-left: -0.5vw;
     }
-
     .header-image-class {
         margin-left: 10vw;
         margin-right: 2rem;
     }
-
     .manual-add-btn {
         font-family: $header-font;
         font-size: 1.5rem;
@@ -311,51 +254,40 @@
     .recipe-image {
         display: none;
     }
-
     .recipe-link {
         display: none;
     }
-
     .recipe-header {
         padding: 1rem 2rem 2rem 9vw;
         margin-bottom: 10%;
     }
-
     .recipe-title {
         font-size: 3.5rem;
     }
-
     .recipe-servingsize {
         font-size: 2rem;
     }
-
     .recipe-subtitle {
         font-size: 3rem;
     }
-
     .ingredientChecklist {
         width: 100%;
         margin-left: 0%;
     }
-
     .ingredientItem {
         font-size: 2rem;
     }
-
     .instructionChecklist {
         font-size: 2rem;
         margin-left: 3%;
     }
-
     .recipe-notes-panel {
         display: none;
     }
-
     .recipepage-btns {
         margin-left: 4vw;
     }
-    
-    .recipepage-btn  {
+    .recipepage-btn {
         letter-spacing: 0.2rem;
         margin-top: 1.5rem;
         margin-right: 1rem;
@@ -365,71 +297,65 @@
         height: 2rem;
         font-size: 1.5rem;
     }
+    /* ===============================================RECIPE EDIT PAGE================================================ */
+    .recipe-add-button {
+        font-size: 1.5rem;
+        margin-left: -1.4rem;
+        padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+    }
 }
 
 @media only screen and (max-width: 375px) {
     .login-logo {
-        height: 4rem; 
+        height: 4rem;
     }
-
     .loginText {
         font-size: 5vw;
     }
-
     .card-deck {
         width: 80%;
         margin-top: 130vw;
         margin-left: 10%;
         padding: 7rem 2rem 5rem 2rem;
     }
-
     .card-text {
         font-size: 7vw;
     }
-
     .howItWorksText {
         font-size: 2rem;
     }
-
     .navbar-brand {
         padding-left: 3rem;
     }
-
     #navbarlogo {
         height: 5rem;
     }
-
     .footertext {
         font-size: 5vw;
     }
     /* ===============================================SIGN UP PAGE================================================ */
     .signup-text {
-    display: none;
-    }   
+        display: none;
+    }
     /* ===============================================USER PAGE================================================ */
     .greeting-text {
         font-size: 2rem;
     }
-
     .input-width {
         width: 83%;
         height: 8vw;
     }
-
     .search-btn {
         padding: -2vw 2rem 0.4vw 1.75rem;
         height: 8vw;
     }
-
     .imageClass {
         height: 2vw;
         margin-left: -0.5vw;
     }
-
     .orangeHdrTitle {
         font-size: 2rem;
     }
-
     .tag-search-button {
         height: 1vw;
         margin-left: -0.5vw;

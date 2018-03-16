@@ -712,6 +712,18 @@ li {
 .recipeComplete {
   margin-left: 3%; }
 
+.recipe-add-button {
+  font-family: LeagueGothic, sans-serif;
+  font-size: 2rem;
+  letter-spacing: 0.2rem;
+  color: white;
+  background-color: #E44125;
+  border-radius: 0;
+  margin-top: 2%;
+  margin-left: -1.1rem;
+  padding-left: 3rem;
+  padding-right: 3rem; }
+
 @media only screen and (max-width: 1690px) {
   /* ===============================================HOME PAGE================================================ */
   .loginBox {
@@ -997,7 +1009,13 @@ li {
   /* ===============================================RECIPE EDIT================================================ */
   .ERInput {
     height: 2rem;
-    font-size: 1.5rem; } }
+    font-size: 1.5rem; }
+
+  /* ===============================================RECIPE EDIT PAGE================================================ */
+  .recipe-add-button {
+    font-size: 1.5rem;
+    margin-left: -1.4rem;
+    padding: 0.5rem 1.5rem 0.5rem 1.5rem; } }
 @media only screen and (max-width: 375px) {
   .login-logo {
     height: 4rem; }
