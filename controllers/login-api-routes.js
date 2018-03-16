@@ -63,7 +63,7 @@ module.exports = function(app) {
     })(req, res, next);
   });
 
-  // Route for logging user out
+  // Route for logging user out, will remove session
   app.get("/logout", function(req, res) {
     req.session.destroy();
     req.logout();
