@@ -61,7 +61,7 @@ class Recipes extends Component {
 
           {this.state.recipe.recipe_image_url ? 
             (<p className="recipe-image"><img src={this.state.recipe.recipe_image_url} alt={this.state.recipe.recipe_name} height="400" /></p>) : 
-            (<div class="no-image" height="0"></div>)
+            (<div class="no-image" height="0"><i class="glyphicon glyphicon-camera"></i></div>)
           }
 
 
