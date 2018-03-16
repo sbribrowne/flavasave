@@ -161,7 +161,6 @@ class UserPage extends Component {
           {this.state.recipes.length ? (
             <CompleteList>
               {this.state.recipes.map(recipe => (
-
                 !recipe.recipe_checkbox ? (
                   <NTCListItem key={recipe.id}>
                     <div className='col-md-7 table-item recipe-name'>
