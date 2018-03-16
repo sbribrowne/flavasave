@@ -51,9 +51,21 @@ class Recipes extends Component {
 
         <div className="recipe-header">
           <h2 className="recipe-title">{this.state.recipe.recipe_name}</h2>
-          <p className="recipe-servingsize">Serving Size: goes here</p>
+          <p className="recipe-servingsize">Yield: 
+          {this.state.recipe.recipe_image_url ? 
+            (<span>{this.state.recipe.recipe_serving_size}</span>) : 
+            (<span>Unknown - cook it and find out</span>)
+          }
+          </p>
           {/* Stand in IMAGE */}
-          <img src={require("../images/salmon.jpg")} alt="Store Image" height="400" />
+
+          {this.state.recipe.recipe_image_url ? 
+            (<p className="recipe-image"><img src={this.state.recipe.recipe_image_url} alt={this.state.recipe.recipe_name} height="400" /></p>) : 
+            (<div class="no-image" height="0"><i class="glyphicon glyphicon-camera"></i></div>)
+          }
+
+
+          
         </div>
 
         <div className="ingredient-div">
@@ -90,7 +102,7 @@ class Recipes extends Component {
         </Panel>
         
         <div className="container-fluid recipepage-btns">
-          <button className="btn recipepage-btn" type="button">ADD</button>
+          <button className="btn recipepage-btn" type="button">EDIT</button>
           <button className="btn recipepage-btn" type="button">DELETE</button>
           <button className="btn recipepage-btn" type="button">NEED TO COOK | COMPLETE</button>
         </div>

@@ -8,11 +8,13 @@ import OrangeHdr from "../components/Panels/OrangeHdr.js";
 import NeedToCookList from "../components/Lists/NeedToCookList";
 import NTCListItem from "../components/Lists/NTCListItem";
 import CompleteList from "../components/Lists/CompleteList";
+import CompleteListItem from "../components/Lists/CompleteListItem";
 import FooterLogged from "../components/Footer/FooterLogged.js";
 import API from "../utils/API";
 import { Link } from "react-router-dom";
 import Buttons from "../components/Buttons/Button.js";
 import EditBtn from "../components/Buttons/EditBtn.js";
+import axios from "axios";
 
 class UserPage extends Component {
   //set inital state of forms to empty
@@ -53,6 +55,35 @@ class UserPage extends Component {
       .catch(err => console.log(err));
   };
 
+  makeTrue = id => {
+    axios
+      .put(`/api/recipes/${id}`, {
+        recipeObj: {
+          recipe_checkbox: 1
+        }
+      })
+      .then(res => this.loadRecipes());
+
+    /*
+    API.updateRecipe(id, {
+      recipe_checkbox: 1
+    })
+      .then(res => this.loadRecipes())
+      .catch(err => console.log(err));
+
+      */
+  };
+
+  makeFalse = id => {
+    axios
+      .put(`/api/recipes/${id}`, {
+        recipeObj: {
+          recipe_checkbox: null
+        }
+      })
+      .then(res => this.loadRecipes());
+  };
+
   handleInputChange = event => {
     const { name, value } = event.target;
     this.setState({
@@ -73,14 +104,10 @@ class UserPage extends Component {
   };
 
   render() {
-    const userName = this.state.user.email;
-
     return (
       <div>
         <NavLogged />
-        <h1 className="greeting-text">{`WELCOME, ${
-          userName.split("@")[0]
-        }`}</h1>
+        <h1 className="greeting-text">Welcome, {this.state.user.email}!</h1>
         <div className="container-fluid userpage-container">
           <h3 className="search-title">ADD RECIPE BY URL</h3>
           <form className="row">
@@ -137,31 +164,43 @@ class UserPage extends Component {
         <div className="container-fluid userpage-container">
           {this.state.recipes.length ? (
             <NeedToCookList>
-              {this.state.recipes.map(recipe => (
-                <NTCListItem key={recipe.id}>
-                  <div className="col-md-7 table-item recipe-name">
-                    <Link className="table-item" to={"/recipe/" + recipe.id}>
-                      {recipe.recipe_name}
-                    </Link>
-                  </div>
-                  <div class="col-md-5 recipe-buttons">
-                    <Link
-                      className="btn btn-sm up-edit-button"
-                      to={"/recipeedit/" + recipe.id}
-                    >
-                      {" "}
-                      Edit{" "}
-                    </Link>
-                    <Buttons onClick={() => this.deleteRecipe(recipe.id)} />
-                    <button className="btn up-toggle-button" type="button">
-                      Need to cook | Complete
-                    </button>
-                  </div>
-                </NTCListItem>
-              ))}
+              {this.state.recipes.map(
+                recipe =>
+                  !recipe.recipe_checkbox ? (
+                    <NTCListItem key={recipe.id}>
+                      <div className="col-md-7 table-item recipe-name">
+                        <Link
+                          className="table-item"
+                          to={"/recipe/" + recipe.id}
+                        >
+                          {recipe.recipe_name}
+                        </Link>
+                      </div>
+                      <div className="col-md-5 recipe-buttons">
+                        <Link
+                          className="btn btn-sm up-edit-button"
+                          to={"/recipeedit/" + recipe.id}
+                        >
+                          {" "}
+                          Edit{" "}
+                        </Link>
+                        <Buttons onClick={() => this.deleteRecipe(recipe.id)} />
+                        <button
+                          onClick={() => this.makeTrue(recipe.id)}
+                          className="btn up-toggle-button"
+                          type="button"
+                        >
+                          Need to cook | Complete
+                        </button>
+                      </div>
+                    </NTCListItem>
+                  ) : (
+                    <h1 className="noshow" />
+                  )
+              )}
             </NeedToCookList>
           ) : (
-            <h1 className="table-item">No Results to Display</h1>
+            <h1 className="table-items">No results to display</h1>
           )}
         </div>
 
@@ -173,13 +212,54 @@ class UserPage extends Component {
           orangehdrimageclass="header-image-class"
         />
         <div className="container-fluid userpage-container">
-          <CompleteList />
+          {this.state.recipes.length ? (
+            <CompleteList>
+              {this.state.recipes.map(
+                recipe =>
+                  recipe.recipe_checkbox ? (
+                    <CompleteListItem key={recipe.id}>
+                      <div className="col-md-7 table-item recipe-name">
+                        <Link
+                          className="table-item"
+                          to={"/recipe/" + recipe.id}
+                        >
+                          {recipe.recipe_name}
+                        </Link>
+                      </div>
+                      <div className="col-md-5 recipe-buttons">
+                        <Link
+                          className="btn btn-sm up-edit-button"
+                          to={"/recipeedit/" + recipe.id}
+                        >
+                          {" "}
+                          Edit{" "}
+                        </Link>
+                        <Buttons onClick={() => this.deleteRecipe(recipe.id)} />
+                        <button
+                          onClick={() => this.makeFalse(recipe.id)}
+                          className="btn up-toggle-button"
+                          type="button"
+                        >
+                          Need to cook | Complete
+                        </button>
+                      </div>
+                    </CompleteListItem>
+                  ) : (
+                    <h1 className="noshow" />
+                  )
+              )}
+            </CompleteList>
+          ) : (
+            <h1 className="table-items">No results to display</h1>
+          )}
         </div>
 
         <div className="container-fluid userpage-container">
-          <button className="btn manual-add-btn" type="button">
-            ADD RECIPE MANUALLY
-          </button>
+          <Link to={"/newrecipe"}>
+            <button className="btn manual-add-btn" type="button">
+              ADD RECIPE MANUALLY
+            </button>
+          </Link>
         </div>
 
         <FooterLogged />
