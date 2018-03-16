@@ -5,8 +5,8 @@ const cheerio = require('cheerio');
 var isAuthenticated = require("../config/middleware/isAuthenticated");
 
 //global variables - THIS IS BAD
-var recipeImageUrl = "testimageurl";
-var recipeServingSize = "servingsize";
+var recipeImageUrl = "";
+var recipeServingSize = "";
 
 module.exports = function (app) {
 
@@ -109,7 +109,7 @@ module.exports = function (app) {
                      db.Recipe.create({
                         recipe_url: newUrl,
                         recipe_name: $("title").text().trim().substr(0, 60),
-                        recipe_notes: " ",
+                        recipe_notes: "Notes go here",
                         recipe_image_url: "",
                         recipe_serving_size: "",
                         UserId: req.user.id //get user
