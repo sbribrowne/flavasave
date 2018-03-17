@@ -102,6 +102,10 @@ class UserPage extends Component {
         //.then(res => { window.location.href = "http://localhost:3000" + res.data; } )
         .catch(err => console.log(err));
     }
+
+    this.setState({
+      recipe_url: '',
+    });
   };
 
   render() {
