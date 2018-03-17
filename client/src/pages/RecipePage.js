@@ -113,9 +113,6 @@ class Recipes extends Component {
           {this.state.ingredients.length ? ( //Check for Ingredients
             <IngredientList>
               {this.state.ingredients.map(ingredient => (
-<<<<<<< HEAD
-                <IngredientListItem onClick={() => this.ingredientCheck(ingredient.id, ingredient.ingredient_checkbox)} key={ingredient.id} data={ingredient} />
-=======
                 <IngredientListItem
                   onClick={() =>
                     this.ingredientCheck(
@@ -131,7 +128,6 @@ class Recipes extends Component {
                   key={ingredient.id}
                   data={ingredient}
                 />
->>>>>>> 7f023f3f998479f793baae235ce60c3efe8a0f6f
               ))}
             </IngredientList>
           ) : (
