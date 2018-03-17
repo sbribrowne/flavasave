@@ -28,12 +28,13 @@ class Recipes extends Component {
 
   loadRecipe = () => {
     API.getRecipe(this.props.match.params.id).then(res => {
+      console.log(res);
       this.setState({
         recipe: res.data,
         ingredients: res.data.Ingredients,
         instructions: res.data.Instructions
       });
-    });
+    }).catch(error => console.log(error));
   };
 
   ingredientCheck = (id, checkbox) => {
@@ -109,7 +110,7 @@ class Recipes extends Component {
 
         <div className="ingredient-div">
           <h4 className="recipe-subtitle">INGREDIENTS</h4>
-          {this.state.ingredients.length ? ( //Check for Ingredients
+          {this.state.ingredients ? ( //Check for Ingredients
             <IngredientList>
               {this.state.ingredients.map(ingredient => (
                 <IngredientListItem
@@ -130,7 +131,7 @@ class Recipes extends Component {
         </div>
         <div className="instruction-div">
           <h4 className="recipe-subtitle">DIRECTIONS</h4>
-          {this.state.instructions.length ? ( //Check for Instructions
+          {this.state.instructions ? ( //Check for Instructions
             <InstructionList>
               {this.state.instructions.map(instruction => (
                 <InstructionListItem key={instruction.id} data={instruction} />
