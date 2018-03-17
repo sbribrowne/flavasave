@@ -1,7 +1,6 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import Panel from "../components/Panels/Panel.js";
-// import Nav from "../components/Nav/Nav";
-// import Footer from "../components/Footer/Footer";
 import NavLogged from "../components/Nav/NavLogged";
 import IngredientList from "../components/Lists/IngredientList";
 import IngredientListItem from "../components/Lists/IngredientListItem";
@@ -150,9 +149,13 @@ class Recipes extends Component {
         </div>
 
         <div className="container-fluid recipepage-btns">
-          <button className="btn recipepage-btn" type="button">
-            EDIT
-          </button>
+          <Link
+            className="btn btn-sm recipepage-btn"
+            to={"/recipeedit/" + this.state.recipe.id}
+          >
+            {" "}
+            Edit{" "}
+          </Link>
           <button className="btn recipepage-btn" type="button">
             NEED TO COOK | COMPLETE
           </button>
