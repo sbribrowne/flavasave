@@ -216,13 +216,23 @@ module.exports = function (app) {
 
 
   app.post("/api/manual", isAuthenticated, function (req, res) {
-    var newRecipe = req.body.recipe;
-    if (req.user) {
-      console.log(newRecipe)
-    
+    const newRecipeName = req.body.recipe.recipe_name;
+    const newRecipeServingSize = req.body.recipe.recipe_serving_size;
 
-    }
-  })
+    if (req.user) {
+      console.log(newRecipeName)
+      console.log(newRecipeServingSize)
+      db.Recipe.create({
+        recipe_name: newRecipeName,
+        recipe_serving_size: newRecipeServingSize,
+        UserId: req.user.id //get user
+      })
+    };
+    //   .then(function (responseRecipe) {
+    //     const recipeId = responseRecipe.dataValues.id; //user recipe id of ingr and instr
+    //     const ingredientArray = 
+    // }
+  });
   //Adds a blank recipe for manual creation/updating
   // app.post("/api/manual", isAuthenticated, function (req, res) {
 

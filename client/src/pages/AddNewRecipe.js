@@ -12,14 +12,17 @@ class AddNewRecipe extends Component {
     recipe_name: "",
     recipe_serving_size: "",
     recipe: {
-      
     },
+    ingredient_info: "",
     ingredient: {
-      ingredient_info: ""
     },
+    ingredients: [],
+    instruction_info: "",
     instruction: {
-      instruction_info: ""
     },
+    instructions: [],
+    tag_info: "",
+    tag: {},
     tags: []
   }
 
@@ -37,14 +40,24 @@ class AddNewRecipe extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
+
     let recipe = {...this.state.recipe};
     recipe.recipe_name = this.state.recipe_name;
     recipe.recipe_serving_size = this.state.recipe_serving_size;
 
+    let instruction = { ...this.state.instruction };
+    instruction.instruction_info = this.state.instruction_info;
+    
+    let ingredient = { ...this.state.ingredient };
+    indredient.ingredient_info = this.state.ingredient_info;
+
+    let tag = { ...this.state.tag };
+    tag.tag_info = this.state.tag_info;
+
     console.log(recipe)
     this.setState({recipe})
     API.addManualRecipe({
-      recipe: recipe
+      recipe: recipe,
     })
 
     // if (this.state.recipe_name) {
@@ -89,23 +102,26 @@ class AddNewRecipe extends Component {
             <h3 className="ERTitle">INGREDIENTS</h3>
             <div className="row">
               <div className="recipe-page-col col-sm-3">
-                <Input className="ERInput" name="amount" />
+                <Input 
+                value={this.state.ingredient_info}
+                onChange={this.handleInputChange}
+                className="ERInput"
+                name="ingredient_info" />
               </div>
               <div className="recipe-page-col col-sm-1">
-                <DropDwn />
-              </div>
-              <div className="recipe-page-col col-sm-7">
-                <Input className="ERInput" name="ingredient" />
-              </div>
-              <div className="recipe-page-col col-sm-1">
-                <button className="btn ERSubmit" type="button">ADD</button>
+                <button 
+                className="btn ERSubmit" type="button">ADD</button>
               </div>
             </div>
 
             <h3 className="ERTitle">INSTRUCTIONS</h3>
             <div className="row">
               <div className="recipe-page-col col-sm-11">
-                <Input className="ERInput" name="recipe-name" />
+                <Input 
+                value={this.state.instruction_info}
+                onChange={this.handleInputChange}
+                className="ERInput" 
+                name="recipe-name" />
               </div>
               <div className="recipe-page-col col-sm-1">
                 <button className="btn ERSubmit" type="button">ADD</button>
@@ -115,7 +131,11 @@ class AddNewRecipe extends Component {
             <h3 className="ERTitle">TAGS</h3>
             <div className="row">
               <div className="recipe-page-col col-sm-11">
-                <Input className="ERInput" name="recipe-name" />
+                <Input 
+                value={this.state.tag_info}
+                onChange={this.handleInputChange}
+                className="ERInput" 
+                name="recipe-name" />
               </div>
               <div className="recipe-page-col col-sm-1">
                 <button className="btn ERSubmit" type="button">ADD</button>
