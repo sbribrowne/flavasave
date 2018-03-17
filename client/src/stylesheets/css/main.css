@@ -605,7 +605,7 @@ li {
   margin-left: 8%; }
 
 .recipe-link-box {
-  margin: 2% 8% 4% 9%;
+  margin: 2% 8% 1% 9%;
   width: 100%; }
 
 .recipe-link {
@@ -651,8 +651,9 @@ li {
   background-color: #E44125;
   border-radius: 0;
   padding: 0.5rem 4rem 0.5rem 4rem;
-  margin-top: 6rem;
-  margin-right: 7rem; }
+  margin-top: 2rem;
+  margin-right: 7rem;
+  margin-bottom: 4rem; }
 
 .recipepage-btn:hover {
   background-color: #1E401D; }

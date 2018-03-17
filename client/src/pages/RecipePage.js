@@ -147,14 +147,6 @@ class Recipes extends Component {
             </a>
         </div>
 
-        <Panel
-          name="STICKY NOTES"
-          panelfullclass="panel recipe-notes-panel"
-          panelheaderclass="recipe-notes-header"
-        >
-          <RecipeNotes data={this.state.recipe.recipe_notes} />
-        </Panel>
-
         <div className="container-fluid recipepage-btns">
           <button className="btn recipepage-btn" type="button">
             EDIT
@@ -166,6 +158,14 @@ class Recipes extends Component {
             NEED TO COOK | COMPLETE
           </button>
         </div>
+
+        <Panel
+          name="STICKY NOTES"
+          panelfullclass="panel recipe-notes-panel"
+          panelheaderclass="recipe-notes-header"
+        >
+          <RecipeNotes data={this.state.recipe.recipe_notes} />
+        </Panel>
 
         <FooterLogged />
       </div>
