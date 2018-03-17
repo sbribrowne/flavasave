@@ -1,6 +1,8 @@
 import React, { Component } from "react";
-import NavLogged from "../components/Nav/NavLogged.js";
 import Panel from "../components/Panels/Panel.js";
+// import Nav from "../components/Nav/Nav";
+// import Footer from "../components/Footer/Footer";
+import NavLogged from "../components/Nav/NavLogged";
 import IngredientList from "../components/Lists/IngredientList";
 import IngredientListItem from "../components/Lists/IngredientListItem";
 import InstructionList from "../components/Lists/InstructionList";
@@ -70,6 +72,14 @@ class Recipes extends Component {
 
   //Need a handler for swapping the recipe from NeedtoCook to Complete
 
+
+  // render() {
+  //   return (
+  //     <div>
+  //       {this.state.recipe}
+  //     </div>
+  //   )
+  // }
   render() {
     return (
       <div>
@@ -78,20 +88,15 @@ class Recipes extends Component {
         <div className="recipe-header">
           <h2 className="recipe-title">{this.state.recipe.recipe_name}</h2>
           <p className="recipe-servingsize">Yield: 
-          {this.state.recipe.recipe_image_url ? 
+          {this.state.recipe.recipe_serving_size ?  //Checks for recipe serving size
             (<span>{this.state.recipe.recipe_serving_size}</span>) : 
             (<span> Unknown - cook it and find out</span>)
           }
           </p>
-          {/* Stand in IMAGE */}
-
-          {this.state.recipe.recipe_image_url ? 
+          {this.state.recipe.recipe_image_url ? //Checks for recipe image
             (<p className="recipe-image"><img src={this.state.recipe.recipe_image_url} alt={this.state.recipe.recipe_name} height="400" /></p>) : 
             (<div class="no-image" height="0"><i class="glyphicon glyphicon-camera"></i></div>)
           }
-
-
-          
         </div>
 
         <div className="ingredient-div">
@@ -106,8 +111,6 @@ class Recipes extends Component {
               <h3 className="ingredientChecklist">No Results to Display</h3>
             )}      
         </div>
-
-        {/* STAND IN DIRECTIONS SECTION */}
         <div className="instruction-div">
           <h4 className="recipe-subtitle">DIRECTIONS</h4>
           {this.state.instructions.length ? ( //Check for Instructions
