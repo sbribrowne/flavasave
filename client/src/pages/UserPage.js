@@ -36,9 +36,9 @@ class UserPage extends Component {
       .then(res => {
         this.setState({ user: res.data });
 
-        if(!res.data.id){
-          document.location.href="http://localhost:3000"
-        }else{
+        if (!res.data.id) {
+          document.location.href = "http://localhost:3000"
+        } else {
           this.loadRecipes();
         }
       })
@@ -48,7 +48,7 @@ class UserPage extends Component {
   loadRecipes = () => {
     API.getRecipes()
       .then(res => {
-        this.setState({ recipes: res.data, search_term:"", showing_search_results: 0 });
+        this.setState({ recipes: res.data, search_term: "", showing_search_results: 0 });
       })
       .catch(err => console.log(err));
   };
@@ -103,17 +103,20 @@ class UserPage extends Component {
       })
         .then(res => this.loadRecipes())
         //.then(res => { window.location.href = "http://localhost:3000" + res.data; } )
-        .catch(err => console.log(err));
+        .catch(err => console.log(err))
+        .then(this.setState({
+          recipe_url: ""
+        }));
     }
   };
 
   handleSearch = event => {
     event.preventDefault();
-    axios.get( `/api/search/${this.state.search_term}`)
-    .then( data => {
-      this.setState({ recipes: data.data, showing_search_results: 1 });
-      document.getElementById("searchresults").scrollIntoView(true); //{ behavior: "smooth", alignTo: 1 }
-    } );
+    axios.get(`/api/search/${this.state.search_term}`)
+      .then(data => {
+        this.setState({ recipes: data.data, showing_search_results: 1 });
+        document.getElementById("searchresults").scrollIntoView(true); //{ behavior: "smooth", alignTo: 1 }
+      });
   };
 
   render() {
@@ -171,12 +174,12 @@ class UserPage extends Component {
           </form>
         </div>
 
-        { this.state.showing_search_results ? 
+        {this.state.showing_search_results ?
           (<div id="searchresults" className="container-fluid userpage-container showing-search-results">
             Search results for: {this.state.search_term}
             <a href="#" onClick={this.loadRecipes}> Clear</a>
-          </div>) : 
-          (<span></span>) 
+          </div>) :
+          (<span></span>)
         }
 
         <OrangeHdr
@@ -221,13 +224,13 @@ class UserPage extends Component {
                       </div>
                     </NTCListItem>
                   ) : (
-                    <h1 className="noshow" />
-                  )
+                      <h1 className="noshow" />
+                    )
               )}
             </NeedToCookList>
           ) : (
-            <h1 className="table-items">No results to display</h1>
-          )}
+              <h1 className="table-items">No results to display</h1>
+            )}
         </div>
 
         <OrangeHdr
@@ -271,13 +274,13 @@ class UserPage extends Component {
                       </div>
                     </CompleteListItem>
                   ) : (
-                    <h1 className="noshow" />
-                  )
+                      <h1 className="noshow" />
+                    )
               )}
             </CompleteList>
           ) : (
-            <h1 className="table-items">No results to display</h1>
-          )}
+              <h1 className="table-items">No results to display</h1>
+            )}
         </div>
 
         <div className="container-fluid userpage-container">
