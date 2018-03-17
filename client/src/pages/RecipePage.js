@@ -16,7 +16,6 @@ import axios from "axios";
 class Recipes extends Component {
   state = {
     recipe: {},
-    recipes: [],
     ingredients: [],
     instructions: []
   };
