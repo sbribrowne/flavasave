@@ -55,6 +55,13 @@
     height: 0.3vw;
 }
 
+.showing-search-results {
+    font-family: $body-font-italic;
+    font-size: 3rem;
+    margin-top: 2%;
+    margin-bottom: -3%;
+}
+
 .orange-box {
     background-color: $orange;
     padding: 0.25rem 0rem 0.25rem 0rem;
@@ -73,7 +80,7 @@
     float: left;
     padding-top: 1rem;
     padding-bottom: 0.25rem;
-    margin-left: 22vw;
+    margin-left: 18vw;
     margin-right: 5rem;
 }
 

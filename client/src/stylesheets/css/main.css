@@ -454,6 +454,12 @@ li {
 .tag-search-button {
   height: 0.3vw; }
 
+.showing-search-results {
+  font-family: PeleguerItalic, serif;
+  font-size: 3rem;
+  margin-top: 2%;
+  margin-bottom: -3%; }
+
 .orange-box {
   background-color: #F99E1C;
   padding: 0.25rem 0rem 0.25rem 0rem;
@@ -470,7 +476,7 @@ li {
   float: left;
   padding-top: 1rem;
   padding-bottom: 0.25rem;
-  margin-left: 22vw;
+  margin-left: 18vw;
   margin-right: 5rem; }
 
 .col-md-4 {
@@ -754,7 +760,7 @@ li {
   .header-image-class {
     padding-top: 2rem;
     padding-bottom: 0rem;
-    margin-left: 17vw; } }
+    margin-left: 13vw; } }
 @media only screen and (max-width: 1280px) {
   /* ===============================================HOME PAGE================================================ */
   .loginBox {
