@@ -22,7 +22,8 @@ class UserPage extends Component {
   //set inital state of forms to empty
   state = {
     recipes: [],
-    recipe_url: ""
+    recipe_url: "",
+    search_term: ""
   };
 
   componentDidMount() {
@@ -88,7 +89,7 @@ class UserPage extends Component {
     });
   };
 
-  handleFormSubmit = event => {
+  handleURLSubmit = event => {
     event.preventDefault();
     if (this.state.recipe_url) {
       API.saveRecipe({
@@ -98,6 +99,16 @@ class UserPage extends Component {
         //.then(res => { window.location.href = "http://localhost:3000" + res.data; } )
         .catch(err => console.log(err));
     }
+  };
+
+  handleSearch = event => {
+    event.preventDefault();
+    console.log(this.state.search_term);  
+    axios.get( `/api/search/${this.state.search_term}`)
+    .then( data => {
+      console.log(data.data);
+      this.setState({ recipes: data.data });
+    } );
   };
 
   render() {
@@ -117,7 +128,7 @@ class UserPage extends Component {
               />
               <FormBtn
                 disabled={!this.state.recipe_url}
-                onClick={this.handleFormSubmit}
+                onClick={this.handleURLSubmit}
                 photo={require("../images/add_button.png")}
                 className="search-btn"
                 imageclass="imageClass"
@@ -128,11 +139,16 @@ class UserPage extends Component {
           <h3 className="search-title">SEARCH RECIPES</h3>
           <form className="row">
             <div className="form-group">
-              <Input name="search-recipe" className="input-width" />
+              <Input name="search-recipe" className="input-width"
+                value={this.state.search_term}
+                onChange={this.handleInputChange}
+                name="search_term"
+              />
               <FormBtn
                 photo={require("../images/search_button.png")}
                 className="search-btn"
                 imageclass="imageClass"
+                onClick={this.handleSearch}
               />
             </div>
           </form>
