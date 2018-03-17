@@ -14,12 +14,12 @@ import DeleteBtn from "../components/Buttons/DeleteBtn";
 import RecipeNotes from "../components/Forms/RecipeNotes";
 import axios from "axios";
 
+
 class Recipes extends Component {
   state = {
     recipe: {},
     ingredients: [],
     instructions: [],
-    ingredientChecked: false
   };
 
   componentDidMount() {
@@ -91,7 +91,6 @@ class Recipes extends Component {
               <span> Unknown - cook it and find out</span>
             )}
           </p>
-          {/* Stand in IMAGE */}
 
           {this.state.recipe.recipe_image_url ? (
             <p className="recipe-image">
@@ -102,8 +101,8 @@ class Recipes extends Component {
               />
             </p>
           ) : (
-            <div class="no-image" height="0">
-              <i class="glyphicon glyphicon-camera" />
+            <div className="no-image" height="0">
+              <i className="glyphicon glyphicon-camera" />
             </div>
           )}
         </div>
@@ -119,11 +118,6 @@ class Recipes extends Component {
                       ingredient.id,
                       ingredient.ingredient_checkbox
                     )
-                  }
-                  className={
-                    this.state.ingredientChecked
-                      ? "row ingredientChecklist"
-                      : "row ingredientChecklistChecked"
                   }
                   key={ingredient.id}
                   data={ingredient}
@@ -146,24 +140,12 @@ class Recipes extends Component {
             <h3 className="instructionChecklist">No Results to Display</h3>
           )}
         </div>
-
-        <p>
-          <a
-            target="_blank"
-            href={this.state.recipe.recipe_url}
-            className="recipe-link"
-          >
-            {this.state.recipe.recipe_url}
-          </a>
-        </p>
-
-        <Panel
-          name="STICKY NOTES"
-          panelfullclass="panel recipe-notes-panel"
-          panelheaderclass="recipe-notes-header"
-        >
-          <RecipeNotes data={this.state.recipe.recipe_notes} />
-        </Panel>
+        
+        <div className="recipe-link-box">
+            <a target="_blank" href={this.state.recipe.recipe_url} className="recipe-link">
+              {this.state.recipe.recipe_url}
+            </a>
+        </div>
 
         <div className="container-fluid recipepage-btns">
           <button className="btn recipepage-btn" type="button">
@@ -176,6 +158,14 @@ class Recipes extends Component {
             NEED TO COOK | COMPLETE
           </button>
         </div>
+
+        <Panel
+          name="STICKY NOTES"
+          panelfullclass="panel recipe-notes-panel"
+          panelheaderclass="recipe-notes-header"
+        >
+          <RecipeNotes data={this.state.recipe.recipe_notes} />
+        </Panel>
 
         <FooterLogged />
       </div>
