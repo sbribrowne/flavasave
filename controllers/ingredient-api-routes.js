@@ -22,7 +22,7 @@ module.exports = function (app) {
         });
     });
 
-    //Edit ingre - include RecipeId in object
+    //Edit ingre
     app.put("/api/ingredients/:recipeId",  isAuthenticated, function (req, res) {
         
         console.log(req.body.ingredientObj.ingredients);
@@ -39,18 +39,9 @@ module.exports = function (app) {
                     }
                 ).then(function (dbIngredient) {
                     res.send("Sucessful Edit"); //edit complete
-                });;
+                });
             });
 
-        /*db.Ingredient.update(
-            req.body.ingredientObj, {
-                where: {
-                    id: req.params.ingredientId
-                }
-            }).then(function (dbIngredient) {
-                res.json(dbIngredient); //edit complete
-            });
-            */
     });
 
     //DELETE
