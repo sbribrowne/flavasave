@@ -4,11 +4,112 @@ import FormBtn from "../components/Forms/FormBtn.js";
 import DropDwn from "../components/Forms/DropDwn.js";
 import NavLogged from "../components/Nav/NavLogged.js";
 import FooterLogged from "../components/Footer/FooterLogged.js";
+import API from "../utils/API";
+import axios from "axios";
 
 class RecipeEdit extends Component {
-  //Need method for handling input submit for
+  state = {
+    recipes: [],
+    id: "",
+    recipe_name: "",
+    serving_size: "",
+    ingredients: [],
+    instructions: []
+    //tags: []
+  };
 
-  //We should add an input for saving images to be associated to the recipe created
+  componentDidMount() {
+    this.loadRecipes();
+    console.log(this.state.recipes);
+  }
+
+  loadRecipes = () => {
+    API.getRecipe(this.props.match.params.id)
+      .then((res) => {
+        this.setState({
+          recipes: res.data,
+          id: res.data.id,
+          recipe_name: res.data.recipe_name,
+          serving_size: res.data.recipe_serving_size,
+          ingredients: res.data.Ingredients,
+          instructions: res.data.Instructions,
+          //tags: res.data.tags
+        })
+        console.log(res);
+        console.log(res.data.Ingredients);
+        console.log(this.state.recipes);
+      })
+      .catch(err => console.log(err));
+  };
+
+  deleteRecipe = id => {
+    API.deleteRecipe(id)
+      .then(res => this.loadRecipes())
+      .catch(err => console.log(err));
+  };
+
+
+  updateName = id => {
+    axios.put(`/api/recipes/${id}`,
+      {
+        recipeObj: {
+          recipe_name: null
+        }
+      }
+    )
+      .then(res => this.loadRecipes());
+  };
+
+  updateServing = id => {
+    axios.put(`/api/recipes/${id}`,
+      {
+        recipeObj: {
+          recipe_serving_size: null
+        }
+      }
+    )
+      .then(res => this.loadRecipes());
+  };
+
+  updateIngredient = id => {
+    axios.put(`/api/recipes/${id}`,
+      {
+        recipeObj: {
+          Ingredients: null
+        }
+      }
+    )
+      .then(res => this.loadRecipes());
+  };
+
+  updateInstructions = id => {
+    axios.put(`/api/recipes/${id}`,
+      {
+        recipeObj: {
+          Instructions: null
+        }
+      }
+    )
+      .then(res => this.loadRecipes());
+  };
+
+  handleInputChange = event => {
+    const { name, value } = event.target;
+    this.setState({
+      [name]: value
+    });
+  };
+
+  handleFormSubmit = event => {
+    event.preventDefault();
+    if (this.state.recipe_url) {
+      API.saveRecipe({
+        recipe_url: this.state.recipe_url
+      })
+        .then(res => this.loadRecipes())
+        .catch(err => console.log(err));
+    }
+  };
 
   render() {
     return (
@@ -18,7 +119,12 @@ class RecipeEdit extends Component {
           <h3 className="ERTitle">RECIPE NAME</h3>
           <div className="row">
             <div className="recipe-page-col col-sm-11">
-              <Input className="ERInput" name="recipe-name" />
+              <Input
+                className="ERInput"
+                name="recipe_name"
+                value={this.state.recipe_name}
+                onChange={this.handleInputChange}
+              />
             </div>
             <div className="recipe-page-col col-sm-1">
               <button className="btn ERSubmit" type="button">SAVE</button>
@@ -28,7 +134,12 @@ class RecipeEdit extends Component {
           <h3 className="ERTitle">SERVING SIZE</h3>
           <div className="row">
             <div className="recipe-page-col col-sm-11">
-              <Input className="ERInput" name="recipe-name" />
+              <Input
+                className="ERInput"
+                name="serving_size"
+                value={this.state.serving_size}
+                onChange={this.handleInputChange}
+              />
             </div>
             <div className="recipe-page-col col-sm-1">
               <button className="btn ERSubmit" type="button">SAVE</button>
@@ -37,14 +148,15 @@ class RecipeEdit extends Component {
 
           <h3 className="ERTitle">INGREDIENTS</h3>
           <div className="row">
-            <div className="recipe-page-col col-sm-3">
-              <Input className="ERInput" name="amount" />
-            </div>
-            <div className="recipe-page-col col-sm-1">
-              <DropDwn />
-            </div>
-            <div className="recipe-page-col col-sm-7">
-              <Input className="ERInput" name="ingredient" />
+            <div className="recipe-page-col col-sm-11">
+              {this.state.ingredients.map(ingredient => (
+                <Input
+                  className="ERInput"
+                  name="ingredient"
+                  value={ingredient.ingredient_info}
+                  onChange={this.handleInputChange}
+                />
+              ))}
             </div>
             <div className="recipe-page-col col-sm-1">
               <button className="btn ERSubmit" type="button">SAVE</button>
@@ -54,7 +166,16 @@ class RecipeEdit extends Component {
           <h3 className="ERTitle">INSTRUCTIONS</h3>
           <div className="row">
             <div className="recipe-page-col col-sm-11">
-              <Input className="ERInput" name="recipe-name" />
+
+              {this.state.instructions.map(instruction => (
+                <Input
+                  className="ERInput"
+                  name="instructions"
+                  value={instruction.instruction_info}
+                  onChange={this.handleInputChange}
+                />
+              ))}
+
             </div>
             <div className="recipe-page-col col-sm-1">
               <button className="btn ERSubmit" type="button">SAVE</button>
@@ -73,8 +194,7 @@ class RecipeEdit extends Component {
 
           <div className="ingredient-btns">
             <button className="btn ingredient-btn recipeComplete" type="button">NEED TO COOK | RECIPE COMPLETE</button>
-            <button className="btn ingredient-btn recipeComplete" type="button">REVERT TO ORIGINAL</button>
-            <button className="btn ingredient-btn recipeDelete" type="button">DELETE</button>
+            <button onClick={() => this.deleteRecipe(this.state.id)} className="btn ingredient-btn recipeDelete" type="button">DELETE</button>
           </div>
         </div>
         <FooterLogged />

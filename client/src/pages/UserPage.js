@@ -35,9 +35,9 @@ class UserPage extends Component {
       .then((res) => {
         this.setState({ recipes: res.data })
         console.log(res);
+        console.log(res.data);
         console.log(this.state.recipes);
-      }
-      )
+      })
       .catch(err => console.log(err));
   };
 
