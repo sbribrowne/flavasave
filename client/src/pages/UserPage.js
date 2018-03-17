@@ -26,7 +26,7 @@ class UserPage extends Component {
     showing_search_results: 0
   };
 
-  componentDidMount() {
+  componentWillMount() { //componentDidMount
     this.currentUser();
     //currentUsers loads this.loadRecipes() if user found
   }
@@ -35,8 +35,12 @@ class UserPage extends Component {
     API.getUserData()
       .then(res => {
         this.setState({ user: res.data });
-        if(this.state.user) this.loadRecipes();
-        else console.log("currentUser: " + this.state.user);
+
+        if(!res.data.id){
+          document.location.href="http://localhost:3000"
+        }else{
+          this.loadRecipes();
+        }
       })
       .catch(err => console.log(err));
   };
