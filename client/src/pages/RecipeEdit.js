@@ -53,7 +53,7 @@ class RecipeEdit extends Component {
     axios.put(`/api/recipes/${id}`,
       {
         recipeObj: {
-          recipe_name: null
+          recipe_name: this.state.recipe_name
         }
       }
     )
@@ -64,7 +64,7 @@ class RecipeEdit extends Component {
     axios.put(`/api/recipes/${id}`,
       {
         recipeObj: {
-          recipe_serving_size: null
+          recipe_serving_size: this.state.serving_size
         }
       }
     )
@@ -75,7 +75,7 @@ class RecipeEdit extends Component {
     axios.put(`/api/recipes/${id}`,
       {
         recipeObj: {
-          Ingredients: null
+          Ingredients: this.state.Ingredients
         }
       }
     )
@@ -127,7 +127,10 @@ class RecipeEdit extends Component {
               />
             </div>
             <div className="recipe-page-col col-sm-1">
-              <button className="btn ERSubmit" type="button">SAVE</button>
+              <button
+                className="btn ERSubmit"
+                type="button"
+                onClick={() => this.updateName(this.state.id)}>SAVE</button>
             </div>
           </div>
 
@@ -142,7 +145,10 @@ class RecipeEdit extends Component {
               />
             </div>
             <div className="recipe-page-col col-sm-1">
-              <button className="btn ERSubmit" type="button">SAVE</button>
+              <button
+                className="btn ERSubmit"
+                type="button"
+                onClick={() => this.updateServing(this.state.id)} > SAVE</button>
             </div>
           </div>
 
@@ -159,7 +165,12 @@ class RecipeEdit extends Component {
               ))}
             </div>
             <div className="recipe-page-col col-sm-1">
-              <button className="btn ERSubmit" type="button">SAVE</button>
+              {this.state.ingredients.map(ingredient => (
+                <button
+                  className="btn ERSubmit"
+                  type="button"
+                  onClick={() => this.updateIngredient(this.state.id)}>SAVE</button>
+              ))}
             </div>
           </div>
 
