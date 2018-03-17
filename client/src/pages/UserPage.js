@@ -21,7 +21,9 @@ class UserPage extends Component {
   state = {
     user: "",
     recipes: [],
-    recipe_url: ""
+    recipe_url: "",
+    search_term: "",
+    showing_search_results: 0
   };
 
   componentDidMount() {
@@ -42,7 +44,7 @@ class UserPage extends Component {
   loadRecipes = () => {
     API.getRecipes()
       .then(res => {
-        this.setState({ recipes: res.data });
+        this.setState({ recipes: res.data, search_term:"", showing_search_results: 0 });
         console.log(res);
         console.log(res.data);
         console.log(this.state.recipes);
@@ -92,7 +94,7 @@ class UserPage extends Component {
     });
   };
 
-  handleFormSubmit = event => {
+  handleURLSubmit = event => {
     event.preventDefault();
     if (this.state.recipe_url) {
       API.saveRecipe({
@@ -106,6 +108,17 @@ class UserPage extends Component {
     this.setState({
       recipe_url: '',
     });
+  };
+
+  handleSearch = event => {
+    event.preventDefault();
+    console.log(this.state.search_term);  
+    axios.get( `/api/search/${this.state.search_term}`)
+    .then( data => {
+      console.log(data.data);
+      this.setState({ recipes: data.data, showing_search_results: 1 });
+      document.getElementById("searchresults").scrollIntoView(true); //{ behavior: "smooth", alignTo: 1 }
+    } );
   };
 
   render() {
@@ -125,7 +138,7 @@ class UserPage extends Component {
               />
               <FormBtn
                 disabled={!this.state.recipe_url}
-                onClick={this.handleFormSubmit}
+                onClick={this.handleURLSubmit}
                 photo={require("../images/add_button.png")}
                 className="search-btn"
                 imageclass="imageClass"
@@ -136,11 +149,16 @@ class UserPage extends Component {
           <h3 className="search-title">SEARCH RECIPES</h3>
           <form className="row">
             <div className="form-group">
-              <Input name="search-recipe" className="input-width" />
+              <Input name="search-recipe" className="input-width"
+                value={this.state.search_term}
+                onChange={this.handleInputChange}
+                name="search_term"
+              />
               <FormBtn
                 photo={require("../images/search_button.png")}
                 className="search-btn"
                 imageclass="imageClass"
+                onClick={this.handleSearch}
               />
             </div>
           </form>
@@ -157,6 +175,14 @@ class UserPage extends Component {
             </div>
           </form>
         </div>
+
+        { this.state.showing_search_results ? 
+          (<div id="searchresults" className="container-fluid userpage-container showing-search-results">
+            Search results for: {this.state.search_term}
+            <a href="#" onClick={this.loadRecipes}> Clear</a>
+          </div>) : 
+          (<span></span>) 
+        }
 
         <OrangeHdr
           photo={require("../images/egg_crack_bowl.png")}
