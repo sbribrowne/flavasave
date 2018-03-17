@@ -11,6 +11,7 @@ import API from "../utils/API";
 import "../stylesheets/css/main.css";
 import DeleteBtn from "../components/Buttons/DeleteBtn";
 import RecipeNotes from "../components/Forms/RecipeNotes";
+import Input from "../components/Forms/Input.js";
 import axios from "axios";
 
 class Recipes extends Component {
@@ -44,10 +45,21 @@ class Recipes extends Component {
       .then(res => this.loadRecipe());
   };
 
+  updateNotes = id => {
+    axios
+      .put(`/api/recipes/${id}`, {
+        recipeObj: {
+          recipe_notes: this.state.recipe_notes
+        }
+      })
+      .then(res => this.loadRecipe());
+  };
+
   loadRecipe = () => {
     API.getRecipe(this.props.match.params.id).then(res => {
       this.setState({
         recipe: res.data,
+        recipe_notes: res.data.recipe_notes,
         ingredients: res.data.Ingredients,
         instructions: res.data.Instructions
       });
@@ -77,6 +89,13 @@ class Recipes extends Component {
         .then(res => this.loadRecipe());
     }
     console.log(checkbox);
+  };
+
+  handleInputChange = event => {
+    const { name, value } = event.target;
+    this.setState({
+      [name]: value
+    });
   };
 
   render() {
@@ -186,7 +205,19 @@ class Recipes extends Component {
           panelfullclass="panel recipe-notes-panel"
           panelheaderclass="recipe-notes-header"
         >
-          <RecipeNotes data={this.state.recipe.recipe_notes} />
+          <Input
+            //className="ERInput"
+            name="recipe_notes"
+            value={this.state.recipe_notes}
+            onChange={this.handleInputChange}
+          />
+          <button
+            className="btn ERSubmit"
+            type="button"
+            onClick={() => this.updateNotes(this.state.recipe.id)}
+          >
+            Save
+          </button>
         </Panel>
 
         <FooterLogged />
