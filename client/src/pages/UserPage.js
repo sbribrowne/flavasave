@@ -44,6 +44,7 @@ class UserPage extends Component {
       .then(res => {
         this.setState({ recipes: res.data });
         console.log(res);
+        console.log(res.data);
         console.log(this.state.recipes);
       })
       .catch(err => console.log(err));
@@ -76,9 +77,9 @@ class UserPage extends Component {
 
   makeFalse = id => {
     axios
-      .put(`/api/ingredients/${id}`, {
+      .put(`/api/recipes/${id}`, {
         recipeObj: {
-          recipe_checkbox: null
+          recipe_checkbox: 0
         }
       })
       .then(res => this.loadRecipes());
@@ -168,7 +169,7 @@ class UserPage extends Component {
                 recipe =>
                   !recipe.recipe_checkbox ? (
                     <NTCListItem key={recipe.id}>
-                      <div className="col-md-7 table-item recipe-name">
+                      <div className="col-md-8 table-item recipe-name">
                         <Link
                           className="table-item"
                           to={"/recipe/" + recipe.id}
@@ -176,7 +177,7 @@ class UserPage extends Component {
                           {recipe.recipe_name}
                         </Link>
                       </div>
-                      <div className="col-md-5 recipe-buttons">
+                      <div className="col-md-4 recipe-buttons">
                         <Link
                           className="btn btn-sm up-edit-button"
                           to={"/recipeedit/" + recipe.id}
@@ -189,19 +190,18 @@ class UserPage extends Component {
                           onClick={() => this.makeTrue(recipe.id)}
                           className="btn up-toggle-button"
                           type="button"
-                        >
-                          Need to cook | Complete
+                        >Complete
                         </button>
                       </div>
                     </NTCListItem>
                   ) : (
-                    <h1 className="noshow" />
-                  )
+                      <h1 className="noshow" />
+                    )
               )}
             </NeedToCookList>
           ) : (
-            <h1 className="table-items">No results to display</h1>
-          )}
+              <h1 className="table-items">No results to display</h1>
+            )}
         </div>
 
         <OrangeHdr
@@ -218,7 +218,7 @@ class UserPage extends Component {
                 recipe =>
                   recipe.recipe_checkbox ? (
                     <CompleteListItem key={recipe.id}>
-                      <div className="col-md-7 table-item recipe-name">
+                      <div className="col-md-8 table-item recipe-name">
                         <Link
                           className="table-item"
                           to={"/recipe/" + recipe.id}
@@ -226,7 +226,7 @@ class UserPage extends Component {
                           {recipe.recipe_name}
                         </Link>
                       </div>
-                      <div className="col-md-5 recipe-buttons">
+                      <div className="col-md-4 recipe-buttons">
                         <Link
                           className="btn btn-sm up-edit-button"
                           to={"/recipeedit/" + recipe.id}
@@ -240,18 +240,18 @@ class UserPage extends Component {
                           className="btn up-toggle-button"
                           type="button"
                         >
-                          Need to cook | Complete
+                          Need to cook
                         </button>
                       </div>
                     </CompleteListItem>
                   ) : (
-                    <h1 className="noshow" />
-                  )
+                      <h1 className="noshow" />
+                    )
               )}
             </CompleteList>
           ) : (
-            <h1 className="table-items">No results to display</h1>
-          )}
+              <h1 className="table-items">No results to display</h1>
+            )}
         </div>
 
         <div className="container-fluid userpage-container">
