@@ -593,13 +593,8 @@ li {
   border: none;
   padding: 0; }
 
-.ingredientChecklistChecked {
-  font-family: Peleguer, serif;
-  font-size: 3.5rem;
-  background-color: transparent;
-  color: #E44125;
-  border: none;
-  padding: 0; }
+.glyphicon {
+  font-size: 2.5rem; }
 
 .instructionChecklist {
   font-family: Peleguer, serif;
@@ -609,13 +604,15 @@ li {
   width: 80%;
   margin-left: 8%; }
 
+.recipe-link-box {
+  margin: 2% 8% 4% 9%;
+  width: 100%; }
+
 .recipe-link {
   font-family: Peleguer, serif;
-  font-size: 2rem;
+  font-size: 2.5rem;
   color: black;
-  text-decoration: none;
-  margin-left: 9%;
-  width: 80%; }
+  text-decoration: none; }
 
 .recipe-notes-panel {
   border: 4px solid #F99E1C;
@@ -633,7 +630,12 @@ li {
   width: 100%;
   margin-top: -0.01rem;
   padding-top: 0.4rem;
-  padding-left: 0.5rem; }
+  padding-left: 3rem; }
+
+.recipe-notes {
+  font-family: PeleguerItalic, serif;
+  font-size: 2.5rem;
+  padding-left: 1rem; }
 
 .panel-header {
   font-family: LeagueGothic, sans-serif; }

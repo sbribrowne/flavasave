@@ -14,6 +14,7 @@ import DeleteBtn from "../components/Buttons/DeleteBtn";
 import RecipeNotes from "../components/Forms/RecipeNotes";
 import axios from "axios";
 
+
 class Recipes extends Component {
   state = {
     recipe: {},
@@ -90,7 +91,6 @@ class Recipes extends Component {
               <span> Unknown - cook it and find out</span>
             )}
           </p>
-          {/* Stand in IMAGE */}
 
           {this.state.recipe.recipe_image_url ? (
             <p className="recipe-image">
@@ -140,16 +140,12 @@ class Recipes extends Component {
             <h3 className="instructionChecklist">No Results to Display</h3>
           )}
         </div>
-
-        <p>
-          <a
-            target="_blank"
-            href={this.state.recipe.recipe_url}
-            className="recipe-link"
-          >
-            {this.state.recipe.recipe_url}
-          </a>
-        </p>
+        
+        <div className="recipe-link-box">
+            <a target="_blank" href={this.state.recipe.recipe_url} className="recipe-link">
+              {this.state.recipe.recipe_url}
+            </a>
+        </div>
 
         <Panel
           name="STICKY NOTES"
