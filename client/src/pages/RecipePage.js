@@ -17,6 +17,7 @@ class Recipes extends Component {
     recipe: {},
     ingredients: [],
     instructions: [],
+    ingredientcheckbox: false,
   }
 
   componentDidMount() {
@@ -31,22 +32,23 @@ class Recipes extends Component {
           recipe: res.data,
           ingredients: res.data.Ingredients, 
           instructions: res.data.Instructions, 
+          ingredientcheckbox: res.data.Ingredients.check_checkbox
         });
       }
     );
   };
 
-  ingredientCheck = id => {
+  ingredientCheck = (id) => {
     console.log("HI");
 
-    if (this.state.ingredient.ingredient_checkbox === 0) {
+    if (this.state.ingredients.ingredient_checkbox === 0) {
       axios.put(`api/ingredients/${id}`, {
         ingredientObj: {
           ingredient_checkbox: 1
         }
       })
       .then (res => console.log("done"));
-    } else if (this.state.ingredient.ingredient_checkbox === 1) {
+    } else if (this.state.ingredients.ingredient_checkbox === 1) {
         axios.put(`api/ingredients/${id}`, {
           ingredientObj: {
             ingredient_checkbox: 0
