@@ -195,7 +195,7 @@ class UserPage extends Component {
                 recipe =>
                   !recipe.recipe_checkbox ? (
                     <NTCListItem key={recipe.id}>
-                      <div className="col-md-7 table-item recipe-name">
+                      <div className="col-md-8 table-item recipe-name">
                         <Link
                           className="table-item"
                           to={"/recipe/" + recipe.id}
@@ -203,7 +203,7 @@ class UserPage extends Component {
                           {recipe.recipe_name}
                         </Link>
                       </div>
-                      <div className="col-md-5 recipe-buttons">
+                      <div className="col-md-4 recipe-buttons">
                         <Link
                           className="btn btn-sm up-edit-button"
                           to={"/recipeedit/" + recipe.id}
@@ -244,7 +244,7 @@ class UserPage extends Component {
                 recipe =>
                   recipe.recipe_checkbox ? (
                     <CompleteListItem key={recipe.id}>
-                      <div className="col-md-7 table-item recipe-name">
+                      <div className="col-md-8 table-item recipe-name">
                         <Link
                           className="table-item"
                           to={"/recipe/" + recipe.id}
@@ -252,7 +252,7 @@ class UserPage extends Component {
                           {recipe.recipe_name}
                         </Link>
                       </div>
-                      <div className="col-md-5 recipe-buttons">
+                      <div className="col-md-4 recipe-buttons">
                         <Link
                           className="btn btn-sm up-edit-button"
                           to={"/recipeedit/" + recipe.id}
