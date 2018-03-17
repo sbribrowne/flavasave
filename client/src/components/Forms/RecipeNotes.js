@@ -2,7 +2,7 @@ import React from "react";
 
 const RecipeNotes = (props) => (
   <div className="recipeNotes">
-    <p>{props.data}</p>
+    <p className="recipe-notes">{props.data}</p>
   </div>
 );
 

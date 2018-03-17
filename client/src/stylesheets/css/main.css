@@ -177,10 +177,10 @@
   font-family: PeleguerItalic, serif;
   font-size: 1.5vw;
   letter-spacing: 0.4rem;
-  color: white; }
+  color: #f4f0ed; }
 
 .signupLink {
-  color: white; }
+  color: #f4f0ed; }
 
 .signupLink:hover {
   font-size: 2.5rem;
@@ -192,7 +192,7 @@
   font-family: LeagueGothic, sans-serif;
   letter-spacing: 0.5rem;
   font-size: 2vw;
-  color: white;
+  color: #f4f0ed;
   padding: 2rem 2rem 10% 2rem;
   bottom: 8vw;
   left: -18rem;
@@ -230,7 +230,7 @@
   font-family: LeagueGothic, sans-serif;
   font-size: 6vw;
   letter-spacing: 1.5rem;
-  color: white;
+  color: #f4f0ed;
   margin-left: 12.5%;
   margin-top: 48vw;
   margin-bottom: 2%; }
@@ -412,7 +412,8 @@ li {
   text-align: center;
   letter-spacing: 0.2rem;
   margin-top: 4vw;
-  margin-bottom: 3vw; }
+  margin-bottom: 3vw;
+  text-transform: uppercase; }
 
 .userpage-container {
   width: 70%; }
@@ -541,7 +542,7 @@ li {
 .manual-add-btn {
   font-family: LeagueGothic, sans-serif;
   font-size: 2rem;
-  letter-spacing: 0.2rem;
+  letter-spacing: 0.25rem;
   color: white;
   background-color: #90bb5e;
   border-radius: 0;
@@ -593,13 +594,8 @@ li {
   border: none;
   padding: 0; }
 
-.ingredientChecklistChecked {
-  font-family: Peleguer, serif;
-  font-size: 3.5rem;
-  background-color: transparent;
-  color: #E44125;
-  border: none;
-  padding: 0; }
+.glyphicon {
+  font-size: 2.5rem; }
 
 .instructionChecklist {
   font-family: Peleguer, serif;
@@ -609,13 +605,15 @@ li {
   width: 80%;
   margin-left: 8%; }
 
+.recipe-link-box {
+  margin: 2% 8% 1% 9%;
+  width: 100%; }
+
 .recipe-link {
   font-family: Peleguer, serif;
-  font-size: 2rem;
+  font-size: 2.5rem;
   color: black;
-  text-decoration: none;
-  margin-left: 9%;
-  width: 80%; }
+  text-decoration: none; }
 
 .recipe-notes-panel {
   border: 4px solid #F99E1C;
@@ -633,7 +631,12 @@ li {
   width: 100%;
   margin-top: -0.01rem;
   padding-top: 0.4rem;
-  padding-left: 0.5rem; }
+  padding-left: 3rem; }
+
+.recipe-notes {
+  font-family: PeleguerItalic, serif;
+  font-size: 2.5rem;
+  padding-left: 1rem; }
 
 .panel-header {
   font-family: LeagueGothic, sans-serif; }
@@ -645,19 +648,20 @@ li {
   font-family: LeagueGothic, sans-serif;
   font-size: 2rem;
   letter-spacing: 0.2rem;
-  color: white;
+  color: #f4f0ed;
   background-color: #E44125;
   border-radius: 0;
   padding: 0.5rem 4rem 0.5rem 4rem;
-  margin-top: 6rem;
-  margin-right: 7rem; }
+  margin-top: 2rem;
+  margin-right: 7rem;
+  margin-bottom: 4rem; }
 
 .recipepage-btn:hover {
   background-color: #1E401D; }
 
 .editrecipe-container {
-  width: 80%;
-  margin-left: 10%;
+  width: 60%;
+  margin-left: 20%;
   margin-top: 4%; }
 
 .recipe-page-col {
@@ -667,28 +671,32 @@ li {
 .ERTitle {
   font-family: LeagueGothic, sans-serif;
   color: black;
-  font-size: 1.5vw;
+  font-size: 3rem;
   letter-spacing: 0.2rem; }
+
+.ER-row {
+  margin-top: 1.2%; }
 
 .ERSubmit {
   font-family: LeagueGothic, sans-serif;
-  font-size: 1vw;
-  letter-spacing: 0.2rem;
-  color: white;
+  font-size: 2.25rem;
+  letter-spacing: 0.31rem;
+  color: #f4f0ed;
   background-color: #F99E1C;
   border: none;
   border-radius: 0;
-  padding: 1.1rem 2rem 1rem 2rem;
-  margin-left: 2rem; }
+  padding: 0.4rem 1.2rem 0.4rem 1.2rem;
+  margin-top: 0.2rem;
+  margin-left: 3rem; }
 
 .ERSubmit:hover {
   background-color: #1E401D; }
 
 .ERInput {
   font-family: Peleguer, serif;
-  font-size: 3rem;
+  font-size: 2.3rem;
   width: 100%;
-  height: 2.5vw;
+  height: 4.2rem;
   box-shadow: none;
   border: 0.5px solid #e1dedc;
   padding-left: 2.4rem; }
@@ -706,7 +714,7 @@ li {
   font-family: LeagueGothic, sans-serif;
   font-size: 1vw;
   letter-spacing: 0.2rem;
-  color: white;
+  color: #f4f0ed;
   background-color: #E44125;
   border-radius: 0;
   margin-top: 3%;
