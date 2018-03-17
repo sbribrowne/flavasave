@@ -25,17 +25,8 @@ class AddNewRecipe extends Component {
 
 
   componentDidMount() {
-    console.log(this.state.recipe)
+    console.log(this.state)
   }
-
-
-  // addRecipe() {
-  //   API.addRecipe()
-  //     .then((res => { 
-  //       this.setState({ recipe: res.data} )
-  //       console.log(res.data)
-  //     }));
-  // };
 
   handleInputChange = event => {
     const { name, value } = event.target;
@@ -46,12 +37,18 @@ class AddNewRecipe extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
-    console.log(this.state.recipe_name)
-    axios.post("/api/manual", this.state.recipe_name)
-      .then((res) => {
-        console.log(res.data);
-        return res.data;
-      })
+    let recipe = {...this.state.recipe};
+    recipe.recipe_name = this.state.recipe_name;
+    recipe.recipe_serving_size = this.state.recipe_serving_size;
+
+    console.log(recipe)
+    this.setState({recipe})
+      
+    
+    API.addManualRecipe({
+      recipe: this.state.recipe
+    })
+
     // if (this.state.recipe_name) {
     //   API.addManualRecipe({
     //     recipe_name: this.state.recipe_name
@@ -84,7 +81,7 @@ class AddNewRecipe extends Component {
             <div className="row">
               <div className="recipe-page-col col-sm-12">
                 <Input
-                  value={this.state.recipe.recipe_serving_size}
+                  value={this.state.recipe_serving_size}
                   onChange={this.handleInputChange}
                   className="ERInput"
                   name="recipe_serving_size" />

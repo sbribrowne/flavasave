@@ -35,7 +35,7 @@ export default {
   addManualRecipe: function (recipe) {
     console.log(recipe);
     return axios.post("/api/manual", recipe)
-      .then( (data) => {
+      .then((data) => {
         console.log(data);
         return data;
       })
