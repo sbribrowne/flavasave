@@ -177,10 +177,10 @@
   font-family: PeleguerItalic, serif;
   font-size: 1.5vw;
   letter-spacing: 0.4rem;
-  color: white; }
+  color: #f4f0ed; }
 
 .signupLink {
-  color: white; }
+  color: #f4f0ed; }
 
 .signupLink:hover {
   font-size: 2.5rem;
@@ -192,7 +192,7 @@
   font-family: LeagueGothic, sans-serif;
   letter-spacing: 0.5rem;
   font-size: 2vw;
-  color: white;
+  color: #f4f0ed;
   padding: 2rem 2rem 10% 2rem;
   bottom: 8vw;
   left: -18rem;
@@ -230,7 +230,7 @@
   font-family: LeagueGothic, sans-serif;
   font-size: 6vw;
   letter-spacing: 1.5rem;
-  color: white;
+  color: #f4f0ed;
   margin-left: 12.5%;
   margin-top: 48vw;
   margin-bottom: 2%; }
@@ -541,7 +541,7 @@ li {
 .manual-add-btn {
   font-family: LeagueGothic, sans-serif;
   font-size: 2rem;
-  letter-spacing: 0.2rem;
+  letter-spacing: 0.25rem;
   color: white;
   background-color: #90bb5e;
   border-radius: 0;
@@ -647,7 +647,7 @@ li {
   font-family: LeagueGothic, sans-serif;
   font-size: 2rem;
   letter-spacing: 0.2rem;
-  color: white;
+  color: #f4f0ed;
   background-color: #E44125;
   border-radius: 0;
   padding: 0.5rem 4rem 0.5rem 4rem;
@@ -679,7 +679,7 @@ li {
   font-family: LeagueGothic, sans-serif;
   font-size: 2.25rem;
   letter-spacing: 0.31rem;
-  color: #fff8f3;
+  color: #f4f0ed;
   background-color: #F99E1C;
   border: none;
   border-radius: 0;
@@ -712,7 +712,7 @@ li {
   font-family: LeagueGothic, sans-serif;
   font-size: 1vw;
   letter-spacing: 0.2rem;
-  color: white;
+  color: #f4f0ed;
   background-color: #E44125;
   border-radius: 0;
   margin-top: 3%;
