@@ -23,8 +23,26 @@ module.exports = function (app) {
     });
 
     //Edit ingre - include RecipeId in object
-    app.put("/api/ingredients/:ingredientId",  isAuthenticated, function (req, res) {
-        db.Ingredient.update(
+    app.put("/api/ingredients/:recipeId",  isAuthenticated, function (req, res) {
+        
+        console.log(req.body.ingredientObj.ingredients);
+
+        req.body.ingredientObj.ingredients.map(
+            ingredient => {
+                console.log(ingredient.id + " " + ingredient.ingredient_info);
+                db.Ingredient.update(
+                    { ingredient_info: ingredient.ingredient_info },
+                    {
+                        where: {
+                            id: ingredient.id
+                        }
+                    }
+                ).then(function (dbIngredient) {
+                    res.send("Sucessful Edit"); //edit complete
+                });;
+            });
+
+        /*db.Ingredient.update(
             req.body.ingredientObj, {
                 where: {
                     id: req.params.ingredientId
@@ -32,6 +50,7 @@ module.exports = function (app) {
             }).then(function (dbIngredient) {
                 res.json(dbIngredient); //edit complete
             });
+            */
     });
 
     //DELETE
