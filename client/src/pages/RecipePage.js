@@ -16,6 +16,7 @@ import axios from "axios";
 class Recipes extends Component {
   state = {
     recipe: {},
+    recipes: [],
     ingredients: [],
     instructions: []
   };
@@ -23,6 +24,26 @@ class Recipes extends Component {
   componentDidMount() {
     this.loadRecipe();
   }
+
+  makeTrue = id => {
+    axios
+      .put(`/api/recipes/${id}`, {
+        recipeObj: {
+          recipe_checkbox: 1
+        }
+      })
+      .then(res => this.loadRecipe());
+  };
+
+  makeFalse = id => {
+    axios
+      .put(`/api/recipes/${id}`, {
+        recipeObj: {
+          recipe_checkbox: 0
+        }
+      })
+      .then(res => this.loadRecipe());
+  };
 
   loadRecipe = () => {
     API.getRecipe(this.props.match.params.id).then(res => {
@@ -59,20 +80,6 @@ class Recipes extends Component {
     console.log(checkbox);
   };
 
-  deleteIngredient() {}
-  //Need an editRecipe method
-
-  //Need a deleteRecipe method
-
-  //Need a handler for swapping the recipe from NeedtoCook to Complete
-
-  // render() {
-  //   return (
-  //     <div>
-  //       {this.state.recipe}
-  //     </div>
-  //   )
-  // }
   render() {
     return (
       <div>
@@ -156,9 +163,23 @@ class Recipes extends Component {
             {" "}
             Edit{" "}
           </Link>
-          <button className="btn recipepage-btn" type="button">
-            NEED TO COOK | COMPLETE
-          </button>
+          {this.state.recipe.recipe_checkbox ? (
+            <button
+              className="btn recipepage-btn"
+              type="button"
+              onClick={() => this.makeFalse(this.state.recipe.id)}
+            >
+              NEED TO COOK
+            </button>
+          ) : (
+            <button
+              className="btn recipepage-btn"
+              type="button"
+              onClick={() => this.makeTrue(this.state.recipe.id)}
+            >
+              COMPLETED
+            </button>
+          )}
         </div>
 
         <Panel
