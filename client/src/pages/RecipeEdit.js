@@ -94,6 +94,7 @@ class RecipeEdit extends Component {
   };
 
   handleInputChange = event => {
+    console.log(event);
     const { name, value } = event.target;
     this.setState({
       [name]: value
@@ -159,9 +160,10 @@ class RecipeEdit extends Component {
                   <div className="recipe-page-col col-sm-11">
                     <Input
                       className="ERInput"
-                      name="ingredient"
                       value={ingredient.ingredient_info}
                       onChange={this.handleInputChange}
+                      key={ingredient.id}
+                      id={ingredient.id}
                     />
                   </div>
                   <div className="recipe-page-col col-sm-1">
