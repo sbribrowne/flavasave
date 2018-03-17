@@ -40,6 +40,16 @@
     }
 }
 
+@media only screen and (max-width: 10240px) and (min-width: 992px) {
+    .up-delete-button {
+        margin-left: 1rem;
+    }
+
+    .up-toggle-button {
+        margin-left: 1rem;
+    }
+}
+
 @media only screen and (max-width: 980px) {
     /* ===============================================HOME PAGE================================================ */
     .loginBox {
