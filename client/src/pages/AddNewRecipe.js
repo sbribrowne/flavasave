@@ -10,27 +10,21 @@ class AddNewRecipe extends Component {
     recipe_serving_size: "",
     recipe: {
     },
-    ingredients: [
-      "",
-      "",
-      "",
-      "",
-      ""
-    ],
-    instructions: [
-      "",
-      "",
-      "",
-      "",
-      ""
-    ],
-    tags: [
-      "",
-      "",
-      "",
-      "",
-      ""
-    ]
+    ingredient1:"",
+    ingredient2: "",
+    ingredient3: "",
+    ingredient4: "",
+    ingredient0: "",
+    instruction0:"",
+    instruction1: "",
+    instruction2: "",
+    instruction3: "",
+    instruction4: "",
+    tag0:"",
+    tag1: "",
+    tag2: "",
+    tag3: "",
+    tag4: ""
   }
 
 
@@ -43,27 +37,46 @@ class AddNewRecipe extends Component {
     this.setState({
       [name]: value
     });
+    console.log(this.state);
   };
 
 
   handleFormSubmit = event => {
     event.preventDefault();
 
-    let recipe = { ...this.state.recipe };
-    recipe.recipe_name = this.state.recipe_name;
-    recipe.recipe_serving_size = this.state.recipe_serving_size;
+    // let recipe = { ...this.state.recipe };
+    // recipe.recipe_name = this.state.recipe_name;
+    // recipe.recipe_serving_size = this.state.recipe_serving_size;
 
-    let ingredients = [ ...this.state.ingredients ];
-    let instructions = [ ...this.state.instructions ];
-    let tags = [ ...this.state.tags ]
+    // let ingredients = [ ...this.state.ingredients ];
+    // let instructions = [ ...this.state.instructions ];
+    // let tags = [ ...this.state.tags ]
 
-    console.log(recipe, ingredients, instructions, tags)
-    this.setState({ recipe, ingredients, instructions, tags })
+    console.log(this.state)
     API.addManualRecipe({
-      recipe: recipe,
-      ingredients: ingredients,
-      instructions: instructions,
-      tags: tags
+      recipe_name: this.state.recipe_name,
+      recipe_serving_size: this.state.recipe_serving_size,
+      ingredients: [
+        this.state.ingredient0,
+        this.state.ingredient1,
+        this.state.ingredient2,
+        this.state.ingredient3,
+        this.state.ingredient4
+      ],
+      instuctions:[
+        this.state.instruction0,
+        this.state.instruction1,
+        this.state.instruction2,
+        this.state.instruction3,
+        this.state.instruction4
+      ],
+      tags:[
+        this.state.tag0,
+        this.state.tag1,
+        this.state.tag2,
+        this.state.tag3,
+        this.state.tag4
+      ]
     })
 
     // if (this.state.recipe_name) {
@@ -109,46 +122,46 @@ class AddNewRecipe extends Component {
             <div className="row">
               <div className="recipe-page-col col-sm-11">
                 <Input
-                  value={this.state.ingredients[0]}
+                  value={this.state.ingredient0}
                   onChange={this.handleInputChange}
                   className="ERInput"
-                  name="ingredients[0]" />
+                  name="ingredient0" />
               </div>
             </div>
             <div className="row">
               <div className="recipe-page-col col-sm-11">
                 <Input
-                  value={this.state.ingredients[1]}
+                  value={this.state.ingredient1}
                   onChange={this.handleInputChange}
                   className="ERInput"
-                  name="ingredients[1]" />
+                  name="ingredient1" />
               </div>
             </div>
             <div className="row">
               <div className="recipe-page-col col-sm-11">
                 <Input
-                  value={this.state.ingredients[2]}
+                  value={this.state.ingredient2}
                   onChange={this.handleInputChange}
                   className="ERInput"
-                  name="ingredients[2]" />
+                  name="ingredient2" />
               </div>
             </div>
             <div className="row">
               <div className="recipe-page-col col-sm-11">
                 <Input
-                  value={this.state.ingredients[3]}
+                  value={this.state.ingredient3}
                   onChange={this.handleInputChange}
                   className="ERInput"
-                  name="ingredients[3]" />
+                  name="ingredient3" />
               </div>
             </div>
             <div className="row">
               <div className="recipe-page-col col-sm-11">
                 <Input
-                  value={this.state.ingredients[4]}
+                  value={this.state.ingredient4}
                   onChange={this.handleInputChange}
                   className="ERInput"
-                  name="ingredients[4]" />
+                  name="ingredient4" />
               </div>
             </div>
 
@@ -156,46 +169,46 @@ class AddNewRecipe extends Component {
             <div className="row">
               <div className="recipe-page-col col-sm-11">
                 <Input
-                  value={this.state.instructions[0]}
+                  value={this.state.instruction0}
                   onChange={this.handleInputChange}
                   className="ERInput"
-                  name="instructions[0]" />
+                  name="instruction0" />
               </div>
             </div>
             <div className="row">
               <div className="recipe-page-col col-sm-11">
                 <Input
-                  value={this.state.instructions[1]}
+                  value={this.state.instruction1}
                   onChange={this.handleInputChange}
                   className="ERInput"
-                  name="instructions[1]" />
+                  name="instruction1" />
               </div>
             </div>
             <div className="row">
               <div className="recipe-page-col col-sm-11">
                 <Input
-                  value={this.state.instructions[2]}
+                  value={this.state.instruction2}
                   onChange={this.handleInputChange}
                   className="ERInput"
-                  name="instructions[2]" />
+                  name="instruction2" />
               </div>
             </div>
             <div className="row">
               <div className="recipe-page-col col-sm-11">
                 <Input
-                  value={this.state.instructions[3]}
+                  value={this.state.instruction3}
                   onChange={this.handleInputChange}
                   className="ERInput"
-                  name="instructions[3]" />
+                  name="instruction3" />
               </div>
             </div>
             <div className="row">
               <div className="recipe-page-col col-sm-11">
                 <Input
-                  value={this.state.instructions[4]}
+                  value={this.state.instruction4}
                   onChange={this.handleInputChange}
                   className="ERInput"
-                  name="instructions[4]" />
+                  name="instructions4" />
               </div>
             </div>
 
@@ -203,46 +216,46 @@ class AddNewRecipe extends Component {
             <div className="row">
               <div className="recipe-page-col col-sm-11">
                 <Input
-                  value={this.state.tags[0]}
+                  value={this.state.tag0}
                   onChange={this.handleInputChange}
                   className="ERInput"
-                  name="tags[0]" />
+                  name="tag0" />
               </div>
             </div>
             <div className="row">
               <div className="recipe-page-col col-sm-11">
                 <Input
-                  value={this.state.tags[1]}
+                  value={this.state.tag1}
                   onChange={this.handleInputChange}
                   className="ERInput"
-                  name="tags[1]" />
+                  name="tag1" />
               </div>
             </div>
             <div className="row">
               <div className="recipe-page-col col-sm-11">
                 <Input
-                  value={this.state.tags[2]}
+                  value={this.state.tag2}
                   onChange={this.handleInputChange}
                   className="ERInput"
-                  name="tags[2]" />
+                  name="tag2" />
               </div>
             </div>
             <div className="row">
               <div className="recipe-page-col col-sm-11">
                 <Input
-                  value={this.state.tags[3]}
+                  value={this.state.tag3}
                   onChange={this.handleInputChange}
                   className="ERInput"
-                  name="tags[3]" />
+                  name="tag3" />
               </div>
             </div>
             <div className="row">
               <div className="recipe-page-col col-sm-11">
                 <Input
-                  value={this.state.tags[4]}
+                  value={this.state.tag4}
                   onChange={this.handleInputChange}
                   className="ERInput"
-                  name="tags[4]" />
+                  name="tag4" />
               </div>
             </div>
 

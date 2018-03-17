@@ -217,16 +217,10 @@ module.exports = function (app) {
 
 
   app.post("/api/manual", isAuthenticated, function (req, res) {
-    const newRecipeName = req.body.recipe.recipe_name;
-    const newRecipeServingSize = req.body.recipe.recipe_serving_size;
     console.log(req.body)
 
     if (req.user) {
-      console.log(newRecipeName)
-      console.log(newRecipeServingSize)
       db.Recipe.create({
-        recipe_name: newRecipeName,
-        recipe_serving_size: newRecipeServingSize,
         UserId: req.user.id //get user
       })
       // .then( (newRecipe) => {
