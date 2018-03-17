@@ -14,12 +14,11 @@ import DeleteBtn from "../components/Buttons/DeleteBtn";
 import RecipeNotes from "../components/Forms/RecipeNotes";
 import axios from "axios";
 
-
 class Recipes extends Component {
   state = {
     recipe: {},
     ingredients: [],
-    instructions: [],
+    instructions: []
   };
 
   componentDidMount() {
@@ -67,7 +66,6 @@ class Recipes extends Component {
   //Need a deleteRecipe method
 
   //Need a handler for swapping the recipe from NeedtoCook to Complete
-
 
   // render() {
   //   return (
@@ -140,19 +138,20 @@ class Recipes extends Component {
             <h3 className="instructionChecklist">No Results to Display</h3>
           )}
         </div>
-        
+
         <div className="recipe-link-box">
-            <a target="_blank" href={this.state.recipe.recipe_url} className="recipe-link">
-              {this.state.recipe.recipe_url}
-            </a>
+          <a
+            target="_blank"
+            href={this.state.recipe.recipe_url}
+            className="recipe-link"
+          >
+            {this.state.recipe.recipe_url}
+          </a>
         </div>
 
         <div className="container-fluid recipepage-btns">
           <button className="btn recipepage-btn" type="button">
             EDIT
-          </button>
-          <button className="btn recipepage-btn" type="button">
-            DELETE
           </button>
           <button className="btn recipepage-btn" type="button">
             NEED TO COOK | COMPLETE
