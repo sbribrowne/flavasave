@@ -9,13 +9,15 @@ import FooterLogged from "../components/Footer/FooterLogged.js";
 import API from "../utils/API";
 import "../stylesheets/css/main.css";
 import DeleteBtn from "../components/Buttons/DeleteBtn";
-import RecipeNotes from "../components/Forms/RecipeNotes"
+import RecipeNotes from "../components/Forms/RecipeNotes";
+import axios from "axios";
 
 class Recipes extends Component {
   state = {
     recipe: {},
     ingredients: [],
-    instructions: []
+    instructions: [],
+    ingredientChecked: false,
   }
 
   componentDidMount() {
@@ -29,11 +31,35 @@ class Recipes extends Component {
         this.setState({ 
           recipe: res.data,
           ingredients: res.data.Ingredients, 
-          instructions: res.data.Instructions 
+          instructions: res.data.Instructions, 
         });
       }
     );
   };
+
+  ingredientCheck = (id, checkbox) => {
+    console.log("HI");
+    console.log(checkbox);
+
+    if (checkbox === false) {
+      console.log("okay")
+      axios.put(`/api/ingredients/${id}`, {
+        ingredientObj: {
+          ingredient_checkbox: 1
+        }
+      })
+      .then (this.setState({ingredients: this.state.ingredients}));
+    } else if (checkbox === true) {
+        console.log("no")
+        axios.put(`/api/ingredients/${id}`, {
+          ingredientObj: {
+            ingredient_checkbox: 0
+          }
+        })
+        .then (this.setState({ingredients: this.state.ingredients}));
+      }
+  };
+
 
   deleteIngredient(){
 
@@ -54,7 +80,7 @@ class Recipes extends Component {
           <p className="recipe-servingsize">Yield: 
           {this.state.recipe.recipe_image_url ? 
             (<span>{this.state.recipe.recipe_serving_size}</span>) : 
-            (<span>Unknown - cook it and find out</span>)
+            (<span> Unknown - cook it and find out</span>)
           }
           </p>
           {/* Stand in IMAGE */}
@@ -73,11 +99,11 @@ class Recipes extends Component {
           {this.state.ingredients.length ? ( //Check for Ingredients
             <IngredientList>
               {this.state.ingredients.map(ingredient => (
-                <IngredientListItem key={ingredient.id} data={ingredient} />
+                <IngredientListItem onClick={() => this.ingredientCheck(ingredient.id, ingredient.ingredient_checkbox)} className={this.state.ingredientChecked? "row ingredientChecklist": "row ingredientChecklistChecked"} key={ingredient.id} data={ingredient} />
               ))}
             </IngredientList>
             ) : (
-              <h3>No Results to Display</h3>
+              <h3 className="ingredientChecklist">No Results to Display</h3>
             )}      
         </div>
 
@@ -91,7 +117,7 @@ class Recipes extends Component {
               ))}
             </InstructionList>
             ) : (
-              <h3>No Results to Display</h3>
+              <h3 className="instructionChecklist">No Results to Display</h3>
             )} 
         </div>
         
