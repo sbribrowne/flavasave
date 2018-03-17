@@ -175,22 +175,22 @@ class RecipeEdit extends Component {
           </div>
 
           <h3 className="ERTitle">INSTRUCTIONS</h3>
-          <div className="row">
-            <div className="recipe-page-col col-sm-11">
-
+          <div>
               {this.state.instructions.map(instruction => (
-                <Input
-                  className="ERInput"
-                  name="instructions"
-                  value={instruction.instruction_info}
-                  onChange={this.handleInputChange}
-                />
+                <div className="row ER-row">
+                  <div className="recipe-page-col col-sm-11">
+                  <Input
+                    className="ERInput"
+                    name="instructions"
+                    value={instruction.instruction_info}
+                    onChange={this.handleInputChange}
+                  />
+                  </div>
+                  <div className="recipe-page-col col-sm-1">
+                    <button className="btn ERSubmit" type="button">SAVE</button>
+                  </div>
+                </div>
               ))}
-
-            </div>
-            <div className="recipe-page-col col-sm-1">
-              <button className="btn ERSubmit" type="button">SAVE</button>
-            </div>
           </div>
 
           <h3 className="ERTitle">TAGS</h3>
