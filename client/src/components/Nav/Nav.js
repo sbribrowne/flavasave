@@ -7,7 +7,7 @@ class Nav extends React.Component {
       <nav className="navbar" id="homeNav">
         <div className="container-fluid">
           <div className="navbar-header">
-            <Link to="/userpage">
+            <Link to="/">
               <img
                 id="navbarlogo"
                 src={require("../../images/logo_green.png")}
