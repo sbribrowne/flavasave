@@ -6,6 +6,7 @@ import NavLogged from "../components/Nav/NavLogged.js";
 import FooterLogged from "../components/Footer/FooterLogged.js";
 import API from "../utils/API";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 class RecipeEdit extends Component {
   state = {
@@ -326,7 +327,9 @@ class RecipeEdit extends Component {
 
           <div className="ingredient-btns">
             <button className="btn ingredient-btn recipeComplete" type="button">NEED TO COOK | RECIPE COMPLETE</button>
-            <button onClick={() => this.deleteRecipe(this.state.id)} className="btn ingredient-btn recipeDelete" type="button">DELETE</button>
+            <Link to={"/userpage"}>
+              <button onClick={() => this.deleteRecipe(this.state.id)} className="btn ingredient-btn recipeDelete" type="button">DELETE</button>
+            </Link>
           </div>
         </div>
         <FooterLogged />
