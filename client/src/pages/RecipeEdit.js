@@ -81,7 +81,10 @@ class RecipeEdit extends Component {
         }
       }
     )
-      .then(res => this.loadRecipes());
+      .then(res => {
+        console.log(res);
+        this.loadRecipes();
+      });
   };
 
   updateIngredient = id => {
