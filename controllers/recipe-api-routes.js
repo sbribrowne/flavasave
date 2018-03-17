@@ -194,25 +194,42 @@ module.exports = function (app) {
 
       } //end succesfull response
     });
-  });//END post api/recipe
+  }); //END post api/recipe
 
-   app.get("/api/search/:searchterm", isAuthenticated, function (req, res) {
-        //req.params.searchterm
-        console.log(req.params.searchterm);
-        db.Recipe.findAll({
-            where: {
-                UserId: req.user.id,
-                recipe_name: {
-                    $like: `%${req.params.searchterm}%`
-                }
-            }
-        }).then(function (dbRecipe) {
-            res.json(dbRecipe); //returns all recipes JSON   
-        })
-            .catch(function (err) { res.status(422).json(err) });
-        //res.send(`You searched for ${req.params.searchterm}`);
-    });
+  app.get("/api/search/:searchterm", isAuthenticated, function (req, res) {
+    //req.params.searchterm
+    console.log(req.params.searchterm);
+    db.Recipe.findAll({
+        where: {
+          UserId: req.user.id,
+          recipe_name: {
+            $like: `%${req.params.searchterm}%`
+          }
+        }
+      }).then(function (dbRecipe) {
+        res.json(dbRecipe); //returns all recipes JSON   
+      })
+      .catch(function (err) {
+        res.status(422).json(err)
+      });
+    //res.send(`You searched for ${req.params.searchterm}`);
+  });
 
+
+  app.post("/api/manual", isAuthenticated, function (req, res) {
+    console.log(req.body)
+
+    if (req.user) {
+      db.Recipe.create({
+        UserId: req.user.id //get user
+      })
+      // .then( (newRecipe) => {
+      //   const recipeId = newRecipe.dataValues.id; //user recipe id of ingr and instr
+      //   const ingredientArray;
+        
+      // })
+    }
+  });
   //Adds a blank recipe for manual creation/updating
   // app.post("/api/manual", isAuthenticated, function (req, res) {
 
@@ -272,7 +289,7 @@ module.exports = function (app) {
   //       });
   //   };
   // });
-  
+
 }; //END MODULE EXPOERTS
 
 
