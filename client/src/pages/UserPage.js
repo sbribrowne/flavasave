@@ -220,18 +220,19 @@ class UserPage extends Component {
                           onClick={() => this.makeTrue(recipe.id)}
                           className="btn up-toggle-button"
                           type="button"
-                        >Complete
+                        >
+                          Completed
                         </button>
                       </div>
                     </NTCListItem>
                   ) : (
-                      <h1 className="noshow" />
-                    )
+                    <h1 className="noshow" />
+                  )
               )}
             </NeedToCookList>
           ) : (
-              <h1 className="table-items">No results to display</h1>
-            )}
+            <h1 className="table-items">No results to display</h1>
+          )}
         </div>
 
         <OrangeHdr
@@ -270,18 +271,18 @@ class UserPage extends Component {
                           className="btn up-toggle-button"
                           type="button"
                         >
-                          Need to cook
+                          Need To Cook
                         </button>
                       </div>
                     </CompleteListItem>
                   ) : (
-                      <h1 className="noshow" />
-                    )
+                    <h1 className="noshow" />
+                  )
               )}
             </CompleteList>
           ) : (
-              <h1 className="table-items">No results to display</h1>
-            )}
+            <h1 className="table-items">No results to display</h1>
+          )}
         </div>
 
         <div className="container-fluid userpage-container">
