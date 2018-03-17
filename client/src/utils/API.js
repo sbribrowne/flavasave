@@ -35,6 +35,13 @@ export default {
         return data;
       })
   },
+  newIngredient: function (ingredient) {
+    return axios.post("/api/ingedients", ingredient)
+      .then(function (data) {
+        console.log(data);
+        return data;
+      })
+  },
   // Gets the user data with give id
   getUserData: function () {
     return axios.get("/api/user_data");
