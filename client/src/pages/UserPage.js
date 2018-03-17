@@ -22,7 +22,8 @@ class UserPage extends Component {
     user: "",
     recipes: [],
     recipe_url: "",
-    search_term: ""
+    search_term: "",
+    showing_search_results: 0
   };
 
   componentDidMount() {
@@ -43,7 +44,7 @@ class UserPage extends Component {
   loadRecipes = () => {
     API.getRecipes()
       .then(res => {
-        this.setState({ recipes: res.data });
+        this.setState({ recipes: res.data, search_term:"", showing_search_results: 0 });
         console.log(res);
         console.log(res.data);
         console.log(this.state.recipes);
@@ -111,7 +112,8 @@ class UserPage extends Component {
     axios.get( `/api/search/${this.state.search_term}`)
     .then( data => {
       console.log(data.data);
-      this.setState({ recipes: data.data });
+      this.setState({ recipes: data.data, showing_search_results: 1 });
+      document.getElementById("searchresults").scrollIntoView(true); //{ behavior: "smooth", alignTo: 1 }
     } );
   };
 
@@ -169,6 +171,14 @@ class UserPage extends Component {
             </div>
           </form>
         </div>
+
+        { this.state.showing_search_results ? 
+          (<div id="searchresults" className="container-fluid userpage-container showing-search-results">
+            Search results for: {this.state.search_term}
+            <a href="#" onClick={this.loadRecipes}> Clear</a>
+          </div>) : 
+          (<span></span>) 
+        }
 
         <OrangeHdr
           photo={require("../images/egg_crack_bowl.png")}
