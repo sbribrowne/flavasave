@@ -14,9 +14,13 @@ export default {
     console.log(object);
     return axios.put(`/api/recipes/${id}`, object);
   },
-  // Deletes the recipe with the given id
+  // Deletes the ingredient with the given id
   deleteIngredient: function (id) {
     return axios.delete(`/api/ingredients/${id}`);
+  },
+  // Deletes the instruction with the given id
+  deleteInstruction: function (id) {
+    return axios.delete(`/api/instructions/${id}`);
   },
   // Deletes the ingredient with the given id
   deleteRecipe: function (id) {

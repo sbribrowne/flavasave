@@ -37,7 +37,7 @@ class RecipeEdit extends Component {
         })
         console.log(res);
         console.log(res.data.Instructions);
-        console.log(this.state.recipes);
+        console.log(this.state);
       })
       .catch(err => console.log(err));
   };
@@ -54,6 +54,11 @@ class RecipeEdit extends Component {
       .catch(err => console.log(err));
   };
 
+  deleteInstruction = id => {
+    API.deleteInstruction(id)
+      .then(res => this.loadRecipes())
+      .catch(err => console.log(err));
+  };
 
   updateName = id => {
     axios.put(`/api/recipes/${id}`,
@@ -105,6 +110,13 @@ class RecipeEdit extends Component {
       [name]: value
     });
   };
+
+  handleChange = event => {
+    console.log(this.state);
+    this.setState({
+      value: event.target.value
+    });
+  }
 
   handleFormSubmit = event => {
     event.preventDefault();
@@ -161,35 +173,43 @@ class RecipeEdit extends Component {
           <h3 className="ERTitle">INGREDIENTS</h3>
           <div>
             {this.state.ingredients.map(ingredient => (
-              <div className="row ER-row">
-                <div className="recipe-page-col col-sm-11">
-                  <Input
+              <div key={ingredient.id} className="row ER-row">
+                <div key={ingredient.id} className="recipe-page-col col-sm-10">
+                  <Input key={ingredient.id}
                     className="ERInput"
-                    name="ingredient"
+                    name="ingredients"
                     value={ingredient.ingredient_info}
                     onChange={this.handleInputChange}
                   />
                 </div>
                 <div className="recipe-page-col col-sm-1">
-                  <button
+                  <button key={ingredient.id}
                     className="btn ERSubmit"
                     type="button"
                     onClick={() => this.updateIngredient(this.state.id)}>save</button>
                 </div>
+                <div className="recipe-page-col col-sm-1">
+                  <button key={ingredient.id}
+                    className="btn ERSubmit"
+                    type="button"
+                    onClick={() => this.deleteIngredient(this.state.id)}>delete</button>
+                </div>
               </div>
-            ))}
+            ))
+            }
           </div>
 
           <h3 className="ERTitle">INSTRUCTIONS</h3>
           <div>
             {this.state.instructions.map(instruction => (
-              <div className="row ER-row">
-                <div className="recipe-page-col col-sm-11">
-                  <Input
+              <div key={instruction.id} className="row ER-row">
+
+                <div className="recipe-page-col col-sm-10">
+                  <Input key={instruction.id}
                     className="ERInput"
-                    name="instructions"
+                    name="instruction"
                     value={instruction.instruction_info}
-                    onChange={this.handleInputChange}
+                    onChange={() => this.handleChange}
                   />
                 </div>
                 <div className="recipe-page-col col-sm-1">
@@ -197,6 +217,12 @@ class RecipeEdit extends Component {
                     className="btn ERSubmit"
                     type="button"
                     onClick={() => this.updateInstruction(this.state.id)}>save</button>
+                </div>
+                <div className="recipe-page-col col-sm-1">
+                  <button key={instruction.id}
+                    className="btn ERSubmit"
+                    type="button"
+                    onClick={() => this.deleteInstruction(this.state.id)}>delete</button>
                 </div>
               </div>
             ))}
