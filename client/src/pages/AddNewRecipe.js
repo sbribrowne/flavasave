@@ -43,10 +43,8 @@ class AddNewRecipe extends Component {
 
     console.log(recipe)
     this.setState({recipe})
-      
-    
     API.addManualRecipe({
-      recipe: this.state.recipe
+      recipe: recipe
     })
 
     // if (this.state.recipe_name) {
