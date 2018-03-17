@@ -28,7 +28,8 @@ module.exports = function (app) {
 
   //GET 1 Recipe and Ingredients & Instructions
   app.get("/api/recipes/:recipeId", isAuthenticated, function (req, res) {
-    console.log('something')
+    console.log('api/recipes/id');
+    console.log("req.user: " + JSON.stringify(req.user));
     db.Recipe.findOne({
       where: {
         id: req.params.recipeId
@@ -43,10 +44,10 @@ module.exports = function (app) {
     }).then(function (dbRecipe) {
       console.log("dbRecipe");
       console.log(dbRecipe);
-      if (dbRecipe.dataValues.UserId === req.user.id)
+      if (dbRecipe && dbRecipe.dataValues.UserId === req.user.id)
         res.json(dbRecipe); //returns 1 recipe and ingreds/instrs
       else
-        res.send(new Error("Not your recipe. dbRecipe.dataValues.UserId does not match req.user.id"));
+        res.send({recipe_name: "Not your recipe. dbRecipe.dataValues.UserId does not match req.user.id"});
 
       //res.json(dbRecipe); //returns 1 recipe and ingreds/instrs
     });
