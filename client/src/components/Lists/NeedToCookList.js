@@ -5,7 +5,7 @@ const NeedToCookList = ({ children }) => {
     <div>
       <div className="row">
         <div className="col-md-7 table-header">TITLE</div>
-        <div className="col-md-5 table-header recipe-buttons">ACTION</div>
+        <div className="col-md-5 table-header">ACTION</div>
         <hr />
       </div>
       <div className="row">

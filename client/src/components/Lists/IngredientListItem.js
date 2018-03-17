@@ -1,10 +1,10 @@
 import React from "react";
 
 const IngredientListItem = (props) => (
-  <div className="row ingredientChecklist">
+  <div className="row ingredientChecklist" onClick={props.onClick}>
     <div className="col-sm-1 ingredientItem">
 
-    {props.data.ingredient_checkbox ? 
+      {props.data.ingredient_checkbox ? 
       (<i className="glyphicon glyphicon-ok"></i> ) : 
       (<i className="glyphicon glyphicon-remove"></i>) }
     </div>
