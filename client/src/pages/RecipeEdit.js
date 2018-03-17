@@ -110,13 +110,13 @@ class RecipeEdit extends Component {
       [name]: value
     });
   };
-
+/*
   handleChange = event => {
-    console.log(this.state);
     this.setState({
       value: event.target.value
     });
   }
+*/
 
   handleFormSubmit = event => {
     event.preventDefault();
@@ -175,11 +175,13 @@ class RecipeEdit extends Component {
             {this.state.ingredients.map(ingredient => (
               <div key={ingredient.id} className="row ER-row">
                 <div key={ingredient.id} className="recipe-page-col col-sm-10">
-                  <Input key={ingredient.id}
+                  <Input 
+                    key={ingredient.id}
+                    id={ingredient.id}
                     className="ERInput"
                     name="ingredients"
                     value={ingredient.ingredient_info}
-                    onChange={this.handleInputChange}
+                    onChange={() => this.handleInputChange}
                   />
                 </div>
                 <div className="recipe-page-col col-sm-1">
@@ -209,7 +211,7 @@ class RecipeEdit extends Component {
                     className="ERInput"
                     name="instruction"
                     value={instruction.instruction_info}
-                    onChange={() => this.handleChange}
+                    onChange={() => this.handleInputChange}
                   />
                 </div>
                 <div className="recipe-page-col col-sm-1">
