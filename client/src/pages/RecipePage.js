@@ -1,7 +1,6 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import Panel from "../components/Panels/Panel.js";
-// import Nav from "../components/Nav/Nav";
-// import Footer from "../components/Footer/Footer";
 import NavLogged from "../components/Nav/NavLogged";
 import IngredientList from "../components/Lists/IngredientList";
 import IngredientListItem from "../components/Lists/IngredientListItem";
@@ -12,28 +11,60 @@ import API from "../utils/API";
 import "../stylesheets/css/main.css";
 import DeleteBtn from "../components/Buttons/DeleteBtn";
 import RecipeNotes from "../components/Forms/RecipeNotes";
+import Input from "../components/Forms/Input.js";
 import axios from "axios";
-
 
 class Recipes extends Component {
   state = {
     recipe: {},
     ingredients: [],
-    instructions: [],
+    instructions: []
   };
 
   componentDidMount() {
     this.loadRecipe();
   }
 
+  makeTrue = id => {
+    axios
+      .put(`/api/recipes/${id}`, {
+        recipeObj: {
+          recipe_checkbox: 1
+        }
+      })
+      .then(res => this.loadRecipe());
+  };
+
+  makeFalse = id => {
+    axios
+      .put(`/api/recipes/${id}`, {
+        recipeObj: {
+          recipe_checkbox: 0
+        }
+      })
+      .then(res => this.loadRecipe());
+  };
+
+  updateNotes = id => {
+    axios
+      .put(`/api/recipes/${id}`, {
+        recipeObj: {
+          recipe_notes: this.state.recipe_notes
+        }
+      })
+      .then(res => this.loadRecipe());
+  };
+
   loadRecipe = () => {
     API.getRecipe(this.props.match.params.id).then(res => {
+      console.log(res);
       this.setState({
         recipe: res.data,
+        recipe_notes: res.data.recipe_notes,
         ingredients: res.data.Ingredients,
         instructions: res.data.Instructions
       });
-    });
+    }).catch(error => console.log(error));
   };
 
   ingredientCheck = (id, checkbox) => {
@@ -61,21 +92,13 @@ class Recipes extends Component {
     console.log(checkbox);
   };
 
-  deleteIngredient() {}
-  //Need an editRecipe method
+  handleInputChange = event => {
+    const { name, value } = event.target;
+    this.setState({
+      [name]: value
+    });
+  };
 
-  //Need a deleteRecipe method
-
-  //Need a handler for swapping the recipe from NeedtoCook to Complete
-
-
-  // render() {
-  //   return (
-  //     <div>
-  //       {this.state.recipe}
-  //     </div>
-  //   )
-  // }
   render() {
     return (
       <div>
@@ -109,7 +132,7 @@ class Recipes extends Component {
 
         <div className="ingredient-div">
           <h4 className="recipe-subtitle">INGREDIENTS</h4>
-          {this.state.ingredients.length ? ( //Check for Ingredients
+          {this.state.ingredients ? ( //Check for Ingredients
             <IngredientList>
               {this.state.ingredients.map(ingredient => (
                 <IngredientListItem
@@ -130,7 +153,7 @@ class Recipes extends Component {
         </div>
         <div className="instruction-div">
           <h4 className="recipe-subtitle">DIRECTIONS</h4>
-          {this.state.instructions.length ? ( //Check for Instructions
+          {this.state.instructions ? ( //Check for Instructions
             <InstructionList>
               {this.state.instructions.map(instruction => (
                 <InstructionListItem key={instruction.id} data={instruction} />
@@ -140,23 +163,42 @@ class Recipes extends Component {
             <h3 className="instructionChecklist">No Results to Display</h3>
           )}
         </div>
-        
+
         <div className="recipe-link-box">
-            <a target="_blank" href={this.state.recipe.recipe_url} className="recipe-link">
-              {this.state.recipe.recipe_url}
-            </a>
+          <a
+            target="_blank"
+            href={this.state.recipe.recipe_url}
+            className="recipe-link"
+          >
+            {this.state.recipe.recipe_url}
+          </a>
         </div>
 
         <div className="container-fluid recipepage-btns">
-          <button className="btn recipepage-btn" type="button">
-            EDIT
-          </button>
-          <button className="btn recipepage-btn" type="button">
-            DELETE
-          </button>
-          <button className="btn recipepage-btn" type="button">
-            NEED TO COOK | COMPLETE
-          </button>
+          <Link
+            className="btn btn-sm recipepage-btn"
+            to={"/recipeedit/" + this.state.recipe.id}
+          >
+            {" "}
+            Edit{" "}
+          </Link>
+          {this.state.recipe.recipe_checkbox ? (
+            <button
+              className="btn recipepage-btn"
+              type="button"
+              onClick={() => this.makeFalse(this.state.recipe.id)}
+            >
+              NEED TO COOK
+            </button>
+          ) : (
+            <button
+              className="btn recipepage-btn"
+              type="button"
+              onClick={() => this.makeTrue(this.state.recipe.id)}
+            >
+              COMPLETED
+            </button>
+          )}
         </div>
 
         <Panel
@@ -164,7 +206,19 @@ class Recipes extends Component {
           panelfullclass="panel recipe-notes-panel"
           panelheaderclass="recipe-notes-header"
         >
-          <RecipeNotes data={this.state.recipe.recipe_notes} />
+          <Input
+            //className="ERInput"
+            name="recipe_notes"
+            value={this.state.recipe_notes}
+            onChange={this.handleInputChange}
+          />
+          <button
+            className="btn ERSubmit"
+            type="button"
+            onClick={() => this.updateNotes(this.state.recipe.id)}
+          >
+            Save
+          </button>
         </Panel>
 
         <FooterLogged />

@@ -139,7 +139,6 @@ class RecipeEdit extends Component {
   };
 
   handleChange = event => {
-    console.log(this.state);
     this.setState({
       value: event.target.value
     });
@@ -191,7 +190,9 @@ class RecipeEdit extends Component {
             {this.state.ingredients.map((ingredient, i) => (
               <div key={ingredient.id} className="row ER-row">
                 <div key={ingredient.id} className="recipe-page-col col-sm-10">
-                  <Input key={ingredient.id}
+                  <Input
+                    key={ingredient.id}
+                    id={ingredient.id}
                     className="ERInput"
                     name={ingredient.id}
                     value={ingredient.ingredient_info}
