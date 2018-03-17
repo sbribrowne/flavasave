@@ -354,7 +354,7 @@ function parseItempropIngredients($, recipeId) {
         recipeImageUrl = $(this)[0].attribs.src;
       }
 
-      if ($(this).attr("itemprop").match(/recipeYield/)) { //all itemprops that match yield
+      if ($(this).attr("itemprop").match(/yield/)) { //all itemprops that match yield
         console.log("Serving Size 2");
         console.log($(this).text());
         recipeServingSize = $(this).text();
