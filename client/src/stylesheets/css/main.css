@@ -595,6 +595,14 @@ li {
   border: none;
   padding: 0; }
 
+.ingredientItemChecked {
+  font-family: Peleguer, serif;
+  font-size: 3.5rem;
+  background-color: transparent;
+  color: #90bb5e;
+  border: none;
+  padding: 0; }
+
 .instructionChecklist {
   font-family: Peleguer, serif;
   font-size: 3.5rem;

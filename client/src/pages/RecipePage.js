@@ -17,7 +17,7 @@ class Recipes extends Component {
     recipe: {},
     ingredients: [],
     instructions: [],
-    ingredientcheckbox: false,
+    ingredientChecked: false,
   }
 
   componentDidMount() {
@@ -32,29 +32,31 @@ class Recipes extends Component {
           recipe: res.data,
           ingredients: res.data.Ingredients, 
           instructions: res.data.Instructions, 
-          ingredientcheckbox: res.data.Ingredients.check_checkbox
         });
       }
     );
   };
 
-  ingredientCheck = (id) => {
+  ingredientCheck = (id, checkbox) => {
     console.log("HI");
+    console.log(checkbox);
 
-    if (this.state.ingredients.ingredient_checkbox === 0) {
-      axios.put(`api/ingredients/${id}`, {
+    if (checkbox === false) {
+      console.log("okay")
+      axios.put(`/api/ingredients/${id}`, {
         ingredientObj: {
           ingredient_checkbox: 1
         }
       })
-      .then (res => console.log("done"));
-    } else if (this.state.ingredients.ingredient_checkbox === 1) {
-        axios.put(`api/ingredients/${id}`, {
+      .then (this.setState({ingredients: this.state.ingredients}));
+    } else if (checkbox === true) {
+        console.log("no")
+        axios.put(`/api/ingredients/${id}`, {
           ingredientObj: {
             ingredient_checkbox: 0
           }
         })
-        .then (res => console.log("done"));
+        .then (this.setState({ingredients: this.state.ingredients}));
       }
   };
 
@@ -97,7 +99,7 @@ class Recipes extends Component {
           {this.state.ingredients.length ? ( //Check for Ingredients
             <IngredientList>
               {this.state.ingredients.map(ingredient => (
-                <IngredientListItem onClick={() => this.ingredientCheck(ingredient.id)} key={ingredient.id} data={ingredient} />
+                <IngredientListItem onClick={() => this.ingredientCheck(ingredient.id, ingredient.ingredient_checkbox)} key={ingredient.id} data={ingredient} />
               ))}
             </IngredientList>
             ) : (

@@ -43,6 +43,15 @@
     padding: 0;
 }
 
+.ingredientItemChecked {
+    font-family: $body-font;
+    font-size: 3.5rem;
+    background-color: transparent;
+    color: $green;
+    border: none;
+    padding: 0;
+}
+
 .instructionChecklist {
     font-family: $body-font;
     font-size: 3.5rem;
