@@ -746,6 +746,12 @@ li {
   /* ===============================================HOME PAGE================================================ */
   .loginBox {
     margin-top: -2.5vw; } }
+@media only screen and (max-width: 1450px) {
+  /* ===============================================USER PAGE================================================ */
+  .header-image-class {
+    padding-top: 2rem;
+    padding-bottom: 0rem;
+    margin-left: 17vw; } }
 @media only screen and (max-width: 1280px) {
   /* ===============================================HOME PAGE================================================ */
   .loginBox {
