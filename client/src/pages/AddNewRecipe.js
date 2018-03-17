@@ -1,14 +1,11 @@
 import React, { Component } from "react";
 import Input from "../components/Forms/Input.js";
-import DropDwn from "../components/Forms/DropDwn.js";
 import NavLogged from "../components/Nav/NavLogged.js";
 import FooterLogged from "../components/Footer/FooterLogged.js";
 import API from "../utils/API";
-import axios from "axios";
 
 class AddNewRecipe extends Component {
   state = {
-    user: "",
     recipe_name: "",
     recipe_serving_size: "",
     recipe: {
@@ -49,15 +46,18 @@ class AddNewRecipe extends Component {
     instruction.instruction_info = this.state.instruction_info;
     
     let ingredient = { ...this.state.ingredient };
-    indredient.ingredient_info = this.state.ingredient_info;
+    ingredient.ingredient_info = this.state.ingredient_info;
 
     let tag = { ...this.state.tag };
     tag.tag_info = this.state.tag_info;
 
-    console.log(recipe)
-    this.setState({recipe})
+    console.log(recipe, ingredient, instruction, tag)
+    this.setState({recipe, ingredient, instruction, tag})
     API.addManualRecipe({
       recipe: recipe,
+      ingredient: ingredient,
+      instruction: instruction,
+      tag: tag
     })
 
     // if (this.state.recipe_name) {
@@ -121,7 +121,7 @@ class AddNewRecipe extends Component {
                 value={this.state.instruction_info}
                 onChange={this.handleInputChange}
                 className="ERInput" 
-                name="recipe-name" />
+                name="instruction_info" />
               </div>
               <div className="recipe-page-col col-sm-1">
                 <button className="btn ERSubmit" type="button">ADD</button>
@@ -135,7 +135,7 @@ class AddNewRecipe extends Component {
                 value={this.state.tag_info}
                 onChange={this.handleInputChange}
                 className="ERInput" 
-                name="recipe-name" />
+                name="tag_info" />
               </div>
               <div className="recipe-page-col col-sm-1">
                 <button className="btn ERSubmit" type="button">ADD</button>

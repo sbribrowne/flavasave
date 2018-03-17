@@ -40,9 +40,9 @@ export default {
     return axios.get("/api/user_data");
   },
   // Manually add new recipe to the database
-  addManualRecipe: function (recipe) {
+  addManualRecipe: function (recipe, ingredients, instructions) {
     console.log(recipe);
-    return axios.post("/api/manual", recipe)
+    return axios.post("/api/manual", recipe, ingredients, instructions)
       .then((data) => {
         console.log(data);
         return data;
