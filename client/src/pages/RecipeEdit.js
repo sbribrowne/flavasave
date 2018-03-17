@@ -6,6 +6,7 @@ import NavLogged from "../components/Nav/NavLogged.js";
 import FooterLogged from "../components/Footer/FooterLogged.js";
 import API from "../utils/API";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 class RecipeEdit extends Component {
   state = {
@@ -81,7 +82,10 @@ class RecipeEdit extends Component {
         }
       }
     )
-      .then(res => this.loadRecipes());
+      .then(res => {
+        console.log(res);
+        this.loadRecipes();
+      });
   };
 
   updateIngredient = id => {
@@ -96,6 +100,21 @@ class RecipeEdit extends Component {
       .then(res => this.loadRecipes());
   };
 
+  newIngredient = () => {
+    axios.post(`/api/ingredients/`,
+      {
+        ingredientObj: {
+          RecipeId: this.state.recipes.id,
+          ingredient_info: this.state.new_ingredient
+        }
+      }
+    )
+      .then(res => this.loadRecipes())
+      .then(this.setState({
+        new_ingredient: ""
+      }))
+  };
+
   updateInstructions = id => {
     axios.put(`/api/instructions/${id}`,
       {
@@ -105,6 +124,21 @@ class RecipeEdit extends Component {
       }
     )
       .then(res => this.loadRecipes());
+  };
+
+  newInstruction = () => {
+    axios.post(`/api/instructions/`,
+      {
+        instructionObj: {
+          RecipeId: this.state.recipes.id,
+          instruction_info: this.state.new_instruction
+        }
+      }
+    )
+      .then(res => this.loadRecipes())
+      .then(this.setState({
+        new_instruction: ""
+      }))
   };
 
   handleInputChange = event => {
@@ -223,7 +257,7 @@ class RecipeEdit extends Component {
                 className="ERInput"
                 name="new_ingredient"
                 value={this.state.new_ingredient}
-                onChange={() => this.handleInputChange}
+                onChange={this.handleInputChange}
               />
             </div>
             <div className="recipe-page-col col-sm-1">
@@ -269,7 +303,7 @@ class RecipeEdit extends Component {
               <Input
                 className="ERInput"
                 name="new_instruction"
-                value={this.state.new_ingredient}
+                value={this.state.new_instruction}
                 onChange={this.handleInputChange}
               />
             </div>
@@ -293,7 +327,9 @@ class RecipeEdit extends Component {
 
           <div className="ingredient-btns">
             <button className="btn ingredient-btn recipeComplete" type="button">NEED TO COOK | RECIPE COMPLETE</button>
-            <button onClick={() => this.deleteRecipe(this.state.id)} className="btn ingredient-btn recipeDelete" type="button">DELETE</button>
+            <Link to={"/userpage"}>
+              <button onClick={() => this.deleteRecipe(this.state.id)} className="btn ingredient-btn recipeDelete" type="button">DELETE</button>
+            </Link>
           </div>
         </div>
         <FooterLogged />
