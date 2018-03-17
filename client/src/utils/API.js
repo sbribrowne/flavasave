@@ -42,6 +42,13 @@ export default {
         return data;
       })
   },
+  newInstruction: function (instruction) {
+    return axios.post("/api/instructions", instruction)
+      .then(function (data) {
+        console.log(data);
+        return data;
+      })
+  },
   // Gets the user data with give id
   getUserData: function () {
     return axios.get("/api/user_data");
