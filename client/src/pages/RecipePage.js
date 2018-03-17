@@ -19,7 +19,6 @@ class Recipes extends Component {
     recipe: {},
     ingredients: [],
     instructions: [],
-    ingredientChecked: false
   };
 
   componentDidMount() {
@@ -119,11 +118,6 @@ class Recipes extends Component {
                       ingredient.id,
                       ingredient.ingredient_checkbox
                     )
-                  }
-                  className={
-                    this.state.ingredientChecked
-                      ? "row ingredientChecklist"
-                      : "row ingredientChecklistChecked"
                   }
                   key={ingredient.id}
                   data={ingredient}
