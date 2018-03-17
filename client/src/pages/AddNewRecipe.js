@@ -10,17 +10,27 @@ class AddNewRecipe extends Component {
     recipe_serving_size: "",
     recipe: {
     },
-    ingredient_info: "",
-    ingredient: {
-    },
-    ingredients: [],
-    instruction_info: "",
-    instruction: {
-    },
-    instructions: [],
-    tag_info: "",
-    tag: {},
-    tags: []
+    ingredients: [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    instructions: [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    tags: [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
   }
 
 
@@ -35,35 +45,25 @@ class AddNewRecipe extends Component {
     });
   };
 
-  handleAddIngredient = event => {
-    event.preventDefault();
-
-    
-  }
 
   handleFormSubmit = event => {
     event.preventDefault();
 
-    let recipe = {...this.state.recipe};
+    let recipe = { ...this.state.recipe };
     recipe.recipe_name = this.state.recipe_name;
     recipe.recipe_serving_size = this.state.recipe_serving_size;
 
-    let instruction = { ...this.state.instruction };
-    instruction.instruction_info = this.state.instruction_info;
-    
-    let ingredient = { ...this.state.ingredient };
-    ingredient.ingredient_info = this.state.ingredient_info;
+    let ingredients = [ ...this.state.ingredients ];
+    let instructions = [ ...this.state.instructions ];
+    let tags = [ ...this.state.tags ]
 
-    let tag = { ...this.state.tag };
-    tag.tag_info = this.state.tag_info;
-
-    console.log(recipe, ingredient, instruction, tag)
-    this.setState({recipe, ingredient, instruction, tag})
+    console.log(recipe, ingredients, instructions, tags)
+    this.setState({ recipe, ingredients, instructions, tags })
     API.addManualRecipe({
       recipe: recipe,
-      ingredient: ingredient,
-      instruction: instruction,
-      tag: tag
+      ingredients: ingredients,
+      instructions: instructions,
+      tags: tags
     })
 
     // if (this.state.recipe_name) {
@@ -107,47 +107,142 @@ class AddNewRecipe extends Component {
 
             <h3 className="ERTitle">INGREDIENTS</h3>
             <div className="row">
-              <div className="recipe-page-col col-sm-3">
-                <Input 
-                value={this.state.ingredient_info}
-                onChange={this.handleInputChange}
-                className="ERInput"
-                name="ingredient_info" />
+              <div className="recipe-page-col col-sm-11">
+                <Input
+                  value={this.state.ingredients[0]}
+                  onChange={this.handleInputChange}
+                  className="ERInput"
+                  name="ingredients[0]" />
               </div>
-              <div className="recipe-page-col col-sm-1">
-                <button 
-                className="btn ERSubmit" type="button">ADD</button>
+            </div>
+            <div className="row">
+              <div className="recipe-page-col col-sm-11">
+                <Input
+                  value={this.state.ingredients[1]}
+                  onChange={this.handleInputChange}
+                  className="ERInput"
+                  name="ingredients[1]" />
+              </div>
+            </div>
+            <div className="row">
+              <div className="recipe-page-col col-sm-11">
+                <Input
+                  value={this.state.ingredients[2]}
+                  onChange={this.handleInputChange}
+                  className="ERInput"
+                  name="ingredients[2]" />
+              </div>
+            </div>
+            <div className="row">
+              <div className="recipe-page-col col-sm-11">
+                <Input
+                  value={this.state.ingredients[3]}
+                  onChange={this.handleInputChange}
+                  className="ERInput"
+                  name="ingredients[3]" />
+              </div>
+            </div>
+            <div className="row">
+              <div className="recipe-page-col col-sm-11">
+                <Input
+                  value={this.state.ingredients[4]}
+                  onChange={this.handleInputChange}
+                  className="ERInput"
+                  name="ingredients[4]" />
               </div>
             </div>
 
             <h3 className="ERTitle">INSTRUCTIONS</h3>
             <div className="row">
               <div className="recipe-page-col col-sm-11">
-                <Input 
-                value={this.state.instruction_info}
-                onChange={this.handleInputChange}
-                className="ERInput" 
-                name="instruction_info" />
+                <Input
+                  value={this.state.instructions[0]}
+                  onChange={this.handleInputChange}
+                  className="ERInput"
+                  name="instructions[0]" />
               </div>
-              <div className="recipe-page-col col-sm-1">
-                <button 
-                onClick=""
-                className="btn ERSubmit" 
-                type="button">ADD</button>
+            </div>
+            <div className="row">
+              <div className="recipe-page-col col-sm-11">
+                <Input
+                  value={this.state.instructions[1]}
+                  onChange={this.handleInputChange}
+                  className="ERInput"
+                  name="instructions[1]" />
+              </div>
+            </div>
+            <div className="row">
+              <div className="recipe-page-col col-sm-11">
+                <Input
+                  value={this.state.instructions[2]}
+                  onChange={this.handleInputChange}
+                  className="ERInput"
+                  name="instructions[2]" />
+              </div>
+            </div>
+            <div className="row">
+              <div className="recipe-page-col col-sm-11">
+                <Input
+                  value={this.state.instructions[3]}
+                  onChange={this.handleInputChange}
+                  className="ERInput"
+                  name="instructions[3]" />
+              </div>
+            </div>
+            <div className="row">
+              <div className="recipe-page-col col-sm-11">
+                <Input
+                  value={this.state.instructions[4]}
+                  onChange={this.handleInputChange}
+                  className="ERInput"
+                  name="instructions[4]" />
               </div>
             </div>
 
             <h3 className="ERTitle">TAGS</h3>
             <div className="row">
               <div className="recipe-page-col col-sm-11">
-                <Input 
-                value={this.state.tag_info}
-                onChange={this.handleInputChange}
-                className="ERInput" 
-                name="tag_info" />
+                <Input
+                  value={this.state.tags[0]}
+                  onChange={this.handleInputChange}
+                  className="ERInput"
+                  name="tags[0]" />
               </div>
-              <div className="recipe-page-col col-sm-1">
-                <button className="btn ERSubmit" type="button">ADD</button>
+            </div>
+            <div className="row">
+              <div className="recipe-page-col col-sm-11">
+                <Input
+                  value={this.state.tags[1]}
+                  onChange={this.handleInputChange}
+                  className="ERInput"
+                  name="tags[1]" />
+              </div>
+            </div>
+            <div className="row">
+              <div className="recipe-page-col col-sm-11">
+                <Input
+                  value={this.state.tags[2]}
+                  onChange={this.handleInputChange}
+                  className="ERInput"
+                  name="tags[2]" />
+              </div>
+            </div>
+            <div className="row">
+              <div className="recipe-page-col col-sm-11">
+                <Input
+                  value={this.state.tags[3]}
+                  onChange={this.handleInputChange}
+                  className="ERInput"
+                  name="tags[3]" />
+              </div>
+            </div>
+            <div className="row">
+              <div className="recipe-page-col col-sm-11">
+                <Input
+                  value={this.state.tags[4]}
+                  onChange={this.handleInputChange}
+                  className="ERInput"
+                  name="tags[4]" />
               </div>
             </div>
 
