@@ -2,11 +2,11 @@ import axios from "axios";
 
 export default {
   // Gets all recipes
-  getRecipes: function() {
+  getRecipes: function () {
     return axios.get("/api/recipes");
   },
   // Gets the recipe with the given id
-  getRecipe: function(id) {
+  getRecipe: function (id) {
     return axios.get(`/api/recipes/${id}`);
   },
   updateRecipe: function (id, object) {
@@ -15,7 +15,11 @@ export default {
     return axios.put(`/api/recipes/${id}`, object);
   },
   // Deletes the recipe with the given id
-  deleteRecipe: function(id) {
+  deleteIngredient: function (id) {
+    return axios.delete(`/api/ingredients/${id}`);
+  },
+  // Deletes the ingredient with the given id
+  deleteRecipe: function (id) {
     return axios.delete(`/api/recipes/${id}`);
   },
   // Saves a recipe to the database by URL
@@ -28,7 +32,7 @@ export default {
       })
   },
   // Gets the user data with give id
-  getUserData: function() {
+  getUserData: function () {
     return axios.get("/api/user_data");
   }
   // Manually add new recipe to the database

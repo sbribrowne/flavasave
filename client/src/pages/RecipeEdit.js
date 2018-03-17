@@ -48,6 +48,12 @@ class RecipeEdit extends Component {
       .catch(err => console.log(err));
   };
 
+  deleteIngredient = id => {
+    API.deleteIngredient(id)
+      .then(res => this.loadRecipes())
+      .catch(err => console.log(err));
+  };
+
 
   updateName = id => {
     axios.put(`/api/recipes/${id}`,
@@ -154,7 +160,7 @@ class RecipeEdit extends Component {
 
           <h3 className="ERTitle">INGREDIENTS</h3>
           <div className="row">
-            <div className="recipe-page-col col-sm-11">
+            <div className="recipe-page-col col-sm-10">
               {this.state.ingredients.map(ingredient => (
                 <Input
                   className="ERInput"
@@ -170,6 +176,14 @@ class RecipeEdit extends Component {
                   className="btn ERSubmit"
                   type="button"
                   onClick={() => this.updateIngredient(this.state.id)}>SAVE</button>
+              ))}
+            </div>
+            <div className="recipe-page-col col-sm-1">
+              {this.state.ingredients.map(ingredient => (
+                <button
+                  className="btn ERSubmit"
+                  type="button"
+                  onClick={() => this.deleteIngredient(this.state.id)}>DELETE</button>
               ))}
             </div>
           </div>
