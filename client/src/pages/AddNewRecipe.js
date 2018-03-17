@@ -8,9 +8,17 @@ import API from "../utils/API";
 
 class AddNewRecipe extends Component {
   state = {
-    recipe: {},
-    ingredients: [],
-    instructions: []
+    recipe: {
+      recipe_name: "",
+      recipe_serving_size: ""
+    },
+    ingredient: {
+      ingredient_info: ""
+    },
+    instruction: {
+      instruction_info: ""
+    },
+    tags: []
   }
 
 
@@ -22,12 +30,12 @@ class AddNewRecipe extends Component {
   //     }));
   // };
 
-  // handleInputChange = event => {
-  //   const { name, value } = event.target;
-  //   this.setState({
-  //     [name]: value
-  //   });
-  // };
+  handleInputChange = event => {
+    const { name, value } = event.target;
+    this.setState({
+      [name]: value
+    });
+  };
 
   // handleFormSubmit = event => {
   //   event.preventDefault();
