@@ -76,7 +76,7 @@ class UserPage extends Component {
 
   makeFalse = id => {
     axios
-      .put(`/api/recipes/${id}`, {
+      .put(`/api/ingredients/${id}`, {
         recipeObj: {
           recipe_checkbox: null
         }
