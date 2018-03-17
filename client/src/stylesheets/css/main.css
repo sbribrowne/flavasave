@@ -484,6 +484,9 @@ li {
   letter-spacing: 0.2rem;
   padding-top: 2rem; }
 
+.all-items-row {
+  margin-top: -2%; }
+
 .recipe-name {
   text-decoration: underline; }
 
