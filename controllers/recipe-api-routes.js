@@ -193,9 +193,24 @@ module.exports = function (app) {
 
       } //end succesfull response
     });
+  });//END post api/recipe
 
-
-  });
+   app.get("/api/search/:searchterm", isAuthenticated, function (req, res) {
+        //req.params.searchterm
+        console.log(req.params.searchterm);
+        db.Recipe.findAll({
+            where: {
+                UserId: req.user.id,
+                recipe_name: {
+                    $like: `%${req.params.searchterm}%`
+                }
+            }
+        }).then(function (dbRecipe) {
+            res.json(dbRecipe); //returns all recipes JSON   
+        })
+            .catch(function (err) { res.status(422).json(err) });
+        //res.send(`You searched for ${req.params.searchterm}`);
+    });
 
   //Adds a blank recipe for manual creation/updating
   // app.post("/api/manual", isAuthenticated, function (req, res) {
@@ -256,7 +271,10 @@ module.exports = function (app) {
   //       });
   //   };
   // });
-};
+  
+}; //END MODULE EXPOERTS
+
+
 
 /*
 function parseImageUrl($){
