@@ -32,22 +32,19 @@
     width: 80%;
     margin-left: 7%;
     border: none;
-}
-
-.ingredientItem {
+    color: black;
     font-family: $body-font;
     font-size: 3.5rem;
     background-color: transparent;
-    color: black;
     border: none;
     padding: 0;
 }
 
-.ingredientItemChecked {
+.ingredientChecklistChecked {
     font-family: $body-font;
     font-size: 3.5rem;
     background-color: transparent;
-    color: $green;
+    color: $red;
     border: none;
     padding: 0;
 }

@@ -99,7 +99,7 @@ class Recipes extends Component {
           {this.state.ingredients.length ? ( //Check for Ingredients
             <IngredientList>
               {this.state.ingredients.map(ingredient => (
-                <IngredientListItem onClick={() => this.ingredientCheck(ingredient.id, ingredient.ingredient_checkbox)} key={ingredient.id} data={ingredient} />
+                <IngredientListItem onClick={() => this.ingredientCheck(ingredient.id, ingredient.ingredient_checkbox)} className={this.state.ingredientChecked? "row ingredientChecklist": "row ingredientChecklistChecked"} key={ingredient.id} data={ingredient} />
               ))}
             </IngredientList>
             ) : (
