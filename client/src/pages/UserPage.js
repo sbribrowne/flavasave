@@ -20,7 +20,7 @@ class UserPage extends Component {
   //set inital state of forms to empty
   state = {
     user: "",
-    recipes: [],
+    recipes: ["test", "test"],
     recipe_url: "",
     search_term: "",
     showing_search_results: 0
@@ -28,15 +28,15 @@ class UserPage extends Component {
 
   componentDidMount() {
     this.currentUser();
-    this.loadRecipes();
-    console.log(this.state.recipes);
+    //currentUsers loads this.loadRecipes() if user found
   }
 
   currentUser = () => {
     API.getUserData()
       .then(res => {
         this.setState({ user: res.data });
-        console.log(res);
+        if(this.state.user) this.loadRecipes();
+        else console.log("currentUser: " + this.state.user);
       })
       .catch(err => console.log(err));
   };
@@ -45,9 +45,6 @@ class UserPage extends Component {
     API.getRecipes()
       .then(res => {
         this.setState({ recipes: res.data, search_term:"", showing_search_results: 0 });
-        console.log(res);
-        console.log(res.data);
-        console.log(this.state.recipes);
       })
       .catch(err => console.log(err));
   };
@@ -108,10 +105,8 @@ class UserPage extends Component {
 
   handleSearch = event => {
     event.preventDefault();
-    console.log(this.state.search_term);  
     axios.get( `/api/search/${this.state.search_term}`)
     .then( data => {
-      console.log(data.data);
       this.setState({ recipes: data.data, showing_search_results: 1 });
       document.getElementById("searchresults").scrollIntoView(true); //{ behavior: "smooth", alignTo: 1 }
     } );
@@ -189,7 +184,7 @@ class UserPage extends Component {
         />
 
         <div className="container-fluid userpage-container">
-          {this.state.recipes.length ? (
+          {this.state.recipes ? (
             <NeedToCookList>
               {this.state.recipes.map(
                 recipe =>
@@ -239,7 +234,7 @@ class UserPage extends Component {
           orangehdrimageclass="header-image-class"
         />
         <div className="container-fluid userpage-container">
-          {this.state.recipes.length ? (
+          {this.state.recipes ? (
             <CompleteList>
               {this.state.recipes.map(
                 recipe =>
