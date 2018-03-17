@@ -14,7 +14,9 @@ class RecipeEdit extends Component {
     recipe_name: "",
     serving_size: "",
     ingredients: [],
-    instructions: []
+    instructions: [],
+    new_ingredient: "",
+    new_instruction: "",
     //tags: []
   };
 
@@ -37,7 +39,7 @@ class RecipeEdit extends Component {
         })
         console.log(res);
         console.log(res.data.Instructions);
-        console.log(this.state);
+        console.log(this.state.recipes);
       })
       .catch(err => console.log(err));
   };
@@ -83,10 +85,11 @@ class RecipeEdit extends Component {
   };
 
   updateIngredient = id => {
-    axios.put(`/api/recipes/${id}`,
+    console.log(this.state.ingredients)
+    axios.put(`/api/ingredients/${id}`,
       {
-        recipeObj: {
-          Ingredients: this.state.Ingredients
+        ingredientObj: {
+          ingredients: this.state.ingredients
         }
       }
     )
@@ -94,10 +97,10 @@ class RecipeEdit extends Component {
   };
 
   updateInstructions = id => {
-    axios.put(`/api/recipes/${id}`,
+    axios.put(`/api/instructions/${id}`,
       {
-        recipeObj: {
-          Instructions: null
+        instructionObj: {
+          instructions: this.state.instructions
         }
       }
     )
@@ -110,24 +113,36 @@ class RecipeEdit extends Component {
       [name]: value
     });
   };
-/*
+
+  handleInstructionChange = (event, i) => {
+    let Instructions = [...this.state.instructions]
+    const { name, value } = event.target;
+    Instructions[i].instruction_info = value;
+    //find where we are working in array (find index of what's changing)
+
+    this.setState({
+      instructions: Instructions
+    });
+  };
+
+  handleIngredientChange = (event, i) => {
+    let Ingredients = [...this.state.ingredients]
+    const { name, value } = event.target;
+    Ingredients[i].ingredient_info = value;
+    console.log(value)
+    //find where we are working in array (find index of what's changing)
+
+    this.setState({
+      ingredients: Ingredients
+    });
+    console.log(this.state.ingredients)
+  };
+
   handleChange = event => {
     this.setState({
       value: event.target.value
     });
   }
-*/
-
-  handleFormSubmit = event => {
-    event.preventDefault();
-    if (this.state.recipe_url) {
-      API.saveRecipe({
-        recipe_url: this.state.recipe_url
-      })
-        .then(res => this.loadRecipes())
-        .catch(err => console.log(err));
-    }
-  };
 
   render() {
     return (
@@ -172,23 +187,23 @@ class RecipeEdit extends Component {
 
           <h3 className="ERTitle">INGREDIENTS</h3>
           <div>
-            {this.state.ingredients.map(ingredient => (
+            {this.state.ingredients.map((ingredient, i) => (
               <div key={ingredient.id} className="row ER-row">
                 <div key={ingredient.id} className="recipe-page-col col-sm-10">
-                  <Input 
+                  <Input
                     key={ingredient.id}
                     id={ingredient.id}
                     className="ERInput"
-                    name="ingredients"
+                    name={ingredient.id}
                     value={ingredient.ingredient_info}
-                    onChange={() => this.handleInputChange}
+                    onChange={(event) => this.handleIngredientChange(event, i)}
                   />
                 </div>
                 <div className="recipe-page-col col-sm-1">
                   <button key={ingredient.id}
                     className="btn ERSubmit"
                     type="button"
-                    onClick={() => this.updateIngredient(ingredient.id)}>save</button>
+                    onClick={() => this.updateIngredient(this.state.recipes.id)}>save</button>
                 </div>
                 <div className="recipe-page-col col-sm-1">
                   <button key={ingredient.id}
@@ -201,24 +216,42 @@ class RecipeEdit extends Component {
             }
           </div>
 
+          <h3 className="ERTitle">ADD NEW INGREDIENT</h3>
+          <div className="row">
+            <div className="recipe-page-col col-sm-11">
+              <Input
+                className="ERInput"
+                name="new_ingredient"
+                value={this.state.new_ingredient}
+                onChange={() => this.handleInputChange}
+              />
+            </div>
+            <div className="recipe-page-col col-sm-1">
+              <button
+                className="btn ERSubmit"
+                type="button"
+                onClick={() => this.newIngredient(this.state.id)}>save</button>
+            </div>
+          </div>
+
           <h3 className="ERTitle">INSTRUCTIONS</h3>
           <div>
-            {this.state.instructions.map(instruction => (
+            {this.state.instructions.map((instruction, i) => (
               <div key={instruction.id} className="row ER-row">
 
                 <div className="recipe-page-col col-sm-10">
                   <Input key={instruction.id}
                     className="ERInput"
-                    name="instruction"
+                    name={instruction.id}
                     value={instruction.instruction_info}
-                    onChange={() => this.handleInputChange}
+                    onChange={(event) => this.handleInstructionChange(event, i)}
                   />
                 </div>
                 <div className="recipe-page-col col-sm-1">
                   <button
                     className="btn ERSubmit"
                     type="button"
-                    onClick={() => this.updateInstruction(instruction.id)}>save</button>
+                    onClick={() => this.updateInstructions(this.state.recipes.id)}>save</button>
                 </div>
                 <div className="recipe-page-col col-sm-1">
                   <button key={instruction.id}
@@ -228,6 +261,24 @@ class RecipeEdit extends Component {
                 </div>
               </div>
             ))}
+          </div>
+
+          <h3 className="ERTitle">ADD NEW INSTRUCTION</h3>
+          <div className="row">
+            <div className="recipe-page-col col-sm-11">
+              <Input
+                className="ERInput"
+                name="new_instruction"
+                value={this.state.new_ingredient}
+                onChange={this.handleInputChange}
+              />
+            </div>
+            <div className="recipe-page-col col-sm-1">
+              <button
+                className="btn ERSubmit"
+                type="button"
+                onClick={() => this.newInstruction(this.state.id)}>save</button>
+            </div>
           </div>
 
           <h3 className="ERTitle">TAGS</h3>
