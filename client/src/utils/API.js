@@ -30,16 +30,16 @@ export default {
   // Gets the user data with give id
   getUserData: function() {
     return axios.get("/api/user_data");
-  }
+  },
   // Manually add new recipe to the database
-  // addManualRecipe: function (recipe) {
-  //   console.log(recipe);
-  //   return axios.post("/api/manual", recipe)
-  //     .then( (data) => {
-  //       console.log(data);
-  //       return data;
-  //     })
-  // }
+  addManualRecipe: function (recipe) {
+    console.log(recipe);
+    return axios.post("/api/manual", recipe)
+      .then( (data) => {
+        console.log(data);
+        return data;
+      })
+  }
   //
   // Add ingredients to manual recipe
 

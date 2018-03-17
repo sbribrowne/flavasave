@@ -197,6 +197,13 @@ module.exports = function (app) {
 
   });
 
+
+  app.post("/api/manual", isAuthenticated, function(req, res) {
+  
+    if (req.user) {
+      console.log(req.body)
+    }
+  })
   //Adds a blank recipe for manual creation/updating
   // app.post("/api/manual", isAuthenticated, function (req, res) {
 

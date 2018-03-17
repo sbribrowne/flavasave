@@ -40,13 +40,8 @@
     padding: 0;
 }
 
-.ingredientChecklistChecked {
-    font-family: $body-font;
-    font-size: 3.5rem;
-    background-color: transparent;
-    color: $red;
-    border: none;
-    padding: 0;
+.glyphicon {
+    font-size: 2.5rem;
 }
 
 .instructionChecklist {
@@ -58,13 +53,16 @@
     margin-left: 8%;
 }
 
+.recipe-link-box {
+    margin: 2% 8% 1% 9%;
+    width: 100%;
+}
+
 .recipe-link {
     font-family: $body-font;
-    font-size: 2rem;
+    font-size: 2.5rem;
     color: black;
     text-decoration: none;
-    margin-left: 9%;
-    width: 80%;
 }
 
 .recipe-notes-panel {
@@ -84,7 +82,13 @@
     width: 100%;
     margin-top: -0.01rem;
     padding-top: 0.4rem;
-    padding-left: 0.5rem;
+    padding-left: 3rem;
+}
+
+.recipe-notes {
+    font-family: $body-font-italic;
+    font-size: 2.5rem;
+    padding-left: 1rem;
 }
 
 .panel-header {
@@ -99,12 +103,13 @@
     font-family: $header-font;
     font-size: 2rem;
     letter-spacing: 0.2rem;
-    color: white;
+    color: $offwhite;
     background-color: $red;
     border-radius: 0;
     padding: 0.5rem 4rem 0.5rem 4rem;
-    margin-top: 6rem;
+    margin-top: 2rem;
     margin-right: 7rem;
+    margin-bottom: 4rem;
 }
 
 .recipepage-btn:hover  {
