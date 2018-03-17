@@ -63,7 +63,7 @@ class AddNewRecipe extends Component {
         this.state.ingredient3,
         this.state.ingredient4
       ],
-      instuctions:[
+      instructions:[
         this.state.instruction0,
         this.state.instruction1,
         this.state.instruction2,

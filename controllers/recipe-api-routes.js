@@ -221,13 +221,32 @@ module.exports = function (app) {
 
     if (req.user) {
       db.Recipe.create({
+        recipe_name: req.body.recipe_name,
+        recipe_serving_size: req.body.recipe_serving_size,
         UserId: req.user.id //get user
       })
-      // .then( (newRecipe) => {
-      //   const recipeId = newRecipe.dataValues.id; //user recipe id of ingr and instr
-      //   const ingredientArray;
-        
-      // })
+        .then( (newRecipe) => {
+          const recipeId = newRecipe.dataValues.id; //user recipe id of ingr and instr
+          const ingredientArray = [];
+
+          req.body.ingredients.map(ingredient => {
+            ingredientArray.push( { ingredient_info: ingredient, RecipeId: recipeId } );
+          });
+          
+          db.Ingredient.bulkCreate(ingredientArray, {
+            individualHooks: true
+          }).then( newIngredient => {
+            const instructionArray = [];
+            
+            req.body.instructions.map(instruction => {
+              instructionArray.push( { instruction_info: instruction, RecipeId: recipeId } );
+            });
+
+            db.Instruction.bulkCreate(instructionArray, {
+              individualHooks: true
+            }).then(newInstruction => res.send("Recipe Added"));
+          });
+       })
     }
   });
   //Adds a blank recipe for manual creation/updating
