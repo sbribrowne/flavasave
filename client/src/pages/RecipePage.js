@@ -1,6 +1,8 @@
 import React, { Component } from "react";
-import NavLogged from "../components/Nav/NavLogged.js";
 import Panel from "../components/Panels/Panel.js";
+// import Nav from "../components/Nav/Nav";
+// import Footer from "../components/Footer/Footer";
+import NavLogged from "../components/Nav/NavLogged";
 import IngredientList from "../components/Lists/IngredientList";
 import IngredientListItem from "../components/Lists/IngredientListItem";
 import InstructionList from "../components/Lists/InstructionList";
@@ -66,6 +68,14 @@ class Recipes extends Component {
 
   //Need a handler for swapping the recipe from NeedtoCook to Complete
 
+
+  // render() {
+  //   return (
+  //     <div>
+  //       {this.state.recipe}
+  //     </div>
+  //   )
+  // }
   render() {
     return (
       <div>
@@ -75,7 +85,7 @@ class Recipes extends Component {
           <h2 className="recipe-title">{this.state.recipe.recipe_name}</h2>
           <p className="recipe-servingsize">
             Yield:
-            {this.state.recipe.recipe_image_url ? (
+            {this.state.recipe.recipe_serving_size ? (
               <span>{this.state.recipe.recipe_serving_size}</span>
             ) : (
               <span> Unknown - cook it and find out</span>
@@ -124,8 +134,6 @@ class Recipes extends Component {
             <h3 className="ingredientChecklist">No Results to Display</h3>
           )}
         </div>
-
-        {/* STAND IN DIRECTIONS SECTION */}
         <div className="instruction-div">
           <h4 className="recipe-subtitle">DIRECTIONS</h4>
           {this.state.instructions.length ? ( //Check for Instructions

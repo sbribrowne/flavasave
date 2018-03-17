@@ -18,16 +18,30 @@ export default {
   deleteRecipe: function(id) {
     return axios.delete(`/api/recipes/${id}`);
   },
-  // Saves a recipe to the database
-  saveRecipe: function(newURL) {
+  // Saves a recipe to the database by URL
+  saveRecipe: function (newURL) {
     console.log(newURL);
-    return axios.post("/api/recipes", newURL).then(function(data) {
-      console.log(data);
-      return data;
-    });
+    return axios.post("/api/recipes", newURL)
+      .then(function (data) {
+        console.log(data);
+        return data;
+      })
   },
   // Gets the user data with give id
   getUserData: function() {
     return axios.get("/api/user_data");
   }
+  // Manually add new recipe to the database
+  // addManualRecipe: function (recipe) {
+  //   console.log(recipe);
+  //   return axios.post("/api/manual", recipe)
+  //     .then( (data) => {
+  //       console.log(data);
+  //       return data;
+  //     })
+  // }
+  //
+  // Add ingredients to manual recipe
+
+  // Add instructions to manual recipe
 };
