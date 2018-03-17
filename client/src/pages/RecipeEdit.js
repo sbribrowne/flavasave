@@ -188,13 +188,13 @@ class RecipeEdit extends Component {
                   <button key={ingredient.id}
                     className="btn ERSubmit"
                     type="button"
-                    onClick={() => this.updateIngredient(this.state.id)}>save</button>
+                    onClick={() => this.updateIngredient(ingredient.id)}>save</button>
                 </div>
                 <div className="recipe-page-col col-sm-1">
                   <button key={ingredient.id}
                     className="btn ERSubmit"
                     type="button"
-                    onClick={() => this.deleteIngredient(this.state.id)}>delete</button>
+                    onClick={() => this.deleteIngredient(ingredient.id)}>delete</button>
                 </div>
               </div>
             ))
@@ -218,13 +218,13 @@ class RecipeEdit extends Component {
                   <button
                     className="btn ERSubmit"
                     type="button"
-                    onClick={() => this.updateInstruction(this.state.id)}>save</button>
+                    onClick={() => this.updateInstruction(instruction.id)}>save</button>
                 </div>
                 <div className="recipe-page-col col-sm-1">
                   <button key={instruction.id}
                     className="btn ERSubmit"
                     type="button"
-                    onClick={() => this.deleteInstruction(this.state.id)}>delete</button>
+                    onClick={() => this.deleteInstruction(instruction.id)}>delete</button>
                 </div>
               </div>
             ))}
