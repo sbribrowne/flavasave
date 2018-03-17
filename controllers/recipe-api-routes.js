@@ -229,11 +229,12 @@ module.exports = function (app) {
         recipe_serving_size: newRecipeServingSize,
         UserId: req.user.id //get user
       })
-    };
-    //   .then(function (responseRecipe) {
-    //     const recipeId = responseRecipe.dataValues.id; //user recipe id of ingr and instr
-    //     const ingredientArray = 
-    // }
+      // .then( (newRecipe) => {
+      //   const recipeId = newRecipe.dataValues.id; //user recipe id of ingr and instr
+      //   const ingredientArray;
+        
+      // })
+    }
   });
   //Adds a blank recipe for manual creation/updating
   // app.post("/api/manual", isAuthenticated, function (req, res) {

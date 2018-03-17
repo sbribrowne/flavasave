@@ -35,6 +35,12 @@ class AddNewRecipe extends Component {
     });
   };
 
+  handleAddIngredient = event => {
+    event.preventDefault();
+
+    
+  }
+
   handleFormSubmit = event => {
     event.preventDefault();
 
@@ -124,7 +130,10 @@ class AddNewRecipe extends Component {
                 name="instruction_info" />
               </div>
               <div className="recipe-page-col col-sm-1">
-                <button className="btn ERSubmit" type="button">ADD</button>
+                <button 
+                onClick=""
+                className="btn ERSubmit" 
+                type="button">ADD</button>
               </div>
             </div>
 
