@@ -56,15 +56,17 @@ class Recipes extends Component {
   };
 
   loadRecipe = () => {
-    API.getRecipe(this.props.match.params.id).then(res => {
-      console.log(res);
-      this.setState({
-        recipe: res.data,
-        recipe_notes: res.data.recipe_notes,
-        ingredients: res.data.Ingredients,
-        instructions: res.data.Instructions
-      });
-    }).catch(error => console.log(error));
+    API.getRecipe(this.props.match.params.id)
+      .then(res => {
+        console.log(res);
+        this.setState({
+          recipe: res.data,
+          recipe_notes: res.data.recipe_notes,
+          ingredients: res.data.Ingredients,
+          instructions: res.data.Instructions
+        });
+      })
+      .catch(error => console.log(error));
   };
 
   ingredientCheck = (id, checkbox) => {
@@ -73,7 +75,7 @@ class Recipes extends Component {
     if (!checkbox) {
       console.log("false");
       axios
-        .put(`/api/ingredients/${id}`, {
+        .put(`/api/ingredients/toggle/${id}`, {
           ingredientObj: {
             ingredient_checkbox: 1
           }
@@ -82,7 +84,7 @@ class Recipes extends Component {
     } else if (checkbox) {
       console.log("true");
       axios
-        .put(`/api/ingredients/${id}`, {
+        .put(`/api/ingredients/toggle/${id}`, {
           ingredientObj: {
             ingredient_checkbox: null
           }
