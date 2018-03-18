@@ -1,4 +1,4 @@
-![alt FSlogo](/client/src/images/logo_white.png) - insert link
+![alt FSlogo](/client/src/images/logo_green.png) - insert link
 
 FlavaSave is an open source recipe saver application written in JavaScript and uses the MERN Stack (MySQL/Express/React/Node).
 
