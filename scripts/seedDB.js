@@ -28,6 +28,16 @@ const ingredientSeed = {
   RecipeId: ""
 };
 
+const instructionSeed = {
+  instruction_info: "Test Instruction",
+  RecipeId: ""
+};
+
+const tagSeed = {
+  tag_name: "tag",
+  RecipeId: ""  
+};
+
 //db.Recipe.create({});
 
 db.User.create(userSeed)
@@ -37,20 +47,20 @@ db.User.create(userSeed)
       .then(function (dbRecipe) {
         ingredientSeed.RecipeId = dbRecipe.dataValues.id;
         db.Ingredient.create(ingredientSeed)
-          .then(function (dbRecipe) {
-            console.log(dbRecipe);
-          })
-          .catch(function (error) {
-            //end create Ing
-            console.log(error);
-          });
-      })
-      .catch(function (error) {
-        //end create recipe
-        console.log(error);
-      });
-  })
-  .catch(function (error) {
-    //end create user
-    console.log(error);
-  });
+          .then(function (dbIngr) {
+            instructionSeed.RecipeId = dbRecipe.dataValues.id;
+            db.Instruction.create(instructionSeed)
+              .then(function (dbInst) {
+                tagSeed.RecipeId = dbRecipe.dataValues.id;
+                db.Tag.create(tagSeed)
+                  .then(function (dbTags) {
+                    console.log(dbTags);
+                  }).catch(function (error){ console.log(error) });
+                }).catch(function (error){ console.log(error) });
+              }).catch(function (error){ console.log(error) });
+            }).catch(function (error){ console.log(error) });
+          }).catch(function (error){ console.log(error) });
+            
+
+
+  /*.catch(function (error){ console.log(error) }; */

@@ -27,6 +27,7 @@ app.use(express.static("client/build"));
 require("./controllers/ingredient-api-routes.js")(app);
 require("./controllers/instruction-api-routes.js")(app);
 require("./controllers/recipe-api-routes.js")(app);
+require("./controllers/tag-api-routes.js")(app);
 //require("./controllers/recipe-display-routes.js")(app);
 require("./controllers/bookmarklet-routes.js")(app);
 //require("./controllers/login-html-routes.js")(app);
