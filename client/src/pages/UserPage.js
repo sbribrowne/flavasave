@@ -95,6 +95,10 @@ class UserPage extends Component {
     });
   };
 
+  loadApp1() {
+    this.props.history.push('/recipe/');
+  }
+
   handleURLSubmit = event => {
     event.preventDefault();
     if (this.state.recipe_url) {
@@ -102,11 +106,14 @@ class UserPage extends Component {
         recipe_url: this.state.recipe_url
       })
         .then(res => this.loadRecipes())
-        //.then(res => { window.location.href = "http://localhost:3000" + res.data; } )
-        .catch(err => console.log(err))
-        .then(this.setState({
-          recipe_url: ""
-        }));
+        .then(res => {
+          console.log(res);
+          this.setState({
+            recipe_url: ""
+          });
+          this.props.history.push(res);
+        })
+        .catch(err => console.log(err));
     }
   };
 
