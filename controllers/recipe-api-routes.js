@@ -39,6 +39,9 @@ module.exports = function (app) {
         },
         {
           model: db.Instruction
+        },
+        {
+          model: db.Tag
         }
       ]
     }).then(function (dbRecipe) {
@@ -65,18 +68,23 @@ module.exports = function (app) {
           RecipeId: req.params.id
         }
       }).then(function (dataInstr) {
-        try {
-          db.Recipe.destroy({ //delete Recipe
-            where: {
-              id: req.params.id
-            }
-          }).then(function (dataRec) {
-            res.send(req.params.id); //returns ID of deleted recipe
-          });
-        } catch (err) {
-          console.log(err);
-        }
-
+        db.Tag.destroy({ //delete all Instr
+          where: {
+            RecipeId: req.params.id
+          }
+        }).then(function(dbTag){
+              try {
+                db.Recipe.destroy({ //delete Recipe
+                  where: {
+                    id: req.params.id
+                  }
+                }).then(function (dataRec) {
+                  res.send(req.params.id); //returns ID of deleted recipe
+                });
+              } catch (err) {
+                console.log(err);
+              }
+        });
       });
 
     });
@@ -244,70 +252,21 @@ module.exports = function (app) {
 
             db.Instruction.bulkCreate(instructionArray, {
               individualHooks: true
-            }).then(newInstruction => res.send("Recipe Added"));
+            }).then(newInstruction =>{
+              const tagArray = [];
+            
+              req.body.tags.map(tag => {
+                tagArray.push( { tag_name: tag, RecipeId: recipeId } );
+              });
+  
+              db.Tag.bulkCreate(tagArray, {
+                individualHooks: true
+              }).then(newTag => res.send("Recipe Added"));
+            });
           });
        })
     }
   });
-  //Adds a blank recipe for manual creation/updating
-  // app.post("/api/manual", isAuthenticated, function (req, res) {
-
-  //   if (req.user) { //await
-  //     db.Recipe.create({
-  //         recipe_name: "",
-  //         recipe_notes: "Notes go here",
-  //         recipe_image_url: "",
-  //         recipe_serving_size: "",
-  //         UserId: req.user.id //get user
-  //       })
-  //       .then(function (blankRecipe) {
-  //         var recipeId = responseRecipe.dataValues.id; //user recipe id of ingr and instr
-  //         var ingredientTempArray = [];
-
-  //         if (!ingredientTempArray.length) { // check if ingredient array is empty
-  //           ingredientTempArray[0] = {
-  //             ingredient_info: "",
-  //             RecipeId: recipeId
-  //           };
-  //         }
-  //         db.Ingredient.create(ingredientTempArray, {
-  //             individualHooks: true
-  //           })
-  //           .then(function (blankIngredient) {
-  //             var instructionsArrayTemp = [];
-  //             if (!instructionsArrayTemp.length) { //check if no instructions
-  //               instructionsArrayTemp[0] = {
-  //                 instruction_info: "No Instructions Detected",
-  //                 RecipeId: recipeId
-  //               };
-  //             }
-  //             db.Instruction.bulkCreate(instructionsArrayTemp, {
-  //               individualHooks: true
-  //             })
-  //           })
-  //           .then(function (blankInstruction) {
-  //             var bigObject = {
-  //               recipe: blankRecipe,
-  //               ingredient: blankIngredient,
-  //               instructions: blankInstruction
-  //             };
-  //           }).then(function (bigObject) {
-  //             console.log(bigObject);
-  //             res.send(`/recipe/${responseRecipe.id}`);
-  //           })
-
-  //           .catch(function (error) {
-  //             res.json(error);
-  //           });
-  //       })
-  //       .catch(function (error) {
-  //         res.json(error);
-  //       })
-  //       .catch(function (error) {
-  //         res.json(error);
-  //       });
-  //   };
-  // });
 
 }; //END MODULE EXPOERTS
 
