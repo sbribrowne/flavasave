@@ -10,7 +10,6 @@ import FooterLogged from "../components/Footer/FooterLogged.js";
 import API from "../utils/API";
 import "../stylesheets/css/main.css";
 import DeleteBtn from "../components/Buttons/DeleteBtn";
-import RecipeNotes from "../components/Forms/RecipeNotes";
 import Input from "../components/Forms/Input.js";
 import axios from "axios";
 
@@ -18,7 +17,8 @@ class Recipes extends Component {
   state = {
     recipe: {},
     ingredients: [],
-    instructions: []
+    instructions: [],
+    tags: []
   };
 
   componentDidMount() {
@@ -56,17 +56,16 @@ class Recipes extends Component {
   };
 
   loadRecipe = () => {
-    API.getRecipe(this.props.match.params.id)
-      .then(res => {
-        console.log(res);
-        this.setState({
-          recipe: res.data,
-          recipe_notes: res.data.recipe_notes,
-          ingredients: res.data.Ingredients,
-          instructions: res.data.Instructions
-        });
-      })
-      .catch(error => console.log(error));
+    API.getRecipe(this.props.match.params.id).then(res => {
+      console.log(res);
+      this.setState({
+        recipe: res.data,
+        recipe_notes: res.data.recipe_notes,
+        ingredients: res.data.Ingredients,
+        instructions: res.data.Instructions,
+        tags: res.data.Tags
+      });
+    }).catch(error => console.log(error));
   };
 
   ingredientCheck = (id, checkbox) => {
@@ -172,6 +171,17 @@ class Recipes extends Component {
           ) : (
               <h3 className="instructionChecklist">No Results to Display</h3>
             )}
+        </div>
+
+        <div className="tags">
+          Tags: 
+          {this.state.tags ? ( //Check for Ingredients
+                this.state.tags.map(tag => (
+                  <span>{tag.tag_name} </span>
+                ))
+            ) : (
+              <span>No Tags</span>
+            )}          
         </div>
 
         <div className="recipe-link-box">

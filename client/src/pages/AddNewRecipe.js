@@ -208,7 +208,7 @@ class AddNewRecipe extends Component {
                   value={this.state.instruction4}
                   onChange={this.handleInputChange}
                   className="ERInput"
-                  name="instructions4" />
+                  name="instruction4" />
               </div>
             </div>
 
