@@ -14,8 +14,10 @@ class RecipeEdit extends Component {
     serving_size: "",
     ingredients: [],
     instructions: [],
+    tags: [],
     new_ingredient: "",
     new_instruction: "",
+    new_tag: ""
     //tags: []
   };
 
@@ -34,6 +36,7 @@ class RecipeEdit extends Component {
           serving_size: res.data.recipe_serving_size,
           ingredients: res.data.Ingredients,
           instructions: res.data.Instructions,
+          tags: res.data.Tags
           //tags: res.data.tags
         })
         console.log(res);
@@ -168,6 +171,52 @@ class RecipeEdit extends Component {
       ingredients: Ingredients
     });
     console.log(this.state.ingredients)
+  };
+
+  handleTagChange = (event, i) => {
+    let Tags = [...this.state.tags]
+    const { name, value } = event.target;
+    Tags[i].tag_name = value;
+    console.log(value)
+    //find where we are working in array (find index of what's changing)
+
+    this.setState({
+      tags: Tags
+    });
+    console.log(this.state.tags)
+  };
+
+  updateTag = id => {
+    console.log(this.state.tags)
+    axios.put(`/api/tags/${id}`,
+      {
+        tagObj: {
+          tags: this.state.tags
+        }
+      }
+    )
+      .then(res => this.loadRecipes());
+  };
+
+  deleteTag = id => {
+    API.deleteTag(id)
+      .then(res => this.loadRecipes())
+      .catch(err => console.log(err));
+  };
+
+  newTag = () => {
+    axios.post(`/api/tags/`,
+      {
+        tagObj: {
+          RecipeId: this.state.recipes.id,
+          tag_name: this.state.new_tag
+        }
+      }
+    )
+      .then(res => this.loadRecipes())
+      .then(this.setState({
+        new_tag: ""
+      }))
   };
 
   handleChange = event => {
@@ -315,11 +364,50 @@ class RecipeEdit extends Component {
 
           <h3 className="ERTitle">TAGS</h3>
           <div className="row">
+            {this.state.tags.map((tag, i) => (
+              <div key={tag.id} className="row ER-row">
+                <div key={tag.id} className="recipe-page-col col-sm-10">
+                  <Input
+                    key={tag.id}
+                    id={tag.id}
+                    className="ERInput"
+                    name={tag.id}
+                    value={tag.tag_name}
+                    onChange={(event) => this.handleTagChange(event, i)}
+                  />
+                </div>
+                <div className="recipe-page-col col-sm-1">
+                  <button key={tag.id}
+                    className="btn ERSubmit"
+                    type="button"
+                    onClick={() => this.updateTag(this.state.recipes.id)}>save</button>
+                </div>
+                <div className="recipe-page-col col-sm-1">
+                  <button key={tag.id}
+                    className="btn ERSubmit"
+                    type="button"
+                    onClick={() => this.deleteTag(tag.id)}>delete</button>
+                </div>
+              </div>
+            ))
+            }
+          </div>
+
+          <h3 className="ERTitle">ADD NEW TAG</h3>
+          <div className="row">
             <div className="recipe-page-col col-sm-11">
-              <Input className="ERInput" name="recipe-name" />
+              <Input
+                className="ERInput"
+                name="new_tag"
+                value={this.state.new_tag}
+                onChange={this.handleInputChange}
+              />
             </div>
             <div className="recipe-page-col col-sm-1">
-              <button className="btn ERSubmit" type="button">save</button>
+              <button
+                className="btn ERSubmit"
+                type="button"
+                onClick={() => this.newTag(this.state.id)}>save</button>
             </div>
           </div>
 

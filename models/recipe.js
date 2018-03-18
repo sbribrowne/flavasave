@@ -43,6 +43,10 @@ module.exports = function(sequelize, DataTypes){
         Recipe.hasMany(models.Instruction, {
           onDelete: "cascade"
         });
+
+        Recipe.hasMany(models.Tag, {
+          onDelete: "cascade"
+        });
       };
 
       return Recipe;
