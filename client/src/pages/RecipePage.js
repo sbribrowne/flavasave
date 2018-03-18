@@ -92,11 +92,19 @@ class Recipes extends Component {
     console.log(checkbox);
   };
 
-  handleInputChange = event => {
+
+  handleInputChange = (event) => {
     const { name, value } = event.target;
-    this.setState({
-      [name]: value
-    });
+    axios.put(`/api/recipes/${this.state.recipe.id}`, {
+      recipeObj: {
+        [name]: value
+      }
+    })
+      .then(res => {
+        this.setState({
+          recipe_notes: res.data.recipe_notes
+        })
+      });
   };
 
   render() {
@@ -111,8 +119,8 @@ class Recipes extends Component {
             {this.state.recipe.recipe_serving_size ? (
               <span>{this.state.recipe.recipe_serving_size}</span>
             ) : (
-              <span> Unknown - cook it and find out</span>
-            )}
+                <span> Unknown - cook it and find out</span>
+              )}
           </p>
 
           {this.state.recipe.recipe_image_url ? (
@@ -124,10 +132,10 @@ class Recipes extends Component {
               />
             </p>
           ) : (
-            <div className="no-image" height="0">
-              <i className="glyphicon glyphicon-camera" />
-            </div>
-          )}
+              <div className="no-image" height="0">
+                <i className="glyphicon glyphicon-camera" />
+              </div>
+            )}
         </div>
 
         <div className="ingredient-div">
@@ -148,8 +156,8 @@ class Recipes extends Component {
               ))}
             </IngredientList>
           ) : (
-            <h3 className="ingredientChecklist">No Results to Display</h3>
-          )}
+              <h3 className="ingredientChecklist">No Results to Display</h3>
+            )}
         </div>
         <div className="instruction-div">
           <h4 className="recipe-subtitle">DIRECTIONS</h4>
@@ -160,19 +168,19 @@ class Recipes extends Component {
               ))}
             </InstructionList>
           ) : (
-            <h3 className="instructionChecklist">No Results to Display</h3>
-          )}
+              <h3 className="instructionChecklist">No Results to Display</h3>
+            )}
         </div>
 
         <div className="tags">
-          Tags: 
+          Tags:
           {this.state.tags ? ( //Check for Ingredients
-                this.state.tags.map(tag => (
-                  <span>{tag.tag_name} </span>
-                ))
-            ) : (
+            this.state.tags.map(tag => (
+              <span>{tag.tag_name} </span>
+            ))
+          ) : (
               <span>No Tags</span>
-            )}          
+            )}
         </div>
 
         <div className="recipe-link-box">
@@ -191,7 +199,14 @@ class Recipes extends Component {
             to={"/recipeedit/" + this.state.recipe.id}
           >
             {" "}
-            Edit{" "}
+            EDIT{" "}
+          </Link>
+          <Link
+            className="btn btn-sm recipepage-btn"
+            to={"/userpage/"}
+          >
+            {" "}
+            MY RECIPES{" "}
           </Link>
           {this.state.recipe.recipe_checkbox ? (
             <button
@@ -202,14 +217,14 @@ class Recipes extends Component {
               NEED TO COOK
             </button>
           ) : (
-            <button
-              className="btn recipepage-btn"
-              type="button"
-              onClick={() => this.makeTrue(this.state.recipe.id)}
-            >
-              COMPLETED
+              <button
+                className="btn recipepage-btn"
+                type="button"
+                onClick={() => this.makeTrue(this.state.recipe.id)}
+              >
+                COMPLETED
             </button>
-          )}
+            )}
         </div>
 
         <Panel
@@ -223,13 +238,13 @@ class Recipes extends Component {
             value={this.state.recipe_notes}
             onChange={this.handleInputChange}
           />
-          <button
+          {/* <button
             className="btn ERSubmit"
             type="button"
             onClick={() => this.updateNotes(this.state.recipe.id)}
           >
             Save
-          </button>
+          </button> */}
         </Panel>
 
         <FooterLogged />
