@@ -27,32 +27,17 @@ class AddNewRecipe extends Component {
     tag4: ""
   }
 
-
-  componentDidMount() {
-    console.log(this.state)
-  }
-
   handleInputChange = event => {
     const { name, value } = event.target;
     this.setState({
       [name]: value
     });
-    console.log(this.state);
   };
 
 
   handleFormSubmit = event => {
     event.preventDefault();
 
-    // let recipe = { ...this.state.recipe };
-    // recipe.recipe_name = this.state.recipe_name;
-    // recipe.recipe_serving_size = this.state.recipe_serving_size;
-
-    // let ingredients = [ ...this.state.ingredients ];
-    // let instructions = [ ...this.state.instructions ];
-    // let tags = [ ...this.state.tags ]
-
-    console.log(this.state)
     API.addManualRecipe({
       recipe_name: this.state.recipe_name,
       recipe_serving_size: this.state.recipe_serving_size,
@@ -79,14 +64,6 @@ class AddNewRecipe extends Component {
       ]
     })
 
-    // if (this.state.recipe_name) {
-    //   API.addManualRecipe({
-    //     recipe_name: this.state.recipe_name
-    //   })
-    //     //.then(res => this.loadRecipes())
-    //     //.then(res => { window.location.href = "http://localhost:3000" + res.data; } )
-    //     .catch(err => console.log(err));
-    // }
   };
 
 
@@ -258,7 +235,6 @@ class AddNewRecipe extends Component {
                   name="tag4" />
               </div>
             </div>
-
             <button
               onClick={this.handleFormSubmit}
               className="btn recipe-add-button"
