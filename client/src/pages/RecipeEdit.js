@@ -408,6 +408,37 @@ class RecipeEdit extends Component {
 
           <h3 className="ERTitle">ADD NEW TAG</h3>
           <div className="row">
+            {this.state.tags.map((tag, i) => (
+              <div key={tag.id} className="row ER-row">
+                <div key={tag.id} className="recipe-page-col col-sm-10">
+                  <Input
+                    key={tag.id}
+                    id={tag.id}
+                    className="ERInput"
+                    name={tag.id}
+                    value={tag.tag_name}
+                    onChange={(event) => this.handleTagChange(event, i)}
+                  />
+                </div>
+                <div className="recipe-page-col col-sm-1">
+                  <button key={tag.id}
+                    className="btn ERSubmit"
+                    type="button"
+                    onClick={() => this.updateTag(this.state.recipes.id)}>save</button>
+                </div>
+                <div className="recipe-page-col col-sm-1">
+                  <button key={tag.id}
+                    className="btn ERSubmit"
+                    type="button"
+                    onClick={() => this.deleteTag(tag.id)}>delete</button>
+                </div>
+              </div>
+            ))
+            }
+          </div>
+
+          <h3 className="ERTitle">ADD NEW TAG</h3>
+          <div className="row">
             <div className="recipe-page-col col-sm-11">
               <Input
                 className="ERInput"
