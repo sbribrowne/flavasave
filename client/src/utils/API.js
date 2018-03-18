@@ -22,6 +22,10 @@ export default {
   deleteInstruction: function (id) {
     return axios.delete(`/api/instructions/${id}`);
   },
+  // Deletes the tag with the given id
+  deleteTag: function (id) {
+    return axios.delete(`/api/tags/${id}`);
+  },
   // Deletes the ingredient with the given id
   deleteRecipe: function (id) {
     return axios.delete(`/api/recipes/${id}`);
