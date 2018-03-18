@@ -174,14 +174,14 @@ class Recipes extends Component {
         </div>
 
         <div className="tags">
-          Tags: 
+          Tags:
           {this.state.tags ? ( //Check for Ingredients
-                this.state.tags.map(tag => (
-                  <span>{tag.tag_name} </span>
-                ))
-            ) : (
+            this.state.tags.map(tag => (
+              <span>{tag.tag_name} </span>
+            ))
+          ) : (
               <span>No Tags</span>
-            )}          
+            )}
         </div>
 
         <div className="recipe-link-box">
@@ -201,6 +201,13 @@ class Recipes extends Component {
           >
             {" "}
             EDIT{" "}
+          </Link>
+          <Link
+            className="btn btn-sm recipepage-btn"
+            to={"/userpage/"}
+          >
+            {" "}
+            MY RECIPES{" "}
           </Link>
           {this.state.recipe.recipe_checkbox ? (
             <button
