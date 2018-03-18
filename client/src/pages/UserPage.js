@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 import NavLogged from "../components/Nav/NavLogged";
 import Input from "../components/Forms/Input.js";
-import FormBtn from "../components/Forms/FormBtn.js";
-import DropDwn from "../components/Forms/DropDwn.js";
-import Panel from "../components/Panels/Panel.js";
+import FormBtn from "../components/Buttons/FormBtn.js";
 import OrangeHdr from "../components/Panels/OrangeHdr.js";
 import NeedToCookList from "../components/Lists/NeedToCookList";
 import NTCListItem from "../components/Lists/NTCListItem";
@@ -13,7 +11,6 @@ import FooterLogged from "../components/Footer/FooterLogged.js";
 import API from "../utils/API";
 import { Link } from "react-router-dom";
 import Buttons from "../components/Buttons/Button.js";
-import EditBtn from "../components/Buttons/EditBtn.js";
 import axios from "axios";
 
 class UserPage extends Component {
