@@ -75,7 +75,7 @@ class Recipes extends Component {
     if (!checkbox) {
       console.log("false");
       axios
-        .put(`/api/ingredients/${id}`, {
+        .put(`/api/ingredients/toggle/${id}`, {
           ingredientObj: {
             ingredient_checkbox: 1
           }
@@ -84,7 +84,7 @@ class Recipes extends Component {
     } else if (checkbox) {
       console.log("true");
       axios
-        .put(`/api/ingredients/${id}`, {
+        .put(`/api/ingredients/toggle/${id}`, {
           ingredientObj: {
             ingredient_checkbox: null
           }
