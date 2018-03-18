@@ -414,7 +414,9 @@ class RecipeEdit extends Component {
           </div>
 
           <div className="ingredient-btns">
-            <button className="btn ingredient-btn recipeComplete" type="button">NEED TO COOK | RECIPE COMPLETE</button>
+            <Link to={"/recipe/" + this.state.id}>
+              <button className="btn ingredient-btn recipeComplete" type="button">GO TO RECIPE</button>
+            </Link>
             <Link to={"/userpage"}>
               <button onClick={() => this.deleteRecipe(this.state.id)} className="btn ingredient-btn recipeDelete" type="button">DELETE</button>
             </Link>
