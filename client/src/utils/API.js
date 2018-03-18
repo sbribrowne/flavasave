@@ -35,19 +35,33 @@ export default {
         return data;
       })
   },
+  newIngredient: function (ingredient) {
+    return axios.post("/api/ingedients", ingredient)
+      .then(function (data) {
+        console.log(data);
+        return data;
+      })
+  },
+  newInstruction: function (instruction) {
+    return axios.post("/api/instructions", instruction)
+      .then(function (data) {
+        console.log(data);
+        return data;
+      })
+  },
   // Gets the user data with give id
   getUserData: function () {
     return axios.get("/api/user_data");
-  }
+  },
   // Manually add new recipe to the database
-  // addManualRecipe: function (recipe) {
-  //   console.log(recipe);
-  //   return axios.post("/api/manual", recipe)
-  //     .then( (data) => {
-  //       console.log(data);
-  //       return data;
-  //     })
-  // }
+  addManualRecipe: function (stateObj) {
+    console.log(stateObj);
+    return axios.post("/api/manual", stateObj)
+      .then((data) => {
+        console.log(data);
+        return data;
+      })
+  }
   //
   // Add ingredients to manual recipe
 

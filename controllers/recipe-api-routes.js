@@ -28,7 +28,8 @@ module.exports = function (app) {
 
   //GET 1 Recipe and Ingredients & Instructions
   app.get("/api/recipes/:recipeId", isAuthenticated, function (req, res) {
-    console.log('something')
+    console.log('api/recipes/id');
+    console.log("req.user: " + JSON.stringify(req.user));
     db.Recipe.findOne({
       where: {
         id: req.params.recipeId
@@ -43,10 +44,10 @@ module.exports = function (app) {
     }).then(function (dbRecipe) {
       console.log("dbRecipe");
       console.log(dbRecipe);
-      if (dbRecipe.dataValues.UserId === req.user.id)
+      if (dbRecipe && dbRecipe.dataValues.UserId === req.user.id)
         res.json(dbRecipe); //returns 1 recipe and ingreds/instrs
       else
-        res.send(new Error("Not your recipe. dbRecipe.dataValues.UserId does not match req.user.id"));
+        res.send({recipe_name: "Not your recipe. dbRecipe.dataValues.UserId does not match req.user.id"});
 
       //res.json(dbRecipe); //returns 1 recipe and ingreds/instrs
     });
@@ -193,25 +194,61 @@ module.exports = function (app) {
 
       } //end succesfull response
     });
-  });//END post api/recipe
+  }); //END post api/recipe
 
-   app.get("/api/search/:searchterm", isAuthenticated, function (req, res) {
-        //req.params.searchterm
-        console.log(req.params.searchterm);
-        db.Recipe.findAll({
-            where: {
-                UserId: req.user.id,
-                recipe_name: {
-                    $like: `%${req.params.searchterm}%`
-                }
-            }
-        }).then(function (dbRecipe) {
-            res.json(dbRecipe); //returns all recipes JSON   
-        })
-            .catch(function (err) { res.status(422).json(err) });
-        //res.send(`You searched for ${req.params.searchterm}`);
-    });
+  app.get("/api/search/:searchterm", isAuthenticated, function (req, res) {
+    //req.params.searchterm
+    console.log(req.params.searchterm);
+    db.Recipe.findAll({
+        where: {
+          UserId: req.user.id,
+          recipe_name: {
+            $like: `%${req.params.searchterm}%`
+          }
+        }
+      }).then(function (dbRecipe) {
+        res.json(dbRecipe); //returns all recipes JSON   
+      })
+      .catch(function (err) {
+        res.status(422).json(err)
+      });
+    //res.send(`You searched for ${req.params.searchterm}`);
+  });
 
+
+  app.post("/api/manual", isAuthenticated, function (req, res) {
+    console.log(req.body)
+
+    if (req.user) {
+      db.Recipe.create({
+        recipe_name: req.body.recipe_name,
+        recipe_serving_size: req.body.recipe_serving_size,
+        UserId: req.user.id //get user
+      })
+        .then( (newRecipe) => {
+          const recipeId = newRecipe.dataValues.id; //user recipe id of ingr and instr
+          const ingredientArray = [];
+
+          req.body.ingredients.map(ingredient => {
+            ingredientArray.push( { ingredient_info: ingredient, RecipeId: recipeId } );
+          });
+          
+          db.Ingredient.bulkCreate(ingredientArray, {
+            individualHooks: true
+          }).then( newIngredient => {
+            const instructionArray = [];
+            
+            req.body.instructions.map(instruction => {
+              instructionArray.push( { instruction_info: instruction, RecipeId: recipeId } );
+            });
+
+            db.Instruction.bulkCreate(instructionArray, {
+              individualHooks: true
+            }).then(newInstruction => res.send("Recipe Added"));
+          });
+       })
+    }
+  });
   //Adds a blank recipe for manual creation/updating
   // app.post("/api/manual", isAuthenticated, function (req, res) {
 
@@ -271,7 +308,7 @@ module.exports = function (app) {
   //       });
   //   };
   // });
-  
+
 }; //END MODULE EXPOERTS
 
 
@@ -372,7 +409,7 @@ function parseItempropIngredients($, recipeId) {
         recipeImageUrl = $(this)[0].attribs.src;
       }
 
-      if ($(this).attr("itemprop").match(/yield/)) { //all itemprops that match yield
+      if ($(this).attr("itemprop").match(/recipeYield/)) { //all itemprops that match yield
         console.log("Serving Size 2");
         console.log($(this).text());
         recipeServingSize = $(this).text();

@@ -20,23 +20,27 @@ class UserPage extends Component {
   //set inital state of forms to empty
   state = {
     user: "",
-    recipes: [],
+    recipes: ["test", "test"],
     recipe_url: "",
     search_term: "",
     showing_search_results: 0
   };
 
-  componentDidMount() {
+  componentWillMount() { //componentDidMount
     this.currentUser();
-    this.loadRecipes();
-    console.log(this.state.recipes);
+    //currentUsers loads this.loadRecipes() if user found
   }
 
   currentUser = () => {
     API.getUserData()
       .then(res => {
         this.setState({ user: res.data });
-        console.log(res);
+
+        if (!res.data.id) {
+          document.location.href = "http://localhost:3000"
+        } else {
+          this.loadRecipes();
+        }
       })
       .catch(err => console.log(err));
   };
@@ -44,10 +48,7 @@ class UserPage extends Component {
   loadRecipes = () => {
     API.getRecipes()
       .then(res => {
-        this.setState({ recipes: res.data, search_term:"", showing_search_results: 0 });
-        console.log(res);
-        console.log(res.data);
-        console.log(this.state.recipes);
+        this.setState({ recipes: res.data, search_term: "", showing_search_results: 0 });
       })
       .catch(err => console.log(err));
   };
@@ -102,19 +103,20 @@ class UserPage extends Component {
       })
         .then(res => this.loadRecipes())
         //.then(res => { window.location.href = "http://localhost:3000" + res.data; } )
-        .catch(err => console.log(err));
+        .catch(err => console.log(err))
+        .then(this.setState({
+          recipe_url: ""
+        }));
     }
   };
 
   handleSearch = event => {
     event.preventDefault();
-    console.log(this.state.search_term);  
-    axios.get( `/api/search/${this.state.search_term}`)
-    .then( data => {
-      console.log(data.data);
-      this.setState({ recipes: data.data, showing_search_results: 1 });
-      document.getElementById("searchresults").scrollIntoView(true); //{ behavior: "smooth", alignTo: 1 }
-    } );
+    axios.get(`/api/search/${this.state.search_term}`)
+      .then(data => {
+        this.setState({ recipes: data.data, showing_search_results: 1 });
+        document.getElementById("searchresults").scrollIntoView(true); //{ behavior: "smooth", alignTo: 1 }
+      });
   };
 
   render() {
@@ -172,12 +174,12 @@ class UserPage extends Component {
           </form>
         </div>
 
-        { this.state.showing_search_results ? 
+        {this.state.showing_search_results ?
           (<div id="searchresults" className="container-fluid userpage-container showing-search-results">
             Search results for: {this.state.search_term}
             <a href="#" onClick={this.loadRecipes}> Clear</a>
-          </div>) : 
-          (<span></span>) 
+          </div>) :
+          (<span></span>)
         }
 
         <OrangeHdr
@@ -189,7 +191,7 @@ class UserPage extends Component {
         />
 
         <div className="container-fluid userpage-container">
-          {this.state.recipes.length ? (
+          {this.state.recipes ? (
             <NeedToCookList>
               {this.state.recipes.map(
                 recipe =>
@@ -222,13 +224,13 @@ class UserPage extends Component {
                       </div>
                     </NTCListItem>
                   ) : (
-                    <h1 className="noshow" />
-                  )
+                      <h1 className="noshow" />
+                    )
               )}
             </NeedToCookList>
           ) : (
-            <h1 className="table-items">No results to display</h1>
-          )}
+              <h1 className="table-items">No results to display</h1>
+            )}
         </div>
 
         <OrangeHdr
@@ -239,7 +241,7 @@ class UserPage extends Component {
           orangehdrimageclass="header-image-class"
         />
         <div className="container-fluid userpage-container">
-          {this.state.recipes.length ? (
+          {this.state.recipes ? (
             <CompleteList>
               {this.state.recipes.map(
                 recipe =>
@@ -272,13 +274,13 @@ class UserPage extends Component {
                       </div>
                     </CompleteListItem>
                   ) : (
-                    <h1 className="noshow" />
-                  )
+                      <h1 className="noshow" />
+                    )
               )}
             </CompleteList>
           ) : (
-            <h1 className="table-items">No results to display</h1>
-          )}
+              <h1 className="table-items">No results to display</h1>
+            )}
         </div>
 
         <div className="container-fluid userpage-container">
