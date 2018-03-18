@@ -42,7 +42,7 @@ class RecipeEdit extends Component {
           //tags: res.data.tags
         })
         console.log(res);
-        console.log(res.data.Instructions);
+        console.log(res.data.Tags);
         console.log(this.state.recipes);
       })
       .catch(err => console.log(err));
@@ -317,34 +317,40 @@ class RecipeEdit extends Component {
             </div>
           </div>
 
-          <h3 className="ERTitle">INSTRUCTIONS</h3>
-          <div>
-            {this.state.instructions.map((instruction, i) => (
-              <div key={instruction.id} className="row ER-row">
+          {this.state.instructions.length ? (
+            <div>
+              <h3 className="ERTitle">INSTRUCTIONS</h3>
+              <div>
+                {this.state.instructions.map((instruction, i) => (
+                  <div key={instruction.id} className="row ER-row">
 
-                <div className="recipe-page-col col-sm-10">
-                  <Input key={instruction.id}
-                    className="ERInput"
-                    name={instruction.id}
-                    value={instruction.instruction_info}
-                    onChange={(event) => this.handleInstructionChange(event, i)}
-                  />
-                </div>
-                <div className="recipe-page-col col-sm-1">
-                  <button
-                    className="btn ERSubmit"
-                    type="button"
-                    onClick={() => this.updateInstructions(this.state.recipes.id)}>save</button>
-                </div>
-                <div className="recipe-page-col col-sm-1">
-                  <button key={instruction.id}
-                    className="btn ERSubmit"
-                    type="button"
-                    onClick={() => this.deleteInstruction(instruction.id)}>delete</button>
-                </div>
+                    <div className="recipe-page-col col-sm-10">
+                      <Input key={instruction.id}
+                        className="ERInput"
+                        name={instruction.id}
+                        value={instruction.instruction_info}
+                        onChange={(event) => this.handleInstructionChange(event, i)}
+                      />
+                    </div>
+                    <div className="recipe-page-col col-sm-1">
+                      <button
+                        className="btn ERSubmit"
+                        type="button"
+                        onClick={() => this.updateInstructions(this.state.recipes.id)}>save</button>
+                    </div>
+                    <div className="recipe-page-col col-sm-1">
+                      <button key={instruction.id}
+                        className="btn ERSubmit"
+                        type="button"
+                        onClick={() => this.deleteInstruction(instruction.id)}>delete</button>
+                    </div>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
+            </div>
+          ) : (
+              <h3 className="noshow" />
+            )}
 
           <h3 className="ERTitle">ADD NEW INSTRUCTION</h3>
           <div className="row">
@@ -364,7 +370,45 @@ class RecipeEdit extends Component {
             </div>
           </div>
 
-          <h3 className="ERTitle">TAGS</h3>
+          {this.state.tags.length ? (
+            <div>
+              <h3 className="ERTitle">TAGS</h3>
+              <div>
+                {this.state.tags.map((tag, i) => (
+                  <div key={tag.id} className="row ER-row">
+                    <div key={tag.id} className="recipe-page-col col-sm-10">
+                      <Input
+                        key={tag.id}
+                        id={tag.id}
+                        className="ERInput"
+                        name={tag.id}
+                        value={tag.tag_name}
+                        onChange={(event) => this.handleTagChange(event, i)}
+                      />
+                    </div>
+                    <div className="recipe-page-col col-sm-1">
+                      <button key={tag.id}
+                        className="btn ERSubmit"
+                        type="button"
+                        onClick={() => this.updateTag(this.state.recipes.id)}>save</button>
+                    </div>
+                    <div className="recipe-page-col col-sm-1">
+                      <button key={tag.id}
+                        className="btn ERSubmit"
+                        type="button"
+                        onClick={() => this.deleteTag(tag.id)}>delete</button>
+                    </div>
+                  </div>
+                ))
+                }
+              </div>
+            </div>
+          ) : (
+              <h3 className="noshow" />
+            )}
+
+
+          <h3 className="ERTitle">ADD NEW TAG</h3>
           <div className="row">
             {this.state.tags.map((tag, i) => (
               <div key={tag.id} className="row ER-row">
@@ -414,7 +458,9 @@ class RecipeEdit extends Component {
           </div>
 
           <div className="ingredient-btns">
-            <button className="btn ingredient-btn recipeComplete" type="button">NEED TO COOK | RECIPE COMPLETE</button>
+            <Link to={"/recipe/" + this.state.id}>
+              <button className="btn ingredient-btn recipeComplete" type="button">GO TO RECIPE</button>
+            </Link>
             <Link to={"/userpage"}>
               <button onClick={() => this.deleteRecipe(this.state.id)} className="btn ingredient-btn recipeDelete" type="button">DELETE</button>
             </Link>
