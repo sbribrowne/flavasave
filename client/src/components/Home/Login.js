@@ -17,7 +17,6 @@ const Login = () => (
         Sign up!
       </a>
     </p>
-    <a className="loginText signupLink">Forget Password?</a>
   </div>
 );
 

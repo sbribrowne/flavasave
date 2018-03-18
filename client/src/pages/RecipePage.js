@@ -10,7 +10,6 @@ import FooterLogged from "../components/Footer/FooterLogged.js";
 import API from "../utils/API";
 import "../stylesheets/css/main.css";
 import DeleteBtn from "../components/Buttons/DeleteBtn";
-import RecipeNotes from "../components/Forms/RecipeNotes";
 import Input from "../components/Forms/Input.js";
 import axios from "axios";
 
