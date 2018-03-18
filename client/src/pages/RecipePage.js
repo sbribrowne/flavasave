@@ -9,7 +9,6 @@ import InstructionListItem from "../components/Lists/InstructionListItem";
 import FooterLogged from "../components/Footer/FooterLogged.js";
 import API from "../utils/API";
 import "../stylesheets/css/main.css";
-import RecipeNotes from "../components/Forms/RecipeNotes";
 import Input from "../components/Forms/Input.js";
 import axios from "axios";
 
