@@ -485,6 +485,12 @@ li {
   background-color: transparent;
   border: none; }
 
+.no-results {
+  font-family: LeagueGothic, sans-serif;
+  color: #121210;
+  font-size: 3.5rem;
+  letter-spacing: 0.1rem; }
+
 .table-header {
   font-family: LeagueGothic, sans-serif;
   color: #121210;
@@ -618,9 +624,9 @@ li {
   margin-top: -0.5%; }
 
 .tags {
-  font-family: PeleguerItalic, serif;
+  font-family: Peleguer, serif;
   font-size: 3.4rem;
-  color: black;
+  color: gray;
   margin: 2% 8% 1% 9%;
   width: 100%; }
 
