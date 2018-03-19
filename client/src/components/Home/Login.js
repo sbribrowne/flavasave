@@ -1,5 +1,6 @@
 import React from "react";
 import LoginForm from "../Forms/LoginForm.js";
+import { Link } from "react-router-dom";
 
 const Login = () => (
   <div className="loginBox">
@@ -13,9 +14,9 @@ const Login = () => (
     <LoginForm />
     <p className="loginText">
       Don't have an account?{" "}
-      <a className="signupLink" href="/signup">
-        Sign up!
-      </a>
+      <Link className="signupLink" to="/signup">
+                Sign up!
+      </Link>
     </p>
   </div>
 );

@@ -113,6 +113,10 @@ class UserPage extends Component {
         })
         .catch(err => console.log(err));
     }
+
+    this.setState({
+      recipe_url: '',
+    });
   };
 
   handleSearch = event => {
@@ -210,7 +214,7 @@ class UserPage extends Component {
         />
 
         <div className="container-fluid userpage-container">
-          {this.state.recipes ? (
+          {this.state.recipes.length ? (
             <NeedToCookList>
               {this.state.recipes.map(
                 recipe =>
@@ -260,7 +264,7 @@ class UserPage extends Component {
           orangehdrimageclass="header-image-class"
         />
         <div className="container-fluid userpage-container">
-          {this.state.recipes ? (
+          {this.state.recipes.length ? (
             <CompleteList>
               {this.state.recipes.map(
                 recipe =>
