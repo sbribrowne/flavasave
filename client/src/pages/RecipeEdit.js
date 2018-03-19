@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import Input from "../components/Forms/Input.js";
-import FormBtn from "../components/Forms/FormBtn.js";
-import DropDwn from "../components/Forms/DropDwn.js";
 import NavLogged from "../components/Nav/NavLogged.js";
 import FooterLogged from "../components/Footer/FooterLogged.js";
 import API from "../utils/API";
@@ -406,7 +404,6 @@ class RecipeEdit extends Component {
           ) : (
               <h3 className="noshow" />
             )}
-
 
           <h3 className="ERTitle">ADD NEW TAG</h3>
           <div className="row">
