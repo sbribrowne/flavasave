@@ -1,3 +1,26 @@
+@media only screen and (max-width: 3590px) and (min-width: 2400px) {
+    /* ===============================================HOME PAGE================================================ */
+    .navbar {
+        background-color: #FFF;
+        border-radius: 0;
+        height: 15rem;
+    }
+
+    .readmore-description {
+        bottom: 4vw;
+    }
+
+    .readmore-block {
+        bottom: 4vw;
+    }
+
+    .arrow {
+        height: 4rem;
+        margin-top: 5vw;
+        margin-left: 5.3vw;
+    }
+}
+
 @media only screen and (max-width: 1690px) {
     /* ===============================================HOME PAGE================================================ */
     .loginBox {

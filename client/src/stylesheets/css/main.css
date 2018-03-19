@@ -603,10 +603,6 @@ li {
   border: none;
   padding: 0; }
 
-  .ingredientChecklist .ingredientItem:hover{ /*this makes it obvious that clickable*/
-    cursor: pointer;
-  }
-
 .glyphicon {
   font-size: 2.5rem; }
 
@@ -755,6 +751,23 @@ li {
   padding-left: 3rem;
   padding-right: 3rem; }
 
+@media only screen and (max-width: 3590px) and (min-width: 2400px) {
+  /* ===============================================HOME PAGE================================================ */
+  .navbar {
+    background-color: #FFF;
+    border-radius: 0;
+    height: 15rem; }
+
+  .readmore-description {
+    bottom: 4vw; }
+
+  .readmore-block {
+    bottom: 4vw; }
+
+  .arrow {
+    height: 4rem;
+    margin-top: 5vw;
+    margin-left: 5.3vw; } }
 @media only screen and (max-width: 1690px) {
   /* ===============================================HOME PAGE================================================ */
   .loginBox {
