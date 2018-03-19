@@ -113,6 +113,10 @@ class UserPage extends Component {
         })
         .catch(err => console.log(err));
     }
+
+    this.setState({
+      recipe_url: '',
+    });
   };
 
   handleSearch = event => {
