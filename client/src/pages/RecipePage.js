@@ -9,8 +9,6 @@ import InstructionListItem from "../components/Lists/InstructionListItem";
 import FooterLogged from "../components/Footer/FooterLogged.js";
 import API from "../utils/API";
 import "../stylesheets/css/main.css";
-import DeleteBtn from "../components/Buttons/DeleteBtn";
-import RecipeNotes from "../components/Forms/RecipeNotes";
 import Input from "../components/Forms/Input.js";
 import axios from "axios";
 
@@ -18,7 +16,8 @@ class Recipes extends Component {
   state = {
     recipe: {},
     ingredients: [],
-    instructions: []
+    instructions: [],
+    tags: []
   };
 
   componentDidMount() {
@@ -57,13 +56,15 @@ class Recipes extends Component {
 
   loadRecipe = () => {
     API.getRecipe(this.props.match.params.id).then(res => {
+      console.log(res);
       this.setState({
         recipe: res.data,
         recipe_notes: res.data.recipe_notes,
         ingredients: res.data.Ingredients,
-        instructions: res.data.Instructions
+        instructions: res.data.Instructions,
+        tags: res.data.Tags
       });
-    });
+    }).catch(error => console.log(error));
   };
 
   ingredientCheck = (id, checkbox) => {
@@ -72,7 +73,7 @@ class Recipes extends Component {
     if (!checkbox) {
       console.log("false");
       axios
-        .put(`/api/ingredients/${id}`, {
+        .put(`/api/ingredients/toggle/${id}`, {
           ingredientObj: {
             ingredient_checkbox: 1
           }
@@ -81,7 +82,7 @@ class Recipes extends Component {
     } else if (checkbox) {
       console.log("true");
       axios
-        .put(`/api/ingredients/${id}`, {
+        .put(`/api/ingredients/toggle/${id}`, {
           ingredientObj: {
             ingredient_checkbox: null
           }
@@ -91,11 +92,19 @@ class Recipes extends Component {
     console.log(checkbox);
   };
 
-  handleInputChange = event => {
+
+  handleInputChange = (event) => {
     const { name, value } = event.target;
-    this.setState({
-      [name]: value
-    });
+    axios.put(`/api/recipes/${this.state.recipe.id}`, {
+      recipeObj: {
+        [name]: value
+      }
+    })
+      .then(res => {
+        this.setState({
+          recipe_notes: res.data.recipe_notes
+        })
+      });
   };
 
   render() {
@@ -110,8 +119,8 @@ class Recipes extends Component {
             {this.state.recipe.recipe_serving_size ? (
               <span>{this.state.recipe.recipe_serving_size}</span>
             ) : (
-              <span> Unknown - cook it and find out</span>
-            )}
+                <span> Unknown - cook it and find out</span>
+              )}
           </p>
 
           {this.state.recipe.recipe_image_url ? (
@@ -123,15 +132,15 @@ class Recipes extends Component {
               />
             </p>
           ) : (
-            <div className="no-image" height="0">
-              <i className="glyphicon glyphicon-camera" />
-            </div>
-          )}
+              <div className="no-image" height="0">
+                <i className="glyphicon glyphicon-camera" />
+              </div>
+            )}
         </div>
 
         <div className="ingredient-div">
           <h4 className="recipe-subtitle">INGREDIENTS</h4>
-          {this.state.ingredients.length ? ( //Check for Ingredients
+          {this.state.ingredients ? ( //Check for Ingredients
             <IngredientList>
               {this.state.ingredients.map(ingredient => (
                 <IngredientListItem
@@ -147,20 +156,31 @@ class Recipes extends Component {
               ))}
             </IngredientList>
           ) : (
-            <h3 className="ingredientChecklist">No Results to Display</h3>
-          )}
+              <h3 className="ingredientChecklist">No Results to Display</h3>
+            )}
         </div>
         <div className="instruction-div">
           <h4 className="recipe-subtitle">DIRECTIONS</h4>
-          {this.state.instructions.length ? ( //Check for Instructions
+          {this.state.instructions ? ( //Check for Instructions
             <InstructionList>
               {this.state.instructions.map(instruction => (
                 <InstructionListItem key={instruction.id} data={instruction} />
               ))}
             </InstructionList>
           ) : (
-            <h3 className="instructionChecklist">No Results to Display</h3>
-          )}
+              <h3 className="instructionChecklist">No Results to Display</h3>
+            )}
+        </div>
+
+        <div className="tags">
+          Tags:
+          {this.state.tags ? ( //Check for Ingredients
+            this.state.tags.map(tag => (
+              <span>{tag.tag_name} </span>
+            ))
+          ) : (
+              <span>No Tags</span>
+            )}
         </div>
 
         <div className="recipe-link-box">
@@ -179,7 +199,14 @@ class Recipes extends Component {
             to={"/recipeedit/" + this.state.recipe.id}
           >
             {" "}
-            Edit{" "}
+            EDIT{" "}
+          </Link>
+          <Link
+            className="btn btn-sm recipepage-btn"
+            to={"/userpage/"}
+          >
+            {" "}
+            MY RECIPES{" "}
           </Link>
           {this.state.recipe.recipe_checkbox ? (
             <button
@@ -190,14 +217,14 @@ class Recipes extends Component {
               NEED TO COOK
             </button>
           ) : (
-            <button
-              className="btn recipepage-btn"
-              type="button"
-              onClick={() => this.makeTrue(this.state.recipe.id)}
-            >
-              COMPLETED
+              <button
+                className="btn recipepage-btn"
+                type="button"
+                onClick={() => this.makeTrue(this.state.recipe.id)}
+              >
+                COMPLETED
             </button>
-          )}
+            )}
         </div>
 
         <Panel
@@ -211,13 +238,13 @@ class Recipes extends Component {
             value={this.state.recipe_notes}
             onChange={this.handleInputChange}
           />
-          <button
+          {/* <button
             className="btn ERSubmit"
             type="button"
             onClick={() => this.updateNotes(this.state.recipe.id)}
           >
             Save
-          </button>
+          </button> */}
         </Panel>
 
         <FooterLogged />

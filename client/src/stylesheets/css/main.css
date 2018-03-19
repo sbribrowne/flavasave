@@ -603,6 +603,10 @@ li {
   border: none;
   padding: 0; }
 
+  .ingredientChecklist .ingredientItem:hover{ /*this makes it obvious that clickable*/
+    cursor: pointer;
+  }
+
 .glyphicon {
   font-size: 2.5rem; }
 

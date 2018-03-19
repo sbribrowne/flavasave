@@ -28,7 +28,8 @@ module.exports = function (app) {
 
   //GET 1 Recipe and Ingredients & Instructions
   app.get("/api/recipes/:recipeId", isAuthenticated, function (req, res) {
-    console.log('something')
+    console.log('api/recipes/id');
+    console.log("req.user: " + JSON.stringify(req.user));
     db.Recipe.findOne({
       where: {
         id: req.params.recipeId
@@ -38,15 +39,18 @@ module.exports = function (app) {
         },
         {
           model: db.Instruction
+        },
+        {
+          model: db.Tag
         }
       ]
     }).then(function (dbRecipe) {
       console.log("dbRecipe");
       console.log(dbRecipe);
-      if (dbRecipe.dataValues.UserId === req.user.id)
+      if (dbRecipe && dbRecipe.dataValues.UserId === req.user.id)
         res.json(dbRecipe); //returns 1 recipe and ingreds/instrs
       else
-        res.send(new Error("Not your recipe. dbRecipe.dataValues.UserId does not match req.user.id"));
+        res.send({recipe_name: "Not your recipe. dbRecipe.dataValues.UserId does not match req.user.id"});
 
       //res.json(dbRecipe); //returns 1 recipe and ingreds/instrs
     });
@@ -64,18 +68,23 @@ module.exports = function (app) {
           RecipeId: req.params.id
         }
       }).then(function (dataInstr) {
-        try {
-          db.Recipe.destroy({ //delete Recipe
-            where: {
-              id: req.params.id
-            }
-          }).then(function (dataRec) {
-            res.send(req.params.id); //returns ID of deleted recipe
-          });
-        } catch (err) {
-          console.log(err);
-        }
-
+        db.Tag.destroy({ //delete all Instr
+          where: {
+            RecipeId: req.params.id
+          }
+        }).then(function(dbTag){
+              try {
+                db.Recipe.destroy({ //delete Recipe
+                  where: {
+                    id: req.params.id
+                  }
+                }).then(function (dataRec) {
+                  res.send(req.params.id); //returns ID of deleted recipe
+                });
+              } catch (err) {
+                console.log(err);
+              }
+        });
       });
 
     });
@@ -193,85 +202,72 @@ module.exports = function (app) {
 
       } //end succesfull response
     });
-  });//END post api/recipe
+  }); //END post api/recipe
 
-   app.get("/api/search/:searchterm", isAuthenticated, function (req, res) {
-        //req.params.searchterm
-        console.log(req.params.searchterm);
-        db.Recipe.findAll({
-            where: {
-                UserId: req.user.id,
-                recipe_name: {
-                    $like: `%${req.params.searchterm}%`
-                }
-            }
-        }).then(function (dbRecipe) {
-            res.json(dbRecipe); //returns all recipes JSON   
-        })
-            .catch(function (err) { res.status(422).json(err) });
-        //res.send(`You searched for ${req.params.searchterm}`);
-    });
+  app.get("/api/search/:searchterm", isAuthenticated, function (req, res) {
+    //req.params.searchterm
+    console.log(req.params.searchterm);
+    db.Recipe.findAll({
+        where: {
+          UserId: req.user.id,
+          recipe_name: {
+            $like: `%${req.params.searchterm}%`
+          }
+        }
+      }).then(function (dbRecipe) {
+        res.json(dbRecipe); //returns all recipes JSON   
+      })
+      .catch(function (err) {
+        res.status(422).json(err)
+      });
+    //res.send(`You searched for ${req.params.searchterm}`);
+  });
 
-  //Adds a blank recipe for manual creation/updating
-  // app.post("/api/manual", isAuthenticated, function (req, res) {
 
-  //   if (req.user) { //await
-  //     db.Recipe.create({
-  //         recipe_name: "",
-  //         recipe_notes: "Notes go here",
-  //         recipe_image_url: "",
-  //         recipe_serving_size: "",
-  //         UserId: req.user.id //get user
-  //       })
-  //       .then(function (blankRecipe) {
-  //         var recipeId = responseRecipe.dataValues.id; //user recipe id of ingr and instr
-  //         var ingredientTempArray = [];
+  app.post("/api/manual", isAuthenticated, function (req, res) {
+    console.log(req.body)
 
-  //         if (!ingredientTempArray.length) { // check if ingredient array is empty
-  //           ingredientTempArray[0] = {
-  //             ingredient_info: "",
-  //             RecipeId: recipeId
-  //           };
-  //         }
-  //         db.Ingredient.create(ingredientTempArray, {
-  //             individualHooks: true
-  //           })
-  //           .then(function (blankIngredient) {
-  //             var instructionsArrayTemp = [];
-  //             if (!instructionsArrayTemp.length) { //check if no instructions
-  //               instructionsArrayTemp[0] = {
-  //                 instruction_info: "No Instructions Detected",
-  //                 RecipeId: recipeId
-  //               };
-  //             }
-  //             db.Instruction.bulkCreate(instructionsArrayTemp, {
-  //               individualHooks: true
-  //             })
-  //           })
-  //           .then(function (blankInstruction) {
-  //             var bigObject = {
-  //               recipe: blankRecipe,
-  //               ingredient: blankIngredient,
-  //               instructions: blankInstruction
-  //             };
-  //           }).then(function (bigObject) {
-  //             console.log(bigObject);
-  //             res.send(`/recipe/${responseRecipe.id}`);
-  //           })
+    if (req.user) {
+      db.Recipe.create({
+        recipe_name: req.body.recipe_name,
+        recipe_serving_size: req.body.recipe_serving_size,
+        UserId: req.user.id //get user
+      })
+        .then( (newRecipe) => {
+          const recipeId = newRecipe.dataValues.id; //user recipe id of ingr and instr
+          const ingredientArray = [];
 
-  //           .catch(function (error) {
-  //             res.json(error);
-  //           });
-  //       })
-  //       .catch(function (error) {
-  //         res.json(error);
-  //       })
-  //       .catch(function (error) {
-  //         res.json(error);
-  //       });
-  //   };
-  // });
+          req.body.ingredients.map(ingredient => {
+            ingredientArray.push( { ingredient_info: ingredient, RecipeId: recipeId } );
+          });
+          
+          db.Ingredient.bulkCreate(ingredientArray, {
+            individualHooks: true
+          }).then( newIngredient => {
+            const instructionArray = [];
+            
+            req.body.instructions.map(instruction => {
+              instructionArray.push( { instruction_info: instruction, RecipeId: recipeId } );
+            });
+
+            db.Instruction.bulkCreate(instructionArray, {
+              individualHooks: true
+            }).then(newInstruction =>{
+              const tagArray = [];
+            
+              req.body.tags.map(tag => {
+                tagArray.push( { tag_name: tag, RecipeId: recipeId } );
+              });
   
+              db.Tag.bulkCreate(tagArray, {
+                individualHooks: true
+              }).then(newTag => res.send("Recipe Added"));
+            });
+          });
+       })
+    }
+  });
+
 }; //END MODULE EXPOERTS
 
 
@@ -372,7 +368,7 @@ function parseItempropIngredients($, recipeId) {
         recipeImageUrl = $(this)[0].attribs.src;
       }
 
-      if ($(this).attr("itemprop").match(/yield/)) { //all itemprops that match yield
+      if ($(this).attr("itemprop").match(/recipeYield/)) { //all itemprops that match yield
         console.log("Serving Size 2");
         console.log($(this).text());
         recipeServingSize = $(this).text();
