@@ -671,8 +671,8 @@ li {
   background-color: #1E401D; }
 
 .editrecipe-container {
-  width: 60%;
-  margin-left: 20%;
+  width: 80%;
+  margin-left: 10%;
   margin-top: 4%; }
 
 .recipe-page-col {
@@ -684,6 +684,13 @@ li {
   color: black;
   font-size: 3rem;
   letter-spacing: 0.2rem; }
+
+.ERAdd {
+  font-family: LeagueGothic, sans-serif;
+  color: gray;
+  font-size: 2rem;
+  letter-spacing: 0.35rem;
+  margin-top: 4rem; }
 
 .ER-row {
   margin-top: 1.2%; }
@@ -701,6 +708,13 @@ li {
   margin-left: 3rem; }
 
 .ERSubmit:hover {
+  background-color: #E44125; }
+
+.ERSave {
+  padding-right: 2rem;
+  padding-left: 2rem; }
+
+.ERSave:hover {
   background-color: #1E401D; }
 
 .ERInput {
