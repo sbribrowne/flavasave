@@ -786,7 +786,18 @@ li {
   .arrow {
     height: 4rem;
     margin-top: 5vw;
-    margin-left: 5.3vw; } }
+    margin-left: 5.3vw; }
+
+  /* ===============================================RECIPE EDIT PAGE================================================ */
+  .ERSubmit {
+    font-size: 3.5rem; }
+
+  .ERTitle {
+    font-size: 5rem; }
+
+  .ERInput {
+    height: 6.2rem;
+    font-size: 3.2rem; } }
 @media only screen and (max-width: 1690px) {
   /* ===============================================HOME PAGE================================================ */
   .loginBox {
