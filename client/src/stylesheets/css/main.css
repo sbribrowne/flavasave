@@ -839,13 +839,29 @@ li {
     padding: 0.5rem 1rem 0 1rem; }
 
   .up-toggle-button {
-    padding: 0.5rem 1rem 0 1rem; } }
-@media only screen and (max-width: 10240px) and (min-width: 992px) {
+    padding: 0.5rem 1rem 0 1rem; }
+
+  /* ===============================================RECIPE EDIT PAGE================================================ */
+  .ERSubmit {
+    font-size: 2rem; }
+
+  .ingredient-btn {
+    font-size: 1.3vw; } }
+@media only screen and (max-width: 1045px) and (min-width: 992px) {
+  /* ===============================================USER PAGE================================================ */
   .up-delete-button {
     margin-left: 1rem; }
 
   .up-toggle-button {
-    margin-left: 1rem; } }
+    margin-left: 1rem; }
+
+  /* ===============================================RECIPE EDIT PAGE================================================ */
+  .ERSubmit {
+    font-size: 1.75rem;
+    padding: 0.6rem 0.75rem 0.6rem 0.75rem; }
+
+  .ERInput {
+    font-size: 1.9rem; } }
 @media only screen and (max-width: 980px) {
   /* ===============================================HOME PAGE================================================ */
   .loginBox {
@@ -906,7 +922,12 @@ li {
     font-size: 3rem; }
 
   .header-image-class {
-    margin-left: 17vw; } }
+    margin-left: 17vw; }
+
+  /* ===============================================RECIPE EDIT PAGE================================================ */
+  .ERSubmit {
+    font-size: 1.6rem;
+    padding: 0.6rem 0.75rem 0.6rem 0.75rem; } }
 @media only screen and (max-width: 736px) {
   /* ===============================================HOME PAGE================================================ */
   .aboutHeader {
@@ -967,7 +988,18 @@ li {
     padding-right: 1rem; }
 
   .ingredient-btns {
-    margin-left: -1.4rem; } }
+    margin-left: -1.4rem; }
+
+  /* ===============================================RECIPE EDIT PAGE================================================ */
+  .ERInput {
+    font-size: 1.5rem; }
+
+  .ERSubmit {
+    font-size: 1.5rem;
+    padding: 0.6rem 0.75rem 0.6rem 0.75rem; }
+
+  .ingredient-btn {
+    font-size: 1.5rem; } }
 @media only screen and (max-width: 480px) {
   /* ===============================================HOME PAGE================================================ */
   .homebody {
@@ -1101,7 +1133,11 @@ li {
   .recipe-add-button {
     font-size: 1.5rem;
     margin-left: -1.4rem;
-    padding: 0.5rem 1.5rem 0.5rem 1.5rem; } }
+    padding: 0.5rem 1.5rem 0.5rem 1.5rem; }
+
+  /* ===============================================RECIPE EDIT PAGE================================================ */
+  .ERInput {
+    height: 4rem; } }
 @media only screen and (max-width: 375px) {
   .login-logo {
     height: 4rem; }
@@ -1155,6 +1191,10 @@ li {
 
   .tag-search-button {
     height: 1vw;
-    margin-left: -0.5vw; } }
+    margin-left: -0.5vw; }
+
+  /* ===============================================RECIPE EDIT PAGE================================================ */
+  .ERInput {
+    height: 3.5rem; } }
 
 /*# sourceMappingURL=main.css.map */

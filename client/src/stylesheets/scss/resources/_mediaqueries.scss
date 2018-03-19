@@ -19,7 +19,7 @@
         margin-top: 5vw;
         margin-left: 5.3vw;
     }
-     /* ===============================================RECIPE EDIT PAGE================================================ */
+    /* ===============================================RECIPE EDIT PAGE================================================ */
     .ERSubmit {
         font-size: 3.5rem;
     }
@@ -83,15 +83,33 @@
     .up-toggle-button {
         padding: 0.5rem 1rem 0 1rem;
     }
+    /* ===============================================RECIPE EDIT PAGE================================================ */
+    .ERSubmit {
+        font-size: 2rem;
+    }
+
+    .ingredient-btn {
+        font-size: 1.3vw;
+    }
 }
 
-@media only screen and (max-width: 10240px) and (min-width: 992px) {
+@media only screen and (max-width: 1045px) and (min-width: 992px) {
+     /* ===============================================USER PAGE================================================ */
     .up-delete-button {
         margin-left: 1rem;
     }
 
     .up-toggle-button {
         margin-left: 1rem;
+    }
+    /* ===============================================RECIPE EDIT PAGE================================================ */
+    .ERSubmit {
+        font-size: 1.75rem;
+        padding: 0.6rem 0.75rem 0.6rem 0.75rem;
+    }
+
+    .ERInput {
+        font-size: 1.9rem;
     }
 }
 
@@ -157,6 +175,11 @@
     .header-image-class {
         margin-left: 17vw;
     }
+    /* ===============================================RECIPE EDIT PAGE================================================ */
+    .ERSubmit {
+        font-size: 1.6rem;
+        padding: 0.6rem 0.75rem 0.6rem 0.75rem;
+    }
 }
 
 @media only screen and (max-width: 736px) {
@@ -220,6 +243,19 @@
     }
     .ingredient-btns {
         margin-left: -1.4rem;
+    }
+    /* ===============================================RECIPE EDIT PAGE================================================ */
+    .ERInput {
+        font-size: 1.5rem;
+    }
+    
+    .ERSubmit {
+        font-size: 1.5rem;
+        padding: 0.6rem 0.75rem 0.6rem 0.75rem;
+    }
+
+    .ingredient-btn {
+        font-size: 1.5rem;
     }
 }
 
@@ -358,6 +394,10 @@
         margin-left: -1.4rem;
         padding: 0.5rem 1.5rem 0.5rem 1.5rem;
     }
+    /* ===============================================RECIPE EDIT PAGE================================================ */
+    .ERInput {
+        height: 4rem;
+    }
 }
 
 @media only screen and (max-width: 375px) {
@@ -414,5 +454,9 @@
     .tag-search-button {
         height: 1vw;
         margin-left: -0.5vw;
+    }
+    /* ===============================================RECIPE EDIT PAGE================================================ */
+    .ERInput {
+        height: 3.5rem;
     }
 }
