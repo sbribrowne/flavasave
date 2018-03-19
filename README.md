@@ -1,29 +1,29 @@
-![alt FSlogo](/client/src/images/logo_green.png) - insert link
+[![alt FSlogo](/client/src/images/logo_green.png)](http://www.flavasave.com)
 
-FlavaSave is an open source recipe saver application written in JavaScript and uses the MERN Stack (MySQL/Express/React/Node).
+FlavaSave is an open source recipe saver application written in JavaScript and uses the (M)ERN Stack (MySQL/Express/React/Node).
 
 # About FlavaSave
 
 ## <img src="./client/src/images/mitts.png" width="50"> Store
 
-Store all the recipes you come across while browsing the internet in just one place with just the URL.
+Store any and all recipes while browsing the internet in one convenient location with just the web address (URL).
 
 ## <img src="./client/src/images/spatulas.png" width="50"> Organize
 
-Search through and organize recipes that you have already cooked or ones that need to be cooked.
+Organize and search saved recipes that you have already cooked or need to cook in the future.
 
 ## <img src="./client/src/images/chef_green.png" width="40"> Edit
 
-Edit ingredients and instructions to your liking and check the ingredients you already have.
+Edit each recipe quickly and easily while checking off the ingredients you have on hand.
 
 # How It Works
 
-1.  Create and account by Signing Up
+1.  Create an account by Signing Up
 2.  Login with email and password
-3.  Find a recipe URL and input on Userpage
+3.  Find a recipe web address (URL) and input in textbox on MyRecipes page
 4.  FlavaSave will work the magic and have the recipe added to your account
 5.  Explore the features available (create, edit, delete, search, tag)
-6.  Become the organized chef you always wanted
+6.  Become the fanciest organized chef you always wanted to be!
 
 # User Demo
 
