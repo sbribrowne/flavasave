@@ -23,19 +23,19 @@
 
 .input-width {
     font-family: $body-font;
-    font-size: 1.5vw;
+    font-size: 1.2vw;
     width: 93%;
-    height: 2vw;
+    height: 2.3vw;
     border: none;
     background-color: $lightgray;
     float: left;
-    padding-left: 2rem;
+    padding: 1rem 2rem 0.5rem 2rem;
 }
 
 .search-btn {
     position: relative;
     background-color: $green;
-    height: 2vw;
+    height: 2.3vw;
     width: 7%;
     border: none;
     padding: 0.3vw 2rem 0.1vw 2rem;
