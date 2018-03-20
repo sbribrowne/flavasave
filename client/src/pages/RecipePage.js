@@ -214,7 +214,7 @@ class Recipes extends Component {
               type="button"
               onClick={() => this.makeFalse(this.state.recipe.id)}
             >
-              NEED TO COOK
+              MARK AS NEED TO COOK
             </button>
           ) : (
               <button
@@ -222,7 +222,7 @@ class Recipes extends Component {
                 type="button"
                 onClick={() => this.makeTrue(this.state.recipe.id)}
               >
-                COMPLETED
+                MARK AS COMPLETED
             </button>
             )}
         </div>

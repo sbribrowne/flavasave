@@ -16,7 +16,7 @@ const Home = () => {
       <Readmore />
       <br />
       <br />
-      <h1 className="aboutHeader">ABOUT</h1>
+      <h1 id="homeAbout" className="aboutHeader">ABOUT</h1>
       <About />
       <br />
       <Howitworks />

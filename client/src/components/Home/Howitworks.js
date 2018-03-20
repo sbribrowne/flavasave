@@ -1,7 +1,7 @@
 import React from "react";
 
 const Howitworks = () => (
-  <div className="container-fluid howItWorksContainer">
+  <div id="howItWorks" className="container-fluid howItWorksContainer">
     <img
       className="card-img-top"
       src={require("../../images/timer.png")}
