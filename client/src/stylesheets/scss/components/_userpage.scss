@@ -55,6 +55,15 @@
     height: 0.3vw;
 }
 
+.clear-search {
+    color: $red;
+}
+
+.clear-search:hover {
+    color: $orange;
+    text-decoration: none;
+}
+
 .showing-search-results {
     font-family: $body-font-italic;
     font-size: 3rem;
@@ -122,7 +131,7 @@
 }
 
 .recipe-buttons {
-    padding-top: 2rem;
+    padding-top: 1rem;
 }
 
 .up-edit-button {
@@ -130,8 +139,8 @@
     color: black;
     font-size: 2rem;
     padding: 0.5rem 2rem 0 2rem;
-    background-color: transparent;
     border: 0.25px solid $lightgray;
+    background-color: transparent;
     border-radius: 0;
 }
 
@@ -146,13 +155,14 @@
     color: black;
     margin-left: 2rem;
     font-size: 2rem;
-    padding: 0.5rem 2rem 0 2rem;
-    background-color: transparent;
+    padding: 0.5rem 2rem 0rem 2rem;
     border: 0.25px solid $lightgray;
+    background-color: transparent;
     border-radius: 0;
 }
 
 .up-delete-button:hover {
+    background-color: $red;
     border-radius: 0;
 }
 
@@ -161,7 +171,7 @@
     color: black;
     margin-left: 2rem;
     font-size: 2rem;
-    padding: 0.5rem 2rem 0 2rem;
+    padding: 0.8rem 2rem 0.5rem 2rem;
     background-color: transparent;
     border: 0.25px solid $lightgray;
     border-radius: 0;
