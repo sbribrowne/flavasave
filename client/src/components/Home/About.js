@@ -42,8 +42,8 @@ const About = () => (
       <div className="card-body">
         <h5 className="card-title">EDIT.</h5>
         <p className="card-text">
-          Edit each recipe quickly and easily while checking off the ingredients
-          you have on hand.
+          Edit ingredients and instructions to your liking, or if something gets missed, 
+          and check the ingredients you already have.
         </p>
       </div>
     </div>
