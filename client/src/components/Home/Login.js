@@ -7,7 +7,7 @@ const Login = () => (
     <img
       className="login-logo"
       src={require("../../images/logo_white.png")}
-      alt="Store Image"
+      alt="Store"
     />
     <h3 className="loginSubTitle">Your One-Stop Recipe Library.</h3>
     <h4 className="loginTitle">LOGIN</h4>

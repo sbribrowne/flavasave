@@ -5,7 +5,7 @@ const Howitworks = () => (
     <img
       className="card-img-top"
       src={require("../../images/timer.png")}
-      alt="Timer Image"
+      alt="Timer"
       height="130"
     />
     <h1 className="howItWorksTitle">HOW IT WORKS.</h1>
