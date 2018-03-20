@@ -14,14 +14,14 @@ module.exports = function(app) {
     });
   });
 
-  //add new ingre to recipe - include RecipeId in object
+  //add new ingredient to recipe - include RecipeId in object
   app.post("/api/ingredients", isAuthenticated, function(req, res) {
     db.Ingredient.create(req.body.ingredientObj).then(function(dbIngredient) {
       res.json(dbIngredient);
     });
   });
 
-  //Edit ingre
+  //Edit ingredient
   app.put("/api/ingredients/:recipeId", isAuthenticated, function(req, res) {
     console.log(req.body.ingredientObj.ingredients);
 
