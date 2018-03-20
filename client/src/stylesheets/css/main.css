@@ -186,6 +186,12 @@
   font-size: 2.5rem;
   color: #F99E1C; }
 
+.readmore-block {
+  position: absolute;
+  white-space: nowrap;
+  top: 35vw;
+  left: 8vw; }
+
 .readmore-description {
   position: absolute;
   width: 45rem;
@@ -202,29 +208,22 @@
   font-family: PeleguerItalic, serif;
   margin-top: -1rem; }
 
-.readmore-block {
-  position: absolute;
-  white-space: nowrap;
-  bottom: 2vw;
-  left: 8vw; }
-
 .readmore-subBlock {
+  margin-left: 5rem;
   -webkit-animation: slideIn 2s forwards, bounce 6s 2s infinite;
   -moz-animation: slideIn 2s forwards, bounce 6s 2s infinite;
   animation: slideIn 2s forwards, bounce 6s 2s infinite; }
 
 .readmore-text {
   font-family: Peleguer, serif;
-  font-size: 1.5vw;
+  font-size: 3rem;
   color: white;
-  border: 2px solid white;
-  transform: rotate(270deg);
-  padding: 1.5rem 6rem 1rem 6rem; }
+  transform: rotate(270deg); }
 
 .arrow {
   height: 4rem;
-  margin-top: 6vw;
-  margin-left: 6.5vw; }
+  margin-top: 7rem;
+  margin-left: 3.2vmax; }
 
 .aboutHeader {
   font-family: LeagueGothic, sans-serif;
@@ -829,13 +828,19 @@ li {
 @media only screen and (max-width: 1690px) {
   /* ===============================================HOME PAGE================================================ */
   .loginBox {
-    margin-top: -2.5vw; } }
+    margin-top: -2.5vw; }
+
+  .arrow {
+    margin-left: 3.8vmax; } }
 @media only screen and (max-width: 1450px) {
   /* ===============================================USER PAGE================================================ */
   .header-image-class {
     padding-top: 2rem;
     padding-bottom: 0rem;
-    margin-left: 13vw; } }
+    margin-left: 13vw; }
+
+  .arrow {
+    margin-left: 4.5vmax; } }
 @media only screen and (max-width: 1280px) {
   /* ===============================================HOME PAGE================================================ */
   .loginBox {
@@ -846,8 +851,7 @@ li {
     bottom: 13vw; }
 
   .arrow {
-    margin-top: 7vw;
-    margin-left: 8vw; }
+    margin-left: 5.1vmax; }
 
   /* ===============================================USER PAGE================================================ */
   .search-btn {
@@ -876,6 +880,13 @@ li {
   .ingredient-btn {
     font-size: 1.3vw; } }
 @media only screen and (max-width: 1045px) and (min-width: 992px) {
+  /* ===============================================USER PAGE================================================ */
+  .readmore-text {
+    font-size: 2.5rem; }
+
+  .arrow {
+    margin-left: 5.1vmax; }
+
   /* ===============================================USER PAGE================================================ */
   .up-delete-button {
     margin-left: 1rem; }

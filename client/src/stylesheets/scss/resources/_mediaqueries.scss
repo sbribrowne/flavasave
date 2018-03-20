@@ -39,6 +39,10 @@
     .loginBox {
         margin-top: -2.5vw;
     }
+    
+    .arrow {
+        margin-left: 3.8vmax;
+    }
 }
 
 @media only screen and (max-width: 1450px) {
@@ -47,6 +51,10 @@
         padding-top: 2rem;
         padding-bottom: 0rem;
         margin-left: 13vw;
+    }
+
+    .arrow {
+        margin-left: 4.5vmax;
     }
 }
 
@@ -60,8 +68,7 @@
         bottom: 13vw;
     }
     .arrow {
-        margin-top: 7vw;
-        margin-left: 8vw;
+        margin-left: 5.1vmax;
     }
     /* ===============================================USER PAGE================================================ */
     .search-btn {
@@ -94,7 +101,15 @@
 }
 
 @media only screen and (max-width: 1045px) and (min-width: 992px) {
-     /* ===============================================USER PAGE================================================ */
+    /* ===============================================USER PAGE================================================ */
+    .readmore-text {
+        font-size: 2.5rem;
+    }
+    
+    .arrow {
+        margin-left: 5.1vmax;
+    }
+    /* ===============================================USER PAGE================================================ */
     .up-delete-button {
         margin-left: 1rem;
     }
