@@ -1,16 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Scrollchor from "react-scrollchor";
 
 const Footer = () => (
   <footer>
     <ul className="navbar-left" id="footerleft">
       <li>
-        <a className="footertext footerlink" href="#logintext">
+        <Scrollchor to="" className="footertext footerlink">
           LOGIN
-        </a>
+        </Scrollchor>
       </li>
       <li>
-        <a className="footertext footerlink">SIGN UP</a>
+        <Link className="footertext footerlink" to="/signup">
+          SIGN UP
+        </Link>
       </li>
     </ul>
     <p className="navbar-right footertext" id="footercopyright">

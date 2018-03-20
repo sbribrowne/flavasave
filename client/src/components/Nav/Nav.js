@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Scrollchor from 'react-scrollchor';
 
 class Nav extends React.Component {
   render() {
@@ -21,12 +22,12 @@ class Nav extends React.Component {
             id="navbarNavAltMarkup"
           >
             <div className="nav navbar-nav navbar-right">
-              <Link className="nav-item nav-link" to="/">
-                ABOUT
-              </Link>
-              <Link className="nav-item nav-link" to="/">
+              <Scrollchor to="#homeAbout" className="nav-item nav-link">
+              ABOUT
+              </Scrollchor>
+              <Scrollchor to="#howItWorks" className="nav-item nav-link">
                 HOW IT WORKS
-              </Link>
+              </Scrollchor>
               <Link className="nav-item nav-link" to="/signup">
                 SIGN UP
               </Link>
