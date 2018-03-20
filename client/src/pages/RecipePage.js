@@ -230,7 +230,7 @@ class Recipes extends Component {
         <Panel
           name="STICKY NOTES"
           panelfullclass="panel recipe-notes-panel"
-          panelheaderclass="recipe-notes-header"
+          panelheaderclass="panel-heading recipe-notes-header"
         >
           <Input
             className="note-input"
