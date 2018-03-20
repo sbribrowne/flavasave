@@ -173,7 +173,10 @@ module.exports = function (app) {
                           id: recipeId
                         }
                       }).then(function (dbRecipeUpdate) {
-                        res.send(`/recipe/${responseRecipe.id}`);
+                        res.send({
+                          id: responseRecipe.id,
+                          status: 1
+                        });
                       });
 
                     })
@@ -254,7 +257,12 @@ module.exports = function (app) {
   
               db.Tag.bulkCreate(tagArray, {
                 individualHooks: true
-              }).then(newTag => res.send("Recipe Added"));
+              }).then(newTag => 
+                res.send({
+                  id: recipeId,
+                  status: 1
+                })
+              );
             });
           });
        })
@@ -313,11 +321,12 @@ function parseItempropIngredients($, recipeId) {
           ingredientsArray = JSON.parse($(this).html())["recipeIngredient"];
           jsonFound = true;
           //console.log(ingredientsArray);
-        } else
+        } //else
           //console.log("No Ingredients");
 
         if (JSON.parse($(this).html())["image"]) {
-          //console.log("IMAGE FOUND");
+          console.log("IMAGE FOUND Typeof");
+          console.log(typeof JSON.parse($(this).html())["image"]);
           if(typeof JSON.parse($(this).html())["image"] === "string")
             recipeImageUrl = JSON.parse($(this).html())["image"];
           if(JSON.parse($(this).html())["image"].url)
