@@ -520,7 +520,7 @@ li {
   padding-top: 2rem; }
 
 .recipe-buttons {
-  padding-top: 2rem; }
+  padding-top: 1rem; }
 
 .up-edit-button {
   font-family: Peleguer, serif;
@@ -541,7 +541,7 @@ li {
   color: black;
   margin-left: 2rem;
   font-size: 2rem;
-  padding: 0.5rem 2rem 0 2rem;
+  padding: 0.5rem 2rem 0rem 2rem;
   border: 0.25px solid #e1dedc;
   background-color: transparent;
   border-radius: 0; }
@@ -555,7 +555,7 @@ li {
   color: black;
   margin-left: 2rem;
   font-size: 2rem;
-  padding: 1rem 2rem 0.7rem 2rem;
+  padding: 0.8rem 2rem 0.5rem 2rem;
   background-color: transparent;
   border: 0.25px solid #e1dedc;
   border-radius: 0; }
