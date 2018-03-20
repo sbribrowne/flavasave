@@ -62,7 +62,13 @@ class AddNewRecipe extends Component {
         this.state.tag3,
         this.state.tag4
       ]
+    }).then(res => {
+      console.log(res);
+      //document.location.href = window.location.protocol + "//" + window.location.hostname;
+      console.log(window.location.origin + res.data);
+      window.location.href = window.location.origin + res.data;
     })
+    .catch(err => console.log(err));
 
   };
 

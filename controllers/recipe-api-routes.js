@@ -254,7 +254,9 @@ module.exports = function (app) {
   
               db.Tag.bulkCreate(tagArray, {
                 individualHooks: true
-              }).then(newTag => res.send("Recipe Added"));
+              }).then(newTag => 
+                res.send(`/recipe/${recipeId}`)
+              );
             });
           });
        })
