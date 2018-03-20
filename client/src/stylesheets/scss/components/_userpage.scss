@@ -139,8 +139,8 @@
     color: black;
     font-size: 2rem;
     padding: 0.5rem 2rem 0 2rem;
-    background-color: transparent;
     border: 0.25px solid $lightgray;
+    background-color: transparent;
     border-radius: 0;
 }
 
@@ -156,12 +156,13 @@
     margin-left: 2rem;
     font-size: 2rem;
     padding: 0.5rem 2rem 0 2rem;
-    background-color: transparent;
     border: 0.25px solid $lightgray;
+    background-color: transparent;
     border-radius: 0;
 }
 
 .up-delete-button:hover {
+    background-color: $red;
     border-radius: 0;
 }
 
@@ -170,7 +171,7 @@
     color: black;
     margin-left: 2rem;
     font-size: 2rem;
-    padding: 0.5rem 2rem 0 2rem;
+    padding: 1rem 2rem 0.7rem 2rem;
     background-color: transparent;
     border: 0.25px solid $lightgray;
     border-radius: 0;

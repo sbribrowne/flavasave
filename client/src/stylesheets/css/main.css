@@ -527,8 +527,8 @@ li {
   color: black;
   font-size: 2rem;
   padding: 0.5rem 2rem 0 2rem;
-  background-color: transparent;
   border: 0.25px solid #e1dedc;
+  background-color: transparent;
   border-radius: 0; }
 
 .up-edit-button:hover {
@@ -542,11 +542,12 @@ li {
   margin-left: 2rem;
   font-size: 2rem;
   padding: 0.5rem 2rem 0 2rem;
-  background-color: transparent;
   border: 0.25px solid #e1dedc;
+  background-color: transparent;
   border-radius: 0; }
 
 .up-delete-button:hover {
+  background-color: #E44125;
   border-radius: 0; }
 
 .up-toggle-button {
@@ -554,7 +555,7 @@ li {
   color: black;
   margin-left: 2rem;
   font-size: 2rem;
-  padding: 0.5rem 2rem 0 2rem;
+  padding: 1rem 2rem 0.7rem 2rem;
   background-color: transparent;
   border: 0.25px solid #e1dedc;
   border-radius: 0; }

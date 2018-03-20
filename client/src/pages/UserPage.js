@@ -233,8 +233,7 @@ class UserPage extends Component {
                           className="btn btn-sm up-edit-button"
                           to={"/recipeedit/" + recipe.id}
                         >
-                          {" "}
-                          Edit{" "}
+                          <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
                         </Link>
                         <Buttons onClick={() => this.deleteRecipe(recipe.id)} />
                         <button
@@ -283,8 +282,7 @@ class UserPage extends Component {
                           className="btn btn-sm up-edit-button"
                           to={"/recipeedit/" + recipe.id}
                         >
-                          {" "}
-                          Edit{" "}
+                          <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
                         </Link>
                         <Buttons onClick={() => this.deleteRecipe(recipe.id)} />
                         <button
