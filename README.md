@@ -37,6 +37,10 @@ Edit each recipe quickly and easily while checking off the ingredients you have 
 * Mozilla Firefox
 * Microsoft Edge
 
+## MODERN TECHNOLOGIES
+
+<img src="./client/src/images/ModTech.png">
+
 ## CONTRIBUTORS
 
 * Sade Browne
