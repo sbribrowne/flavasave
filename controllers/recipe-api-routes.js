@@ -173,7 +173,10 @@ module.exports = function (app) {
                           id: recipeId
                         }
                       }).then(function (dbRecipeUpdate) {
-                        res.send(`/recipe/${responseRecipe.id}`);
+                        res.send({
+                          id: responseRecipe.id,
+                          status: 1
+                        });
                       });
 
                     })
@@ -255,7 +258,10 @@ module.exports = function (app) {
               db.Tag.bulkCreate(tagArray, {
                 individualHooks: true
               }).then(newTag => 
-                res.send(`/recipe/${recipeId}`)
+                res.send({
+                  id: recipeId,
+                  status: 1
+                })
               );
             });
           });

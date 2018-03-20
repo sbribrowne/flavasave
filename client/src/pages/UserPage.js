@@ -109,8 +109,8 @@ class UserPage extends Component {
             recipe_url: ""
           });
           //document.location.href = window.location.protocol + "//" + window.location.hostname;
-          console.log(window.location.origin + res.data);
-          window.location.href = window.location.origin + res.data;
+          if(res.data.status)
+            window.location.href = window.location.origin + "/recipe/" + res.data.id;
         })
         .catch(err => console.log(err));
     }
