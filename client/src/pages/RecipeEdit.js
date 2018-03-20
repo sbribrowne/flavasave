@@ -1,10 +1,10 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import Input from "../components/Forms/Input.js";
 import NavLogged from "../components/Nav/NavLogged.js";
 import FooterLogged from "../components/Footer/FooterLogged.js";
 import API from "../utils/API";
 import axios from "axios";
-import { Link } from "react-router-dom";
 
 class RecipeEdit extends Component {
   state = {
@@ -18,7 +18,6 @@ class RecipeEdit extends Component {
     new_ingredient: "",
     new_instruction: "",
     new_tag: ""
-    //tags: []
   };
 
   componentDidMount() {
@@ -37,11 +36,7 @@ class RecipeEdit extends Component {
           ingredients: res.data.Ingredients,
           instructions: res.data.Instructions,
           tags: res.data.Tags
-          //tags: res.data.tags
         })
-        console.log(res);
-        console.log(res.data.Tags);
-        console.log(this.state.recipes);
       })
       .catch(err => console.log(err));
   };
@@ -164,30 +159,25 @@ class RecipeEdit extends Component {
     let Ingredients = [...this.state.ingredients]
     const { name, value } = event.target;
     Ingredients[i].ingredient_info = value;
-    console.log(value)
     //find where we are working in array (find index of what's changing)
 
     this.setState({
       ingredients: Ingredients
     });
-    console.log(this.state.ingredients)
   };
 
   handleTagChange = (event, i) => {
     let Tags = [...this.state.tags]
     const { name, value } = event.target;
     Tags[i].tag_name = value;
-    console.log(value)
     //find where we are working in array (find index of what's changing)
 
     this.setState({
       tags: Tags
     });
-    console.log(this.state.tags)
   };
 
   updateTag = id => {
-    console.log(this.state.tags)
     axios.put(`/api/tags/${id}`,
       {
         tagObj: {

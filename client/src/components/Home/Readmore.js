@@ -9,7 +9,7 @@ const ReadMore = () => (
     </div>
     <Scrollchor to="homeAbout" className="readmore-subBlock">
       <h3 className="readmore-text">READ MORE</h3>
-      <img className="arrow" src={require('../../images/arrow.png')} alt="Arrow Image" />
+      <img className="arrow" src={require('../../images/arrow.png')} alt="Arrow" />
     </Scrollchor>
   </div>
 );
