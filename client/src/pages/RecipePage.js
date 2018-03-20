@@ -173,10 +173,10 @@ class Recipes extends Component {
         </div>
 
         <div className="tags">
-          Tags:
+          Tags: {" "}
           {this.state.tags ? ( //Check for Ingredients
             this.state.tags.map(tag => (
-              <span>{tag.tag_name} </span>
+              <span>{tag.tag_name} {" | "} </span>
             ))
           ) : (
               <span>No Tags</span>
@@ -233,7 +233,7 @@ class Recipes extends Component {
           panelheaderclass="recipe-notes-header"
         >
           <Input
-            //className="ERInput"
+            className="note-input"
             name="recipe_notes"
             value={this.state.recipe_notes}
             onChange={this.handleInputChange}

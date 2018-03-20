@@ -242,7 +242,7 @@ class RecipeEdit extends Component {
             </div>
             <div className="recipe-page-col col-sm-1">
               <button
-                className="btn ERSubmit"
+                className="btn ERSubmit ERSave"
                 type="button"
                 onClick={() => this.updateName(this.state.id)}>save</button>
             </div>
@@ -260,7 +260,7 @@ class RecipeEdit extends Component {
             </div>
             <div className="recipe-page-col col-sm-1">
               <button
-                className="btn ERSubmit"
+                className="btn ERSubmit ERSave"
                 type="button"
                 onClick={() => this.updateServing(this.state.id)} >save</button>
             </div>
@@ -282,7 +282,7 @@ class RecipeEdit extends Component {
                 </div>
                 <div className="recipe-page-col col-sm-1">
                   <button key={ingredient.id}
-                    className="btn ERSubmit"
+                    className="btn ERSubmit ERSave"
                     type="button"
                     onClick={() => this.updateIngredient(this.state.recipes.id)}>save</button>
                 </div>
@@ -297,7 +297,7 @@ class RecipeEdit extends Component {
             }
           </div>
 
-          <h3 className="ERTitle">ADD NEW INGREDIENT</h3>
+          <h3 className="ERTitle ERAdd">ADD NEW INGREDIENT</h3>
           <div className="row">
             <div className="recipe-page-col col-sm-11">
               <Input
@@ -309,7 +309,7 @@ class RecipeEdit extends Component {
             </div>
             <div className="recipe-page-col col-sm-1">
               <button
-                className="btn ERSubmit"
+                className="btn ERSubmit ERSave"
                 type="button"
                 onClick={() => this.newIngredient(this.state.id)}>save</button>
             </div>
@@ -332,7 +332,7 @@ class RecipeEdit extends Component {
                     </div>
                     <div className="recipe-page-col col-sm-1">
                       <button
-                        className="btn ERSubmit"
+                        className="btn ERSubmit ERSave"
                         type="button"
                         onClick={() => this.updateInstructions(this.state.recipes.id)}>save</button>
                     </div>
@@ -350,7 +350,7 @@ class RecipeEdit extends Component {
               <h3 className="noshow" />
             )}
 
-          <h3 className="ERTitle">ADD NEW INSTRUCTION</h3>
+          <h3 className="ERTitle ERAdd">ADD NEW INSTRUCTION</h3>
           <div className="row">
             <div className="recipe-page-col col-sm-11">
               <Input
@@ -362,7 +362,7 @@ class RecipeEdit extends Component {
             </div>
             <div className="recipe-page-col col-sm-1">
               <button
-                className="btn ERSubmit"
+                className="btn ERSubmit ERSave"
                 type="button"
                 onClick={() => this.newInstruction(this.state.id)}>save</button>
             </div>
@@ -386,7 +386,7 @@ class RecipeEdit extends Component {
                     </div>
                     <div className="recipe-page-col col-sm-1">
                       <button key={tag.id}
-                        className="btn ERSubmit"
+                        className="btn ERSubmit ERSave"
                         type="button"
                         onClick={() => this.updateTag(this.state.recipes.id)}>save</button>
                     </div>
@@ -417,7 +417,7 @@ class RecipeEdit extends Component {
             </div>
             <div className="recipe-page-col col-sm-1">
               <button
-                className="btn ERSubmit"
+                className="btn ERSubmit ERSave"
                 type="button"
                 onClick={() => this.newTag(this.state.id)}>save</button>
             </div>
