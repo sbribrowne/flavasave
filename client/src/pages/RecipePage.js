@@ -115,7 +115,7 @@ class Recipes extends Component {
         <div className="recipe-header">
           <h2 className="recipe-title">{this.state.recipe.recipe_name}</h2>
           <p className="recipe-servingsize">
-            Yield:
+            Yield: 
             {this.state.recipe.recipe_serving_size ? (
               <span>{this.state.recipe.recipe_serving_size}</span>
             ) : (
@@ -214,7 +214,7 @@ class Recipes extends Component {
               type="button"
               onClick={() => this.makeFalse(this.state.recipe.id)}
             >
-              NEED TO COOK
+              MARK AS NEED TO COOK
             </button>
           ) : (
               <button
@@ -222,7 +222,7 @@ class Recipes extends Component {
                 type="button"
                 onClick={() => this.makeTrue(this.state.recipe.id)}
               >
-                COMPLETED
+                MARK AS COMPLETED
             </button>
             )}
         </div>
