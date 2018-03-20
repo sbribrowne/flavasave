@@ -674,8 +674,9 @@ li {
 
 .note-input {
   font-family: Peleguer, serif;
-  font-size: 2rem;
-  width: 100%; }
+  font-size: 2.75rem;
+  width: 100%;
+  border: none; }
 
 .panel-header {
   font-family: LeagueGothic, sans-serif; }
