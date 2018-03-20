@@ -416,7 +416,7 @@ li {
   text-transform: uppercase; }
 
 .userpage-container {
-  width: 70%; }
+  width: 60%; }
 
 .search-title {
   font-family: LeagueGothic, sans-serif;
@@ -454,6 +454,12 @@ li {
 .tag-search-button {
   height: 0.3vw; }
 
+.showing-search-results {
+  font-family: PeleguerItalic, serif;
+  font-size: 3rem;
+  margin-top: 2%;
+  margin-bottom: -3%; }
+
 .orange-box {
   background-color: #F99E1C;
   padding: 0.25rem 0rem 0.25rem 0rem;
@@ -470,7 +476,7 @@ li {
   float: left;
   padding-top: 1rem;
   padding-bottom: 0.25rem;
-  margin-left: 22vw;
+  margin-left: 18vw;
   margin-right: 5rem; }
 
 .col-md-4 {
@@ -483,6 +489,9 @@ li {
   font-size: 3rem;
   letter-spacing: 0.2rem;
   padding-top: 2rem; }
+
+.all-items-row {
+  margin-top: -2%; }
 
 .recipe-name {
   text-decoration: underline; }
@@ -750,6 +759,12 @@ li {
   /* ===============================================HOME PAGE================================================ */
   .loginBox {
     margin-top: -2.5vw; } }
+@media only screen and (max-width: 1450px) {
+  /* ===============================================USER PAGE================================================ */
+  .header-image-class {
+    padding-top: 2rem;
+    padding-bottom: 0rem;
+    margin-left: 13vw; } }
 @media only screen and (max-width: 1280px) {
   /* ===============================================HOME PAGE================================================ */
   .loginBox {
@@ -782,6 +797,12 @@ li {
 
   .up-toggle-button {
     padding: 0.5rem 1rem 0 1rem; } }
+@media only screen and (max-width: 10240px) and (min-width: 992px) {
+  .up-delete-button {
+    margin-left: 1rem; }
+
+  .up-toggle-button {
+    margin-left: 1rem; } }
 @media only screen and (max-width: 980px) {
   /* ===============================================HOME PAGE================================================ */
   .loginBox {
