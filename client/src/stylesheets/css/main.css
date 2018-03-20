@@ -186,6 +186,12 @@
   font-size: 2.5rem;
   color: #F99E1C; }
 
+.readmore-block {
+  position: absolute;
+  white-space: nowrap;
+  top: 35vw;
+  left: 8vw; }
+
 .readmore-description {
   position: absolute;
   width: 45rem;
@@ -202,29 +208,22 @@
   font-family: PeleguerItalic, serif;
   margin-top: -1rem; }
 
-.readmore-block {
-  position: absolute;
-  white-space: nowrap;
-  bottom: 2vw;
-  left: 8vw; }
-
 .readmore-subBlock {
+  margin-left: 6rem;
   -webkit-animation: slideIn 2s forwards, bounce 6s 2s infinite;
   -moz-animation: slideIn 2s forwards, bounce 6s 2s infinite;
   animation: slideIn 2s forwards, bounce 6s 2s infinite; }
 
 .readmore-text {
   font-family: Peleguer, serif;
-  font-size: 1.5vw;
+  font-size: 3rem;
   color: white;
-  border: 2px solid white;
-  transform: rotate(270deg);
-  padding: 1.5rem 6rem 1rem 6rem; }
+  transform: rotate(270deg); }
 
 .arrow {
   height: 4rem;
-  margin-top: 6vw;
-  margin-left: 6.5vw; }
+  margin-top: 7rem;
+  margin-left: 3.2vmax; }
 
 .aboutHeader {
   font-family: LeagueGothic, sans-serif;
@@ -457,6 +456,13 @@ li {
 .tag-search-button {
   height: 0.3vw; }
 
+.clear-search {
+  color: #E44125; }
+
+.clear-search:hover {
+  color: #F99E1C;
+  text-decoration: none; }
+
 .showing-search-results {
   font-family: PeleguerItalic, serif;
   font-size: 3rem;
@@ -514,15 +520,15 @@ li {
   padding-top: 2rem; }
 
 .recipe-buttons {
-  padding-top: 2rem; }
+  padding-top: 1rem; }
 
 .up-edit-button {
   font-family: Peleguer, serif;
   color: black;
   font-size: 2rem;
   padding: 0.5rem 2rem 0 2rem;
-  background-color: transparent;
   border: 0.25px solid #e1dedc;
+  background-color: transparent;
   border-radius: 0; }
 
 .up-edit-button:hover {
@@ -535,12 +541,13 @@ li {
   color: black;
   margin-left: 2rem;
   font-size: 2rem;
-  padding: 0.5rem 2rem 0 2rem;
-  background-color: transparent;
+  padding: 0.5rem 2rem 0rem 2rem;
   border: 0.25px solid #e1dedc;
+  background-color: transparent;
   border-radius: 0; }
 
 .up-delete-button:hover {
+  background-color: #E44125;
   border-radius: 0; }
 
 .up-toggle-button {
@@ -548,7 +555,7 @@ li {
   color: black;
   margin-left: 2rem;
   font-size: 2rem;
-  padding: 0.5rem 2rem 0 2rem;
+  padding: 0.8rem 2rem 0.5rem 2rem;
   background-color: transparent;
   border: 0.25px solid #e1dedc;
   border-radius: 0; }
@@ -648,15 +655,16 @@ li {
   margin-left: 9vw;
   margin-top: 2%; }
 
+.panel-heading {
+  background-color: #F99E1C;
+  border: 2px solid #F99E1C;
+  border-radius: 0; }
+
 .panel-header {
   color: white;
   font-size: 4rem;
   letter-spacing: 0.5rem;
-  background-color: #F99E1C;
-  border: 2px solid #F99E1C;
-  height: 100%;
-  width: 100%;
-  padding: 2rem 1rem 2rem 1.5rem;
+  padding: 1rem 0.5rem 1rem 0.5rem;
   margin-top: 0; }
 
 .recipe-notes {
@@ -666,8 +674,9 @@ li {
 
 .note-input {
   font-family: Peleguer, serif;
-  font-size: 2rem;
-  width: 100%; }
+  font-size: 2.75rem;
+  width: 100%;
+  border: none; }
 
 .panel-header {
   font-family: LeagueGothic, sans-serif; }
@@ -821,13 +830,19 @@ li {
 @media only screen and (max-width: 1690px) {
   /* ===============================================HOME PAGE================================================ */
   .loginBox {
-    margin-top: -2.5vw; } }
+    margin-top: -2.5vw; }
+
+  .arrow {
+    margin-left: 3.8vmax; } }
 @media only screen and (max-width: 1450px) {
   /* ===============================================USER PAGE================================================ */
   .header-image-class {
     padding-top: 2rem;
     padding-bottom: 0rem;
-    margin-left: 13vw; } }
+    margin-left: 13vw; }
+
+  .arrow {
+    margin-left: 4.5vmax; } }
 @media only screen and (max-width: 1280px) {
   /* ===============================================HOME PAGE================================================ */
   .loginBox {
@@ -838,8 +853,7 @@ li {
     bottom: 13vw; }
 
   .arrow {
-    margin-top: 7vw;
-    margin-left: 8vw; }
+    margin-left: 5.1vmin; }
 
   /* ===============================================USER PAGE================================================ */
   .search-btn {
@@ -859,7 +873,7 @@ li {
     padding: 0.5rem 1rem 0 1rem; }
 
   .up-toggle-button {
-    padding: 0.5rem 1rem 0 1rem; }
+    padding: 1rem 2rem 0.7rem 2rem; }
 
   /* ===============================================RECIPE EDIT PAGE================================================ */
   .ERSubmit {
@@ -868,7 +882,17 @@ li {
   .ingredient-btn {
     font-size: 1.3vw; } }
 @media only screen and (max-width: 1045px) and (min-width: 992px) {
+  /* ===============================================HOME PAGE================================================ */
+  .readmore-text {
+    font-size: 2.5rem; }
+
+  .arrow {
+    margin-left: 5.1vmin; }
+
   /* ===============================================USER PAGE================================================ */
+  .search-btn {
+    height: 2.5vw; }
+
   .up-delete-button {
     margin-left: 1rem; }
 
@@ -1158,6 +1182,21 @@ li {
   /* ===============================================RECIPE EDIT PAGE================================================ */
   .ERInput {
     height: 4rem; } }
+@media only screen and (max-width: 420px) {
+  .up-delete-button {
+    margin-left: 1rem;
+    font-size: 1.25rem;
+    padding: 1rem 1rem 0.6rem 1rem; }
+
+  .up-toggle-button {
+    margin-left: 1rem;
+    font-size: 1.25rem; }
+
+  .glyphicon-pencil {
+    font-size: 1.25rem; }
+
+  .glyphicon-trash {
+    font-size: 1.25rem; } }
 @media only screen and (max-width: 375px) {
   .login-logo {
     height: 4rem; }

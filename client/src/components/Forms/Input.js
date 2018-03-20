@@ -1,7 +1,7 @@
 import React from "react";
 
 const Input = props => (
-  <textarea className="form-control" {...props} rows="6" />
+  <input className="form-control" {...props} />
 );
 
 export default Input;

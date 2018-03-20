@@ -1,3 +1,10 @@
+.readmore-block {
+    position: absolute;
+    white-space: nowrap;
+    top: 35vw;
+    left: 8vw;
+}
+
 .readmore-description {
     position: absolute;
     width: 45rem;
@@ -16,29 +23,22 @@
     margin-top: -1rem;;
 }
 
-.readmore-block {
-    position: absolute;
-    white-space: nowrap;
-    bottom: 2vw;
-    left: 8vw;
-}
-
 .readmore-subBlock {
+    margin-left: 6rem;
     -webkit-animation: slideIn 2s forwards, bounce 6s 2s infinite;
     -moz-animation: slideIn 2s forwards, bounce 6s 2s infinite;
     animation: slideIn 2s forwards, bounce 6s 2s infinite;
 }
+
 .readmore-text {
     font-family: $body-font;
-    font-size: 1.5vw;
+    font-size: 3rem;
     color: white;
-    border: 2px solid white;
     transform: rotate(270deg);
-    padding: 1.5rem 6rem 1rem 6rem;
 }
 
 .arrow {
     height: 4rem;
-    margin-top: 6vw;
-    margin-left: 6.5vw;
+    margin-top: 7rem;
+    margin-left: 3.2vmax;
 }

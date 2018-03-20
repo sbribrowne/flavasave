@@ -8,8 +8,8 @@ import InstructionList from "../components/Lists/InstructionList";
 import InstructionListItem from "../components/Lists/InstructionListItem";
 import FooterLogged from "../components/Footer/FooterLogged.js";
 import API from "../utils/API";
+import NoteInput from "../components/Forms/noteInput.js";
 import "../stylesheets/css/main.css";
-import Input from "../components/Forms/Input.js";
 import axios from "axios";
 
 class Recipes extends Component {
@@ -115,7 +115,7 @@ class Recipes extends Component {
         <div className="recipe-header">
           <h2 className="recipe-title">{this.state.recipe.recipe_name}</h2>
           <p className="recipe-servingsize">
-            Yield: 
+            Yield: {" "}
             {this.state.recipe.recipe_serving_size ? (
               <span>{this.state.recipe.recipe_serving_size}</span>
             ) : (
@@ -230,9 +230,9 @@ class Recipes extends Component {
         <Panel
           name="STICKY NOTES"
           panelfullclass="panel recipe-notes-panel"
-          panelheaderclass="recipe-notes-header"
+          panelheaderclass="panel-heading recipe-notes-header"
         >
-          <Input
+          <NoteInput
             className="note-input"
             name="recipe_notes"
             value={this.state.recipe_notes}

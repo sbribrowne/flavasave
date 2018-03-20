@@ -195,7 +195,7 @@ class UserPage extends Component {
         {this.state.showing_search_results ?
           (<div id="searchresults" className="container-fluid userpage-container showing-search-results">
             Search results for: {this.state.search_term ? (this.state.search_term) : (this.state.search_tag)}
-            <a href="#" onClick={this.loadRecipes}> Clear</a>
+            <a href="#" className = "clear-search" onClick={this.loadRecipes}> Clear</a>
           </div>) :
           (<span></span>)
         }
@@ -215,7 +215,7 @@ class UserPage extends Component {
                 recipe =>
                   !recipe.recipe_checkbox ? (
                     <NTCListItem key={recipe.id}>
-                      <div className="col-md-8 table-item recipe-name">
+                      <div className="col-md-7 table-item recipe-name">
                         <Link
                           className="table-item"
                           to={"/recipe/" + recipe.id}
@@ -223,13 +223,12 @@ class UserPage extends Component {
                           {recipe.recipe_name}
                         </Link>
                       </div>
-                      <div className="col-md-4 recipe-buttons">
+                      <div className="col-md-5 recipe-buttons">
                         <Link
                           className="btn btn-sm up-edit-button"
                           to={"/recipeedit/" + recipe.id}
                         >
-                          {" "}
-                          Edit{" "}
+                          <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
                         </Link>
                         <Buttons onClick={() => this.deleteRecipe(recipe.id)} />
                         <button
@@ -265,7 +264,7 @@ class UserPage extends Component {
                 recipe =>
                   recipe.recipe_checkbox ? (
                     <CompleteListItem key={recipe.id}>
-                      <div className="col-md-8 table-item recipe-name">
+                      <div className="col-md-7 table-item recipe-name">
                         <Link
                           className="table-item"
                           to={"/recipe/" + recipe.id}
@@ -273,13 +272,12 @@ class UserPage extends Component {
                           {recipe.recipe_name}
                         </Link>
                       </div>
-                      <div className="col-md-4 recipe-buttons">
+                      <div className="col-md-5 recipe-buttons">
                         <Link
                           className="btn btn-sm up-edit-button"
                           to={"/recipeedit/" + recipe.id}
                         >
-                          {" "}
-                          Edit{" "}
+                          <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
                         </Link>
                         <Buttons onClick={() => this.deleteRecipe(recipe.id)} />
                         <button
