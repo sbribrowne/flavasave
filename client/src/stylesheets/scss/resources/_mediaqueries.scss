@@ -88,7 +88,7 @@
         padding: 0.5rem 1rem 0 1rem;
     }
     .up-toggle-button {
-        padding: 0.5rem 1rem 0 1rem;
+        padding: 1rem 2rem 0.7rem 2rem;
     }
     /* ===============================================RECIPE EDIT PAGE================================================ */
     .ERSubmit {
@@ -101,7 +101,7 @@
 }
 
 @media only screen and (max-width: 1045px) and (min-width: 992px) {
-    /* ===============================================USER PAGE================================================ */
+    /* ===============================================HOME PAGE================================================ */
     .readmore-text {
         font-size: 2.5rem;
     }
@@ -110,6 +110,10 @@
         margin-left: 5.1vmax;
     }
     /* ===============================================USER PAGE================================================ */
+    .search-btn {
+        height: 2.5vw;
+    }
+    
     .up-delete-button {
         margin-left: 1rem;
     }
@@ -412,6 +416,27 @@
     /* ===============================================RECIPE EDIT PAGE================================================ */
     .ERInput {
         height: 4rem;
+    }
+}
+
+@media only screen and (max-width: 420px) {
+    .up-delete-button {
+        margin-left: 1rem;
+        font-size: 1.25rem;
+        padding: 1rem 1rem 0.6rem 1rem;
+    }
+    
+    .up-toggle-button {
+        margin-left: 1rem;
+        font-size: 1.25rem;
+    }
+
+    .glyphicon-pencil {
+        font-size: 1.25rem;
+    }
+
+    .glyphicon-trash {
+        font-size: 1.25rem;
     }
 }
 
