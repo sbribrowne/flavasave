@@ -26,9 +26,9 @@ class UserPage extends Component {
 
   componentWillMount() { //componentDidMount
     this.currentUser();
-    //currentUsers loads this.loadRecipes() if user found
   }
 
+  //grab user information
   currentUser = () => {
     API.getUserData()
       .then(res => {
@@ -43,6 +43,7 @@ class UserPage extends Component {
       .catch(err => console.log(err));
   };
 
+  //load recipes on page
   loadRecipes = () => {
     API.getRecipes()
       .then(res => {
@@ -51,12 +52,14 @@ class UserPage extends Component {
       .catch(err => console.log(err));
   };
 
+  //axios call to delete recipe in db
   deleteRecipe = id => {
     API.deleteRecipe(id)
       .then(res => this.loadRecipes())
       .catch(err => console.log(err));
   };
 
+  //changes recipe_checkbox field in db to true
   makeTrue = id => {
     axios
       .put(`/api/recipes/${id}`, {
@@ -65,17 +68,9 @@ class UserPage extends Component {
         }
       })
       .then(res => this.loadRecipes());
-
-    /*
-    API.updateRecipe(id, {
-      recipe_checkbox: 1
-    })
-      .then(res => this.loadRecipes())
-      .catch(err => console.log(err));
-
-      */
   };
 
+  //changes recipe_checkbox field in db to false
   makeFalse = id => {
     axios
       .put(`/api/recipes/${id}`, {
@@ -86,6 +81,7 @@ class UserPage extends Component {
       .then(res => this.loadRecipes());
   };
 
+  //happens on submit of input
   handleInputChange = event => {
     const { name, value } = event.target;
     this.setState({
@@ -93,10 +89,7 @@ class UserPage extends Component {
     });
   };
 
-  loadApp1() {
-    this.props.history.push('/recipe/');
-  }
-
+  //axios call and redirect on submit of recipe url
   handleURLSubmit = event => {
     event.preventDefault();
     if (this.state.recipe_url) {
@@ -108,8 +101,7 @@ class UserPage extends Component {
           this.setState({
             recipe_url: ""
           });
-          //document.location.href = window.location.protocol + "//" + window.location.hostname;
-          if(res.data.status)
+          if (res.data.status)
             window.location.href = window.location.origin + "/recipe/" + res.data.id;
         })
         .catch(err => console.log(err));
@@ -120,6 +112,7 @@ class UserPage extends Component {
     });
   };
 
+  //axios call to db on submit of search / set state to results
   handleSearch = event => {
     event.preventDefault();
     axios.get(`/api/search/${this.state.search_term}`)
@@ -129,6 +122,7 @@ class UserPage extends Component {
       });
   };
 
+  //axios call to db on submit of search / set state to results
   handleTagSearch = event => {
     event.preventDefault();
     axios.get(`/api/tags/search/${this.state.search_tag}`)
