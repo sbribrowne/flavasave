@@ -150,6 +150,7 @@ class RecipeEdit extends Component {
       }))
   };
 
+  //set state to field input
   handleInputChange = event => {
     const { name, value } = event.target;
     this.setState({
@@ -157,6 +158,9 @@ class RecipeEdit extends Component {
     });
   };
 
+  //find positon of input 
+  //set that input to correct position in temporary array called Instructions
+  //set entire array to state
   handleInstructionChange = (event, i) => {
     let Instructions = [...this.state.instructions]
     const { name, value } = event.target;
@@ -168,6 +172,9 @@ class RecipeEdit extends Component {
     });
   };
 
+  //find positon of input 
+  //set that input to correct position in temporary array called Ingredients
+  //set entire array to state
   handleIngredientChange = (event, i) => {
     let Ingredients = [...this.state.ingredients]
     const { name, value } = event.target;
@@ -181,6 +188,9 @@ class RecipeEdit extends Component {
     console.log(this.state.ingredients)
   };
 
+  //find positon of input 
+  //set that input to correct positon in temporary array called Tags
+  //set entire array to state
   handleTagChange = (event, i) => {
     let Tags = [...this.state.tags]
     const { name, value } = event.target;
@@ -194,6 +204,7 @@ class RecipeEdit extends Component {
     console.log(this.state.tags)
   };
 
+  //axios call to save tag input to state
   updateTag = id => {
     console.log(this.state.tags)
     axios.put(`/api/tags/${id}`,
@@ -206,12 +217,14 @@ class RecipeEdit extends Component {
       .then(res => this.loadRecipes());
   };
 
+  //axios call to delete tag
   deleteTag = id => {
     API.deleteTag(id)
       .then(res => this.loadRecipes())
       .catch(err => console.log(err));
   };
 
+  //axios call to create new tag
   newTag = () => {
     axios.post(`/api/tags/`,
       {
@@ -227,6 +240,7 @@ class RecipeEdit extends Component {
       }))
   };
 
+  //set value of inputs to state
   handleChange = event => {
     this.setState({
       value: event.target.value
