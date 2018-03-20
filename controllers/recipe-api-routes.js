@@ -110,7 +110,7 @@ module.exports = function (app) {
   //Adds a recipe from a URL
   app.post("/api/recipes", isAuthenticated, function (req, res) {
     var newUrl = req.body.recipe_url;
-
+    console.log("POST /api/recipes");
 
     request(newUrl, function (error, response, body) {
       if (error) throw error;
@@ -173,15 +173,8 @@ module.exports = function (app) {
                           id: recipeId
                         }
                       }).then(function (dbRecipeUpdate) {
-                        console.log("recipeImageUrl");
-                        console.log(recipeImageUrl);
-                        console.log("recipeServingSize");
-                        console.log(recipeServingSize);
                         res.send(`/recipe/${responseRecipe.id}`);
                       });
-
-
-
 
                     })
                     .catch(function (error) {
@@ -325,7 +318,10 @@ function parseItempropIngredients($, recipeId) {
 
         if (JSON.parse($(this).html())["image"]) {
           console.log("IMAGE FOUND");
-          recipeImageUrl = JSON.parse($(this).html())["image"];
+          if(typeof JSON.parse($(this).html())["image"] === "string")
+            recipeImageUrl = JSON.parse($(this).html())["image"];
+          if(JSON.parse($(this).html())["image"].url)
+            recipeImageUrl = JSON.parse($(this).html())["image"].url;
         } else
           console.log("No Image");
 
@@ -384,22 +380,29 @@ function parseItempropInstructions($, recipeId) {
   var instructionsArray = [];
   var instructionArrayClean = [];
   var jsonFound = false;
+  console.log("***parseItempropInstructions***");
 
   //Look for JSON object in page
   $("script").each(function () {
     if ($(this).attr("type") === "application/ld+json") {
       if (JSON.parse($(this).html())["@type"] === "Recipe") {
+        console.log("application/ld+json RECIPE found, JSON.parse($(this).html()):");
+        console.log(JSON.parse($(this).html()));
         if (JSON.parse($(this).html())["recipeInstructions"]) {
-          instructionArrayClean = JSON.parse($(this).html())["recipeInstructions"].split(". ");
+          console.log("*********************** if (JSON.parse($(this).html())[recipeInstructions])*******************");
+          console.log(JSON.parse($(this).html())["recipeInstructions"]);
+          instructionArrayClean = JSON.parse($(this).html())["recipeInstructions"];
           jsonFound = true;
-          console.log(instructionArrayClean);
-        } else
-          console.log("No Instructions");
-      } else
-        console.log("No Recipe in JSON OBJ");
-    } else
-      console.log("No JSON Obj");
+          //console.log(instructionArrayClean);
+        } //else
+          //console.log("No Instructions");
+      } //else
+        //console.log("No Recipe in JSON OBJ");
+    } //else
+      //console.log("No JSON Obj");
   });
+
+
 
   if (jsonFound && instructionArrayClean.length) { //push objects with RecipeID
     for (let i = 0; i < instructionArrayClean.length; i++) {
@@ -423,8 +426,8 @@ function parseItempropInstructions($, recipeId) {
   var counter = 0;
   for (let i = 0; i < instructionsArray.length; i++) { //Run through array of arrays and put all instructions in order
     for (let j = 0; j < instructionsArray[i].length; j++) {
-      console.log("original: " + instructionsArray[i][j].length);
-      console.log("space removed: " + instructionsArray[i][j].replace(/\s\s+/g, ' ').length);
+      //console.log("original: " + instructionsArray[i][j].length);
+      //console.log("space removed: " + instructionsArray[i][j].replace(/\s\s+/g, ' ').length);
       if (instructionsArray[i][j].replace(/\s\s+/g, ' ').length > 20) {
         counter++;
         instructionArrayClean.push({
