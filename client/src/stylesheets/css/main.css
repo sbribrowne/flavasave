@@ -457,6 +457,13 @@ li {
 .tag-search-button {
   height: 0.3vw; }
 
+.clear-search {
+  color: #E44125; }
+
+.clear-search:hover {
+  color: #F99E1C;
+  text-decoration: none; }
+
 .showing-search-results {
   font-family: PeleguerItalic, serif;
   font-size: 3rem;

@@ -200,7 +200,7 @@ class UserPage extends Component {
         {this.state.showing_search_results ?
           (<div id="searchresults" className="container-fluid userpage-container showing-search-results">
             Search results for: {this.state.search_term ? (this.state.search_term) : (this.state.search_tag)}
-            <a href="#" onClick={this.loadRecipes}> Clear</a>
+            <a href="#" className = "clear-search" onClick={this.loadRecipes}> Clear</a>
           </div>) :
           (<span></span>)
         }

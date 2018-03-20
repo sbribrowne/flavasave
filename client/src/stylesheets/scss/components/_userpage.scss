@@ -55,6 +55,15 @@
     height: 0.3vw;
 }
 
+.clear-search {
+    color: $red;
+}
+
+.clear-search:hover {
+    color: $orange;
+    text-decoration: none;
+}
+
 .showing-search-results {
     font-family: $body-font-italic;
     font-size: 3rem;
