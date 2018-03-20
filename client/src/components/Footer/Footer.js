@@ -10,7 +10,9 @@ const Footer = () => (
         </a>
       </li>
       <li>
-        <a className="footertext footerlink">SIGN UP</a>
+       <Link className="footertext footerlink" to="/signup">
+                SIGN UP
+        </Link>
       </li>
     </ul>
     <p className="navbar-right footertext" id="footercopyright">

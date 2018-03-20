@@ -252,7 +252,7 @@ class UserPage extends Component {
               )}
             </NeedToCookList>
           ) : (
-              <h1 className="table-items">No results to display</h1>
+              <h1 className="no-results">No results to display</h1>
             )}
         </div>
 
@@ -302,7 +302,7 @@ class UserPage extends Component {
               )}
             </CompleteList>
           ) : (
-              <h1 className="table-items">No results to display</h1>
+              <h1 className="no-results">No results to display</h1>
             )}
         </div>
 
