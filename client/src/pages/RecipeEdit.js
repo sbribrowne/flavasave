@@ -1,10 +1,10 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import Input from "../components/Forms/Input.js";
 import NavLogged from "../components/Nav/NavLogged.js";
 import FooterLogged from "../components/Footer/FooterLogged.js";
 import API from "../utils/API";
 import axios from "axios";
-import { Link } from "react-router-dom";
 
 class RecipeEdit extends Component {
   state = {
@@ -38,9 +38,6 @@ class RecipeEdit extends Component {
           instructions: res.data.Instructions,
           tags: res.data.Tags
         })
-        console.log(res);
-        console.log(res.data.Tags);
-        console.log(this.state.recipes);
       })
       .catch(err => console.log(err));
   };
@@ -179,13 +176,11 @@ class RecipeEdit extends Component {
     let Ingredients = [...this.state.ingredients]
     const { name, value } = event.target;
     Ingredients[i].ingredient_info = value;
-    console.log(value)
     //find where we are working in array (find index of what's changing)
 
     this.setState({
       ingredients: Ingredients
     });
-    console.log(this.state.ingredients)
   };
 
   //find positon of input 
@@ -195,18 +190,15 @@ class RecipeEdit extends Component {
     let Tags = [...this.state.tags]
     const { name, value } = event.target;
     Tags[i].tag_name = value;
-    console.log(value)
     //find where we are working in array (find index of what's changing)
 
     this.setState({
       tags: Tags
     });
-    console.log(this.state.tags)
   };
 
   //axios call to save tag input to state
   updateTag = id => {
-    console.log(this.state.tags)
     axios.put(`/api/tags/${id}`,
       {
         tagObj: {

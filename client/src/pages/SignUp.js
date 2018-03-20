@@ -15,7 +15,7 @@ class SignUp extends React.Component {
         <div className="container-fluid">
           <div className="row">
             <div className="col-md-4" id="signup-info">
-              <img src={require("../images/chef_white.png")} height="180" />
+              <img alt="" src={require("../images/chef_white.png")} height="180" />
               <br />
               <h1 className="signup-header">START COOKING</h1>
               <h4 className="signup-text">

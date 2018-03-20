@@ -1,7 +1,9 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import NavLogged from "../components/Nav/NavLogged";
 import Input from "../components/Forms/Input.js";
 import FormBtn from "../components/Buttons/FormBtn.js";
+import Buttons from "../components/Buttons/Button.js";
 import OrangeHdr from "../components/Panels/OrangeHdr.js";
 import NeedToCookList from "../components/Lists/NeedToCookList";
 import NTCListItem from "../components/Lists/NTCListItem";
@@ -9,8 +11,6 @@ import CompleteList from "../components/Lists/CompleteList";
 import CompleteListItem from "../components/Lists/CompleteListItem";
 import FooterLogged from "../components/Footer/FooterLogged.js";
 import API from "../utils/API";
-import { Link } from "react-router-dom";
-import Buttons from "../components/Buttons/Button.js";
 import axios from "axios";
 
 class UserPage extends Component {
@@ -160,7 +160,7 @@ class UserPage extends Component {
           <h3 className="search-title">SEARCH RECIPES</h3>
           <form className="row">
             <div className="form-group">
-              <Input name="search-recipe" className="input-width"
+              <Input className="input-width"
                 value={this.state.search_term}
                 onChange={this.handleInputChange}
                 name="search_term"
@@ -177,7 +177,7 @@ class UserPage extends Component {
           <h3 className="search-title">SEARCH BY TAGS</h3>
           <form className="row">
             <div className="form-group">
-              <Input name="search-tags" className="input-width"
+              <Input className="input-width"
                 value={this.state.search_tag}
                 onChange={this.handleInputChange}
                 name="search_tag"

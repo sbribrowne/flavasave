@@ -6,7 +6,7 @@ const About = () => (
       <img
         className="card-img-top"
         src={require("../../images/mitts.png")}
-        alt="Store Image"
+        alt="Store"
         height="90"
       />
       <div className="card-body">
@@ -21,7 +21,7 @@ const About = () => (
       <img
         className="card-img-top"
         src={require("../../images/spatulas.png")}
-        alt="Organize Image"
+        alt="Organize"
         height="90"
       />
       <div className="card-body">
@@ -36,7 +36,7 @@ const About = () => (
       <img
         className="card-img-top"
         src={require("../../images/chef_green.png")}
-        alt="Edit Image"
+        alt="Edit"
         height="90"
       />
       <div className="card-body">
