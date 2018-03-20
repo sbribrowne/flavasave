@@ -35,7 +35,7 @@ class UserPage extends Component {
         this.setState({ user: res.data });
 
         if (!res.data.id) {
-          document.location.href = "http://localhost:3000"
+          document.location.href = window.location.origin;
         } else {
           this.loadRecipes();
         }
@@ -103,13 +103,14 @@ class UserPage extends Component {
       API.saveRecipe({
         recipe_url: this.state.recipe_url
       })
-        .then(res => this.loadRecipes())
         .then(res => {
           console.log(res);
           this.setState({
             recipe_url: ""
           });
-          this.props.history.push(res);
+          //document.location.href = window.location.protocol + "//" + window.location.hostname;
+          console.log(window.location.origin + res.data);
+          window.location.href = window.location.origin + res.data;
         })
         .catch(err => console.log(err));
     }
