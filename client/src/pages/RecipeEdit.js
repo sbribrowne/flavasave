@@ -18,7 +18,6 @@ class RecipeEdit extends Component {
     new_ingredient: "",
     new_instruction: "",
     new_tag: ""
-    //tags: []
   };
 
   componentDidMount() {
@@ -26,6 +25,7 @@ class RecipeEdit extends Component {
     console.log(this.state.recipes);
   }
 
+  //load recipes to page
   loadRecipes = () => {
     API.getRecipe(this.props.match.params.id)
       .then((res) => {
@@ -37,7 +37,6 @@ class RecipeEdit extends Component {
           ingredients: res.data.Ingredients,
           instructions: res.data.Instructions,
           tags: res.data.Tags
-          //tags: res.data.tags
         })
         console.log(res);
         console.log(res.data.Tags);
@@ -46,24 +45,28 @@ class RecipeEdit extends Component {
       .catch(err => console.log(err));
   };
 
+  //axios call to delete recipes id
   deleteRecipe = id => {
     API.deleteRecipe(id)
       .then(res => this.loadRecipes())
       .catch(err => console.log(err));
   };
 
+  //axios call to delete ingredient by id
   deleteIngredient = id => {
     API.deleteIngredient(id)
       .then(res => this.loadRecipes())
       .catch(err => console.log(err));
   };
 
+  //axios call to delete instruction by id
   deleteInstruction = id => {
     API.deleteInstruction(id)
       .then(res => this.loadRecipes())
       .catch(err => console.log(err));
   };
 
+  //axios call to update recipe name in database
   updateName = id => {
     axios.put(`/api/recipes/${id}`,
       {
@@ -75,6 +78,7 @@ class RecipeEdit extends Component {
       .then(res => this.loadRecipes());
   };
 
+  //axios call to update recipe serving in database
   updateServing = id => {
     axios.put(`/api/recipes/${id}`,
       {
@@ -89,6 +93,7 @@ class RecipeEdit extends Component {
       });
   };
 
+  //axios call to update recipe ingredient in database
   updateIngredient = id => {
     console.log(this.state.ingredients)
     axios.put(`/api/ingredients/${id}`,
@@ -101,6 +106,7 @@ class RecipeEdit extends Component {
       .then(res => this.loadRecipes());
   };
 
+  //axios call to add new ingredient to database
   newIngredient = () => {
     axios.post(`/api/ingredients/`,
       {
@@ -116,6 +122,7 @@ class RecipeEdit extends Component {
       }))
   };
 
+  //axios call to update recipe ingredient in database
   updateInstructions = id => {
     axios.put(`/api/instructions/${id}`,
       {
@@ -127,6 +134,7 @@ class RecipeEdit extends Component {
       .then(res => this.loadRecipes());
   };
 
+  //axios call to add new instruction to database
   newInstruction = () => {
     axios.post(`/api/instructions/`,
       {
