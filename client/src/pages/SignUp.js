@@ -1,5 +1,5 @@
 import React from "react";
-import Nav from "../components/Nav/Nav.js";
+import NavSignup from "../components/Nav/NavSignup.js";
 import SignUpForm from "../components/Forms/SignUpForm";
 import FooterLogged from "../components/Footer/FooterLogged.js";
 import PropTypes from "prop-types";
@@ -11,7 +11,7 @@ class SignUp extends React.Component {
     const { userSignUpRequest } = this.props;
     return (
       <div>
-        <Nav />
+        <NavSignup />
         <div className="container-fluid">
           <div className="row">
             <div className="col-md-4" id="signup-info">
