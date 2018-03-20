@@ -97,7 +97,7 @@ class AddNewRecipe extends Component {
 
             <h3 className="ERTitle">INGREDIENTS</h3>
             <div className="row">
-              <div className="recipe-page-col col-sm-11">
+              <div className="recipe-page-col col-sm-12">
                 <Input
                   value={this.state.ingredient0}
                   onChange={this.handleInputChange}
@@ -106,7 +106,7 @@ class AddNewRecipe extends Component {
               </div>
             </div>
             <div className="row">
-              <div className="recipe-page-col col-sm-11">
+              <div className="recipe-page-col col-sm-12">
                 <Input
                   value={this.state.ingredient1}
                   onChange={this.handleInputChange}
@@ -115,7 +115,7 @@ class AddNewRecipe extends Component {
               </div>
             </div>
             <div className="row">
-              <div className="recipe-page-col col-sm-11">
+              <div className="recipe-page-col col-sm-12">
                 <Input
                   value={this.state.ingredient2}
                   onChange={this.handleInputChange}
@@ -124,7 +124,7 @@ class AddNewRecipe extends Component {
               </div>
             </div>
             <div className="row">
-              <div className="recipe-page-col col-sm-11">
+              <div className="recipe-page-col col-sm-12">
                 <Input
                   value={this.state.ingredient3}
                   onChange={this.handleInputChange}
@@ -133,7 +133,7 @@ class AddNewRecipe extends Component {
               </div>
             </div>
             <div className="row">
-              <div className="recipe-page-col col-sm-11">
+              <div className="recipe-page-col col-sm-12">
                 <Input
                   value={this.state.ingredient4}
                   onChange={this.handleInputChange}
@@ -144,7 +144,7 @@ class AddNewRecipe extends Component {
 
             <h3 className="ERTitle">INSTRUCTIONS</h3>
             <div className="row">
-              <div className="recipe-page-col col-sm-11">
+              <div className="recipe-page-col col-sm-12">
                 <Input
                   value={this.state.instruction0}
                   onChange={this.handleInputChange}
@@ -153,7 +153,7 @@ class AddNewRecipe extends Component {
               </div>
             </div>
             <div className="row">
-              <div className="recipe-page-col col-sm-11">
+              <div className="recipe-page-col col-sm-12">
                 <Input
                   value={this.state.instruction1}
                   onChange={this.handleInputChange}
@@ -162,7 +162,7 @@ class AddNewRecipe extends Component {
               </div>
             </div>
             <div className="row">
-              <div className="recipe-page-col col-sm-11">
+              <div className="recipe-page-col col-sm-12">
                 <Input
                   value={this.state.instruction2}
                   onChange={this.handleInputChange}
@@ -171,7 +171,7 @@ class AddNewRecipe extends Component {
               </div>
             </div>
             <div className="row">
-              <div className="recipe-page-col col-sm-11">
+              <div className="recipe-page-col col-sm-12">
                 <Input
                   value={this.state.instruction3}
                   onChange={this.handleInputChange}
@@ -180,7 +180,7 @@ class AddNewRecipe extends Component {
               </div>
             </div>
             <div className="row">
-              <div className="recipe-page-col col-sm-11">
+              <div className="recipe-page-col col-sm-12">
                 <Input
                   value={this.state.instruction4}
                   onChange={this.handleInputChange}
@@ -191,7 +191,7 @@ class AddNewRecipe extends Component {
 
             <h3 className="ERTitle">TAGS</h3>
             <div className="row">
-              <div className="recipe-page-col col-sm-11">
+              <div className="recipe-page-col col-sm-12">
                 <Input
                   value={this.state.tag0}
                   onChange={this.handleInputChange}
@@ -200,7 +200,7 @@ class AddNewRecipe extends Component {
               </div>
             </div>
             <div className="row">
-              <div className="recipe-page-col col-sm-11">
+              <div className="recipe-page-col col-sm-12">
                 <Input
                   value={this.state.tag1}
                   onChange={this.handleInputChange}
@@ -209,7 +209,7 @@ class AddNewRecipe extends Component {
               </div>
             </div>
             <div className="row">
-              <div className="recipe-page-col col-sm-11">
+              <div className="recipe-page-col col-sm-12">
                 <Input
                   value={this.state.tag2}
                   onChange={this.handleInputChange}
@@ -218,7 +218,7 @@ class AddNewRecipe extends Component {
               </div>
             </div>
             <div className="row">
-              <div className="recipe-page-col col-sm-11">
+              <div className="recipe-page-col col-sm-12">
                 <Input
                   value={this.state.tag3}
                   onChange={this.handleInputChange}
@@ -227,7 +227,7 @@ class AddNewRecipe extends Component {
               </div>
             </div>
             <div className="row">
-              <div className="recipe-page-col col-sm-11">
+              <div className="recipe-page-col col-sm-12">
                 <Input
                   value={this.state.tag4}
                   onChange={this.handleInputChange}
